@@ -12,8 +12,10 @@ class Login extends PureComponent {
 
     render() {
         const {getFieldDecorator} = this.props.form;
-        return (
-            localStorage.getItem("token") === null ?
+        const loginToken = localStorage.getItem("token");
+        debugger;
+        if(loginToken === null){
+            return (
                 <div className="login">
                     <div className="login-form">
                         <div className="login-logo">
@@ -52,12 +54,12 @@ class Login extends PureComponent {
                         </Form>
                     </div>
                 </div>
-                :
+            )
+        }else{
+            return (
                 <Redirect to="/admin"/>
-
-        )
-
-
+            )
+        }
     }
 
     //登录提交
@@ -73,9 +75,6 @@ class Login extends PureComponent {
     }
 }
 
-const mapState = (state) => ({
-    loginToken: state.getIn(['loginReducer', 'loginToken'])
-});
 
 const mapDispatchToProps = (dispatch) => ({
     //登录
@@ -86,4 +85,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const LoginForm = Form.create()(Login);
-export default connect(mapState, mapDispatchToProps)(LoginForm);
+export default connect(null, mapDispatchToProps)(LoginForm);
