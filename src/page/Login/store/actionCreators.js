@@ -4,16 +4,14 @@ import  axios from 'axios';
 import  {Modal} from 'antd';
 
 //用户登录Action
-const  authLoginAction =  (loginUser)=>({
+const  authLoginAction =  (loginToken)=>({
    type: ActionConstants.AUTH_LOGIN_ACTION,
-   loginUser
+    loginToken
 });
 
 //用户登录
 export const authLogin = (values) => {
-    console.log(JSON.stringify(values));
     return (dispatch) => {
-
         //登录请求
         axios.post(StringConstants.SERVER_URL+"/sysUser/authLogin",JSON.stringify(values),
             {headers: {'Content-Type': 'application/json;charset=utf-8'}}).then((res)=>{
@@ -26,7 +24,7 @@ export const authLogin = (values) => {
                     });
                     //将token存入本地
                     localStorage.setItem("token",resp.data.token);
-                    dispatch(authLoginAction(resp.data));
+                    dispatch(authLoginAction(resp.data.token));
                 }else if(resp.resultCode === StringConstants.SERVER_FAIL_RES_CODE){
                     //显示错误信息
                     Modal.error({

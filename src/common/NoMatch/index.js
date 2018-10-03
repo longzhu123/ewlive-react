@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import img404 from '../../static/img/404.png';
 
-//404页面
+//404页面组件
 class NoMatch extends Component{
     render(){
         return(

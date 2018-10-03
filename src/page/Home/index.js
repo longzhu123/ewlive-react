@@ -5,7 +5,7 @@ import {Redirect} from 'react-router-dom';
 class Home extends PureComponent {
     render() {
         return (
-            localStorage.getItem("mspa_user") === null ?
+            localStorage.getItem("token") === null ?
                 <Redirect to="/login"/> :
                 <Redirect to="/admin"/>
         )
