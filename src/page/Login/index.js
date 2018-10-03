@@ -13,7 +13,6 @@ class Login extends PureComponent {
     render() {
         const {getFieldDecorator} = this.props.form;
         const loginToken = localStorage.getItem("token");
-        debugger;
         if(loginToken === null){
             return (
                 <div className="login">
