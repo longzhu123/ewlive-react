@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
 import {Form, Icon, Input, Button, Checkbox} from 'antd';
 import './index.css';
 import {actionCreators} from "./store";
@@ -12,7 +11,6 @@ class Login extends PureComponent {
 
     render() {
         const {getFieldDecorator} = this.props.form;
-        const loginToken = localStorage.getItem("token");
         return (
             <div className="login">
                 <div className="login-form">
