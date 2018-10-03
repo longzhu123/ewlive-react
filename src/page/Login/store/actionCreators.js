@@ -11,6 +11,7 @@ const  authLoginAction =  (loginToken)=>({
 
 //用户登录
 export const authLogin = (values) => {
+    let _this = this;
     return (dispatch) => {
         //登录请求
         axios.post(StringConstants.SERVER_URL+"/sysUser/authLogin",JSON.stringify(values),
@@ -25,6 +26,8 @@ export const authLogin = (values) => {
                     //将token存入本地
                     localStorage.setItem("token",resp.data.token);
                     dispatch(authLoginAction(resp.data.token));
+                    //跳转到登录页
+                    window.location.href = "/admin";
                 }else if(resp.resultCode === StringConstants.SERVER_FAIL_RES_CODE){
                     //显示错误信息
                     Modal.error({

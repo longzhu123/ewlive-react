@@ -13,52 +13,47 @@ class Login extends PureComponent {
     render() {
         const {getFieldDecorator} = this.props.form;
         const loginToken = localStorage.getItem("token");
-        if(loginToken === null){
-            return (
-                <div className="login">
-                    <div className="login-form">
-                        <div className="login-logo">
-                            <div className="login-name">登录</div>
-                        </div>
-                        <Form onSubmit={this.submitLogin} style={{maxWidth: '300px'}}>
-                            <FormItem>
-                                {getFieldDecorator('email', {
-                                    rules: [{required: true, message: '请输入邮箱!'}],
-                                })(
-                                    <Input prefix={<Icon type="user" style={{fontSize: 13}}/>} placeholder="请输入邮箱"/>
-                                )}
-                            </FormItem>
-                            <FormItem>
-                                {getFieldDecorator('password', {
-                                    rules: [{required: true, message: '请输入密码!'}],
-                                })(
-                                    <Input prefix={<Icon type="lock" style={{fontSize: 13}}/>} type="password"
-                                           placeholder="请输入密码"/>
-                                )}
-                            </FormItem>
-                            <FormItem style={{marginBottom: '0'}}>
-                                {getFieldDecorator('remember', {
-                                    valuePropName: 'checked',
-                                    initialValue: true,
-                                })(
-                                    <Checkbox>记住我</Checkbox>
-                                )}
-                                <a className="login-form-forgot" href="" style={{float: 'right'}}>忘记密码?</a>
-                                <Button type="primary" htmlType="submit" className="login-form-button"
-                                        style={{width: '100%'}}>
-                                    登录
-                                </Button>
-                                Or <a href="">现在就去注册!</a>
-                            </FormItem>
-                        </Form>
+        return (
+            <div className="login">
+                <div className="login-form">
+                    <div className="login-logo">
+                        <div className="login-name">登录</div>
                     </div>
+                    <Form onSubmit={this.submitLogin} style={{maxWidth: '300px'}}>
+                        <FormItem>
+                            {getFieldDecorator('email', {
+                                rules: [{required: true, message: '请输入邮箱!'}],
+                            })(
+                                <Input prefix={<Icon type="user" style={{fontSize: 13}}/>} placeholder="请输入邮箱"/>
+                            )}
+                        </FormItem>
+                        <FormItem>
+                            {getFieldDecorator('password', {
+                                rules: [{required: true, message: '请输入密码!'}],
+                            })(
+                                <Input prefix={<Icon type="lock" style={{fontSize: 13}}/>} type="password"
+                                       placeholder="请输入密码"/>
+                            )}
+                        </FormItem>
+                        <FormItem style={{marginBottom: '0'}}>
+                            {getFieldDecorator('remember', {
+                                valuePropName: 'checked',
+                                initialValue: true,
+                            })(
+                                <Checkbox>记住我</Checkbox>
+                            )}
+                            <a className="login-form-forgot" href="" style={{float: 'right'}}>忘记密码?</a>
+                            <Button type="primary" htmlType="submit" className="login-form-button"
+                                    style={{width: '100%'}}>
+                                登录
+                            </Button>
+                            Or <a href="">现在就去注册!</a>
+                        </FormItem>
+                    </Form>
                 </div>
-            )
-        }else{
-            return (
-                <Redirect to="/admin"/>
-            )
-        }
+            </div>
+        )
+
     }
 
     //登录提交
