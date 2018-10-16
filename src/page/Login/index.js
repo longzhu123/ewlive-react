@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Form, Icon, Input, Button, Checkbox} from 'antd';
 import './index.css';
+import {Link} from 'react-router-dom';
 import {actionCreators} from "./store";
 
 const FormItem = Form.Item;
@@ -45,7 +46,8 @@ class Login extends PureComponent {
                                     style={{width: '100%'}}>
                                 登录
                             </Button>
-                            Or <a href="">现在就去注册!</a>
+                            Or
+                            <Link to="/register">现在就去注册!</Link>
                         </FormItem>
                     </Form>
                 </div>
