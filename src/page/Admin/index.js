@@ -1,22 +1,23 @@
-import  React,{PureComponent} from  'react';
+import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
+import AdminSlider from './AdminSlider/AdminSlider';
+import {Layout} from 'antd';
 
-class Admin extends  PureComponent{
-    render(){
-        return(
-            <div>
-                <h1>首页</h1>
-            </div>
+//Admin首页组件
+class Admin extends PureComponent {
+
+    render() {
+        return (
+            <Layout className="ant-layout-has-sider" style={{height: '100%'}}>
+                <AdminSlider/>
+            </Layout>
         )
     }
 
 }
 
-const mapState = (state) => ({
-});
+const mapState = (state) => ({});
 
-const mapDispatchToProps = (dispatch) => ({
-
-});
+const mapDispatchToProps = (dispatch) => ({});
 
 export default connect(mapState, mapDispatchToProps)(Admin);
