@@ -7,3 +7,32 @@
     -o-transition: color .3s;
     transition: color .3s;
 }
+
+.ant-layout-has-sider .trigger:hover {
+    color: #108ee9;
+}
+
+.head-menu-lay-out {
+    line-height: 64px;
+    float: right;
+}
+
+.head-icon {
+    font-size: 16px;
+    color: #1DA57A;
+}
+
+.menu-item-text {
+    text-align: center;
+}
+
+.logout span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.admin-header {
+    background: #fff;
+    padding: 0;
+}

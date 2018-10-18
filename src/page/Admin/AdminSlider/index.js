@@ -8,9 +8,11 @@ const SubMenu = Menu.SubMenu;
 
 //Admin首页左侧组件
 class AdminSlider extends PureComponent {
-    render(){
-        return(
+    render() {
+        return (
             <Sider
+                trigger={null}
+                collapsible
             >
                 <div className="logo" style={{backgroundSize: '30%'}}/>
                 <Menu

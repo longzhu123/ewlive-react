@@ -6,25 +6,39 @@ import './index.css';
 
 const {Header} = Layout;
 const SubMenu = Menu.SubMenu;
+
 //Admin首页头部组件
 class AdminHeader extends PureComponent {
+
+    state = {
+        collapsed: false,
+    };
+
+    toggle = () => {
+        this.setState({
+            collapsed: !this.state.collapsed,
+        });
+    }
+
+
     render() {
         return (
-            <Header style={{background: '#fff', padding: 0}} className="header">
+            <Header className="admin-header">
                 <Icon
                     className="trigger"
-                    type={'menu-unfold'}
+                    type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+                    onClick={this.toggle}
                 />
                 <Menu
                     mode="horizontal"
-                    style={{lineHeight: '64px', float: 'right'}}
+                    className='head-menu-lay-out'
                 >
                     <SubMenu
                         title={<span>
-                            <Icon type="user" style={{fontSize: 16, color: '#1DA57A'}}/>
+                            <Icon type="user" className="head-icon"/>
                         </span>}
                     >
-                        <Menu.Item key="logout" style={{textAlign: 'center'}} className="logout">
+                        <Menu.Item key="logout" className="menu-item-text logout">
                             <span>logout</span>
                         </Menu.Item>
                     </SubMenu>
