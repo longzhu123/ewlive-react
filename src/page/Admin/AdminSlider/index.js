@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Icon, Layout, Menu} from 'antd';
-import './AdminSlider.css';
+import './index.css';
 
 const {Sider} = Layout;
 const SubMenu = Menu.SubMenu;
