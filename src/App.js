@@ -18,7 +18,7 @@ class App extends Component {
                         <Route exact path="/" component={Home}/>
                         <Route exact path='/login' component={Login}/>
                         <Route exact path='/register' component={Register}/>
-                        <AuthorRoute exact path="/admin" component={Admin}/>
+                        <AuthorRoute path="/admin" component={Admin}/>
                         <Route component={NoMatch}/>
                     </Switch>
                 </BrowserRouter>
