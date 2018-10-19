@@ -1,7 +1,13 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {Layout, Breadcrumb} from 'antd';
+import {Breadcrumb, Layout} from 'antd';
+import {Route,Switch} from 'react-router-dom';
 import './index.css';
+import AuthorRoute from '../../../route/AuthorRoute';
+import Chart from "../../Service/Chart";
+import Form from "../../Service/Form";
+import NoMatch from "../../../common/NoMatch";
+import AdminIndex from "../AdminIndex";
 
 const {Content} = Layout;
 
@@ -15,7 +21,14 @@ class AdminContent extends PureComponent {
                     <Breadcrumb.Item>首页</Breadcrumb.Item>
                     <Breadcrumb.Item>表单</Breadcrumb.Item>
                 </Breadcrumb>
-                <div className="admin-normal-content">Content</div>
+                <div className="admin-normal-content">
+                    <Switch>
+                        <AuthorRoute exact path="/admin" component={AdminIndex}/>
+                        <AuthorRoute exact path="/page/chart" component={Chart}/>
+                        <AuthorRoute exact path="/page/form" component={Form}/>
+                        <Route component={NoMatch}/>
+                    </Switch>
+                </div>
             </Content>
         )
     }
