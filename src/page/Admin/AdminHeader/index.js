@@ -1,6 +1,7 @@
 import {connect} from "react-redux";
 import React, {PureComponent} from 'react';
 import {Layout, Icon, Menu} from 'antd';
+import {actionCreators} from './store';
 import './index.css';
 
 
@@ -10,24 +11,15 @@ const SubMenu = Menu.SubMenu;
 //Admin首页头部组件
 class AdminHeader extends PureComponent {
 
-    state = {
-        collapsed: false,
-    };
-
-    toggle = () => {
-        this.setState({
-            collapsed: !this.state.collapsed,
-        });
-    }
-
 
     render() {
+        const {collapsed,toggleClick} = this.props;
         return (
             <Header className="admin-header">
                 <Icon
                     className="trigger"
-                    type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                    onClick={this.toggle}
+                    type={collapsed ? 'menu-unfold' : 'menu-fold'}
+                    onClick={toggleClick}
                 />
                 <Menu
                     mode="horizontal"
@@ -49,8 +41,14 @@ class AdminHeader extends PureComponent {
 }
 
 
-const mapState = (state) => ({});
+const mapState = (state) => ({
+    collapsed:state.get("adminHeader").get("collapsed")
+});
 
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+    toggleClick(){
+        dispatch(actionCreators.toggleClick());
+    }
+});
 
 export default connect(mapState, mapDispatchToProps)(AdminHeader);

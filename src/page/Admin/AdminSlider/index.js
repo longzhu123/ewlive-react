@@ -9,15 +9,18 @@ const SubMenu = Menu.SubMenu;
 //Admin首页左侧组件
 class AdminSlider extends PureComponent {
     render() {
+        const {collapsed} = this.props;
         return (
             <Sider
                 trigger={null}
                 collapsible
+                collapsed={collapsed}
             >
-                <div className="logo" style={{backgroundSize: '30%'}}/>
+                <div className="logo" style={collapsed ? {backgroundSize: '70%'} : {backgroundSize: '30%'}}/>
                 <Menu
                     theme="dark"
                     mode="inline"
+                    defaultSelectedKeys={['/app']}
                 >
                     <Menu.Item key={"/app"}>
                         <Icon type="home"/><span>首页</span>
@@ -46,7 +49,9 @@ class AdminSlider extends PureComponent {
 }
 
 
-const mapState = (state) => ({});
+const mapState = (state) => ({
+    collapsed: state.get("adminHeader").get("collapsed")
+});
 
 const mapDispatchToProps = (dispatch) => ({});
 
