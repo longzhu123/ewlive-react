@@ -24,8 +24,8 @@ class AdminContent extends PureComponent {
                 <div className="admin-normal-content">
                     <Switch>
                         <AuthorRoute exact path="/admin" component={AdminIndex}/>
-                        <AuthorRoute exact path="/page/chart" component={Chart}/>
-                        <AuthorRoute exact path="/page/form" component={Form}/>
+                        <AuthorRoute exact path="/admin/chart" component={Chart}/>
+                        <AuthorRoute exact path="/admin/form" component={Form}/>
                         <Route component={NoMatch}/>
                     </Switch>
                 </div>
