@@ -2,6 +2,7 @@ import {combineReducers} from 'redux-immutable';
 import {reducer as customHeaderReducer} from '../common/CustomHeader/store';
 import {reducer as loginReducer} from '../page/Login/store';
 import {reducer as AdminHeader} from '../page/Admin/AdminHeader/store';
+import {reducer as AdminSlider} from '../page/Admin/AdminSlider/store';
 
 
 //全局reducer
@@ -9,7 +10,8 @@ import {reducer as AdminHeader} from '../page/Admin/AdminHeader/store';
 const reducer = combineReducers({
     customHeader:customHeaderReducer,
     loginReducer:loginReducer,
-    adminHeader:AdminHeader
+    adminHeader:AdminHeader,
+    adminSlider:AdminSlider
 });
 
 export default reducer;
