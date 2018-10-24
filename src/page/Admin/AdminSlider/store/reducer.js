@@ -3,7 +3,7 @@ import * as ActionConstants from './constants';
 
 const defaultState = fromJS(
     {
-        leftMenuSelectKey: false
+        leftMenuSelectKey: ""
     }
 );
 
