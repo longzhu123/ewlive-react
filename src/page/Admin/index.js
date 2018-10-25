@@ -6,6 +6,7 @@ import AdminContent from './AdminContent/';
 import AdminFooter from './AdminFooter/';
 import {Layout} from 'antd';
 
+
 //Admin首页组件
 class Admin extends PureComponent {
 
