@@ -1,0 +1,13 @@
+.admin-layout-content {
+    margin: 0px 16px;
+}
+
+.admin-content-bread {
+    margin: 12px 0px;
+}
+
+.admin-normal-content {
+    padding: 24px;
+    background: #fff;
+    min-height: 280px;
+}
