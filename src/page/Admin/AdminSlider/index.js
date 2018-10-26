@@ -58,7 +58,7 @@ class AdminSlider extends PureComponent {
                             <Link to={'/admin/system/monitor/log/error'}><span><Icon type="exception"/>异常日志</span></Link>
                         </Menu.Item>
                         <Menu.Item key="/admin/system/monitor/log/login">
-                            <Link to={'/admin/system/monitor/log/login'}><span><Icon type="file-done"/>异常日志</span></Link>
+                            <Link to={'/admin/system/monitor/log/login'}><span><Icon type="file-done"/>登录日志</span></Link>
                         </Menu.Item>
                         <Menu.Item key="/admin/system/monitor/ip/black">
                             <Link to={'/admin/system/monitor/ip/black'}><span><Icon type="user-delete"/>IP黑名单</span></Link>
