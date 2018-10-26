@@ -3,14 +3,14 @@ import * as ActionConstants from './constants';
 
 const defaultState = fromJS(
     {
-        loginToken:""
+        currentUser:{}
     }
 );
 
 export default (state = defaultState, action) => {
     switch (action.type){
         case ActionConstants.AUTH_LOGIN_ACTION:
-            return state.set("loginToken",action.loginToken);
+            return state.set("currentUser",action.user);
         default:
             return state;
     }
