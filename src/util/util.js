@@ -1,7 +1,6 @@
 import axios from 'axios';
 import {Modal} from 'antd';
 import * as StringConstant from '../constant';
-import {Redirect} from 'react-router-dom';
 
 let util = {
     //通用Ajax
@@ -20,9 +19,7 @@ let util = {
                             "content": res.resultMsg
                         })
                     } else if (res.resultCode === 2) {
-                        // return (
-                        //     <Redirect to="/login"/>
-                        // )
+                        window.location = '/login';
                     }
                 } else {
                     reject(response.data);
@@ -39,30 +36,28 @@ let util = {
         });
     },
     //验证token是否有效
-    async authToken(callback){
-        // let isAuth = false;
-        // await axios.post(StringConstant.SERVER_URL+"/sysUser/validateToken",JSON.stringify({"token":localStorage.getItem("token")}),
-        //     {headers: {'Content-Type': 'application/json;charset=utf-8'}}).then((res)=>{
-        //     if(res.status === 200){ //请求成功
-        //         let resp = res.data;
-        //         if(resp.resultCode === StringConstant.SERVER_SUCCESS_RES_CODE){
-        //             isAuth = true;
-        //         }
-        //         return isAuth;
-        //     }else{
-        //         Modal.error({
-        //             title: '错误提示',
-        //             content: "网络异常"
-        //         });
-        //     }
-        //
-        // }).catch((e)=>{
-        //     Modal.error({
-        //         title: '错误提示',
-        //         content: "网络异常"
-        //     });
-        // });
-        // return isAuth;
+    authToken(){
+        axios.post(StringConstant.SERVER_URL+"/sysUser/validateToken",JSON.stringify({"token":localStorage.getItem("token")}),
+            {headers: {'Content-Type': 'application/json;charset=utf-8'}}).then((res)=>{
+            if(res.status === 200){ //请求成功
+                let resp = res.data;
+                if(resp.resultCode === StringConstant.SERVER_SUCCESS_RES_CODE){
+                }else{
+                    window.location = '/login';
+                }
+
+            }else{
+                Modal.error({
+                    title: '错误提示',
+                    content: "网络异常"
+                });
+            }
+        }).catch((e)=>{
+            Modal.error({
+                title: '错误提示',
+                content: "网络异常"
+            });
+        });
     }
 
 };
