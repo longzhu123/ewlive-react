@@ -23,6 +23,7 @@ export const authLogin = (values) => {
                 if(resp.resultCode === StringConstants.SERVER_SUCCESS_RES_CODE){
                     //将token存入本地
                     localStorage.setItem("token",resp.data.token);
+                    localStorage.setItem("user",JSON.stringify(resp.data));
                     dispatch(authLoginAction(resp.data.token));
                     NProgress.done();
                     //跳转到登录页
