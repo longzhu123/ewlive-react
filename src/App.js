@@ -8,12 +8,12 @@ import Home from './page/Home';
 import Admin from './page/Admin';
 import NoMatch from './common/NoMatch';
 import AuthorRoute from './route/AuthorRoute';
-import history from  './history';
+
 class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <BrowserRouter history={history}>
+                <BrowserRouter >
                     <Switch>
                         <Route exact path="/" component={Home}/>
                         <AuthorRoute path="/admin" component={Admin}/>

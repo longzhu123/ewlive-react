@@ -68,7 +68,9 @@ class Login extends PureComponent {
         });
     }
 }
+const mapState = (state) => ({
 
+});
 
 const mapDispatchToProps = (dispatch) => ({
     //登录
@@ -79,4 +81,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const LoginForm = Form.create()(Login);
-export default connect(null, mapDispatchToProps)(LoginForm);
+export default connect(mapState, mapDispatchToProps)(LoginForm);
