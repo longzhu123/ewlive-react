@@ -51,9 +51,10 @@ class Admin extends PureComponent {
         };
         const path = window.location.pathname;
         if(path !== "/admin"){
+            let menuName = breadcrumbNameMap[path] === undefined ? '404页面':breadcrumbNameMap[path];
             return (
                 <Breadcrumb.Item key={path}>
-                    {" / "+breadcrumbNameMap[path]}
+                    {" / "+menuName}
                 </Breadcrumb.Item>
             );
         }
