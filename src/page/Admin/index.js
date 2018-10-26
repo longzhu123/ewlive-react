@@ -25,7 +25,6 @@ class Admin extends PureComponent {
                     <AdminHeader/>
                     <Content className='admin-layout-content'>
                         <Breadcrumb className="admin-content-bread">
-                            <Link to={"/admin"}>首页</Link>
                             {this.breadCrumbs()}
                         </Breadcrumb>
                         <div className="admin-normal-content">
@@ -54,7 +53,13 @@ class Admin extends PureComponent {
             let menuName = breadcrumbNameMap[path] === undefined ? '404页面':breadcrumbNameMap[path];
             return (
                 <Breadcrumb.Item key={path}>
-                    {" / "+menuName}
+                    <Link to={'/admin'}>首页</Link>/{" / "+menuName}
+                </Breadcrumb.Item>
+            );
+        }else{
+            return (
+                <Breadcrumb.Item key={path}>
+                    <Link to={'/admin'}>首页</Link>
                 </Breadcrumb.Item>
             );
         }
