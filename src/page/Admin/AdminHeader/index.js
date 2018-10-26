@@ -15,9 +15,8 @@ class AdminHeader extends PureComponent {
 
 
     render() {
-        const {collapsed, toggleClick, loginOut,currentUser} = this.props;
-        //const  localUser = user.toJS();
-        console.log(currentUser);
+        const {collapsed, toggleClick, loginOut} = this.props;
+        const  localUser = JSON.parse(localStorage.getItem("user"));
         return (
             <Header className="admin-header">
                 <Icon
@@ -32,7 +31,7 @@ class AdminHeader extends PureComponent {
                     <SubMenu
                         title={<span className="avatar"><img src={headPic} alt="头像"/><i className="on bottom b-white"/></span>}>
                         <MenuItemGroup title="用户中心">
-                            <Menu.Item key="setting:1">你好 -</Menu.Item>
+                            <Menu.Item key="setting:1">你好 -{localUser.nickName}</Menu.Item>
                             <Menu.Item key="setting:2">个人设置</Menu.Item>
                             <Menu.Item key="loginOut"><Link to={'/login'} onClick={loginOut}>退出登录</Link></Menu.Item>
                         </MenuItemGroup>
@@ -46,8 +45,7 @@ class AdminHeader extends PureComponent {
 
 
 const mapState = (state) => ({
-    collapsed: state.get("adminHeader").get("collapsed"),
-    user:state.get("loginReducer").get("currentUser")
+    collapsed: state.get("adminHeader").get("collapsed")
 });
 
 const mapDispatchToProps = (dispatch) => ({
