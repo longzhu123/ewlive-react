@@ -26,10 +26,10 @@ export const authLogin = (values) => {
                     //将token存入本地
                     localStorage.setItem("token", resp.data.token);
                     localStorage.setItem("user", JSON.stringify(resp.data));
+                    window.location.href = "/admin";
                     dispatch(authLoginAction(resp.data));
                     NProgress.done();
-                    //跳转到登录页(异步问题)
-                    window.location.href = "/admin";
+
                 } else if (resp.resultCode === StringConstants.SERVER_FAIL_RES_CODE) {
                     //显示错误信息
                     Modal.error({
