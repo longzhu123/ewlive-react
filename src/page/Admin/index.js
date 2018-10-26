@@ -8,7 +8,7 @@ import Chart from "../Service/Chart";
 import AdminIndex from "./AdminIndex";
 import NoMatch from "../../common/NoMatch";
 import {Breadcrumb, Layout} from 'antd';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Link} from 'react-router-dom';
 import AuthorRoute from '../../route/AuthorRoute';
 import './index.css';
 
@@ -25,14 +25,14 @@ class Admin extends PureComponent {
                     <AdminHeader/>
                     <Content className='admin-layout-content'>
                         <Breadcrumb className="admin-content-bread">
-                            <Breadcrumb.Item>首页</Breadcrumb.Item>
-                            <Breadcrumb.Item>表单</Breadcrumb.Item>
+                            <Link to={"/admin"}>首页</Link>
+                            {this.breadCrumbs()}
                         </Breadcrumb>
                         <div className="admin-normal-content">
                             <Switch>
-                                <AuthorRoute exact path="/admin" component={AdminIndex}/>
-                                <AuthorRoute exact path="/admin/chart" component={Chart}/>
-                                <AuthorRoute exact path="/admin/form" component={Form}/>
+                                <AuthorRoute exact path="/admin" name="首页" component={AdminIndex}/>
+                                <AuthorRoute exact path="/admin/chart" name="图表" component={Chart}/>
+                                <AuthorRoute exact path="/admin/form" name="表单" component={Form}/>
                                 <Route component={NoMatch}/>
                             </Switch>
                         </div>
@@ -43,6 +43,22 @@ class Admin extends PureComponent {
         )
     }
 
+    breadCrumbs() {
+        const breadcrumbNameMap = {
+            '/admin': '首页',
+            '/admin/form': '表单',
+            '/admin/chart': '图表'
+        };
+        const path = window.location.pathname;
+        if(path !== "/admin"){
+            return (
+                <Breadcrumb.Item key={path}>
+                    {" / "+breadcrumbNameMap[path]}
+                </Breadcrumb.Item>
+            );
+        }
+
+    }
 }
 
 const mapState = (state) => ({});
