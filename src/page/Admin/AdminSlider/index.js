@@ -16,6 +16,7 @@ class AdminSlider extends PureComponent {
                 trigger={null}
                 collapsible
                 collapsed={collapsed}
+                style={{ overflowY: 'auto' }}
             >
                 <div className="logo" style={collapsed ? {backgroundSize: '70%'} : {backgroundSize: '30%'}}/>
                 <Menu
@@ -47,6 +48,40 @@ class AdminSlider extends PureComponent {
                         </Menu.Item>
                     </SubMenu>
 
+                    <SubMenu
+                        key="/admin/system/monitor"
+                        title={<span><Icon type="alert"/><span>系统监控</span></span>}
+                    >
+                        <Menu.Item key="/admin/system/monitor/log/operate">
+                            <Link to={'/admin/system/monitor/log/operate'}><span><Icon type="solution"/>操作日志</span></Link>
+                        </Menu.Item>
+                        <Menu.Item key="/admin/system/monitor/log/error">
+                            <Link to={'/admin/system/monitor/log/error'}><span><Icon type="exception"/>异常日志</span></Link>
+                        </Menu.Item>
+                        <Menu.Item key="/admin/system/monitor/log/login">
+                            <Link to={'/admin/system/monitor/log/login'}><span><Icon type="file-done"/>登录日志</span></Link>
+                        </Menu.Item>
+                        <Menu.Item key="/admin/system/monitor/ip/black">
+                            <Link to={'/admin/system/monitor/ip/black'}><span><Icon type="user-delete"/>IP黑名单</span></Link>
+                        </Menu.Item>
+                    </SubMenu>
+                    <SubMenu
+                        key="/admin/system/monitor"
+                        title={<span><Icon type="alert"/><span>系统监控</span></span>}
+                    >
+                        <Menu.Item key="/admin/system/monitor/log/operate">
+                            <Link to={'/admin/system/monitor/log/operate'}><span><Icon type="solution"/>操作日志</span></Link>
+                        </Menu.Item>
+                        <Menu.Item key="/admin/system/monitor/log/error">
+                            <Link to={'/admin/system/monitor/log/error'}><span><Icon type="exception"/>异常日志</span></Link>
+                        </Menu.Item>
+                        <Menu.Item key="/admin/system/monitor/log/login">
+                            <Link to={'/admin/system/monitor/log/login'}><span><Icon type="file-done"/>登录日志</span></Link>
+                        </Menu.Item>
+                        <Menu.Item key="/admin/system/monitor/ip/black">
+                            <Link to={'/admin/system/monitor/ip/black'}><span><Icon type="user-delete"/>IP黑名单</span></Link>
+                        </Menu.Item>
+                    </SubMenu>
                     <SubMenu
                         key="/admin/system/monitor"
                         title={<span><Icon type="alert"/><span>系统监控</span></span>}
