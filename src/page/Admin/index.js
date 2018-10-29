@@ -49,8 +49,10 @@ class Admin extends PureComponent {
     breadCrumbs() {
         const breadcrumbNameMap = {
             '/admin': '首页',
-            '/admin/form': '表单',
-            '/admin/chart': '图表'
+            '/admin/setting/user': '用户管理',
+            '/admin/setting/menu': '菜单管理',
+            '/admin/setting/role': '角色管理',
+            '/admin/setting/dic': '字典管理'
         };
         const path = window.location.pathname;
         if (path !== "/admin") {
