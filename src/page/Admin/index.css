@@ -1,5 +1,8 @@
 .admin-layout-content {
-    margin: 0px 16px;
+    margin: 0 16px;
+    overflow: initial;
+    flex: 1 1 0;
+    min-height: auto;
 }
 
 .admin-content-bread {
