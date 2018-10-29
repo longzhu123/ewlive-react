@@ -53,7 +53,7 @@ class Admin extends PureComponent {
             let menuName = breadcrumbNameMap[path] === undefined ? '404页面':breadcrumbNameMap[path];
             return (
                 <Breadcrumb.Item key={path}>
-                    <Link to={'/admin'}>首页</Link>/{" / "+menuName}
+                    <Link to={'/admin'}>首页</Link>{" / "+menuName}
                 </Breadcrumb.Item>
             );
         }else{
