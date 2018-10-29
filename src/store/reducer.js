@@ -2,6 +2,11 @@ import {combineReducers} from 'redux-immutable';
 import {reducer as loginReducer} from '../page/Login/store';
 import {reducer as AdminHeader} from '../page/Admin/AdminHeader/store';
 import {reducer as AdminSlider} from '../page/Admin/AdminSlider/store';
+import {reducer as UserSettingReducer} from '../page/Service/Setting/User/store';
+import {reducer as MenuSettingReducer} from '../page/Service/Setting/Menu/store';
+import {reducer as RoleSettingReducer} from '../page/Service/Setting/Role/store';
+import {reducer as DicSettingReducer} from '../page/Service/Setting/Dic/store';
+
 
 
 //全局reducer
@@ -9,7 +14,11 @@ import {reducer as AdminSlider} from '../page/Admin/AdminSlider/store';
 const reducer = combineReducers({
     loginReducer:loginReducer,
     adminHeader:AdminHeader,
-    adminSlider:AdminSlider
+    adminSlider:AdminSlider,
+    userSettingReducer:UserSettingReducer,
+    menuSettingReducer:MenuSettingReducer,
+    roleSettingReducer:RoleSettingReducer,
+    dicSettingReducer:DicSettingReducer
 });
 
 export default reducer;

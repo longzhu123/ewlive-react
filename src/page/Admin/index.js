@@ -3,8 +3,10 @@ import {connect} from 'react-redux';
 import AdminSlider from './AdminSlider/';
 import AdminHeader from './AdminHeader/';
 import AdminFooter from './AdminFooter/';
-import Form from "../Service/Form";
-import Chart from "../Service/Chart";
+import UserSetting from '../Service/Setting/User';
+import MenuSetting from '../Service/Setting/Menu';
+import RoleSetting from '../Service/Setting/Role';
+import DicSetting from '../Service/Setting/Dic';
 import AdminIndex from "./AdminIndex";
 import NoMatch from "../../common/NoMatch";
 import {Breadcrumb, Layout} from 'antd';
@@ -29,9 +31,11 @@ class Admin extends PureComponent {
                         </Breadcrumb>
                         <div className="admin-normal-content">
                             <Switch>
-                                <AuthorRoute exact path="/admin" name="首页" component={AdminIndex}/>
-                                <AuthorRoute exact path="/admin/chart" name="图表" component={Chart}/>
-                                <AuthorRoute exact path="/admin/form" name="表单" component={Form}/>
+                                <AuthorRoute exact path="/admin" component={AdminIndex}/>
+                                <AuthorRoute exact path="/admin/setting/user" component={UserSetting}/>
+                                <AuthorRoute exact path="/admin/setting/menu" component={MenuSetting}/>
+                                <AuthorRoute exact path="/admin/setting/role" component={RoleSetting}/>
+                                <AuthorRoute exact path="/admin/setting/dic" component={DicSetting}/>
                                 <Route component={NoMatch}/>
                             </Switch>
                         </div>
@@ -49,14 +53,14 @@ class Admin extends PureComponent {
             '/admin/chart': '图表'
         };
         const path = window.location.pathname;
-        if(path !== "/admin"){
-            let menuName = breadcrumbNameMap[path] === undefined ? '404页面':breadcrumbNameMap[path];
+        if (path !== "/admin") {
+            let menuName = breadcrumbNameMap[path] === undefined ? '404页面' : breadcrumbNameMap[path];
             return (
                 <Breadcrumb.Item key={path}>
-                    <Link to={'/admin'}>首页</Link>{" / "+menuName}
+                    <Link to={'/admin'}>首页</Link>{" / " + menuName}
                 </Breadcrumb.Item>
             );
-        }else{
+        } else {
             return (
                 <Breadcrumb.Item key={path}>
                     <Link to={'/admin'}>首页</Link>
