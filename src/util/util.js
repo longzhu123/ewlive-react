@@ -7,7 +7,7 @@ let util = {
     ajax(options) {
         options.data.token = localStorage.getItem("token");
         return new Promise((resolve, reject) => {
-            axios.post(StringConstant.SERVER_URL + options.url, JSON.stringify(options.data),
+            axios.post( options.url, JSON.stringify(options.data),
                 {headers: {'Content-Type': 'application/json;charset=utf-8'}}).then((response) => {
                 if (response.status === 200) {
                     let res = response.data;
@@ -26,7 +26,7 @@ let util = {
                 }
 
             }).catch((e) => {
-                Modal.info({
+                Modal.error({
                     "title": "错误提示",
                     "content": "网络异常"
                 })
