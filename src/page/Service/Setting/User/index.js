@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Form, Card, Input, Button, Table} from 'antd';
-import  * as StringConstants from  '../../../../constant';
+import * as StringConstants from '../../../../constant';
 import './index.css';
 import {actionCreators} from "./store";
 import {Modal} from "antd/lib/index";
@@ -18,7 +18,7 @@ class User extends PureComponent {
     }
 
     render() {
-        const {userList,tableSelectChange,delItem,selectIds,onShowSizeChange,pageIndex,totalSize} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize} = this.props;
         const userDataList = userList.toJS();
         console.log(userDataList);
         const selectDataIds = selectIds.toJS();
@@ -39,6 +39,16 @@ class User extends PureComponent {
                 title: '优币',
                 dataIndex: 'ewCoin',
                 align: "center"
+            },
+            , {
+                title: '操作',
+                key: 'control',
+                render: (text, record) => (
+                    <span className='control-container'>
+                        <button className="ant-btn viewBtn">查看</button>
+                        <button className="ant-btn updateBtn">修改</button>
+                    </span>
+                ),
             }
         ];
         return (
@@ -48,8 +58,8 @@ class User extends PureComponent {
                 </Card>
                 <Card>
                     <div>
-                        <Button type="primary" icon="plus" style={{marginRight:'10px'}}>添加</Button>
-                        <Button type="danger" icon="delete"  onClick={()=>delItem(selectDataIds)}>删除</Button>
+                        <Button type="primary" icon="plus" style={{marginRight: '10px'}}>添加</Button>
+                        <Button type="danger" icon="delete" onClick={() => delItem(selectDataIds)}>删除</Button>
                     </div>
                     <br/>
                     <Table
@@ -60,7 +70,7 @@ class User extends PureComponent {
                         dataSource={userDataList}
                         pagination={{
                             current: pageIndex,
-                            total:totalSize,
+                            total: totalSize,
                             onChange: onShowSizeChange
                         }}
                     />
@@ -106,29 +116,29 @@ FilterForm = Form.create({})(FilterForm);
 
 const mapState = (state) => ({
     userList: state.get("userSettingReducer").get("userList"),
-    selectIds:state.get("userSettingReducer").get("selectIds"),
-    pageIndex:state.get("userSettingReducer").get("pageIndex"),
-    totalSize:state.get("userSettingReducer").get("totalSize")
+    selectIds: state.get("userSettingReducer").get("selectIds"),
+    pageIndex: state.get("userSettingReducer").get("pageIndex"),
+    totalSize: state.get("userSettingReducer").get("totalSize")
 });
 
 const mapDispatchToProps = (dispatch) => ({
     //加载用户列表
-    loadUserList(){
+    loadUserList() {
         dispatch(actionCreators.loadUserList(StringConstants.DEFAULT_PAGE_CURRENT));
     },
     //表格复选框change事件
-    tableSelectChange(selectedRowKeys){
+    tableSelectChange(selectedRowKeys) {
         dispatch(actionCreators.tableSelectChange(selectedRowKeys));
     },
     //删除项事件
-    delItem(selectDataIds){
+    delItem(selectDataIds) {
         confirm({
             title: '确认删除当前数据吗?',
             okText: '确定',
             okType: 'danger',
             cancelText: '取消',
             onOk() {
-                if(selectDataIds.length === 0){
+                if (selectDataIds.length === 0) {
                     Modal.error({
                         "title": "错误提示",
                         "content": "请选择要删除的记录"
