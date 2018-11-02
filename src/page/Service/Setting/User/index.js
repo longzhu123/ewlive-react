@@ -18,7 +18,7 @@ class User extends PureComponent {
     }
 
     render() {
-        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize,viewDetail,updateItem} = this.props;
         const userDataList = userList.toJS();
         console.log(userDataList);
         const selectDataIds = selectIds.toJS();
@@ -45,8 +45,8 @@ class User extends PureComponent {
                 key: 'control',
                 render: (text, record) => (
                     <span className='control-container'>
-                        <button className="ant-btn viewBtn">查看</button>
-                        <button className="ant-btn updateBtn">修改</button>
+                        <button className="ant-btn viewBtn" onClick={()=>viewDetail(record.id)}>查看</button>
+                        <button className="ant-btn updateBtn" onClick={()=>updateItem(record.id)}>修改</button>
                     </span>
                 ),
             }
@@ -153,6 +153,16 @@ const mapDispatchToProps = (dispatch) => ({
     //表格分页change事件
     onShowSizeChange(current) {
         dispatch(actionCreators.loadUserList(current));
+    },
+    //查看单条记录的详情
+    viewDetail(id){
+        console.log("查询详情");
+        console.log(id);
+    },
+    //修改单条记录
+    updateItem(id){
+        console.log("修改详情");
+        console.log(id);
     }
 });
 
