@@ -57,15 +57,15 @@ export const delItem = (selectIds) => {
             data: {"ids":selectIds}
         };
         util.ajax(options).then((res => {
+            Modal.success({
+                "title": "信息提示",
+                "content": "删除成功"
+            });
             let userOptions = {
                 url: StringConstants.SERVER_URL + "/sysUser/getSysUserByParams",
                 data: {}
             };
             util.ajax(userOptions).then((res => {
-                Modal.success({
-                    "title": "信息提示",
-                    "content": "删除成功"
-                });
                 dispatch(delItemAction(res.data));
             })).catch((e => {
                 Modal.error({
