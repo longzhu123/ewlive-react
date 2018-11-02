@@ -41,6 +41,7 @@ class User extends PureComponent {
             , {
                 title: '操作',
                 key: 'control',
+                align: "center",
                 render: (text, record) => (
                     <span className='control-container'>
                         <button className="ant-btn viewBtn" onClick={()=>viewDetail(record.id)}>查看</button>
