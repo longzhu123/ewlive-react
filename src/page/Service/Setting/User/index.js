@@ -18,7 +18,7 @@ class User extends PureComponent {
     }
 
     render() {
-        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize,viewDetail,updateItem} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize,viewDetail,updateItem,filterForm} = this.props;
         const userDataList = userList.toJS();
         const selectDataIds = selectIds.toJS();
         const rowSelection = {
@@ -37,7 +37,7 @@ class User extends PureComponent {
                 title: '优币',
                 dataIndex: 'ewCoin',
                 align: "center"
-            },
+            }
             , {
                 title: '操作',
                 key: 'control',
@@ -53,7 +53,8 @@ class User extends PureComponent {
         return (
             <div>
                 <Card>
-                    <FilterForm/>
+                    {/*将父组件的filterForm方法传给子组件filterForm*/}
+                    <FilterForm filterForm={filterForm}/>
                 </Card>
                 <Card>
                     <div>
@@ -83,6 +84,20 @@ class User extends PureComponent {
 //过滤表单组件
 class FilterForm extends PureComponent {
 
+    //获取过滤表单的submit事件
+    handleFilterSubmit = (e)=>{
+        e.preventDefault();
+        let fieldsValue = this.props.form.getFieldsValue();
+        //调用父组件filterForm方法
+        this.props.filterForm(fieldsValue);
+    };
+
+
+    //重置
+    reset = ()=>{
+        this.props.form.resetFields();
+    };
+
     render() {
         const {getFieldDecorator} = this.props.form;
         return (
@@ -102,8 +117,8 @@ class FilterForm extends PureComponent {
                     }
                 </FormItem>
                 <FormItem>
-                    <Button type="primary" style={{margin: '0 20px'}}>查询</Button>
-                    <Button>重置</Button>
+                    <Button type="primary" style={{margin: '0 20px'}} onClick={this.handleFilterSubmit}>查询</Button>
+                    <Button onClick={this.reset}>重置</Button>
                 </FormItem>
             </Form>
         );
@@ -111,7 +126,6 @@ class FilterForm extends PureComponent {
 }
 
 FilterForm = Form.create({})(FilterForm);
-
 
 const mapState = (state) => ({
     userList: state.get("userSettingReducer").get("userList"),
@@ -162,6 +176,10 @@ const mapDispatchToProps = (dispatch) => ({
     updateItem(id){
         console.log("修改详情");
         console.log(id);
+    },
+    //条件查询表格
+    filterForm(queryObj){
+        dispatch(actionCreators.filterForm(queryObj));
     }
 });
 

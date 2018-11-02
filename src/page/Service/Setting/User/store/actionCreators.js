@@ -89,3 +89,25 @@ export const delItem = (selectIds) => {
 };
 
 
+
+//条件查询表格
+export const filterForm = (queryObj) => {
+    return (dispatch) => {
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysUser/likeSearchSysUserByPage",
+            data: {
+                "current":1,
+                "size":StringConstants.PAGE_SIZE,
+                queryObj
+            }
+        };
+        util.ajax(options).then((res => {
+            dispatch(loadUserListAction(res.data.records,res.data.current,res.data.total));
+        })).catch((e => {
+            Modal.error({
+                "title": "错误提示",
+                "content": "网络异常"
+            })
+        }))
+    }
+};
