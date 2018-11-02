@@ -20,9 +20,7 @@ class User extends PureComponent {
     render() {
         const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize,viewDetail,updateItem} = this.props;
         const userDataList = userList.toJS();
-        console.log(userDataList);
         const selectDataIds = selectIds.toJS();
-        debugger;
         const rowSelection = {
             onChange: tableSelectChange
         };
