@@ -14,3 +14,31 @@
     background: #fff;
     min-height: 280px;
 }
+
+.control-container button{
+    margin-right: 10px;
+}
+.viewBtn{
+    color: #fff;
+    background-color: #00CCCC;
+    border-color: #00CCCC;
+}
+
+.viewBtn:hover, .viewBtn:focus {
+    color: #fff;
+    background-color: #00ccccd1;
+    border-color: #00ccccd1;
+}
+
+
+.updateBtn{
+    color: #fff;
+    background-color: #FF6699;
+    border-color: #FF6699;
+}
+
+.updateBtn:hover, .updateBtn:focus {
+    color: #fff;
+    background-color: #ff6699d1;
+    border-color: #ff6699d1;
+}
