@@ -29,13 +29,16 @@ class User extends PureComponent {
         const columns = [
             {
                 title: '邮箱',
-                dataIndex: 'email'
+                dataIndex: 'email',
+                align: "center"
             }, {
                 title: '昵称',
-                dataIndex: 'nickName'
+                dataIndex: 'nickName',
+                align: "center"
             }, {
                 title: '优币',
-                dataIndex: 'ewCoin'
+                dataIndex: 'ewCoin',
+                align: "center"
             }
         ];
         return (
