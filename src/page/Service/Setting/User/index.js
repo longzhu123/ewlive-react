@@ -117,7 +117,7 @@ const mapDispatchToProps = (dispatch) => ({
             });
             return;
         }
-        console.log(selectDataIds);
+        dispatch(actionCreators.delItem(selectDataIds));
     }
 });
 

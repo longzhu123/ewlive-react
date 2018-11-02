@@ -17,12 +17,14 @@ let util = {
                         Modal.info({
                             "title": "错误提示",
                             "content": res.resultMsg
-                        })
+                        });
+                        return;
                     } else if (res.resultCode === 2) {
                         window.location = '/login';
                     }
                 } else {
                     reject(response.data);
+                    return;
                 }
 
             }).catch((e) => {
@@ -30,6 +32,7 @@ let util = {
                     "title": "错误提示",
                     "content": "网络异常"
                 })
+                return;
             });
 
 

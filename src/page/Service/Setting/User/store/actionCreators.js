@@ -11,7 +11,7 @@ const loadUserListAction = (list) => ({
 });
 
 //加载用户List
-export const loadUserList = (values) => {
+export const loadUserList = () => {
     return (dispatch) => {
         let options = {
             url: StringConstants.SERVER_URL + "/sysUser/getSysUserByParams",
@@ -41,3 +41,43 @@ export const tableSelectChange = (selectedRowKeys) => {
         dispatch(tableSelectChangeAction(selectedRowKeys));
     }
 };
+
+//删除表格项的数据 Action
+const delItemAction = (userList) => ({
+    type: ActionConstants.TABLE_DEL_ITEM,
+    userList
+});
+
+//删除表格项的数据
+export const delItem = (selectIds) => {
+    return (dispatch) => {
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysUser/deleteBatchSysUserByIds",
+            data: {"ids":selectIds}
+        };
+        util.ajax(options).then((res => {
+            debugger;
+            let userOptions = {
+                url: StringConstants.SERVER_URL + "/sysUser/getSysUserByParams",
+                data: {}
+            };
+            util.ajax(userOptions).then((res => {
+                dispatch(delItemAction(res.data));
+            })).catch((e => {
+                Modal.error({
+                    "title": "错误提示",
+                    "content": "网络异常"
+                })
+            }))
+
+        })).catch((e => {
+            Modal.error({
+                "title": "错误提示",
+                "content": "网络异常"
+            })
+        }))
+
+    }
+};
+
+
