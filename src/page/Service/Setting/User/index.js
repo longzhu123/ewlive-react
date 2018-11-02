@@ -17,7 +17,7 @@ class User extends PureComponent {
     }
 
     render() {
-        const {userList,tableSelectChange,delItem,selectIds} = this.props;
+        const {userList,tableSelectChange,delItem,selectIds,onShowSizeChange,pageIndex,totalSize} = this.props;
         const userDataList = userList.toJS();
         const selectDataIds = selectIds.toJS();
 
@@ -53,7 +53,11 @@ class User extends PureComponent {
                         bordered
                         columns={columns}
                         dataSource={userDataList}
-                        pagination={true}
+                        pagination={{
+                            current: pageIndex,
+                            total:totalSize,
+                            onChange: onShowSizeChange
+                        }}
                     />
                 </Card>
             </div>
@@ -127,6 +131,8 @@ const mapDispatchToProps = (dispatch) => ({
             }
         });
 
+    },
+    onShowSizeChange(current, pageSize) {
     }
 });
 

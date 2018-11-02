@@ -3,22 +3,26 @@ import {fromJS} from 'immutable';
 import * as StringConstants from "../../../../../constant";
 import util from '../../../../../util/util';
 import {Modal} from 'antd';
-
 //加载用户ListAction
-const loadUserListAction = (list) => ({
+const loadUserListAction = (list,current,total) => ({
     type: ActionConstants.LOAD_USER_LIST,
-    userList: fromJS(list)
+    userList: fromJS(list),
+    current,
+    total
 });
 
 //加载用户List
 export const loadUserList = () => {
     return (dispatch) => {
         let options = {
-            url: StringConstants.SERVER_URL + "/sysUser/getSysUserByParams",
-            data: {}
+            url: StringConstants.SERVER_URL + "/sysUser/likeSearchSysUserByPage",
+            data: {
+                "current":1,
+                "size":StringConstants.PAGE_SIZE
+            }
         };
         util.ajax(options).then((res => {
-            dispatch(loadUserListAction(res.data));
+            dispatch(loadUserListAction(res.data.records,res.data.current,res.data.total));
         })).catch((e => {
             Modal.error({
                 "title": "错误提示",

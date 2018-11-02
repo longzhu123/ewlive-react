@@ -11,3 +11,6 @@ export const SERVER_FAIL_RES_CODE = 0;
 
 //后台token鉴权失效编码
 export const SERVER_TOKEN_FAIL_RES_CODE = 2;
+
+//每页显示的记录数
+export  const  PAGE_SIZE = 10;
