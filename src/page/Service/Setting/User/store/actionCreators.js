@@ -12,12 +12,12 @@ const loadUserListAction = (list,current,total) => ({
 });
 
 //加载用户List
-export const loadUserList = () => {
+export const loadUserList = (current) => {
     return (dispatch) => {
         let options = {
             url: StringConstants.SERVER_URL + "/sysUser/likeSearchSysUserByPage",
             data: {
-                "current":1,
+                "current":current,
                 "size":StringConstants.PAGE_SIZE
             }
         };

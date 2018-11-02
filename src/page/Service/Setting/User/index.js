@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Form, Card, Input, Button, Table} from 'antd';
+import  * as StringConstants from  '../../../../constant';
 import './index.css';
 import {actionCreators} from "./store";
 import {Modal} from "antd/lib/index";
@@ -19,8 +20,9 @@ class User extends PureComponent {
     render() {
         const {userList,tableSelectChange,delItem,selectIds,onShowSizeChange,pageIndex,totalSize} = this.props;
         const userDataList = userList.toJS();
+        console.log(userDataList);
         const selectDataIds = selectIds.toJS();
-
+        debugger;
         const rowSelection = {
             onChange: tableSelectChange
         };
@@ -100,13 +102,15 @@ FilterForm = Form.create({})(FilterForm);
 
 const mapState = (state) => ({
     userList: state.get("userSettingReducer").get("userList"),
-    selectIds:state.get("userSettingReducer").get("selectIds")
+    selectIds:state.get("userSettingReducer").get("selectIds"),
+    pageIndex:state.get("userSettingReducer").get("pageIndex"),
+    totalSize:state.get("userSettingReducer").get("totalSize")
 });
 
 const mapDispatchToProps = (dispatch) => ({
     //加载用户列表
     loadUserList(){
-        dispatch(actionCreators.loadUserList());
+        dispatch(actionCreators.loadUserList(StringConstants.DEFAULT_PAGE_CURRENT));
     },
     //表格复选框change事件
     tableSelectChange(selectedRowKeys){
@@ -132,7 +136,9 @@ const mapDispatchToProps = (dispatch) => ({
         });
 
     },
-    onShowSizeChange(current, pageSize) {
+    //表格分页change事件
+    onShowSizeChange(current) {
+        dispatch(actionCreators.loadUserList(current));
     }
 });
 
