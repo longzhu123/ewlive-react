@@ -45,7 +45,8 @@ export const tableSelectChange = (selectedRowKeys) => {
 //删除表格项的数据 Action
 const delItemAction = (userList) => ({
     type: ActionConstants.TABLE_DEL_ITEM,
-    userList
+    selectIds:fromJS([]),
+    userList:fromJS(userList)
 });
 
 //删除表格项的数据
@@ -56,18 +57,21 @@ export const delItem = (selectIds) => {
             data: {"ids":selectIds}
         };
         util.ajax(options).then((res => {
-            debugger;
             let userOptions = {
                 url: StringConstants.SERVER_URL + "/sysUser/getSysUserByParams",
                 data: {}
             };
             util.ajax(userOptions).then((res => {
+                Modal.success({
+                    "title": "信息提示",
+                    "content": "删除成功"
+                });
                 dispatch(delItemAction(res.data));
             })).catch((e => {
                 Modal.error({
                     "title": "错误提示",
                     "content": "网络异常"
-                })
+                });
             }))
 
         })).catch((e => {

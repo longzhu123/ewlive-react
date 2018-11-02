@@ -6,7 +6,7 @@ import {actionCreators} from "./store";
 import {Modal} from "antd/lib/index";
 
 const FormItem = Form.Item;
-
+const confirm = Modal.confirm;
 
 //用户管理组件
 class User extends PureComponent {
@@ -110,14 +110,23 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //删除项事件
     delItem(selectDataIds){
-        if(selectDataIds.length === 0){
-            Modal.error({
-                "title": "错误提示",
-                "content": "请选择要删除的记录"
-            });
-            return;
-        }
-        dispatch(actionCreators.delItem(selectDataIds));
+        confirm({
+            title: '确认删除当前数据吗?',
+            okText: '确定',
+            okType: 'danger',
+            cancelText: '取消',
+            onOk() {
+                if(selectDataIds.length === 0){
+                    Modal.error({
+                        "title": "错误提示",
+                        "content": "请选择要删除的记录"
+                    });
+                    return;
+                }
+                dispatch(actionCreators.delItem(selectDataIds));
+            }
+        });
+
     }
 });
 

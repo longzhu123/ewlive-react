@@ -15,7 +15,7 @@ export default (state = defaultState, action) => {
         case ActionConstants.TABLE_SELECT_CHANGE:
             return state.set("selectIds",action.selectIds);
         case ActionConstants.TABLE_DEL_ITEM:
-            return state.set("selectIds",[]).set("userList",action.userList);
+            return state.set("selectIds",action.selectIds).set("userList",action.userList);
         default:
             return state;
     }
