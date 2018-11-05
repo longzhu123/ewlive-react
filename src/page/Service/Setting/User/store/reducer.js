@@ -6,7 +6,8 @@ const defaultState = fromJS(
         userList:[],
         selectIds:[],
         pageIndex:1,
-        totalSize:0
+        totalSize:0,
+        queryObj:{}
     }
 );
 
@@ -18,6 +19,8 @@ export default (state = defaultState, action) => {
             return state.set("selectIds",action.selectIds);
         case ActionConstants.TABLE_DEL_ITEM:
             return state.set("selectIds",action.selectIds).set("userList",action.userList);
+        case ActionConstants.CHANGE_FILTER_PARAM:
+            return state.set("queryObj",action.queryObj);
         default:
             return state;
     }

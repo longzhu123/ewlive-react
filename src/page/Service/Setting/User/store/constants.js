@@ -4,3 +4,6 @@ export  const  TABLE_SELECT_CHANGE = "TABLE_SELECT_CHANGE";
 
 export  const  TABLE_DEL_ITEM = "TABLE_DEL_ITEM";
 
+export  const  CHANGE_FILTER_PARAM = "CHANGE_FILTER_PARAM";
+
+

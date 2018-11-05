@@ -88,11 +88,18 @@ export const delItem = (selectIds) => {
     }
 };
 
+//改变过滤表单参数
+const changeFilterParamAction = (queryObj) => ({
+    type: ActionConstants.CHANGE_FILTER_PARAM,
+    queryObj:fromJS(queryObj)
+});
 
 
 //条件查询表格
 export const filterForm = (queryObj) => {
     return (dispatch) => {
+
+        dispatch(changeFilterParamAction(queryObj));
         queryObj.current = 1;
         queryObj.size = StringConstants.PAGE_SIZE;
         let options = {
