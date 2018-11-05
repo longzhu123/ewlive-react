@@ -8,17 +8,18 @@ import {Modal} from "antd/lib/index";
 
 const FormItem = Form.Item;
 const confirm = Modal.confirm;
+let querParams = {};
 
 //用户管理组件
 class User extends PureComponent {
-
 
     componentDidMount() {
         this.props.loadUserList();
     }
 
     render() {
-        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize,viewDetail,updateItem,filterForm,queryObj} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, updateItem, filterForm, queryObj} = this.props;
+        querParams = queryObj.toJS();
         const userDataList = userList.toJS();
         const selectDataIds = selectIds.toJS();
         const rowSelection = {
@@ -44,8 +45,8 @@ class User extends PureComponent {
                 align: "center",
                 render: (text, record) => (
                     <span className='control-container'>
-                        <button className="ant-btn viewBtn" onClick={()=>viewDetail(record.id)}>查看</button>
-                        <button className="ant-btn updateBtn" onClick={()=>updateItem(record.id)}>修改</button>
+                        <button className="ant-btn viewBtn" onClick={() => viewDetail(record.id)}>查看</button>
+                        <button className="ant-btn updateBtn" onClick={() => updateItem(record.id)}>修改</button>
                     </span>
                 ),
             }
@@ -85,7 +86,7 @@ class User extends PureComponent {
 class FilterForm extends PureComponent {
 
     //获取过滤表单的submit事件
-    handleFilterSubmit = (e)=>{
+    handleFilterSubmit = (e) => {
         e.preventDefault();
         let fieldsValue = this.props.form.getFieldsValue();
         //调用父组件filterForm方法
@@ -94,7 +95,7 @@ class FilterForm extends PureComponent {
 
 
     //重置
-    reset = ()=>{
+    reset = () => {
         this.props.form.resetFields();
     };
 
@@ -135,10 +136,10 @@ const mapState = (state) => ({
     queryObj: state.get("userSettingReducer").get("queryObj")
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
     //加载用户列表
     loadUserList() {
-        dispatch(actionCreators.loadUserList(StringConstants.DEFAULT_PAGE_CURRENT));
+        dispatch(actionCreators.loadUserList(StringConstants.DEFAULT_PAGE_CURRENT,{}));
     },
     //表格复选框change事件
     tableSelectChange(selectedRowKeys) {
@@ -166,20 +167,20 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //表格分页change事件
     onShowSizeChange(current) {
-        dispatch(actionCreators.loadUserList(current));
+        dispatch(actionCreators.loadUserList(current,querParams));
     },
     //查看单条记录的详情
-    viewDetail(id){
+    viewDetail(id) {
         console.log("查询详情");
         console.log(id);
     },
     //修改单条记录
-    updateItem(id){
+    updateItem(id) {
         console.log("修改详情");
         console.log(id);
     },
     //条件查询表格
-    filterForm(queryObj){
+    filterForm(queryObj) {
         dispatch(actionCreators.filterForm(queryObj));
     }
 });

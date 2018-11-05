@@ -12,14 +12,13 @@ const loadUserListAction = (list,current,total) => ({
 });
 
 //加载用户List
-export const loadUserList = (current) => {
+export const loadUserList = (current,querParams) => {
     return (dispatch) => {
+        querParams.current = current;
+        querParams.size = StringConstants.PAGE_SIZE;
         let options = {
             url: StringConstants.SERVER_URL + "/sysUser/likeSearchSysUserByPage",
-            data: {
-                "current":current,
-                "size":StringConstants.PAGE_SIZE
-            }
+            data: querParams
         };
         util.ajax(options).then((res => {
             dispatch(loadUserListAction(res.data.records,res.data.current,res.data.total));
