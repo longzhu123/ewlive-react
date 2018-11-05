@@ -19,7 +19,6 @@ class User extends PureComponent {
 
     render() {
         const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, updateItem, filterForm, queryObj,resetLoadGrid} = this.props;
-        debugger;
         querParams = queryObj.toJS();
         const userDataList = userList.toJS();
         const selectDataIds = selectIds.toJS();
