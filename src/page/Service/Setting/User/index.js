@@ -18,7 +18,7 @@ class User extends PureComponent {
     }
 
     render() {
-        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, updateItem, filterForm, queryObj} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, updateItem, filterForm, queryObj,resetLoadGrid} = this.props;
         querParams = queryObj.toJS();
         const userDataList = userList.toJS();
         const selectDataIds = selectIds.toJS();
@@ -55,7 +55,7 @@ class User extends PureComponent {
             <div>
                 <Card>
                     {/*将父组件的filterForm方法传给子组件filterForm*/}
-                    <FilterForm filterForm={filterForm}/>
+                    <FilterForm filterForm={filterForm} resetLoadGrid={resetLoadGrid}/>
                 </Card>
                 <Card>
                     <div>
@@ -97,6 +97,7 @@ class FilterForm extends PureComponent {
     //重置
     reset = () => {
         this.props.form.resetFields();
+        this.props.resetLoadGrid();
     };
 
     render() {
@@ -182,6 +183,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     //条件查询表格
     filterForm(queryObj) {
         dispatch(actionCreators.filterForm(queryObj));
+    },
+    //重置表格
+    resetLoadGrid(){
+        dispatch(actionCreators.resetLoadGrid({}));
     }
 });
 

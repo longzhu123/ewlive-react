@@ -21,6 +21,9 @@ export default (state = defaultState, action) => {
             return state.set("selectIds",action.selectIds).set("userList",action.userList);
         case ActionConstants.CHANGE_FILTER_PARAM:
             return state.set("queryObj",action.queryObj);
+        case ActionConstants.RESET_LOAD_GRID:
+            debugger;
+            return state.set("userList",action.userList).set("totalSize",action.total).set("pageIndex",action.current).set("queryObj",action.queryObj);
         default:
             return state;
     }

@@ -6,4 +6,6 @@ export  const  TABLE_DEL_ITEM = "TABLE_DEL_ITEM";
 
 export  const  CHANGE_FILTER_PARAM = "CHANGE_FILTER_PARAM";
 
+export  const  RESET_LOAD_GRID = "RESET_LOAD_GRID ";
+
 

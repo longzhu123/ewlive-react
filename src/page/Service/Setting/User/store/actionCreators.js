@@ -115,3 +115,33 @@ export const filterForm = (queryObj) => {
         }))
     }
 };
+
+
+//重置表格ListAction
+const resetLoadGridAction = (list,current,total) => ({
+    type: ActionConstants.RESET_LOAD_GRID,
+    userList: fromJS(list),
+    current,
+    total,
+    queryObj:{}
+});
+
+//重置表格
+export const resetLoadGrid = (querParams) => {
+    return (dispatch) => {
+        querParams.current = 1;
+        querParams.size = StringConstants.PAGE_SIZE;
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysUser/likeSearchSysUserByPage",
+            data: querParams
+        };
+        util.ajax(options).then((res => {
+            dispatch(resetLoadGridAction(res.data.records,res.data.current,res.data.total));
+        })).catch((e => {
+            Modal.error({
+                "title": "错误提示",
+                "content": "网络异常"
+            })
+        }))
+    }
+};
