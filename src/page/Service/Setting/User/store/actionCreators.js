@@ -122,8 +122,7 @@ const resetLoadGridAction = (list,current,total) => ({
     type: ActionConstants.RESET_LOAD_GRID,
     userList: fromJS(list),
     current,
-    total,
-    queryObj:{}
+    total
 });
 
 //重置表格
