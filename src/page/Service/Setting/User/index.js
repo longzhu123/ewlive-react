@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Form, Card, Input, Button, Table} from 'antd';
+
 import * as StringConstants from '../../../../constant';
 import './index.css';
 import {actionCreators} from "./store";
@@ -70,9 +71,13 @@ class User extends PureComponent {
                         columns={columns}
                         dataSource={userDataList}
                         pagination={{
+                            showQuickJumper:true,
                             current: pageIndex,
                             total: totalSize,
-                            onChange: onShowSizeChange
+                            onChange: onShowSizeChange,
+                            showTotal:()=>{
+                                return `共 ${totalSize} 条`
+                            },
                         }}
                     />
                 </Card>

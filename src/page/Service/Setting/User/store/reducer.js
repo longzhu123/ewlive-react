@@ -14,6 +14,7 @@ const defaultState = fromJS(
 export default (state = defaultState, action) => {
     switch (action.type){
         case ActionConstants.LOAD_USER_LIST:
+            debugger;
             return state.set("userList",action.userList).set("totalSize",action.total).set("pageIndex",action.current);
         case ActionConstants.TABLE_SELECT_CHANGE:
             return state.set("selectIds",action.selectIds);
