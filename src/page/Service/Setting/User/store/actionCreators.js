@@ -49,11 +49,12 @@ export const tableSelectChange = (selectedRowKeys) => {
 const delItemAction = (userList) => ({
     type: ActionConstants.TABLE_DEL_ITEM,
     selectIds:fromJS([]),
-    userList:fromJS(userList)
+    userList:fromJS(userList.records),
+    total:userList.total
 });
 
 //删除表格项的数据
-export const delItem = (selectIds) => {
+export const delItem = (selectIds,querParams) => {
     return (dispatch) => {
         let options = {
             url: StringConstants.SERVER_URL + "/sysUser/deleteBatchSysUserByIds",
@@ -64,9 +65,11 @@ export const delItem = (selectIds) => {
                 "title": "信息提示",
                 "content": "删除成功"
             });
+            querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
+            querParams.size = StringConstants.PAGE_SIZE;
             let userOptions = {
-                url: StringConstants.SERVER_URL + "/sysUser/getSysUserByParams",
-                data: {}
+                url: StringConstants.SERVER_URL + "/sysUser/likeSearchSysUserByPage",
+                data: querParams
             };
             util.ajax(userOptions).then((res => {
                 dispatch(delItemAction(res.data));

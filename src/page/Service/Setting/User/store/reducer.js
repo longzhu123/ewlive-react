@@ -14,12 +14,12 @@ const defaultState = fromJS(
 export default (state = defaultState, action) => {
     switch (action.type){
         case ActionConstants.LOAD_USER_LIST:
-            debugger;
             return state.set("userList",action.userList).set("totalSize",action.total).set("pageIndex",action.current);
         case ActionConstants.TABLE_SELECT_CHANGE:
             return state.set("selectIds",action.selectIds);
         case ActionConstants.TABLE_DEL_ITEM:
-            return state.set("selectIds",action.selectIds).set("userList",action.userList);
+            debugger;
+            return state.set("selectIds",action.selectIds).set("userList",action.userList).set("totalSize",action.total).set("pageIndex",1);
         case ActionConstants.CHANGE_FILTER_PARAM:
             return state.set("queryObj",action.queryObj);
         case ActionConstants.RESET_LOAD_GRID:

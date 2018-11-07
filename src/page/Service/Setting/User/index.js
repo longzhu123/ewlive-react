@@ -61,7 +61,7 @@ class User extends PureComponent {
                 <Card>
                     <div>
                         <Button type="primary" icon="plus" style={{marginRight: '10px'}}>添加</Button>
-                        <Button type="danger" icon="delete" onClick={() => delItem(selectDataIds)}>删除</Button>
+                        <Button type="danger" icon="delete" onClick={() => delItem(selectDataIds,querParams)}>删除</Button>
                     </div>
                     <br/>
                     <Table
@@ -142,7 +142,7 @@ const mapState = (state) => ({
     queryObj: state.get("userSettingReducer").get("queryObj")
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
     //加载用户列表
     loadUserList() {
         dispatch(actionCreators.loadUserList(StringConstants.DEFAULT_PAGE_CURRENT,{}));
@@ -152,7 +152,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
         dispatch(actionCreators.tableSelectChange(selectedRowKeys));
     },
     //删除项事件
-    delItem(selectDataIds) {
+    delItem(selectDataIds,querParams) {
         confirm({
             title: '确认删除当前数据吗?',
             okText: '确定',
@@ -166,7 +166,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
                     });
                     return;
                 }
-                dispatch(actionCreators.delItem(selectDataIds));
+                dispatch(actionCreators.delItem(selectDataIds,querParams));
             }
         });
 
