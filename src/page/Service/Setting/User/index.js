@@ -19,7 +19,7 @@ class User extends PureComponent {
     }
 
     render() {
-        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, updateItem, filterForm, queryObj,resetLoadGrid,isShowAddUserModal,showAddUserModal,addUser} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, updateItem, filterForm, queryObj,resetLoadGrid,isShowAddUserModal,showAddUserModal,showViewUserModal,showUpdateUserModal,addUser,isShowViewUserModal,isShowUpdateUserModal} = this.props;
         querParams = queryObj.toJS();
         const userDataList = userList.toJS();
         const selectDataIds = selectIds.toJS();
@@ -94,6 +94,31 @@ class User extends PureComponent {
                         <p>Some contents...</p>
                     </Modal>
                 </div>
+
+
+                <div>
+                    <Modal
+                        title="查看用户"
+                        visible={showViewUserModal}
+                        onCancel={() =>isShowViewUserModal(false)}
+                    >
+                        <p>Some contents...</p>
+                        <p>Some contents...</p>
+                        <p>Some contents...</p>
+                    </Modal>
+                </div>
+
+                <div>
+                    <Modal
+                        title="修改用户"
+                        visible={showUpdateUserModal}
+                        onCancel={() =>isShowUpdateUserModal(false)}
+                    >
+                        <p>Some contents...</p>
+                        <p>Some contents...</p>
+                        <p>Some contents...</p>
+                    </Modal>
+                </div>
             </div>
         )
 
@@ -153,7 +178,9 @@ const mapState = (state) => ({
     pageIndex: state.get("userSettingReducer").get("pageIndex"),
     totalSize: state.get("userSettingReducer").get("totalSize"),
     queryObj: state.get("userSettingReducer").get("queryObj"),
-    showAddUserModal: state.get("userSettingReducer").get("showAddUserModal")
+    showAddUserModal: state.get("userSettingReducer").get("showAddUserModal"),
+    showViewUserModal: state.get("userSettingReducer").get("showViewUserModal"),
+    showUpdateUserModal: state.get("userSettingReducer").get("showUpdateUserModal")
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -191,13 +218,13 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //查看单条记录的详情
     viewDetail(id) {
-        console.log("查询详情");
-        console.log(id);
+        console.log("查询详情====>"+id);
+        dispatch(actionCreators.isShowViewUserModal(true));
     },
     //修改单条记录
     updateItem(id) {
-        console.log("修改详情");
-        console.log(id);
+        console.log("修改详情====>"+id);
+        dispatch(actionCreators.isShowUpdateUserModal(true));
     },
     //条件查询表格
     filterForm(queryObj) {
@@ -209,12 +236,19 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //是否显示添加用户模态框
     isShowAddUserModal(isShow){
-        debugger;
         dispatch(actionCreators.isShowAddUserModal(isShow));
     },
     //添加用户
     addUser(){
         alert("添加用户");
+    },
+    //是否显示查看用户模态框
+    isShowViewUserModal(isShow){
+        dispatch(actionCreators.isShowViewUserModal(isShow));
+    },
+    //是否显示修改用户模态框
+    isShowUpdateUserModal(isShow){
+        dispatch(actionCreators.isShowUpdateUserModal(isShow));
     }
 });
 

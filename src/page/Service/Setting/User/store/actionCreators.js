@@ -160,3 +160,32 @@ export const isShowAddUserModal = (isShow) => {
         dispatch(isShowAddUserModalAction(isShow));
     }
 };
+
+
+//是否显示查看用户模态框Action
+const isShowViewUserModalAction = (isShow) => ({
+    type: ActionConstants.IS_SHOW_VIEW_USER_MODAL,
+    isShow
+});
+
+//是否显示查看用户模态框
+export const isShowViewUserModal = (isShow) => {
+    return (dispatch) => {
+        dispatch(isShowViewUserModalAction(isShow));
+    }
+};
+
+
+
+//是否显示修改用户模态框Action
+const isShowUpdateUserModalAction = (isShow) => ({
+    type: ActionConstants.IS_SHOW_UPDATE_USER_MODAL,
+    isShow
+});
+
+//是否显示修改用户模态框
+export const isShowUpdateUserModal = (isShow) => {
+    return (dispatch) => {
+        dispatch(isShowUpdateUserModalAction(isShow));
+    }
+};

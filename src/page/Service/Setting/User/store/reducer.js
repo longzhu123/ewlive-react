@@ -8,7 +8,9 @@ const defaultState = fromJS(
         pageIndex:1,
         totalSize:0,
         queryObj:{},
-        showAddUserModal:false
+        showAddUserModal:false,
+        showViewUserModal:false,
+        showUpdateUserModal:false
     }
 );
 
@@ -25,8 +27,11 @@ export default (state = defaultState, action) => {
         case ActionConstants.RESET_LOAD_GRID:
             return state.set("userList",action.userList).set("totalSize",action.total).set("pageIndex",action.current).set("queryObj",fromJS({}));
         case ActionConstants.IS_SHOW_ADD_USER_MODAL:
-            debugger;
             return state.set("showAddUserModal",action.isShow);
+        case ActionConstants.IS_SHOW_VIEW_USER_MODAL:
+            return state.set("showViewUserModal",action.isShow);
+        case ActionConstants.IS_SHOW_UPDATE_USER_MODAL:
+            return state.set("showUpdateUserModal",action.isShow);
         default:
             return state;
     }
