@@ -19,7 +19,7 @@ class User extends PureComponent {
     }
 
     render() {
-        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, updateItem, filterForm, queryObj,resetLoadGrid} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, updateItem, filterForm, queryObj,resetLoadGrid,isShowAddUserModal,showAddUserModal,addUser} = this.props;
         querParams = queryObj.toJS();
         const userDataList = userList.toJS();
         const selectDataIds = selectIds.toJS();
@@ -60,7 +60,7 @@ class User extends PureComponent {
                 </Card>
                 <Card>
                     <div>
-                        <Button type="primary" icon="plus" style={{marginRight: '10px'}}>添加</Button>
+                        <Button type="primary" icon="plus" style={{marginRight: '10px'}}  onClick={() =>isShowAddUserModal(true)}>添加</Button>
                         <Button type="danger" icon="delete" onClick={() => delItem(selectDataIds,querParams)}>删除</Button>
                     </div>
                     <br/>
@@ -81,6 +81,19 @@ class User extends PureComponent {
                         }}
                     />
                 </Card>
+
+                <div>
+                    <Modal
+                        title="添加用户"
+                        visible={showAddUserModal}
+                        onOk={() =>addUser()}
+                        onCancel={() =>isShowAddUserModal(false)}
+                    >
+                        <p>Some contents...</p>
+                        <p>Some contents...</p>
+                        <p>Some contents...</p>
+                    </Modal>
+                </div>
             </div>
         )
 
@@ -139,7 +152,8 @@ const mapState = (state) => ({
     selectIds: state.get("userSettingReducer").get("selectIds"),
     pageIndex: state.get("userSettingReducer").get("pageIndex"),
     totalSize: state.get("userSettingReducer").get("totalSize"),
-    queryObj: state.get("userSettingReducer").get("queryObj")
+    queryObj: state.get("userSettingReducer").get("queryObj"),
+    showAddUserModal: state.get("userSettingReducer").get("showAddUserModal")
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -192,6 +206,15 @@ const mapDispatchToProps = (dispatch) => ({
     //重置表格
     resetLoadGrid(){
         dispatch(actionCreators.resetLoadGrid({}));
+    },
+    //是否显示添加用户模态框
+    isShowAddUserModal(isShow){
+        debugger;
+        dispatch(actionCreators.isShowAddUserModal(isShow));
+    },
+    //添加用户
+    addUser(){
+        alert("添加用户");
     }
 });
 

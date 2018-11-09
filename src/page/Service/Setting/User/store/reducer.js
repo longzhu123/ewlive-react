@@ -7,7 +7,8 @@ const defaultState = fromJS(
         selectIds:[],
         pageIndex:1,
         totalSize:0,
-        queryObj:{}
+        queryObj:{},
+        showAddUserModal:false
     }
 );
 
@@ -18,13 +19,14 @@ export default (state = defaultState, action) => {
         case ActionConstants.TABLE_SELECT_CHANGE:
             return state.set("selectIds",action.selectIds);
         case ActionConstants.TABLE_DEL_ITEM:
-            debugger;
             return state.set("selectIds",action.selectIds).set("userList",action.userList).set("totalSize",action.total).set("pageIndex",1);
         case ActionConstants.CHANGE_FILTER_PARAM:
             return state.set("queryObj",action.queryObj);
         case ActionConstants.RESET_LOAD_GRID:
-            debugger;
             return state.set("userList",action.userList).set("totalSize",action.total).set("pageIndex",action.current).set("queryObj",fromJS({}));
+        case ActionConstants.IS_SHOW_ADD_USER_MODAL:
+            debugger;
+            return state.set("showAddUserModal",action.isShow);
         default:
             return state;
     }

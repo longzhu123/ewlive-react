@@ -147,3 +147,16 @@ export const resetLoadGrid = (querParams) => {
         }))
     }
 };
+
+//是否显示添加用户模态框Action
+const isShowAddUserModalAction = (isShow) => ({
+    type: ActionConstants.IS_SHOW_ADD_USER_MODAL,
+    isShow
+});
+
+//是否显示添加用户模态框
+export const isShowAddUserModal = (isShow) => {
+    return (dispatch) => {
+        dispatch(isShowAddUserModalAction(isShow));
+    }
+};
