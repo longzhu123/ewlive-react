@@ -8,6 +8,7 @@ const defaultState = fromJS(
         pageIndex:1,
         totalSize:0,
         queryObj:{},
+        curOperRowObj:{},
         showAddUserModal:false,
         showViewUserModal:false,
         showUpdateUserModal:false
@@ -34,6 +35,8 @@ export default (state = defaultState, action) => {
             return state.set("showUpdateUserModal",action.isShow);
         case ActionConstants.ADD_USER_OPER:
             return state.set("userList",action.userList).set("totalSize",action.total).set("pageIndex",action.current).set("queryObj",fromJS({})).set("showAddUserModal",action.showAddUserModal);
+        case ActionConstants.GET_DETAILBY_ID:
+            return state.set("curOperRowObj",action.curOperRowObj).set("showUpdateUserModal",action.showUpdateUserModal);
         default:
             return state;
     }

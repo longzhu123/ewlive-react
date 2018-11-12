@@ -10,7 +10,7 @@ import {Modal} from "antd/lib/index";
 const FormItem = Form.Item;
 const confirm = Modal.confirm;
 let querParams = {};
-
+let toCurOperRowObj = {};
 //用户管理组件
 class User extends PureComponent {
 
@@ -21,11 +21,13 @@ class User extends PureComponent {
     constructor(prop) {
         super(prop);
         this.addUserFormRef = React.createRef();
+        this.updateUserFormRef = React.createRef();
     }
 
     render() {
-        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, updateItem, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, addUserOper, isShowViewUserModal, isShowUpdateUserModal} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, updateItem, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, addUserOper, isShowViewUserModal, isShowUpdateUserModal,curOperRowObj} = this.props;
         querParams = queryObj.toJS();
+        toCurOperRowObj = curOperRowObj.toJS();
         const userDataList = userList.toJS();
         const selectDataIds = selectIds.toJS();
         const rowSelection = {
@@ -107,6 +109,7 @@ class User extends PureComponent {
                         title="查看用户"
                         visible={showViewUserModal}
                         onCancel={() => isShowViewUserModal(false)}
+                        destroyOnClose
                     >
                         <p>Some contents...</p>
                         <p>Some contents...</p>
@@ -119,10 +122,9 @@ class User extends PureComponent {
                         title="修改用户"
                         visible={showUpdateUserModal}
                         onCancel={() => isShowUpdateUserModal(false)}
+                        destroyOnClose
                     >
-                        <p>Some contents...</p>
-                        <p>Some contents...</p>
-                        <p>Some contents...</p>
+                       <UpdateUserForm ref={this.updateUserFormRef} curObj={curOperRowObj}/>
                     </Modal>
                 </div>
             </div>
@@ -268,25 +270,74 @@ class UpdateUserForm extends PureComponent {
 
     render() {
         const {getFieldDecorator} = this.props.form;
+        console.log("哎呦不错哦");
+        console.log(toCurOperRowObj);
+        const formItemLayout = {
+            labelCol: {
+                xs: {span: 24},
+                sm: {span: 4},
+            },
+            wrapperCol: {
+                xs: {span: 24},
+                sm: {span: 19},
+            },
+        };
         return (
-            <Form layout="inline">
-                <FormItem label="邮箱">
-                    {
-                        getFieldDecorator('email')(
-                            <Input placeholder="请输入邮箱"/>
-                        )
-                    }
+            <Form>
+                <FormItem
+                    {...formItemLayout}
+                    label="邮箱"
+                >
+                    {getFieldDecorator('email', {
+                        initialValue:curOperRowObj.email,
+                        rules: [{
+                            type: 'email', message: '邮箱格式不正确!',
+                        }, {
+                            required: true, message: '请输入邮箱!',
+                        }],
+                    })(
+                        <Input placeholder="请输入邮箱"/>
+                    )}
                 </FormItem>
-                <FormItem label="昵称">
-                    {
-                        getFieldDecorator('nickName')(
-                            <Input placeholder="请输入昵称"/>
-                        )
-                    }
+                <FormItem
+                    {...formItemLayout}
+                    label="密码"
+                >
+                    {getFieldDecorator('password', {
+                        initialValue:"1",
+                        rules: [{
+                            required: true, message: '请输入密码!',
+                        }],
+                    })(
+                        <Input placeholder="请输入密码"/>
+                    )}
                 </FormItem>
-                <FormItem>
-                    <Button type="primary" style={{margin: '0 20px'}} onClick={this.handleFilterSubmit}>查询</Button>
-                    <Button onClick={this.reset}>重置</Button>
+                <FormItem
+                    {...formItemLayout}
+                    label="昵称"
+                >
+                    {getFieldDecorator('nickName', {
+                        rules: [{
+                            required: true, message: '请输入昵称!',
+                        }],
+                    })(
+                        <Input placeholder="请输入昵称"/>
+                    )}
+                </FormItem>
+                <FormItem
+                    {...formItemLayout}
+                    label="优币"
+                >
+                    {getFieldDecorator('ewCoin', {
+                        rules: [{
+                            pattern: new RegExp(/^[1-9]\d*$/, "g"),
+                            message: '只能输入数值格式'
+                        }, {
+                            required: true, message: '请输入优币!',
+                        }]
+                    })(
+                        <Input placeholder="请输入优币"/>
+                    )}
                 </FormItem>
             </Form>
         );
@@ -336,7 +387,8 @@ const mapState = (state) => ({
     queryObj: state.get("userSettingReducer").get("queryObj"),
     showAddUserModal: state.get("userSettingReducer").get("showAddUserModal"),
     showViewUserModal: state.get("userSettingReducer").get("showViewUserModal"),
-    showUpdateUserModal: state.get("userSettingReducer").get("showUpdateUserModal")
+    showUpdateUserModal: state.get("userSettingReducer").get("showUpdateUserModal"),
+    curOperRowObj:state.get("userSettingReducer").get("curOperRowObj")
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -377,10 +429,10 @@ const mapDispatchToProps = (dispatch) => ({
         console.log("查询详情====>" + id);
         dispatch(actionCreators.isShowViewUserModal(true));
     },
-    //修改单条记录
+    //显示修改模态框
     updateItem(id) {
         console.log("修改详情====>" + id);
-        dispatch(actionCreators.isShowUpdateUserModal(true));
+        dispatch(actionCreators.getDetailById(id));
     },
     //条件查询表格
     filterForm(queryObj) {

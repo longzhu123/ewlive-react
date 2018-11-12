@@ -20,4 +20,6 @@ export const UPDATE_USER_OPER = "UPDATE_USER_OPER";
 
 export const VIEW_USER_OPER = "VIEW_USER_OPER";
 
+export const GET_DETAILBY_ID = "GET_DETAILBY_ID";
+
 

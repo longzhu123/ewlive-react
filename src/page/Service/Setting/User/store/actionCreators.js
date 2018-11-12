@@ -250,6 +250,37 @@ export const updateUserOper = (updateUserObj) => {
     }
 };
 
+//根据id查询详情
+export const getDetailById = (id) => {
+    return (dispatch) => {
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysUser/getSysUserById",
+            data: {"id":id}
+        };
+        util.ajax(options).then((res => {
+            let data = res.data;
+            dispatch(getDetailByIdAction(data));
+        })).catch((e => {
+            Modal.error({
+                "title": "错误提示",
+                "content": "网络异常"
+            })
+        }));
+
+    }
+};
+
+/**
+ * 修改用户Action
+ * @param curOperRowObj  当前操作的表格行对象
+ *
+ */
+const getDetailByIdAction = (curOperRowObj) => ({
+    type: ActionConstants.GET_DETAILBY_ID,
+    curOperRowObj:fromJS(curOperRowObj),
+    showUpdateUserModal:true
+});
+
 
 
 //查看详情用户Action
