@@ -14,7 +14,7 @@ let util = {
                     if (res.resultCode === 1) {
                         resolve(res);
                     } else if (res.resultCode === 0) {
-                        Modal.info({
+                        Modal.error({
                             "title": "错误提示",
                             "content": res.resultMsg
                         });

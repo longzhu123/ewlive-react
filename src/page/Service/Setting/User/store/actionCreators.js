@@ -189,3 +189,71 @@ export const isShowUpdateUserModal = (isShow) => {
         dispatch(isShowUpdateUserModalAction(isShow));
     }
 };
+
+
+//添加用户
+export const addUserOper = (addUserObj) => {
+    return (dispatch) => {
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysUser/addSysUser",
+            data: addUserObj
+        };
+        util.ajax(options).then((res => {
+            Modal.success({
+                "title": "信息提示",
+                "content": "添加成功"
+            });
+
+            let querParams={};
+            querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
+            querParams.size = StringConstants.PAGE_SIZE;
+            let userOptions = {
+                url: StringConstants.SERVER_URL + "/sysUser/likeSearchSysUserByPage",
+                data: querParams
+            };
+            util.ajax(userOptions).then((res => {
+                dispatch(resetLoadGridAction(res.data.records,res.data.current,res.data.total));
+            })).catch((e => {
+                Modal.error({
+                    "title": "错误提示",
+                    "content": "网络异常"
+                });
+            }))
+        })).catch((e => {
+            Modal.error({
+                "title": "错误提示",
+                "content": "网络异常"
+            })
+        }))
+    }
+};
+
+
+
+//修改用户Action
+const updateUserOperAction = (updateUserObj) => ({
+    type: ActionConstants.UPDATE_USER_OPER,
+    updateUserObj
+});
+
+//修改用户
+export const updateUserOper = (updateUserObj) => {
+    return (dispatch) => {
+        dispatch(updateUserOperAction(updateUserObj));
+    }
+};
+
+
+
+//查看详情用户Action
+const viewUserOperAction = (viewUserObj) => ({
+    type: ActionConstants.VIEW_USER_OPER,
+    viewUserObj
+});
+
+//查看详情用户
+export const viewUserOper = (viewUserObj) => {
+    return (dispatch) => {
+        dispatch(updateUserOperAction(viewUserObj));
+    }
+};

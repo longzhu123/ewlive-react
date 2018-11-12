@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {Form, Card, Input, Button, Table, InputNumber} from 'antd';
+import {Button, Card, Form, Input, Table} from 'antd';
 
 import * as StringConstants from '../../../../constant';
 import './index.css';
@@ -18,13 +18,13 @@ class User extends PureComponent {
         this.props.loadUserList();
     }
 
-    constructor(prop){
+    constructor(prop) {
         super(prop);
-        this.addUserFormRef=React.createRef();
+        this.addUserFormRef = React.createRef();
     }
 
     render() {
-        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, updateItem, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, addUser, isShowViewUserModal, isShowUpdateUserModal} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, updateItem, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, addUserOper, isShowViewUserModal, isShowUpdateUserModal} = this.props;
         querParams = queryObj.toJS();
         const userDataList = userList.toJS();
         const selectDataIds = selectIds.toJS();
@@ -93,11 +93,11 @@ class User extends PureComponent {
                     <Modal
                         title="添加用户"
                         visible={showAddUserModal}
-                        onOk={()=>addUser(this.addUserFormRef)}
+                        onOk={() => this.addUser(this.addUserFormRef)}
                         onCancel={() => isShowAddUserModal(false)}
                         destroyOnClose
                     >
-                        <AddUserForm  ref={this.addUserFormRef}/>
+                        <AddUserForm ref={this.addUserFormRef}/>
                     </Modal>
                 </div>
 
@@ -128,6 +128,15 @@ class User extends PureComponent {
             </div>
         )
 
+    }
+
+    //添加用户前validate
+    addUser = (addUserForm) => {
+        addUserForm.current.validateFields((err, values) => {
+            if (!err) {
+                this.props.addUserOper(values);
+            }
+        });
     }
 }
 
@@ -250,6 +259,7 @@ class AddUserForm extends PureComponent {
             </Form>
         );
     }
+
 }
 
 
@@ -385,13 +395,8 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(actionCreators.isShowAddUserModal(isShow));
     },
     //添加用户
-    addUser(addUserForm) {
-        addUserForm.current.validateFields((err, values) => {
-            if (!err) {
-                debugger;
-                console.log(values);
-            }
-        });
+    addUserOper(addUserObj) {
+        dispatch(actionCreators.addUserOper(addUserObj));
     },
     //是否显示查看用户模态框
     isShowViewUserModal(isShow) {
