@@ -18,6 +18,11 @@ class User extends PureComponent {
         this.props.loadUserList();
     }
 
+    constructor(prop){
+        super(prop);
+        this.addUserFormRef=React.createRef();
+    }
+
     render() {
         const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, updateItem, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, addUser, isShowViewUserModal, isShowUpdateUserModal} = this.props;
         querParams = queryObj.toJS();
@@ -88,10 +93,11 @@ class User extends PureComponent {
                     <Modal
                         title="添加用户"
                         visible={showAddUserModal}
-                        onOk={() => addUser()}
+                        onOk={()=>addUser(this.addUserFormRef)}
                         onCancel={() => isShowAddUserModal(false)}
+                        destroyOnClose
                     >
-                        <AddUserForm/>
+                        <AddUserForm  ref={this.addUserFormRef}/>
                     </Modal>
                 </div>
 
@@ -173,6 +179,7 @@ class FilterForm extends PureComponent {
 //添加表单组件
 class AddUserForm extends PureComponent {
 
+
     render() {
         const {getFieldDecorator} = this.props.form;
         const formItemLayout = {
@@ -185,7 +192,6 @@ class AddUserForm extends PureComponent {
                 sm: {span: 19},
             },
         };
-        debugger;
         return (
             <Form>
                 <FormItem
@@ -237,8 +243,7 @@ class AddUserForm extends PureComponent {
                         }, {
                             required: true, message: '请输入优币!',
                         }]
-                    })
-                    (
+                    })(
                         <Input placeholder="请输入优币"/>
                     )}
                 </FormItem>
@@ -380,8 +385,13 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(actionCreators.isShowAddUserModal(isShow));
     },
     //添加用户
-    addUser() {
-        alert("添加用户");
+    addUser(addUserForm) {
+        addUserForm.current.validateFields((err, values) => {
+            if (!err) {
+                debugger;
+                console.log(values);
+            }
+        });
     },
     //是否显示查看用户模态框
     isShowViewUserModal(isShow) {
