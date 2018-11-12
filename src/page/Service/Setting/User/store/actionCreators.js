@@ -190,9 +190,17 @@ export const isShowUpdateUserModal = (isShow) => {
     }
 };
 
+//修改用户Action
+const addUserOperAction = (res) => ({
+    type: ActionConstants.ADD_USER_OPER,
+    userList: fromJS(res.data.records),
+    current:res.data.current,
+    total:res.data.total,
+    showAddUserModal:false
+});
 
 //添加用户
-export const addUserOper = (addUserObj) => {
+export const addUserOper = (addUserObj,querParams) => {
     return (dispatch) => {
         let options = {
             url: StringConstants.SERVER_URL + "/sysUser/addSysUser",
@@ -204,7 +212,6 @@ export const addUserOper = (addUserObj) => {
                 "content": "添加成功"
             });
 
-            let querParams={};
             querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
             querParams.size = StringConstants.PAGE_SIZE;
             let userOptions = {
@@ -212,7 +219,7 @@ export const addUserOper = (addUserObj) => {
                 data: querParams
             };
             util.ajax(userOptions).then((res => {
-                dispatch(resetLoadGridAction(res.data.records,res.data.current,res.data.total));
+                dispatch(addUserOperAction(res));
             })).catch((e => {
                 Modal.error({
                     "title": "错误提示",

@@ -93,7 +93,7 @@ class User extends PureComponent {
                     <Modal
                         title="添加用户"
                         visible={showAddUserModal}
-                        onOk={() => this.addUser(this.addUserFormRef)}
+                        onOk={() => this.addUser(this.addUserFormRef,querParams)}
                         onCancel={() => isShowAddUserModal(false)}
                         destroyOnClose
                     >
@@ -131,10 +131,10 @@ class User extends PureComponent {
     }
 
     //添加用户前validate
-    addUser = (addUserForm) => {
+    addUser = (addUserForm,querParam) => {
         addUserForm.current.validateFields((err, values) => {
             if (!err) {
-                this.props.addUserOper(values);
+                this.props.addUserOper(values,querParam);
             }
         });
     }
@@ -395,8 +395,8 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(actionCreators.isShowAddUserModal(isShow));
     },
     //添加用户
-    addUserOper(addUserObj) {
-        dispatch(actionCreators.addUserOper(addUserObj));
+    addUserOper(addUserObj,querParam) {
+        dispatch(actionCreators.addUserOper(addUserObj,querParam));
     },
     //是否显示查看用户模态框
     isShowViewUserModal(isShow) {

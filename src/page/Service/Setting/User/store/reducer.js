@@ -32,6 +32,8 @@ export default (state = defaultState, action) => {
             return state.set("showViewUserModal",action.isShow);
         case ActionConstants.IS_SHOW_UPDATE_USER_MODAL:
             return state.set("showUpdateUserModal",action.isShow);
+        case ActionConstants.ADD_USER_OPER:
+            return state.set("userList",action.userList).set("totalSize",action.total).set("pageIndex",action.current).set("queryObj",fromJS({})).set("showAddUserModal",action.showAddUserModal);
         default:
             return state;
     }
