@@ -289,14 +289,14 @@ class UpdateUserForm extends PureComponent {
                     label="邮箱"
                 >
                     {getFieldDecorator('email', {
-                        initialValue:curOperRowObj.email,
+                        initialValue : toCurOperRowObj ? toCurOperRowObj.email : "",
                         rules: [{
                             type: 'email', message: '邮箱格式不正确!',
                         }, {
                             required: true, message: '请输入邮箱!',
                         }],
                     })(
-                        <Input placeholder="请输入邮箱"/>
+                        <Input placeholder="请输入邮箱" />
                     )}
                 </FormItem>
                 <FormItem
@@ -304,7 +304,7 @@ class UpdateUserForm extends PureComponent {
                     label="密码"
                 >
                     {getFieldDecorator('password', {
-                        initialValue:"1",
+                        initialValue : toCurOperRowObj ? toCurOperRowObj.password : "",
                         rules: [{
                             required: true, message: '请输入密码!',
                         }],
@@ -317,6 +317,7 @@ class UpdateUserForm extends PureComponent {
                     label="昵称"
                 >
                     {getFieldDecorator('nickName', {
+                        initialValue : toCurOperRowObj ? toCurOperRowObj.nickName : "",
                         rules: [{
                             required: true, message: '请输入昵称!',
                         }],
@@ -329,6 +330,7 @@ class UpdateUserForm extends PureComponent {
                     label="优币"
                 >
                     {getFieldDecorator('ewCoin', {
+                        initialValue : toCurOperRowObj ? toCurOperRowObj.ewCoin : "",
                         rules: [{
                             pattern: new RegExp(/^[1-9]\d*$/, "g"),
                             message: '只能输入数值格式'
