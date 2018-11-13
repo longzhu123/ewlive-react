@@ -356,28 +356,27 @@ class UpdateUserForm extends PureComponent {
 class ViewDetailUserForm extends PureComponent {
 
     render() {
-        const {getFieldDecorator} = this.props.form;
         return (
-            <Form layout="inline">
-                <FormItem label="邮箱">
-                    {
-                        getFieldDecorator('email')(
-                            <Input placeholder="请输入邮箱"/>
-                        )
-                    }
-                </FormItem>
-                <FormItem label="昵称">
-                    {
-                        getFieldDecorator('nickName')(
-                            <Input placeholder="请输入昵称"/>
-                        )
-                    }
-                </FormItem>
-                <FormItem>
-                    <Button type="primary" style={{margin: '0 20px'}} onClick={this.handleFilterSubmit}>查询</Button>
-                    <Button onClick={this.reset}>重置</Button>
-                </FormItem>
-            </Form>
+           <div>
+               <ul className="detail-form">
+                   <li>
+                       <div className="detail-form-left">邮箱 : </div>
+                        <div className="detail-form-content">{toCurOperRowObj.email}</div>
+                   </li>
+                   <li>
+                       <div className="detail-form-left">密码 : </div>
+                       <div className="detail-form-content">{toCurOperRowObj.password}</div>
+                   </li>
+                   <li>
+                       <div className="detail-form-left">昵称 : </div>
+                       <div className="detail-form-content">{toCurOperRowObj.nickName}</div>
+                   </li>
+                   <li>
+                       <div className="detail-form-left">优币 : </div>
+                       <div className="detail-form-content">{toCurOperRowObj.ewCoin}</div>
+                   </li>
+               </ul>
+           </div>
         );
     }
 }
@@ -385,7 +384,6 @@ class ViewDetailUserForm extends PureComponent {
 FilterForm = Form.create({})(FilterForm);
 AddUserForm = Form.create({})(AddUserForm);
 UpdateUserForm = Form.create({})(UpdateUserForm);
-ViewDetailUserForm = Form.create({})(ViewDetailUserForm);
 
 const mapState = (state) => ({
     userList: state.get("userSettingReducer").get("userList"),
