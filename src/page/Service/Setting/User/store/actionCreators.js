@@ -238,15 +238,18 @@ export const updateItem = (updateObj,querParams) => {
 };
 
 //根据id查询详情
-export const getDetailById = (id) => {
+export const getDetailById = (id,operate) => {
     return (dispatch) => {
         let options = {
             url: StringConstants.SERVER_URL + "/sysUser/getSysUserById",
             data: {"id":id}
         };
+
+
         util.ajax(options).then((res => {
             let data = res.data;
-            dispatch(getDetailByIdAction(data));
+            debugger;
+            dispatch(getDetailByIdAction(data,operate));
         }));
 
     }
@@ -257,10 +260,10 @@ export const getDetailById = (id) => {
  * @param curOperRowObj  当前操作的表格行对象
  *
  */
-const getDetailByIdAction = (curOperRowObj) => ({
+const getDetailByIdAction = (curOperRowObj,opera) => ({
     type: ActionConstants.GET_DETAILBY_ID,
     curOperRowObj:fromJS(curOperRowObj),
-    showUpdateUserModal:true
+    opera
 });
 
 

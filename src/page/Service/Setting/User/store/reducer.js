@@ -38,7 +38,14 @@ export default (state = defaultState, action) => {
         case ActionConstants.UPDATE_USER_OPER:
             return state.set("userList",action.userList).set("totalSize",action.total).set("pageIndex",action.current).set("queryObj",fromJS({})).set("showUpdateUserModal",action.showAddUserModal);
         case ActionConstants.GET_DETAILBY_ID:
-            return state.set("curOperRowObj",action.curOperRowObj).set("showUpdateUserModal",action.showUpdateUserModal);
+            let showUpdateUserModal = false;
+            let showViewUserModal = false;
+            if(action.opera === "update"){
+                showUpdateUserModal = true;
+            }else if(action.opera === "view"){
+                showViewUserModal = true;
+            }
+            return state.set("curOperRowObj",action.curOperRowObj).set("showUpdateUserModal",fromJS(showUpdateUserModal)).set("showViewUserModal",fromJS(showViewUserModal));
         default:
             return state;
     }

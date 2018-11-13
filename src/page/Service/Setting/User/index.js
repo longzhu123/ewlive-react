@@ -25,7 +25,7 @@ class User extends PureComponent {
     }
 
     render() {
-        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, showUpdateModal,updateItem, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, isShowViewUserModal, isShowUpdateUserModal,curOperRowObj} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal,updateItem, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, isShowViewUserModal, isShowUpdateUserModal,curOperRowObj} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
         const userDataList = userList.toJS();
@@ -53,7 +53,7 @@ class User extends PureComponent {
                 align: "center",
                 render: (text, record) => (
                     <span className='control-container'>
-                        <button className="ant-btn viewBtn" onClick={() => viewDetail(record.id)}>查看</button>
+                        <button className="ant-btn viewBtn" onClick={() => showViewModal(record.id)}>查看</button>
                         <button className="ant-btn updateBtn" onClick={() => showUpdateModal(record.id)}>修改</button>
                     </span>
                 ),
@@ -111,9 +111,7 @@ class User extends PureComponent {
                         onCancel={() => isShowViewUserModal(false)}
                         destroyOnClose
                     >
-                        <p>Some contents...</p>
-                        <p>Some contents...</p>
-                        <p>Some contents...</p>
+                        <ViewDetailUserForm/>
                     </Modal>
                 </div>
 
@@ -435,12 +433,12 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(actionCreators.loadUserList(current, querParams));
     },
     //查看单条记录的详情
-    viewDetail(id) {
-        dispatch(actionCreators.isShowViewUserModal(true));
+    showViewModal(id) {
+        dispatch(actionCreators.getDetailById(id,"view"));
     },
     //显示修改模态框
     showUpdateModal(id) {
-        dispatch(actionCreators.getDetailById(id));
+        dispatch(actionCreators.getDetailById(id,"update"));
     },
     //修改操作
     updateItem(updateObj,queryObj){
