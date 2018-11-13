@@ -22,12 +22,7 @@ export const loadUserList = (current,querParams) => {
         };
         util.ajax(options).then((res => {
             dispatch(loadUserListAction(res.data.records,res.data.current,res.data.total));
-        })).catch((e => {
-            Modal.error({
-                "title": "错误提示",
-                "content": "网络异常"
-            })
-        }))
+        }));
     }
 };
 
@@ -73,19 +68,9 @@ export const delItem = (selectIds,querParams) => {
             };
             util.ajax(userOptions).then((res => {
                 dispatch(delItemAction(res.data));
-            })).catch((e => {
-                Modal.error({
-                    "title": "错误提示",
-                    "content": "网络异常"
-                });
-            }))
+            }));
 
-        })).catch((e => {
-            Modal.error({
-                "title": "错误提示",
-                "content": "网络异常"
-            })
-        }))
+        }));
 
     }
 };
@@ -110,12 +95,7 @@ export const filterForm = (queryObj) => {
         };
         util.ajax(options).then((res => {
             dispatch(loadUserListAction(res.data.records,res.data.current,res.data.total));
-        })).catch((e => {
-            Modal.error({
-                "title": "错误提示",
-                "content": "网络异常"
-            })
-        }))
+        }));
     }
 };
 
@@ -139,12 +119,7 @@ export const resetLoadGrid = (querParams) => {
         };
         util.ajax(options).then((res => {
             dispatch(resetLoadGridAction(res.data.records,res.data.current,res.data.total));
-        })).catch((e => {
-            Modal.error({
-                "title": "错误提示",
-                "content": "网络异常"
-            })
-        }))
+        }));
     }
 };
 
@@ -220,33 +195,45 @@ export const addUserOper = (addUserObj,querParams) => {
             };
             util.ajax(userOptions).then((res => {
                 dispatch(addUserOperAction(res));
-            })).catch((e => {
-                Modal.error({
-                    "title": "错误提示",
-                    "content": "网络异常"
-                });
-            }))
-        })).catch((e => {
-            Modal.error({
-                "title": "错误提示",
-                "content": "网络异常"
-            })
-        }))
+            }));
+        }));
     }
 };
 
 
 
 //修改用户Action
-const updateUserOperAction = (updateUserObj) => ({
+const updateUserOperAction = (res) => ({
     type: ActionConstants.UPDATE_USER_OPER,
-    updateUserObj
+    userList: fromJS(res.data.records),
+    current:res.data.current,
+    total:res.data.total,
+    showUpdateUserModal:false
 });
 
 //修改用户
-export const updateUserOper = (updateUserObj) => {
+export const updateItem = (updateObj,querParams) => {
     return (dispatch) => {
-        dispatch(updateUserOperAction(updateUserObj));
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysUser/updateSysUserById",
+            data: updateObj
+        };
+        util.ajax(options).then((res => {
+            Modal.success({
+                "title": "信息提示",
+                "content": "修改成功"
+            });
+
+            querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
+            querParams.size = StringConstants.PAGE_SIZE;
+            let userOptions = {
+                url: StringConstants.SERVER_URL + "/sysUser/likeSearchSysUserByPage",
+                data: querParams
+            };
+            util.ajax(userOptions).then((res => {
+                dispatch(updateUserOperAction(res));
+            }))
+        }));
     }
 };
 
@@ -260,11 +247,6 @@ export const getDetailById = (id) => {
         util.ajax(options).then((res => {
             let data = res.data;
             dispatch(getDetailByIdAction(data));
-        })).catch((e => {
-            Modal.error({
-                "title": "错误提示",
-                "content": "网络异常"
-            })
         }));
 
     }

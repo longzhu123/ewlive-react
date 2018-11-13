@@ -25,7 +25,7 @@ class User extends PureComponent {
     }
 
     render() {
-        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, updateItem, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, addUserOper, isShowViewUserModal, isShowUpdateUserModal,curOperRowObj} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, viewDetail, showUpdateModal,updateItem, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, isShowViewUserModal, isShowUpdateUserModal,curOperRowObj} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
         const userDataList = userList.toJS();
@@ -54,7 +54,7 @@ class User extends PureComponent {
                 render: (text, record) => (
                     <span className='control-container'>
                         <button className="ant-btn viewBtn" onClick={() => viewDetail(record.id)}>查看</button>
-                        <button className="ant-btn updateBtn" onClick={() => updateItem(record.id)}>修改</button>
+                        <button className="ant-btn updateBtn" onClick={() => showUpdateModal(record.id)}>修改</button>
                     </span>
                 ),
             }
@@ -121,10 +121,11 @@ class User extends PureComponent {
                     <Modal
                         title="修改用户"
                         visible={showUpdateUserModal}
+                        onOk={() => this.updateUser(this.updateUserFormRef,toCurOperRowObj.id,querParams)}
                         onCancel={() => isShowUpdateUserModal(false)}
                         destroyOnClose
                     >
-                       <UpdateUserForm ref={this.updateUserFormRef} curObj={curOperRowObj}/>
+                       <UpdateUserForm ref={this.updateUserFormRef}/>
                     </Modal>
                 </div>
             </div>
@@ -139,7 +140,16 @@ class User extends PureComponent {
                 this.props.addUserOper(values,querParam);
             }
         });
-    }
+    };
+
+    updateUser = (updateUserForm,id,querParam) => {
+        updateUserForm.current.validateFields((err, values) => {
+            if (!err) {
+                values.id=id;
+                this.props.updateItem(values,querParam);
+            }
+        });
+    };
 }
 
 //过滤表单组件
@@ -270,8 +280,6 @@ class UpdateUserForm extends PureComponent {
 
     render() {
         const {getFieldDecorator} = this.props.form;
-        console.log("哎呦不错哦");
-        console.log(toCurOperRowObj);
         const formItemLayout = {
             labelCol: {
                 xs: {span: 24},
@@ -428,13 +436,15 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //查看单条记录的详情
     viewDetail(id) {
-        console.log("查询详情====>" + id);
         dispatch(actionCreators.isShowViewUserModal(true));
     },
     //显示修改模态框
-    updateItem(id) {
-        console.log("修改详情====>" + id);
+    showUpdateModal(id) {
         dispatch(actionCreators.getDetailById(id));
+    },
+    //修改操作
+    updateItem(updateObj,queryObj){
+        dispatch(actionCreators.updateItem(updateObj,queryObj));
     },
     //条件查询表格
     filterForm(queryObj) {
