@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Select, Form, Radio, Checkbox, Button, Input, DatePicker} from "antd";
+import {Button, Checkbox, DatePicker, Form, Input, Select} from "antd";
 import util from '../../../util/util';
 import './index.css';
 import moment from "moment"
@@ -8,8 +8,6 @@ import 'moment/locale/zh-cn';
 
 moment.locale('zh-cn');
 const FormItem = Form.Item;
-const Option = Select.Option;
-const {RangePicker} = DatePicker;
 
 //公共的搜索表单组件
 class SearchForm extends Component {
