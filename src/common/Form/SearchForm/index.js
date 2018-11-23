@@ -17,15 +17,15 @@ class SearchForm extends Component {
 
 
     //搜索表单提交事件
-    commit = ()=>{
-        const {getFieldsValue}=this.props.form;
-        let date1=getFieldsValue();
-        date1.isStart =  date1.isStart["_i"]; // 把向后段传值的moment的对象改为其_i属性；
-        this.props.formSubmit(date1);//最终 向后端输出；
+    search = ()=>{
+        let fieldsValue = this.props.form.getFieldsValue();
+        //调用父组件filterForm方法
+        this.props.filterForm(fieldsValue);
     };
 
     //重置方法
     reset = () => {
+        console.log(1);
         this.props.form.resetFields();
         this.props.resetLoadGrid();
     };
@@ -121,8 +121,8 @@ class SearchForm extends Component {
         return (<Form layout="inline">
             {this.initSearchFormList()}
             <FormItem>
-                <Button type="primary" onClick={this.commit()}>查询</Button>
-                <Button onClick={this.reset()}>重置</Button>
+                <Button type="primary" onClick={this.search} style={{margin: '0 20px'}}>查询</Button>
+                <Button onClick={this.reset}>重置</Button>
             </FormItem>
         </Form>)
     }
