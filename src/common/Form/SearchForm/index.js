@@ -25,7 +25,6 @@ class SearchForm extends Component {
 
     //重置方法
     reset = () => {
-        console.log(1);
         this.props.form.resetFields();
         this.props.resetLoadGrid();
     };
