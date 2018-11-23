@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {Button, Card, Form, Input, Table} from 'antd';
+import {Button, Card, Form, Input, Table,Icon} from 'antd';
 
 import * as StringConstants from '../../../../constant';
 import './index.css';
@@ -53,8 +53,8 @@ class User extends PureComponent {
                 align: "center",
                 render: (text, record) => (
                     <span className='control-container'>
-                        <button className="ant-btn viewBtn" onClick={() => showViewModal(record.id)}>查看</button>
-                        <button className="ant-btn updateBtn" onClick={() => showUpdateModal(record.id)}>修改</button>
+                        <button className="ant-btn viewBtn" onClick={() => showViewModal(record.id)}><Icon type="eye" />查看</button>
+                        <button className="ant-btn updateBtn" onClick={() => showUpdateModal(record.id)}><Icon type="edit" />修改</button>
                     </span>
                 ),
             }
