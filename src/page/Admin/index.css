@@ -20,25 +20,44 @@
 }
 .viewBtn{
     color: #fff;
-    background-color: #00CCCC;
-    border-color: #00CCCC;
+    background-color: #00a65a;
+    border-color: #008d4c;
 }
 
 .viewBtn:hover, .viewBtn:focus {
     color: #fff;
-    background-color: #00ccccd1;
-    border-color: #00ccccd1;
+    background-color: #449d44;
+    border-color: #398439;
+    box-shadow: none;
+    opacity: .85;
 }
 
 
 .updateBtn{
     color: #fff;
-    background-color: #FF6699;
-    border-color: #FF6699;
+    background-color: #f39c12;
+    border-color: #e08e0b;
 }
 
 .updateBtn:hover, .updateBtn:focus {
     color: #fff;
-    background-color: #ff6699d1;
-    border-color: #ff6699d1;
+    background-color: #ec971f;
+    border-color: #d58512;
+    box-shadow: none;
+    opacity: .85;
+}
+
+
+.delBtn{
+    color: #fff;
+    background-color: #dd4b39;;
+    border-color: #dd4b39;;
+}
+
+.delBtn:hover, .delBtn:focus {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    box-shadow: none;
+    opacity: .85;
 }

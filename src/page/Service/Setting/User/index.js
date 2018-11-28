@@ -87,8 +87,8 @@ class User extends PureComponent {
                     <div>
                         <Button type="primary" icon="plus" style={{marginRight: '10px'}}
                                 onClick={() => isShowAddUserModal(true)}>添加</Button>
-                        <Button type="danger" icon="delete"
-                                onClick={() => delItem(selectDataIds, querParams)}>删除</Button>
+                        <button className="ant-btn delBtn"  onClick={() => delItem(selectDataIds, querParams)}><Icon
+                            type="delete"/>删除</button>
                     </div>
                     <br/>
                     <Table
