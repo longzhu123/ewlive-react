@@ -97,6 +97,7 @@ class User extends PureComponent {
                         bordered
                         columns={columns}
                         dataSource={userDataList}
+                        size="small"
                         pagination={{
                             showQuickJumper: true,
                             current: pageIndex,
