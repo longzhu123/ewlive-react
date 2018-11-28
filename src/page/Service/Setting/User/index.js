@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Button, Card, Form, Input, Table, Icon} from 'antd';
 import SearchForm from '../../../../common/Form/SearchForm';
+import EditForm from '../../../../common/Form/EditForm';
 import * as StringConstants from '../../../../constant';
 import './index.css';
 import {actionCreators} from "./store";
@@ -61,6 +62,7 @@ class User extends PureComponent {
                 ),
             }
         ];
+        //搜索表单组件的配置参数
         const searchFormOptions = [
             {
                 type: "input",
@@ -77,18 +79,73 @@ class User extends PureComponent {
                 field: "nickName"
             }
         ];
+        //编辑表单的配置参数
+        const editFormOptions = [
+            {
+                type: "input",
+                lable: "邮箱",
+                placeholder: "邮箱",
+                width: "200px",
+                field: "email",
+                validate: [
+                    {
+                        type: 'email', message: '邮箱格式不正确!',
+                    },
+                    {
+                        required: true, message: '请输入邮箱!',
+                    }
+                ]
+            },
+            {
+                type: "input",
+                lable: "密码",
+                placeholder: "密码",
+                width: "200px",
+                field: "password",
+                validate: [
+                    {required: true, message: '请输入密码!'}
+                ]
+            },
+            {
+                type: "input",
+                lable: "昵称",
+                placeholder: "昵称",
+                width: "200px",
+                field: "nickName",
+                validate: [
+                    {required: true, message: '请输入昵称!'}
+                ]
+            },
+            {
+                type: "input",
+                lable: "优币",
+                placeholder: "优币",
+                width: "200px",
+                field: "ewCoin",
+                validate: [
+                    {
+                        pattern: new RegExp(/^[1-9]\d*$/, "g"),
+                        message: '只能输入数值格式'
+                    }, {
+                        required: true, message: '请输入优币!',
+                    }
+                ]
+            }
+        ];
         return (
             <div>
                 <Card>
                     {/*将父组件的filterForm方法传给子组件filterForm*/}
-                    <SearchForm searchOptions={searchFormOptions} resetLoadGrid={resetLoadGrid} filterForm={filterForm}/>
+                    <SearchForm searchOptions={searchFormOptions} resetLoadGrid={resetLoadGrid}
+                                filterForm={filterForm}/>
                 </Card>
                 <Card>
                     <div>
                         <Button type="primary" icon="plus" style={{marginRight: '10px'}}
                                 onClick={() => isShowAddUserModal(true)}>添加</Button>
-                        <button className="ant-btn delBtn"  onClick={() => delItem(selectDataIds, querParams)}><Icon
-                            type="delete"/>删除</button>
+                        <button className="ant-btn delBtn" onClick={() => delItem(selectDataIds, querParams)}><Icon
+                            type="delete"/>删除
+                        </button>
                     </div>
                     <br/>
                     <Table
@@ -114,11 +171,12 @@ class User extends PureComponent {
                     <Modal
                         title="添加用户"
                         visible={showAddUserModal}
-                        onOk={() => this.addUser(this.addUserFormRef, querParams)}
+                        onOk={this.addUserFormRef.editFormValidate}
                         onCancel={() => isShowAddUserModal(false)}
                         destroyOnClose
                     >
-                        <AddUserForm ref={this.addUserFormRef}/>
+                        <EditForm editFormOption={editFormOptions} editType="add" editAction={this.props.addUserOper} ref={this.addUserFormRef}/>
+                        {/*<AddUserForm ref={this.addUserFormRef}/>*/}
                     </Modal>
                 </div>
 
@@ -150,14 +208,6 @@ class User extends PureComponent {
 
     }
 
-    //添加用户前validate
-    addUser = (addUserForm, querParam) => {
-        addUserForm.current.validateFields((err, values) => {
-            if (!err) {
-                this.props.addUserOper(values, querParam);
-            }
-        });
-    };
 
     updateUser = (updateUserForm, id, querParam) => {
         updateUserForm.current.validateFields((err, values) => {
@@ -167,128 +217,6 @@ class User extends PureComponent {
             }
         });
     };
-}
-
-//过滤表单组件
-class FilterForm extends PureComponent {
-
-    //获取过滤表单的submit事件
-    handleFilterSubmit = (e) => {
-        e.preventDefault();
-        let fieldsValue = this.props.form.getFieldsValue();
-        //调用父组件filterForm方法
-        this.props.filterForm(fieldsValue);
-    };
-
-
-    //重置
-    reset = () => {
-        this.props.form.resetFields();
-        this.props.resetLoadGrid();
-    };
-
-    render() {
-        const {getFieldDecorator} = this.props.form;
-        return (
-            <Form layout="inline">
-                <FormItem label="邮箱">
-                    {
-                        getFieldDecorator('email')(
-                            <Input placeholder="请输入邮箱"/>
-                        )
-                    }
-                </FormItem>
-                <FormItem label="昵称">
-                    {
-                        getFieldDecorator('nickName')(
-                            <Input placeholder="请输入昵称"/>
-                        )
-                    }
-                </FormItem>
-                <FormItem>
-                    <Button type="primary" style={{margin: '0 20px'}} onClick={this.handleFilterSubmit}>查询</Button>
-                    <Button onClick={this.reset}>重置</Button>
-                </FormItem>
-            </Form>
-        );
-    }
-}
-
-//添加表单组件
-class AddUserForm extends PureComponent {
-
-
-    render() {
-        const {getFieldDecorator} = this.props.form;
-        const formItemLayout = {
-            labelCol: {
-                xs: {span: 24},
-                sm: {span: 4},
-            },
-            wrapperCol: {
-                xs: {span: 24},
-                sm: {span: 19},
-            },
-        };
-        return (
-            <Form>
-                <FormItem
-                    {...formItemLayout}
-                    label="邮箱"
-                >
-                    {getFieldDecorator('email', {
-                        rules: [{
-                            type: 'email', message: '邮箱格式不正确!',
-                        }, {
-                            required: true, message: '请输入邮箱!',
-                        }],
-                    })(
-                        <Input placeholder="请输入邮箱"/>
-                    )}
-                </FormItem>
-                <FormItem
-                    {...formItemLayout}
-                    label="密码"
-                >
-                    {getFieldDecorator('password', {
-                        rules: [{
-                            required: true, message: '请输入密码!',
-                        }],
-                    })(
-                        <Input placeholder="请输入密码"/>
-                    )}
-                </FormItem>
-                <FormItem
-                    {...formItemLayout}
-                    label="昵称"
-                >
-                    {getFieldDecorator('nickName', {
-                        rules: [{
-                            required: true, message: '请输入昵称!',
-                        }],
-                    })(
-                        <Input placeholder="请输入昵称"/>
-                    )}
-                </FormItem>
-                <FormItem
-                    {...formItemLayout}
-                    label="优币"
-                >
-                    {getFieldDecorator('ewCoin', {
-                        rules: [{
-                            pattern: new RegExp(/^[1-9]\d*$/, "g"),
-                            message: '只能输入数值格式'
-                        }, {
-                            required: true, message: '请输入优币!',
-                        }]
-                    })(
-                        <Input placeholder="请输入优币"/>
-                    )}
-                </FormItem>
-            </Form>
-        );
-    }
-
 }
 
 
@@ -400,8 +328,7 @@ class ViewDetailUserForm extends PureComponent {
     }
 }
 
-FilterForm = Form.create({})(FilterForm);
-AddUserForm = Form.create({})(AddUserForm);
+
 UpdateUserForm = Form.create({})(UpdateUserForm);
 
 const mapState = (state) => ({
