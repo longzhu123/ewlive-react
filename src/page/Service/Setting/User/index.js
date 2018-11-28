@@ -26,6 +26,10 @@ class User extends PureComponent {
         this.updateUserFormRef = React.createRef();
     }
 
+    onRef = (ref) => {
+        this.addUserFormRef= ref;
+    };
+
     render() {
         const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, isShowViewUserModal, isShowUpdateUserModal, curOperRowObj} = this.props;
         querParams = queryObj.toJS();
@@ -171,11 +175,11 @@ class User extends PureComponent {
                     <Modal
                         title="添加用户"
                         visible={showAddUserModal}
-                        onOk={this.addUserFormRef.editFormValidate}
+                        onOk={()=>{this.addUserFormRef.editFormValidate(this.addUserFormRef,querParams)}}
                         onCancel={() => isShowAddUserModal(false)}
                         destroyOnClose
                     >
-                        <EditForm editFormOption={editFormOptions} editType="add" editAction={this.props.addUserOper} ref={this.addUserFormRef}/>
+                        <EditForm editFormOption={editFormOptions} editType="add" editAction={this.props.addUserOper} onRef={this.onRef}/>
                         {/*<AddUserForm ref={this.addUserFormRef}/>*/}
                     </Modal>
                 </div>

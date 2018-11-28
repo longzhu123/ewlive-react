@@ -14,6 +14,10 @@ const {RangePicker} = DatePicker;
 //公共的编辑(增,删,改)表单组件
 class EditForm extends PureComponent {
 
+    componentDidMount(){
+        this.props.onRef(this)
+    }
+
     /**
      * 初始化编辑表单Form
      *
@@ -60,7 +64,7 @@ class EditForm extends PureComponent {
                         {getFieldDecorator(field, {initialValue: initialValue,rules:validate})(
                             <Input placeholder={placeholder}/>
                         )}
-                    </FormItem>
+                    </FormItem>;
                     editFormList.push(input);
                 }
                 else if (item.type === "select") {
@@ -85,7 +89,7 @@ class EditForm extends PureComponent {
                         })(
                             <Checkbox>{lable}</Checkbox>
                         )}
-                    </FormItem>
+                    </FormItem>;
                     editFormList.push(checkbox);
                 } else if (item.type === "date") {
                     const dateComponent = <FormItem label={lable} key={field}  {...formItemLayout}>
@@ -99,7 +103,7 @@ class EditForm extends PureComponent {
                                 placeholder={placeholder}
                             />
                         )}
-                    </FormItem>
+                    </FormItem>;
                     editFormList.push(dateComponent);
                 }
             })
@@ -118,9 +122,9 @@ class EditForm extends PureComponent {
     }
 
 
-    //添加用户前validate
-    editFormValidate = (editForm, querParam) => {
-        editForm.current.validateFields((err, values) => {
+    //编辑表单的validate
+    editFormValidate = (querParam) => {
+        this.props.form.validateFields((err, values) => {
             if (!err) {
                 let editType = this.props.editType;
                 if(editType === "update"){
