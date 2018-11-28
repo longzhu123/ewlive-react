@@ -122,19 +122,24 @@ class EditForm extends PureComponent {
     }
 
 
-    //编辑表单的validate
-    editFormValidate = (querParam) => {
+    //添加表单的validate
+    addFormValidate = (querParam) => {
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                let editType = this.props.editType;
-                if(editType === "update"){
-                    values.id = this.props.id;
-                }
                 this.props.editAction(values, querParam);
             }
         });
     };
 
+    //修改表单的validate
+    updateFormValidate = (id,querParam) => {
+        this.props.form.validateFields((err, values) => {
+            if (!err) {
+                values.id=id;
+                this.props.editAction(values, querParam);
+            }
+        });
+    };
 
 }
 

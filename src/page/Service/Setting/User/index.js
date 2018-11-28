@@ -22,6 +22,8 @@ class User extends PureComponent {
 
     constructor(prop) {
         super(prop);
+        this.addUserFormRef = React.createRef();
+        this.updateUserFormRef = React.createRef();
     }
 
     onRef = (ref) => {
@@ -174,12 +176,11 @@ class User extends PureComponent {
                     <Modal
                         title="添加用户"
                         visible={showAddUserModal}
-                        onOk={()=>{this.addUserFormRef.editFormValidate(querParams)}}
+                        onOk={()=>{this.addUserFormRef.addFormValidate(querParams)}}
                         onCancel={() => isShowAddUserModal(false)}
                         destroyOnClose
                     >
-                        <EditForm editFormOption={editFormOptions} editType="add" editAction={this.props.addUserOper} onRef={this.onRef}/>
-                        {/*<AddUserForm ref={this.addUserFormRef}/>*/}
+                        <EditForm editFormOption={editFormOptions}  editAction={this.props.addUserOper} onRef={this.onRef}/>
                     </Modal>
                 </div>
 
@@ -199,11 +200,11 @@ class User extends PureComponent {
                     <Modal
                         title="修改用户"
                         visible={showUpdateUserModal}
-                        onOk={() => this.updateUser(this.updateUserFormRef, toCurOperRowObj.id, querParams)}
+                        onOk={() =>this.updateUserFormRef.updateFormValidate(toCurOperRowObj.id,querParams)}
                         onCancel={() => isShowUpdateUserModal(false)}
                         destroyOnClose
                     >
-                        <UpdateUserForm ref={this.updateUserFormRef}/>
+                        <EditForm editFormOption={editFormOptions} editAction={this.props.updateItem} onRef={this.onRef}/>
                     </Modal>
                 </div>
             </div>
@@ -212,94 +213,6 @@ class User extends PureComponent {
     }
 
 
-    updateUser = (updateUserForm, id, querParam) => {
-        updateUserForm.current.validateFields((err, values) => {
-            if (!err) {
-                values.id = id;
-                this.props.updateItem(values, querParam);
-            }
-        });
-    };
-}
-
-
-//修改表单组件
-class UpdateUserForm extends PureComponent {
-
-    render() {
-        const {getFieldDecorator} = this.props.form;
-        const formItemLayout = {
-            labelCol: {
-                xs: {span: 24},
-                sm: {span: 4},
-            },
-            wrapperCol: {
-                xs: {span: 24},
-                sm: {span: 19},
-            },
-        };
-        return (
-            <Form>
-                <FormItem
-                    {...formItemLayout}
-                    label="邮箱"
-                >
-                    {getFieldDecorator('email', {
-                        initialValue: toCurOperRowObj ? toCurOperRowObj.email : "",
-                        rules: [{
-                            type: 'email', message: '邮箱格式不正确!',
-                        }, {
-                            required: true, message: '请输入邮箱!',
-                        }],
-                    })(
-                        <Input placeholder="请输入邮箱"/>
-                    )}
-                </FormItem>
-                <FormItem
-                    {...formItemLayout}
-                    label="密码"
-                >
-                    {getFieldDecorator('password', {
-                        initialValue: toCurOperRowObj ? toCurOperRowObj.password : "",
-                        rules: [{
-                            required: true, message: '请输入密码!',
-                        }],
-                    })(
-                        <Input placeholder="请输入密码"/>
-                    )}
-                </FormItem>
-                <FormItem
-                    {...formItemLayout}
-                    label="昵称"
-                >
-                    {getFieldDecorator('nickName', {
-                        initialValue: toCurOperRowObj ? toCurOperRowObj.nickName : "",
-                        rules: [{
-                            required: true, message: '请输入昵称!',
-                        }],
-                    })(
-                        <Input placeholder="请输入昵称"/>
-                    )}
-                </FormItem>
-                <FormItem
-                    {...formItemLayout}
-                    label="优币"
-                >
-                    {getFieldDecorator('ewCoin', {
-                        initialValue: toCurOperRowObj ? toCurOperRowObj.ewCoin : "",
-                        rules: [{
-                            pattern: new RegExp(/^[1-9]\d*$/, "g"),
-                            message: '只能输入数值格式'
-                        }, {
-                            required: true, message: '请输入优币!',
-                        }]
-                    })(
-                        <Input placeholder="请输入优币"/>
-                    )}
-                </FormItem>
-            </Form>
-        );
-    }
 }
 
 //查看详细表单组件
@@ -330,9 +243,6 @@ class ViewDetailUserForm extends PureComponent {
         );
     }
 }
-
-
-UpdateUserForm = Form.create({})(UpdateUserForm);
 
 const mapState = (state) => ({
     userList: state.get("userSettingReducer").get("userList"),
