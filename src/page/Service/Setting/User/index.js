@@ -22,12 +22,11 @@ class User extends PureComponent {
 
     constructor(prop) {
         super(prop);
-        this.addUserFormRef = React.createRef();
-        this.updateUserFormRef = React.createRef();
     }
 
     onRef = (ref) => {
         this.addUserFormRef= ref;
+        this.updateUserFormRef=ref;
     };
 
     render() {
@@ -175,7 +174,7 @@ class User extends PureComponent {
                     <Modal
                         title="添加用户"
                         visible={showAddUserModal}
-                        onOk={()=>{this.addUserFormRef.editFormValidate(this.addUserFormRef,querParams)}}
+                        onOk={()=>{this.addUserFormRef.editFormValidate(querParams)}}
                         onCancel={() => isShowAddUserModal(false)}
                         destroyOnClose
                     >
