@@ -84,8 +84,8 @@ class User extends PureComponent {
                 field: "nickName"
             }
         ];
-        //编辑表单的配置参数
-        const editFormOptions = [
+        //添加表单的配置参数
+        const addFormOptions = [
             {
                 type: "input",
                 lable: "邮箱",
@@ -137,6 +137,65 @@ class User extends PureComponent {
                 ]
             }
         ];
+        //编辑表单的配置参数
+        const updateFormOptions = [
+            {
+                type: "input",
+                lable: "邮箱",
+                placeholder: "邮箱",
+                width: "200px",
+                field: "email",
+                initialValue:toCurOperRowObj.email,
+                validate: [
+                    {
+                        type: 'email', message: '邮箱格式不正确!',
+                    },
+                    {
+                        required: true, message: '请输入邮箱!',
+                    }
+                ]
+            },
+            {
+                type: "input",
+                lable: "密码",
+                placeholder: "密码",
+                width: "200px",
+                field: "password",
+                initialValue:toCurOperRowObj.password,
+                validate: [
+                    {required: true, message: '请输入密码!'}
+                ]
+            },
+            {
+                type: "input",
+                lable: "昵称",
+                placeholder: "昵称",
+                width: "200px",
+                field: "nickName",
+                initialValue:toCurOperRowObj.nickName,
+                validate: [
+                    {required: true, message: '请输入昵称!'}
+                ]
+            },
+            {
+                type: "input",
+                lable: "优币",
+                placeholder: "优币",
+                width: "200px",
+                field: "ewCoin",
+                initialValue:toCurOperRowObj.ewCoin,
+                validate: [
+                    {
+                        pattern: new RegExp(/^[1-9]\d*$/, "g"),
+                        message: '只能输入数值格式'
+                    }, {
+                        required: true, message: '请输入优币!',
+                    }
+                ]
+            }
+        ];
+
+
         return (
             <div>
                 <Card>
@@ -180,7 +239,7 @@ class User extends PureComponent {
                         onCancel={() => isShowAddUserModal(false)}
                         destroyOnClose
                     >
-                        <EditForm editFormOption={editFormOptions}  editAction={this.props.addUserOper} onRef={this.onRef}/>
+                        <EditForm editFormOption={addFormOptions}  editAction={this.props.addUserOper} onRef={this.onRef}/>
                     </Modal>
                 </div>
 
@@ -204,7 +263,7 @@ class User extends PureComponent {
                         onCancel={() => isShowUpdateUserModal(false)}
                         destroyOnClose
                     >
-                        <EditForm editFormOption={editFormOptions} editAction={this.props.updateItem} onRef={this.onRef}/>
+                        <EditForm editFormOption={updateFormOptions} editAction={this.props.updateItem} onRef={this.onRef}/>
                     </Modal>
                 </div>
             </div>
