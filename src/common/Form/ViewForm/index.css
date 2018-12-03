@@ -1,0 +1,18 @@
+.detail-form li {
+    margin: 20px 0;
+    height: 20px;
+    line-height: 20px;
+    font-size: 15px;
+    color: #333;
+}
+
+.detail-form-left {
+    float: left;
+    width: 75px;
+    text-align: right;
+    color: #999;
+}
+
+.detail-form-content {
+    padding-left: 85px;
+}

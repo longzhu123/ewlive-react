@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Button, Card, Form, Input, Table, Icon} from 'antd';
 import SearchForm from '../../../../common/Form/SearchForm';
+import ViewForm from '../../../../common/Form/ViewForm';
 import EditForm from '../../../../common/Form/EditForm';
 import * as StringConstants from '../../../../constant';
 import './index.css';
@@ -84,6 +85,28 @@ class User extends PureComponent {
                 field: "nickName"
             }
         ];
+
+        //详细的配置参数
+        const  viewOptions = [
+            {
+                type:"text",
+                lable:"邮箱",
+                field:"email"
+            },
+            {
+                type:"text",
+                lable:"昵称",
+                field:"nickName"
+            },
+            {
+                type:"text",
+                lable:"优币",
+                field:"ewCoin"
+            }
+
+        ];
+
+
         //添加表单的配置参数
         const addFormOptions = [
             {
@@ -251,7 +274,7 @@ class User extends PureComponent {
                         onCancel={() => isShowViewUserModal(false)}
                         destroyOnClose
                     >
-                        <ViewDetailUserForm/>
+                        <ViewForm viewOptions={viewOptions} viewData={toCurOperRowObj}/>
                     </Modal>
                 </div>
 
@@ -274,34 +297,7 @@ class User extends PureComponent {
 
 }
 
-//查看详细表单组件
-class ViewDetailUserForm extends PureComponent {
 
-    render() {
-        return (
-            <div>
-                <ul className="detail-form">
-                    <li>
-                        <div className="detail-form-left">邮箱 :</div>
-                        <div className="detail-form-content">{toCurOperRowObj.email}</div>
-                    </li>
-                    <li>
-                        <div className="detail-form-left">密码 :</div>
-                        <div className="detail-form-content">{toCurOperRowObj.password}</div>
-                    </li>
-                    <li>
-                        <div className="detail-form-left">昵称 :</div>
-                        <div className="detail-form-content">{toCurOperRowObj.nickName}</div>
-                    </li>
-                    <li>
-                        <div className="detail-form-left">优币 :</div>
-                        <div className="detail-form-content">{toCurOperRowObj.ewCoin}</div>
-                    </li>
-                </ul>
-            </div>
-        );
-    }
-}
 
 const mapState = (state) => ({
     userList: state.get("userSettingReducer").get("userList"),
