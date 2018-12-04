@@ -261,12 +261,3 @@ const getDetailByIdAction = (curOperRowObj,opera) => ({
     curOperRowObj:fromJS(curOperRowObj),
     opera
 });
-
-
-
-//查看详情字典
-export const viewDicOper = (viewDicObj) => {
-    return (dispatch) => {
-        dispatch(updateDicOperAction(viewDicObj));
-    }
-};

@@ -30,7 +30,6 @@ export default (state = defaultState, action) => {
         case ActionConstants.IS_SHOW_ADD_DIC_MODAL:
             return state.set("showAddDicModal",action.isShow);
         case ActionConstants.IS_SHOW_VIEW_DIC_MODAL:
-            debugger;
             return state.set("showViewDicModal",action.isShow);
         case ActionConstants.IS_SHOW_UPDATE_DIC_MODAL:
             return state.set("showUpdateDicModal",action.isShow);

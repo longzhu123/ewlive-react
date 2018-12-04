@@ -264,12 +264,3 @@ const getDetailByIdAction = (curOperRowObj,opera) => ({
     curOperRowObj:fromJS(curOperRowObj),
     opera
 });
-
-
-
-//查看详情用户
-export const viewUserOper = (viewUserObj) => {
-    return (dispatch) => {
-        dispatch(updateUserOperAction(viewUserObj));
-    }
-};
