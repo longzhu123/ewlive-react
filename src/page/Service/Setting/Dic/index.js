@@ -96,7 +96,7 @@ class Dic extends PureComponent {
                 placeholder: "字典名称",
                 width: "200px",
                 field: "dicName",
-                initialValue:toCurOperRowObj.nickName,
+                initialValue:toCurOperRowObj.dicName,
                 validate: [
                     {required: true, message: '请输入字典名称!'}
                 ]
