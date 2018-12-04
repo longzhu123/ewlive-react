@@ -95,7 +95,6 @@ class User extends PureComponent {
                 lable:"优币",
                 field:"ewCoin"
             }
-
         ];
 
 

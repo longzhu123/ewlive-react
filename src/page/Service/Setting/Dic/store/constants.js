@@ -1,1 +1,25 @@
-export  const  LOAD_DIC_LIST = "LOAD_DIC_LIST";
+export const LOAD_DIC_LIST = "LOAD_DIC_LIST";
+
+export const TABLE_SELECT_CHANGE = "TABLE_SELECT_CHANGE";
+
+export const TABLE_DEL_ITEM = "TABLE_DEL_ITEM";
+
+export const CHANGE_FILTER_PARAM = "CHANGE_FILTER_PARAM";
+
+export const RESET_LOAD_GRID = "RESET_LOAD_GRID ";
+
+export const IS_SHOW_ADD_DIC_MODAL = "IS_SHOW_ADD_DIC_MODAL";
+
+export const IS_SHOW_VIEW_DIC_MODAL = "IS_SHOW_VIEW_DIC_MODAL";
+
+export const IS_SHOW_UPDATE_DIC_MODAL = "IS_SHOW_UPDATE_DIC_MODAL";
+
+export const ADD_DIC_OPER = "ADD_DIC_OPER";
+
+export const UPDATE_DIC_OPER = "UPDATE_DIC_OPER";
+
+export const VIEW_DIC_OPER = "VIEW_DIC_OPER";
+
+export const GET_DETAILBY_ID = "GET_DETAILBY_ID";
+
+
