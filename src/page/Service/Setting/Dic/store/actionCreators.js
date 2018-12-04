@@ -261,3 +261,25 @@ const getDetailByIdAction = (curOperRowObj,opera) => ({
     curOperRowObj:fromJS(curOperRowObj),
     opera
 });
+
+
+
+//根据字典id查询字典项信息
+export const getDicItemById = (querParams) => {
+    return (dispatch) => {
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysDicItem/likeSearchSysDicItemByPage",
+            data: querParams
+        };
+        util.ajax(options).then((res => {
+            let data = res.data;
+            dispatch(getDicItemByIdAction(data));
+        }));
+    }
+};
+
+//根据字典id查询字典项信息Action
+const getDicItemByIdAction = (dicItemList) => ({
+    type: ActionConstants.GET_DIC_ITEM_BY_DICID,
+    dicItemList:dicItemList
+});

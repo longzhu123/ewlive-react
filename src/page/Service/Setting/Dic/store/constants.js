@@ -20,4 +20,6 @@ export const UPDATE_DIC_OPER = "UPDATE_DIC_OPER";
 
 export const GET_DETAILBY_ID = "GET_DIC_DETAILBY_ID";
 
+export const GET_DIC_ITEM_BY_DICID = "GET_DIC_ITEM_BY_DICID";
+
 

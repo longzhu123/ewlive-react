@@ -27,7 +27,7 @@ class Dic extends PureComponent {
     };
 
     render() {
-        const {dicList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddDicModal, showAddDicModal, showViewDicModal, showUpdateDicModal, isShowViewDicModal, isShowUpdateDicModal, curOperRowObj} = this.props;
+        const {dicList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showDicItemSettingModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddDicModal, showAddDicModal, showViewDicModal, showUpdateDicModal, isShowViewDicModal, isShowUpdateDicModal, curOperRowObj} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
         const dicDataList = dicList.toJS();
@@ -47,8 +47,8 @@ class Dic extends PureComponent {
                 align: "center",
                 render: (text, record) => (
                     <span className='control-container'>
-                         <Button type="primary" ghost onClick={() => showViewModal(record.id)}>查看</Button>
-                         <Button type="primary" ghost onClick={() => showUpdateModal(record.id)}>修改</Button>
+                        <Button type="primary" ghost onClick={() => showUpdateModal(record.id)}>修改</Button>
+                        <Button type="primary" ghost onClick={() => showDicItemSettingModal(record.id)}>字典项设置</Button>
                     </span>
                 ),
             }
@@ -227,9 +227,10 @@ const mapDispatchToProps = (dispatch) => ({
     onShowSizeChange(current) {
         dispatch(actionCreators.loadDicList(current, querParams));
     },
-    //查看单条记录的详情
-    showViewModal(id) {
-        dispatch(actionCreators.getDetailById(id, "view"));
+    //显示字典项设置的模态框
+    showDicItemSettingModal(id) {
+        let queryParams = {dicId:id,current:1,size:StringConstants.PAGE_SIZE};
+        dispatch(actionCreators.getDicItemById(queryParams));
     },
     //显示修改模态框
     showUpdateModal(id) {
