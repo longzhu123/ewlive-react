@@ -104,8 +104,8 @@ class EditForm extends PureComponent {
                         )}
                     </FormItem>;
                     editFormList.push(dateComponent);
-                    return index;
                 }
+                return index;
             })
         }
         return editFormList;
