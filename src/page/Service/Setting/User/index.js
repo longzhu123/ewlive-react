@@ -55,8 +55,7 @@ class User extends PureComponent {
                 render: (text, record) => (
                     <span className='control-container'>
                         <button className="ant-btn viewBtn" onClick={() => showViewModal(record.id)}><Icon type="eye"/>查看</button>
-                        <button className="ant-btn updateBtn" onClick={() => showUpdateModal(record.id)}><Icon
-                            type="edit"/>修改</button>
+                        <button className="ant-btn updateBtn" onClick={() => showUpdateModal(record.id)}><Icon type="edit"/>修改</button>
                     </span>
                 ),
             }
