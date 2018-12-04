@@ -58,7 +58,6 @@ class SearchForm extends Component {
                 let width = item.width;   //width
                 let list = item.list || [];    //option
                 let field = item.field;   // 字段key
-
                 if (item.type === "input") {
                     const input = <FormItem label={lable} key={field}>
                         {getFieldDecorator(field, {initialValue: initialValue})(
@@ -107,6 +106,7 @@ class SearchForm extends Component {
                     formItemList.push(dateComponent);
 
                 }
+                return index;
             })
 
         }

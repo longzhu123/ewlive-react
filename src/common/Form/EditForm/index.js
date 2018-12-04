@@ -1,5 +1,5 @@
-import React, {Component, PureComponent} from 'react';
-import {Select, Form, Radio, Checkbox, Button, Input, DatePicker} from "antd";
+import React, {PureComponent} from 'react';
+import {Checkbox, DatePicker, Form, Input, Select} from "antd";
 import util from '../../../util/util';
 import './index.css';
 import moment from "moment"
@@ -8,8 +8,7 @@ import 'moment/locale/zh-cn';
 
 moment.locale('zh-cn');
 const FormItem = Form.Item;
-const Option = Select.Option;
-const {RangePicker} = DatePicker;
+
 
 //公共的编辑(增,删,改)表单组件
 class EditForm extends PureComponent {
@@ -105,6 +104,7 @@ class EditForm extends PureComponent {
                         )}
                     </FormItem>;
                     editFormList.push(dateComponent);
+                    return index;
                 }
             })
         }

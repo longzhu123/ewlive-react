@@ -17,7 +17,7 @@ class ViewForm extends Component {
             }
      */
     initViewFormList = () => {
-        let formList = new Array();
+        let formList = [];
 
         const  {viewData,viewOptions} = this.props;
         viewOptions.map((options, index) =>

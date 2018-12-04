@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {Button, Card, Form, Input, Table, Icon} from 'antd';
+import {Button, Card, Icon, Table} from 'antd';
 import SearchForm from '../../../../common/Form/SearchForm';
 import ViewForm from '../../../../common/Form/ViewForm';
 import EditForm from '../../../../common/Form/EditForm';
@@ -9,7 +9,6 @@ import './index.css';
 import {actionCreators} from "./store";
 import {Modal} from "antd/lib/index";
 
-const FormItem = Form.Item;
 const confirm = Modal.confirm;
 let querParams = {};
 let toCurOperRowObj = {};

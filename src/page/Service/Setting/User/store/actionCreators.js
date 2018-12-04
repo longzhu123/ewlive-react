@@ -268,12 +268,6 @@ const getDetailByIdAction = (curOperRowObj,opera) => ({
 
 
 
-//查看详情用户Action
-const viewUserOperAction = (viewUserObj) => ({
-    type: ActionConstants.VIEW_USER_OPER,
-    viewUserObj
-});
-
 //查看详情用户
 export const viewUserOper = (viewUserObj) => {
     return (dispatch) => {
