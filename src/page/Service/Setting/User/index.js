@@ -7,7 +7,7 @@ import EditForm from '../../../../common/Form/EditForm';
 import * as StringConstants from '../../../../constant';
 import './index.css';
 import {actionCreators} from "./store";
-import {Modal} from "antd/lib/index";
+import {Modal} from "antd";
 
 const confirm = Modal.confirm;
 let querParams = {};
@@ -18,12 +18,6 @@ class User extends PureComponent {
 
     componentDidMount() {
         this.props.loadUserList();
-    }
-
-    constructor(prop) {
-        super(prop);
-        this.addUserFormRef = React.createRef();
-        this.updateUserFormRef = React.createRef();
     }
 
     onRef = (ref) => {
