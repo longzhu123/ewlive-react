@@ -244,14 +244,10 @@ export const getDetailById = (id,operate) => {
             url: StringConstants.SERVER_URL + "/sysDic/getSysDicById",
             data: {"id":id}
         };
-
-
         util.ajax(options).then((res => {
             let data = res.data;
-            debugger;
             dispatch(getDetailByIdAction(data,operate));
         }));
-
     }
 };
 

@@ -248,7 +248,6 @@ export const getDetailById = (id,operate) => {
 
         util.ajax(options).then((res => {
             let data = res.data;
-            debugger;
             dispatch(getDetailByIdAction(data,operate));
         }));
 
