@@ -21,8 +21,8 @@ class User extends PureComponent {
     }
 
     onRef = (ref) => {
-        this.addUserFormRef= ref;
-        this.updateUserFormRef=ref;
+        this.addUserFormRef = ref;
+        this.updateUserFormRef = ref;
     };
 
     render() {
@@ -54,8 +54,8 @@ class User extends PureComponent {
                 align: "center",
                 render: (text, record) => (
                     <span className='control-container'>
-                        <button className="ant-btn viewBtn" onClick={() => showViewModal(record.id)}><Icon type="eye"/>查看</button>
-                        <button className="ant-btn updateBtn" onClick={() => showUpdateModal(record.id)}><Icon type="edit"/>修改</button>
+                         <Button type="primary" ghost onClick={() => showViewModal(record.id)}>查看</Button>
+                         <Button type="primary" ghost onClick={() => showUpdateModal(record.id)}>修改</Button>
                     </span>
                 ),
             }
@@ -79,21 +79,21 @@ class User extends PureComponent {
         ];
 
         //详细的配置参数
-        const  viewOptions = [
+        const viewOptions = [
             {
-                type:"text",
-                lable:"邮箱",
-                field:"email"
+                type: "text",
+                lable: "邮箱",
+                field: "email"
             },
             {
-                type:"text",
-                lable:"昵称",
-                field:"nickName"
+                type: "text",
+                lable: "昵称",
+                field: "nickName"
             },
             {
-                type:"text",
-                lable:"优币",
-                field:"ewCoin"
+                type: "text",
+                lable: "优币",
+                field: "ewCoin"
             }
         ];
 
@@ -159,7 +159,7 @@ class User extends PureComponent {
                 placeholder: "邮箱",
                 width: "200px",
                 field: "email",
-                initialValue:toCurOperRowObj.email,
+                initialValue: toCurOperRowObj.email,
                 validate: [
                     {
                         type: 'email', message: '邮箱格式不正确!',
@@ -175,7 +175,7 @@ class User extends PureComponent {
                 placeholder: "密码",
                 width: "200px",
                 field: "password",
-                initialValue:toCurOperRowObj.password,
+                initialValue: toCurOperRowObj.password,
                 validate: [
                     {required: true, message: '请输入密码!'}
                 ]
@@ -186,7 +186,7 @@ class User extends PureComponent {
                 placeholder: "昵称",
                 width: "200px",
                 field: "nickName",
-                initialValue:toCurOperRowObj.nickName,
+                initialValue: toCurOperRowObj.nickName,
                 validate: [
                     {required: true, message: '请输入昵称!'}
                 ]
@@ -197,7 +197,7 @@ class User extends PureComponent {
                 placeholder: "优币",
                 width: "200px",
                 field: "ewCoin",
-                initialValue:toCurOperRowObj.ewCoin,
+                initialValue: toCurOperRowObj.ewCoin,
                 validate: [
                     {
                         pattern: new RegExp(/^[1-9]\d*$/, "g"),
@@ -249,11 +249,14 @@ class User extends PureComponent {
                     <Modal
                         title="添加用户"
                         visible={showAddUserModal}
-                        onOk={()=>{this.addUserFormRef.addFormValidate(querParams)}}
+                        onOk={() => {
+                            this.addUserFormRef.addFormValidate(querParams)
+                        }}
                         onCancel={() => isShowAddUserModal(false)}
                         destroyOnClose
                     >
-                        <EditForm editFormOption={addFormOptions}  editAction={this.props.addUserOper} onRef={this.onRef}/>
+                        <EditForm editFormOption={addFormOptions} editAction={this.props.addUserOper}
+                                  onRef={this.onRef}/>
                     </Modal>
                 </div>
 
@@ -273,11 +276,12 @@ class User extends PureComponent {
                     <Modal
                         title="修改用户"
                         visible={showUpdateUserModal}
-                        onOk={() =>this.updateUserFormRef.updateFormValidate(toCurOperRowObj.id,querParams)}
+                        onOk={() => this.updateUserFormRef.updateFormValidate(toCurOperRowObj.id, querParams)}
                         onCancel={() => isShowUpdateUserModal(false)}
                         destroyOnClose
                     >
-                        <EditForm editFormOption={updateFormOptions} editAction={this.props.updateItem} onRef={this.onRef}/>
+                        <EditForm editFormOption={updateFormOptions} editAction={this.props.updateItem}
+                                  onRef={this.onRef}/>
                     </Modal>
                 </div>
             </div>
@@ -287,7 +291,6 @@ class User extends PureComponent {
 
 
 }
-
 
 
 const mapState = (state) => ({
