@@ -11,7 +11,11 @@ const defaultState = fromJS(
         curOperRowObj:{},
         showAddDicModal:false,
         showViewDicModal:false,
-        showUpdateDicModal:false
+        showUpdateDicModal:false,
+        showViewDicItemModal:false,
+        dicItemList:[],
+        dicItemCurrent:1,
+        dicItemTotal:0
     }
 );
 
@@ -46,6 +50,10 @@ export default (state = defaultState, action) => {
                 showViewDicModal = true;
             }
             return state.set("curOperRowObj",action.curOperRowObj).set("showUpdateDicModal",fromJS(showUpdateDicModal)).set("showViewDicModal",fromJS(showViewDicModal));
+        case ActionConstants.GET_DIC_ITEM_BY_DICID:
+            return state.set("showViewDicItemModal",true).set("dicItemCurrent",action.dicItemCurrent).set("dicItemTotal",action.dicItemTotal).set("dicItemList",action.dicItemList);
+        case ActionConstants.IS_SHOW_VIEW_DIC_ITEM_MODAL:
+            return state.set("showViewDicItemModal",action.show);
         default:
             return state;
     }

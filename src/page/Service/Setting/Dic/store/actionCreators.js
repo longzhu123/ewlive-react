@@ -143,6 +143,7 @@ const isShowViewDicModalAction = (isShow) => ({
     isShow
 });
 
+
 //是否显示查看字典模态框
 export const isShowViewDicModal = (isShow) => {
     return (dispatch) => {
@@ -151,6 +152,17 @@ export const isShowViewDicModal = (isShow) => {
 };
 
 
+//是否显示查看字典项模态框
+export const isShowViewDicItemModal = (isShow) => {
+    return (dispatch) => {
+        dispatch(isShowViewDicItemModalAction(isShow));
+    }
+};
+
+const isShowViewDicItemModalAction = (isShow) => ({
+    type: ActionConstants.IS_SHOW_VIEW_DIC_ITEM_MODAL,
+    isShow
+});
 
 //是否显示修改字典模态框Action
 const isShowUpdateDicModalAction = (isShow) => ({
@@ -273,13 +285,16 @@ export const getDicItemById = (querParams) => {
         };
         util.ajax(options).then((res => {
             let data = res.data;
+            console.log(data);
             dispatch(getDicItemByIdAction(data));
         }));
     }
 };
 
 //根据字典id查询字典项信息Action
-const getDicItemByIdAction = (dicItemList) => ({
+const getDicItemByIdAction = (data) => ({
     type: ActionConstants.GET_DIC_ITEM_BY_DICID,
-    dicItemList:dicItemList
+    dicItemList: fromJS(data.records),
+    dicItemCurrent:data.current,
+    dicItemTotal:data.total
 });
