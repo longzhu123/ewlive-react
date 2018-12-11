@@ -11,13 +11,13 @@ import {actionCreators} from "./store";
 const confirm = Modal.confirm;
 let querParams = {};
 let toCurOperRowObj = {};
-
+let dicId = {};
 
 //字典项管理组件
 class DicItem extends PureComponent {
 
     componentDidMount() {
-        let dicId = this.props.dicId;
+        dicId = this.props.dicId;
         this.props.loadDicItemList(dicId);
     }
 
@@ -46,7 +46,7 @@ class DicItem extends PureComponent {
                 dataIndex: 'dicItemName',
                 align: "center"
             },
-             {
+            {
                 title: '操作',
                 key: 'control',
                 align: "center",
@@ -162,9 +162,11 @@ class DicItem extends PureComponent {
 
                 <div>
                     <Modal
-                        title="添加字典"
+                        title="添加字典项"
                         visible={showAddDicItemModal}
+                        style={{top: 120}}
                         onOk={() => {
+                            querParams.dicId=dicId;
                             this.addDicItemFormRef.addFormValidate(querParams)
                         }}
                         onCancel={() => isShowAddDicItemModal(false)}
@@ -272,15 +274,16 @@ const mapDispatchToProps = (dispatch) => ({
     resetLoadGrid() {
         dispatch(actionCreators.resetLoadGrid({}));
     },
-    //是否显示添加字典模态框
+    //是否显示添加字典项模态框
     isShowAddDicItemModal(isShow) {
         dispatch(actionCreators.isShowAddDicItemModal(isShow));
     },
-    //添加字典
+    //添加字典项
     addDicItemOper(addDicItemObj, querParam) {
+        addDicItemObj.dicId=querParam.dicId;
         dispatch(actionCreators.addDicItemOper(addDicItemObj, querParam));
     },
-    //是否显示修改字典模态框
+    //是否显示修改字典项模态框
     isShowUpdateDicItemModal(isShow) {
         dispatch(actionCreators.isShowUpdateDicItemModal(isShow));
     }

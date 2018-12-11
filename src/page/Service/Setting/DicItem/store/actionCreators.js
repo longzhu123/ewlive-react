@@ -190,6 +190,7 @@ const addDicItemOperAction = (res) => ({
 //添加字典项
 export const addDicItemOper = (addDicItemObj,querParams) => {
     return (dispatch) => {
+        debugger;
         let options = {
             url: StringConstants.SERVER_URL + "/sysDicItem/addSysDicItem",
             data: addDicItemObj
