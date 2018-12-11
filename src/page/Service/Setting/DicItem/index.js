@@ -1,13 +1,12 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {Button, Card, Icon, Table} from 'antd';
+import {Button, Card, Icon, Modal, Table} from 'antd';
 import SearchForm from '../../../../common/Form/SearchForm';
 import ViewForm from '../../../../common/Form/ViewForm';
 import EditForm from '../../../../common/Form/EditForm';
 import * as StringConstants from '../../../../constant';
 import './index.css';
 import {actionCreators} from "./store";
-import {Modal} from "antd";
 
 const confirm = Modal.confirm;
 let querParams = {};
@@ -18,7 +17,9 @@ let toCurOperRowObj = {};
 class DicItem extends PureComponent {
 
     componentDidMount() {
-        this.props.loadDicItemList();
+        debugger;
+        let dicId = this.props.dicId;
+        this.props.loadDicItemList(dicId);
     }
 
     onRef = (ref) => {
@@ -89,12 +90,12 @@ class DicItem extends PureComponent {
         const addFormOptions = [
             {
                 type: "input",
-                lable: "字典名称",
-                placeholder: "字典名称",
+                lable: "字典项名称",
+                placeholder: "字典项名称",
                 width: "200px",
                 field: "dicItemName",
                 validate: [
-                    {required: true, message: '请输入字典名称!'}
+                    {required: true, message: '请输入字典项名称!'}
                 ]
             }
         ];
@@ -103,13 +104,13 @@ class DicItem extends PureComponent {
         const updateFormOptions = [
             {
                 type: "input",
-                lable: "字典名称",
-                placeholder: "字典名称",
+                lable: "字典项名称",
+                placeholder: "字典项名称",
                 width: "200px",
                 field: "dicItemName",
                 initialValue: toCurOperRowObj.dicItemName,
                 validate: [
-                    {required: true, message: '请输入字典名称!'}
+                    {required: true, message: '请输入字典项名称!'}
                 ]
             }
         ];
@@ -215,8 +216,8 @@ const mapState = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     //加载字典项列表
-    loadDicItemList() {
-        dispatch(actionCreators.loadDicItemList(StringConstants.DEFAULT_PAGE_CURRENT, {}));
+    loadDicItemList(dicId) {
+        dispatch(actionCreators.loadDicItemList(StringConstants.DEFAULT_PAGE_CURRENT, {dicId}));
     },
     //表格复选框change事件
     tableSelectChange(selectedRowKeys) {

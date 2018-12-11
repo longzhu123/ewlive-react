@@ -283,16 +283,23 @@ export const getDicItemById = (querParams) => {
             url: StringConstants.SERVER_URL + "/sysDicItem/likeSearchSysDicItemByPage",
             data: querParams
         };
+        let viewOptions = {
+            url: StringConstants.SERVER_URL + "/sysDic/getSysDicById",
+            data: {"id":querParams.dicId}
+        };
+        util.ajax(viewOptions).then((res => {
+            let data = res.data;
+            dispatch(getDetailByIdAction(data,null));
+        }));
         util.ajax(options).then((res => {
             let data = res.data;
-            console.log(data);
-            dispatch(getDicItemByIdAction(data));
+            dispatch(getDicItemByIdAction(data,querParams.dicId));
         }));
     }
 };
 
 //根据字典id查询字典项信息Action
-const getDicItemByIdAction = (data) => ({
+const getDicItemByIdAction = (data,dicId) => ({
     type: ActionConstants.GET_DIC_ITEM_BY_DICID,
     dicItemList: fromJS(data.records),
     dicItemCurrent:data.current,

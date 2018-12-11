@@ -162,7 +162,7 @@ class Dic extends PureComponent {
                         onCancel={() => isShowViewDicItemModal(false)}
                         destroyOnClose
                     >
-                        <DicItem/>
+                        <DicItem dicId={toCurOperRowObj.id}/>
                     </Modal>
                 </div>
 
