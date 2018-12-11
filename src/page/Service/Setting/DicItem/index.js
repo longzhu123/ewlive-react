@@ -265,15 +265,17 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //修改操作
     updateItem(updateObj, queryObj) {
+        queryObj.dicId=dicId;
         dispatch(actionCreators.updateItem(updateObj, queryObj));
     },
     //条件查询表格
     filterForm(queryObj) {
+        queryObj.dicId=dicId;
         dispatch(actionCreators.filterForm(queryObj));
     },
     //重置表格
     resetLoadGrid() {
-        dispatch(actionCreators.resetLoadGrid({}));
+        dispatch(actionCreators.resetLoadGrid({dicId:dicId}));
     },
     //是否显示添加字典项模态框
     isShowAddDicItemModal(isShow) {
