@@ -133,7 +133,6 @@ const isShowAddDicItemModalAction = (isShow) => ({
 //是否显示添加字典项模态框
 export const isShowAddDicItemModal = (isShow) => {
     return (dispatch) => {
-        debugger;
         dispatch(isShowAddDicItemModalAction(isShow));
     }
 };
@@ -271,7 +270,7 @@ export const getDetailById = (id,operate) => {
  *
  */
 const getDetailByIdAction = (curOperRowObj,opera) => ({
-    type: ActionConstants.GET_DETAILBY_ID,
+    type: ActionConstants.GET_DETAILBYDICITEM_ID,
     curOperRowObj:fromJS(curOperRowObj),
     opera
 });

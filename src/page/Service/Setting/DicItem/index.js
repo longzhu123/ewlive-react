@@ -64,14 +64,14 @@ class DicItem extends PureComponent {
                 type: "input",
                 lable: "字典项编码",
                 placeholder: "字典项编码",
-                width: "200px",
+                width: "100px",
                 field: "dicItemCode"
             },
             {
                 type: "input",
                 lable: "字典项名称",
                 placeholder: "字典项名称",
-                width: "200px",
+                width: "100px",
                 field: "dicItemName"
             }
         ];
@@ -89,9 +89,19 @@ class DicItem extends PureComponent {
         const addFormOptions = [
             {
                 type: "input",
+                lable: "字典项编码",
+                placeholder: "字典项编码",
+                width: "50px",
+                field: "dicItemCode",
+                validate: [
+                    {required: true, message: '请输入字典项编码!'}
+                ]
+            },
+            {
+                type: "input",
                 lable: "字典项名称",
                 placeholder: "字典项名称",
-                width: "200px",
+                width: "50px",
                 field: "dicItemName",
                 validate: [
                     {required: true, message: '请输入字典项名称!'}

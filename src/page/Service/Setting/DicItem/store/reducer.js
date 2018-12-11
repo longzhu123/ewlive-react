@@ -37,7 +37,7 @@ export default (state = defaultState, action) => {
             return state.set("dicItemList",action.dicItemList).set("totalSize",action.total).set("pageIndex",action.current).set("queryObj",fromJS({})).set("showAddDicItemModal",action.showAddDicItemModal);
         case ActionConstants.UPDATE_DICITEM_OPER:
             return state.set("dicItemList",action.dicItemList).set("totalSize",action.total).set("pageIndex",action.current).set("queryObj",fromJS({})).set("showUpdateDicItemModal",action.showAddDicItemModal);
-        case ActionConstants.GET_DETAILBY_ID:
+        case ActionConstants.GET_DETAILBYDICITEM_ID:
             let showUpdateDicItemModal = false;
             let showViewDicItemModal = false;
             if(action.opera === "update"){
