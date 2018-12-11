@@ -21,6 +21,7 @@ export const loadDicItemList = (current,querParams) => {
             data: querParams
         };
         util.ajax(options).then((res => {
+            debugger;
             dispatch(loadDicItemListAction(res.data.records,res.data.current,res.data.total));
         }));
     }

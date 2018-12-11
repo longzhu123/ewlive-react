@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Button, Card, Icon, Table} from 'antd';
+import DicItem from '../DicItem';
 import SearchForm from '../../../../common/Form/SearchForm';
 import ViewForm from '../../../../common/Form/ViewForm';
 import EditForm from '../../../../common/Form/EditForm';
@@ -156,11 +157,12 @@ class Dic extends PureComponent {
                 <div>
                     <Modal
                         title="字典项设置"
+                        width={900}
                         visible={showViewDicItemModal}
                         onCancel={() => isShowViewDicItemModal(false)}
                         destroyOnClose
                     >
-                        <ViewForm viewOptions={viewOptions} viewData={toCurOperRowObj}/>
+                        <DicItem/>
                     </Modal>
                 </div>
 

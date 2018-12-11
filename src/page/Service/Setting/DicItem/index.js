@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Button, Card, Icon, Table} from 'antd';
+import SearchForm from '../../../../common/Form/SearchForm';
 import ViewForm from '../../../../common/Form/ViewForm';
 import EditForm from '../../../../common/Form/EditForm';
 import * as StringConstants from '../../../../constant';
@@ -37,15 +38,15 @@ class DicItem extends PureComponent {
         const columns = [
             {
                 title: '字典项编码',
-                dataIndex: 'dicItemItemCode',
+                dataIndex: 'dicItemCode',
                 align: "center"
             },
             {
                 title: '字典项名称',
-                dataIndex: 'dicItemItemName',
+                dataIndex: 'dicItemName',
                 align: "center"
             },
-            , {
+             {
                 title: '操作',
                 key: 'control',
                 align: "center",
@@ -61,8 +62,15 @@ class DicItem extends PureComponent {
         const searchFormOptions = [
             {
                 type: "input",
-                lable: "字典名称",
-                placeholder: "字典名称",
+                lable: "字典项编码",
+                placeholder: "字典项编码",
+                width: "200px",
+                field: "dicItemCode"
+            },
+            {
+                type: "input",
+                lable: "字典项名称",
+                placeholder: "字典项名称",
                 width: "200px",
                 field: "dicItemName"
             }
