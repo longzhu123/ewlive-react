@@ -1,14 +1,12 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {Button, Card, Icon, Table} from 'antd';
+import {Button, Card, Icon, Modal, Table} from 'antd';
 import DicItem from '../DicItem';
 import SearchForm from '../../../../common/Form/SearchForm';
-import ViewForm from '../../../../common/Form/ViewForm';
 import EditForm from '../../../../common/Form/EditForm';
 import * as StringConstants from '../../../../constant';
 import './index.css';
 import {actionCreators} from "./store";
-import {Modal} from "antd";
 
 const confirm = Modal.confirm;
 let querParams = {};

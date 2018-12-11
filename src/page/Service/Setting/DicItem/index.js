@@ -136,7 +136,7 @@ class DicItem extends PureComponent {
                     <div>
                         <Button type="primary" icon="plus" style={{marginRight: '10px'}}
                                 onClick={() => isShowAddDicItemModal(true)}>添加</Button>
-                        <button className="ant-btn delBtn" onClick={() => delItem(selectDataIds, querParams)}><Icon
+                        <button className="ant-btn delBtn" onClick={() => delItem(selectDataIds, querParams,dicId)}><Icon
                             type="delete"/>删除
                         </button>
                     </div>
@@ -235,7 +235,8 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(actionCreators.tableSelectChange(selectedRowKeys));
     },
     //删除项事件
-    delItem(selectDataIds, querParams) {
+    delItem(selectDataIds, querParams,dicId) {
+        querParams.dicId=dicId;
         confirm({
             title: '确认删除当前数据吗?',
             okText: '确定',
