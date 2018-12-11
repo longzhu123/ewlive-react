@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Button, Card, Icon, Table} from 'antd';
-import SearchForm from '../../../../common/Form/SearchForm';
 import ViewForm from '../../../../common/Form/ViewForm';
 import EditForm from '../../../../common/Form/EditForm';
 import * as StringConstants from '../../../../constant';
@@ -14,33 +13,38 @@ let querParams = {};
 let toCurOperRowObj = {};
 
 
-//字典管理组件
-class Dic extends PureComponent {
+//字典项管理组件
+class DicItem extends PureComponent {
 
     componentDidMount() {
-        this.props.loadDicList();
+        this.props.loadDicItemList();
     }
 
     onRef = (ref) => {
-        this.addDicFormRef= ref;
-        this.updateDicFormRef=ref;
+        this.addDicItemFormRef = ref;
+        this.updateDicItemFormRef = ref;
     };
 
     render() {
-        const {dicList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showDicItemSettingModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddDicModal, showAddDicModal, showViewDicModal, showUpdateDicModal, isShowViewDicModal,isShowUpdateDicModal, curOperRowObj,showViewDicItemModal,dicItemList,dicItemCurrent,dicItemTotal,isShowViewDicItemModal} = this.props;
+        const {dicItemList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddDicItemModal, showAddDicItemModal, showViewDicItemModal, showUpdateDicItemModal, isShowViewDicItemModal, isShowUpdateDicItemModal, curOperRowObj} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
-        const dicDataList = dicList.toJS();
+        const dicItemDataList = dicItemList.toJS();
         const selectDataIds = selectIds.toJS();
         const rowSelection = {
             onChange: tableSelectChange
         };
         const columns = [
             {
-                title: '字典名称',
-                dataIndex: 'dicName',
+                title: '字典项编码',
+                dataIndex: 'dicItemItemCode',
                 align: "center"
-            }
+            },
+            {
+                title: '字典项名称',
+                dataIndex: 'dicItemItemName',
+                align: "center"
+            },
             , {
                 title: '操作',
                 key: 'control',
@@ -48,7 +52,6 @@ class Dic extends PureComponent {
                 render: (text, record) => (
                     <span className='control-container'>
                         <Button type="primary" ghost onClick={() => showUpdateModal(record.id)}>修改</Button>
-                        <Button type="primary" ghost onClick={() => showDicItemSettingModal(record.id)}>字典项设置</Button>
                     </span>
                 ),
             }
@@ -61,16 +64,16 @@ class Dic extends PureComponent {
                 lable: "字典名称",
                 placeholder: "字典名称",
                 width: "200px",
-                field: "dicName"
+                field: "dicItemName"
             }
         ];
 
         //详细的配置参数
         const viewOptions = [
             {
-                type:"text",
-                lable:"字典名称",
-                field:"dicName"
+                type: "text",
+                lable: "字典名称",
+                field: "dicItemName"
             }
         ];
 
@@ -81,7 +84,7 @@ class Dic extends PureComponent {
                 lable: "字典名称",
                 placeholder: "字典名称",
                 width: "200px",
-                field: "dicName",
+                field: "dicItemName",
                 validate: [
                     {required: true, message: '请输入字典名称!'}
                 ]
@@ -95,14 +98,13 @@ class Dic extends PureComponent {
                 lable: "字典名称",
                 placeholder: "字典名称",
                 width: "200px",
-                field: "dicName",
-                initialValue:toCurOperRowObj.dicName,
+                field: "dicItemName",
+                initialValue: toCurOperRowObj.dicItemName,
                 validate: [
                     {required: true, message: '请输入字典名称!'}
                 ]
             }
         ];
-
 
 
         return (
@@ -115,7 +117,7 @@ class Dic extends PureComponent {
                 <Card>
                     <div>
                         <Button type="primary" icon="plus" style={{marginRight: '10px'}}
-                                onClick={() => isShowAddDicModal(true)}>添加</Button>
+                                onClick={() => isShowAddDicItemModal(true)}>添加</Button>
                         <button className="ant-btn delBtn" onClick={() => delItem(selectDataIds, querParams)}><Icon
                             type="delete"/>删除
                         </button>
@@ -126,7 +128,7 @@ class Dic extends PureComponent {
                         rowKey="id"
                         bordered
                         columns={columns}
-                        dataSource={dicDataList}
+                        dataSource={dicItemDataList}
                         size="small"
                         pagination={{
                             showQuickJumper: true,
@@ -143,12 +145,15 @@ class Dic extends PureComponent {
                 <div>
                     <Modal
                         title="添加字典"
-                        visible={showAddDicModal}
-                        onOk={()=>{this.addDicFormRef.addFormValidate(querParams)}}
-                        onCancel={() => isShowAddDicModal(false)}
+                        visible={showAddDicItemModal}
+                        onOk={() => {
+                            this.addDicItemFormRef.addFormValidate(querParams)
+                        }}
+                        onCancel={() => isShowAddDicItemModal(false)}
                         destroyOnClose
                     >
-                        <EditForm editFormOption={addFormOptions}  editAction={this.props.addDicOper} onRef={this.onRef}/>
+                        <EditForm editFormOption={addFormOptions} editAction={this.props.addDicItemOper}
+                                  onRef={this.onRef}/>
                     </Modal>
                 </div>
 
@@ -167,12 +172,13 @@ class Dic extends PureComponent {
                 <div>
                     <Modal
                         title="修改字典"
-                        visible={showUpdateDicModal}
-                        onOk={() =>this.updateDicFormRef.updateFormValidate(toCurOperRowObj.id,querParams)}
-                        onCancel={() => isShowUpdateDicModal(false)}
+                        visible={showUpdateDicItemModal}
+                        onOk={() => this.updateDicItemFormRef.updateFormValidate(toCurOperRowObj.id, querParams)}
+                        onCancel={() => isShowUpdateDicItemModal(false)}
                         destroyOnClose
                     >
-                        <EditForm editFormOption={updateFormOptions} editAction={this.props.updateItem} onRef={this.onRef}/>
+                        <EditForm editFormOption={updateFormOptions} editAction={this.props.updateItem}
+                                  onRef={this.onRef}/>
                     </Modal>
                 </div>
             </div>
@@ -182,26 +188,27 @@ class Dic extends PureComponent {
 
 
 }
+
 const mapState = (state) => ({
-    dicList: state.get("dicSettingReducer").get("dicList"),
-    selectIds: state.get("dicSettingReducer").get("selectIds"),
-    pageIndex: state.get("dicSettingReducer").get("pageIndex"),
-    totalSize: state.get("dicSettingReducer").get("totalSize"),
-    queryObj: state.get("dicSettingReducer").get("queryObj"),
-    showAddDicModal: state.get("dicSettingReducer").get("showAddDicModal"),
-    showViewDicModal: state.get("dicSettingReducer").get("showViewDicModal"),
-    showUpdateDicModal: state.get("dicSettingReducer").get("showUpdateDicModal"),
-    curOperRowObj: state.get("dicSettingReducer").get("curOperRowObj"),
-    showViewDicItemModal: state.get("dicSettingReducer").get("showViewDicItemModal"),
-    dicItemList: state.get("dicSettingReducer").get("dicItemList"),
-    dicItemCurrent: state.get("dicSettingReducer").get("dicItemCurrent"),
-    dicItemTotal: state.get("dicSettingReducer").get("dicItemTotal")
+    dicItemList: state.get("dicItemSettingReducer").get("dicItemList"),
+    selectIds: state.get("dicItemSettingReducer").get("selectIds"),
+    pageIndex: state.get("dicItemSettingReducer").get("pageIndex"),
+    totalSize: state.get("dicItemSettingReducer").get("totalSize"),
+    queryObj: state.get("dicItemSettingReducer").get("queryObj"),
+    showAddDicItemModal: state.get("dicItemSettingReducer").get("showAddDicItemModal"),
+    showViewDicItemModal: state.get("dicItemSettingReducer").get("showViewDicItemModal"),
+    showUpdateDicItemModal: state.get("dicItemSettingReducer").get("showUpdateDicItemModal"),
+    curOperRowObj: state.get("dicItemSettingReducer").get("curOperRowObj"),
+    showViewDicItemModal: state.get("dicItemSettingReducer").get("showViewDicItemModal"),
+    dicItemItemList: state.get("dicItemSettingReducer").get("dicItemItemList"),
+    dicItemItemCurrent: state.get("dicItemSettingReducer").get("dicItemItemCurrent"),
+    dicItemItemTotal: state.get("dicItemSettingReducer").get("dicItemItemTotal")
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    //加载字典列表
-    loadDicList() {
-        dispatch(actionCreators.loadDicList(StringConstants.DEFAULT_PAGE_CURRENT, {}));
+    //加载字典项列表
+    loadDicItemList() {
+        dispatch(actionCreators.loadDicItemList(StringConstants.DEFAULT_PAGE_CURRENT, {}));
     },
     //表格复选框change事件
     tableSelectChange(selectedRowKeys) {
@@ -229,12 +236,7 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //表格分页change事件
     onShowSizeChange(current) {
-        dispatch(actionCreators.loadDicList(current, querParams));
-    },
-    //显示字典项设置的模态框
-    showDicItemSettingModal(id) {
-        let queryParams = {dicId:id,current:1,size:StringConstants.PAGE_SIZE};
-        dispatch(actionCreators.getDicItemById(queryParams));
+        dispatch(actionCreators.loadDicItemList(current, querParams));
     },
     //显示修改模态框
     showUpdateModal(id) {
@@ -253,25 +255,17 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(actionCreators.resetLoadGrid({}));
     },
     //是否显示添加字典模态框
-    isShowAddDicModal(isShow) {
-        dispatch(actionCreators.isShowAddDicModal(isShow));
+    isShowAddDicItemModal(isShow) {
+        dispatch(actionCreators.isShowAddDicItemModal(isShow));
     },
     //添加字典
-    addDicOper(addDicObj, querParam) {
-        dispatch(actionCreators.addDicOper(addDicObj, querParam));
-    },
-    //是否显示查看字典模态框
-    isShowViewDicModal(isShow) {
-        dispatch(actionCreators.isShowViewDicModal(isShow));
-    },
-    //是否显示查看字典项模态框
-    isShowViewDicItemModal(isShow) {
-        dispatch(actionCreators.isShowViewDicItemModal(isShow));
+    addDicItemOper(addDicItemObj, querParam) {
+        dispatch(actionCreators.addDicItemOper(addDicItemObj, querParam));
     },
     //是否显示修改字典模态框
-    isShowUpdateDicModal(isShow) {
-        dispatch(actionCreators.isShowUpdateDicModal(isShow));
+    isShowUpdateDicItemModal(isShow) {
+        dispatch(actionCreators.isShowUpdateDicItemModal(isShow));
     }
 });
 
-export default connect(mapState, mapDispatchToProps)(Dic);
+export default connect(mapState, mapDispatchToProps)(DicItem);

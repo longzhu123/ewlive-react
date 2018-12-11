@@ -6,6 +6,7 @@ import {reducer as UserSettingReducer} from '../page/Service/Setting/User/store'
 import {reducer as MenuSettingReducer} from '../page/Service/Setting/Menu/store';
 import {reducer as RoleSettingReducer} from '../page/Service/Setting/Role/store';
 import {reducer as DicSettingReducer} from '../page/Service/Setting/Dic/store';
+import {reducer as DicItemSettingReducer} from '../page/Service/Setting/DicItem/store';
 
 
 
@@ -18,7 +19,8 @@ const reducer = combineReducers({
     userSettingReducer:UserSettingReducer,
     menuSettingReducer:MenuSettingReducer,
     roleSettingReducer:RoleSettingReducer,
-    dicSettingReducer:DicSettingReducer
+    dicSettingReducer:DicSettingReducer,
+    dicItemSettingReducer:DicItemSettingReducer
 });
 
 export default reducer;
