@@ -133,6 +133,7 @@ const isShowAddDicItemModalAction = (isShow) => ({
 //是否显示添加字典项模态框
 export const isShowAddDicItemModal = (isShow) => {
     return (dispatch) => {
+        debugger;
         dispatch(isShowAddDicItemModalAction(isShow));
     }
 };

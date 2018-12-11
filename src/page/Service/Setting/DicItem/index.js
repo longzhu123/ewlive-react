@@ -17,7 +17,6 @@ let toCurOperRowObj = {};
 class DicItem extends PureComponent {
 
     componentDidMount() {
-        debugger;
         let dicId = this.props.dicId;
         this.props.loadDicItemList(dicId);
     }

@@ -9,9 +9,9 @@ const defaultState = fromJS(
         totalSize:0,
         queryObj:{},
         curOperRowObj:{},
-        showAddUserModal:false,
-        showViewUserModal:false,
-        showUpdateUserModal:false
+        showAddDicItemModal:false,
+        showViewDicItemModal:false,
+        showUpdateDicItemModal:false
     }
 );
 
@@ -28,24 +28,24 @@ export default (state = defaultState, action) => {
         case ActionConstants.RESET_LOAD_GRID:
             return state.set("dicItemList",action.dicItemList).set("totalSize",action.total).set("pageIndex",action.current).set("queryObj",fromJS({}));
         case ActionConstants.IS_SHOW_ADD_DICITEM_MODAL:
-            return state.set("showAddUserModal",action.isShow);
+            return state.set("showAddDicItemModal",action.isShow);
         case ActionConstants.IS_SHOW_VIEW_DICITEM_MODAL:
-            return state.set("showViewUserModal",action.isShow);
+            return state.set("showViewDicItemModal",action.isShow);
         case ActionConstants.IS_SHOW_UPDATE_DICITEM_MODAL:
-            return state.set("showUpdateUserModal",action.isShow);
+            return state.set("showUpdateDicItemModal",action.isShow);
         case ActionConstants.ADD_DICITEM_OPER:
-            return state.set("dicItemList",action.dicItemList).set("totalSize",action.total).set("pageIndex",action.current).set("queryObj",fromJS({})).set("showAddUserModal",action.showAddUserModal);
+            return state.set("dicItemList",action.dicItemList).set("totalSize",action.total).set("pageIndex",action.current).set("queryObj",fromJS({})).set("showAddDicItemModal",action.showAddDicItemModal);
         case ActionConstants.UPDATE_DICITEM_OPER:
-            return state.set("dicItemList",action.dicItemList).set("totalSize",action.total).set("pageIndex",action.current).set("queryObj",fromJS({})).set("showUpdateUserModal",action.showAddUserModal);
+            return state.set("dicItemList",action.dicItemList).set("totalSize",action.total).set("pageIndex",action.current).set("queryObj",fromJS({})).set("showUpdateDicItemModal",action.showAddDicItemModal);
         case ActionConstants.GET_DETAILBY_ID:
-            let showUpdateUserModal = false;
-            let showViewUserModal = false;
+            let showUpdateDicItemModal = false;
+            let showViewDicItemModal = false;
             if(action.opera === "update"){
-                showUpdateUserModal = true;
+                showUpdateDicItemModal = true;
             }else if(action.opera === "view"){
-                showViewUserModal = true;
+                showViewDicItemModal = true;
             }
-            return state.set("curOperRowObj",action.curOperRowObj).set("showUpdateUserModal",fromJS(showUpdateUserModal)).set("showViewUserModal",fromJS(showViewUserModal));
+            return state.set("curOperRowObj",action.curOperRowObj).set("showUpdateDicItemModal",fromJS(showUpdateDicItemModal)).set("showViewDicItemModal",fromJS(showViewDicItemModal));
         default:
             return state;
     }
