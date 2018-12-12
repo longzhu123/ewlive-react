@@ -26,7 +26,7 @@ class Dic extends PureComponent {
     };
 
     render() {
-        const {dicList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showDicItemSettingModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddDicModal, showAddDicModal, showViewDicModal, showUpdateDicModal, isShowViewDicModal,isShowUpdateDicModal, curOperRowObj,showViewDicItemModal,dicItemList,dicItemCurrent,dicItemTotal,isShowViewDicItemModal} = this.props;
+        const {dicList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showDicItemSettingModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddDicModal, showAddDicModal, showUpdateDicModal,isShowUpdateDicModal, curOperRowObj,showViewDicItemModal,isShowViewDicItemModal} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
         const dicDataList = dicList.toJS();
@@ -189,13 +189,9 @@ const mapState = (state) => ({
     totalSize: state.get("dicSettingReducer").get("totalSize"),
     queryObj: state.get("dicSettingReducer").get("queryObj"),
     showAddDicModal: state.get("dicSettingReducer").get("showAddDicModal"),
-    showViewDicModal: state.get("dicSettingReducer").get("showViewDicModal"),
     showUpdateDicModal: state.get("dicSettingReducer").get("showUpdateDicModal"),
     curOperRowObj: state.get("dicSettingReducer").get("curOperRowObj"),
-    showViewDicItemModal: state.get("dicSettingReducer").get("showViewDicItemModal"),
-    dicItemList: state.get("dicSettingReducer").get("dicItemList"),
-    dicItemCurrent: state.get("dicSettingReducer").get("dicItemCurrent"),
-    dicItemTotal: state.get("dicSettingReducer").get("dicItemTotal")
+    showViewDicItemModal: state.get("dicSettingReducer").get("showViewDicItemModal")
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -12,10 +12,7 @@ const defaultState = fromJS(
         showAddDicModal:false,
         showViewDicModal:false,
         showUpdateDicModal:false,
-        showViewDicItemModal:false,
-        dicItemList:[],
-        dicItemCurrent:1,
-        dicItemTotal:0
+        showViewDicItemModal:false
     }
 );
 

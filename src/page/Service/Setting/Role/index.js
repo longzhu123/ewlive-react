@@ -1,28 +1,379 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
+import {Button, Card, Icon, Table} from 'antd';
+import SearchForm from '../../../../common/Form/SearchForm';
+import ViewForm from '../../../../common/Form/ViewForm';
+import EditForm from '../../../../common/Form/EditForm';
+import * as StringConstants from '../../../../constant';
 import './index.css';
+import {actionCreators} from "./store";
+import {Modal} from "antd";
 
+const confirm = Modal.confirm;
+let querParams = {};
+let toCurOperRowObj = {};
 
 //角色管理组件
 class Role extends PureComponent {
 
+    componentDidMount() {
+        this.props.loadRoleList();
+    }
+
+    onRef = (ref) => {
+        this.addRoleFormRef = ref;
+        this.updateRoleFormRef = ref;
+    };
+
     render() {
+        const {roleList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddRoleModal, showAddRoleModal, showViewRoleModal, showUpdateRoleModal, isShowViewRoleModal, isShowUpdateRoleModal, curOperRowObj} = this.props;
+        querParams = queryObj.toJS();
+        toCurOperRowObj = curOperRowObj.toJS();
+        const roleDataList = roleList.toJS();
+        const selectDataIds = selectIds.toJS();
+        const rowSelection = {
+            onChange: tableSelectChange
+        };
+        const columns = [
+            {
+                title: '邮箱',
+                dataIndex: 'email',
+                align: "center"
+            }, {
+                title: '昵称',
+                dataIndex: 'nickName',
+                align: "center"
+            }, {
+                title: '优币',
+                dataIndex: 'ewCoin',
+                align: "center"
+            }
+            , {
+                title: '操作',
+                key: 'control',
+                align: "center",
+                render: (text, record) => (
+                    <span className='control-container'>
+                         <Button type="primary" ghost onClick={() => showViewModal(record.id)}>查看</Button>
+                         <Button type="primary" ghost onClick={() => showUpdateModal(record.id)}>修改</Button>
+                    </span>
+                ),
+            }
+        ];
+        //搜索表单组件的配置参数
+        const searchFormOptions = [
+            {
+                type: "input",
+                lable: "邮箱",
+                placeholder: "邮箱",
+                width: "200px",
+                field: "email"
+            },
+            {
+                type: "input",
+                lable: "昵称",
+                placeholder: "昵称",
+                width: "200px",
+                field: "nickName"
+            }
+        ];
+
+        //详细的配置参数
+        const viewOptions = [
+            {
+                type: "text",
+                lable: "邮箱",
+                field: "email"
+            },
+            {
+                type: "text",
+                lable: "昵称",
+                field: "nickName"
+            },
+            {
+                type: "text",
+                lable: "优币",
+                field: "ewCoin"
+            }
+        ];
+
+
+        //添加表单的配置参数
+        const addFormOptions = [
+            {
+                type: "input",
+                lable: "邮箱",
+                placeholder: "邮箱",
+                width: "200px",
+                field: "email",
+                validate: [
+                    {
+                        type: 'email', message: '邮箱格式不正确!',
+                    },
+                    {
+                        required: true, message: '请输入邮箱!',
+                    }
+                ]
+            },
+            {
+                type: "input",
+                lable: "密码",
+                placeholder: "密码",
+                width: "200px",
+                field: "password",
+                validate: [
+                    {required: true, message: '请输入密码!'}
+                ]
+            },
+            {
+                type: "input",
+                lable: "昵称",
+                placeholder: "昵称",
+                width: "200px",
+                field: "nickName",
+                validate: [
+                    {required: true, message: '请输入昵称!'}
+                ]
+            },
+            {
+                type: "input",
+                lable: "优币",
+                placeholder: "优币",
+                width: "200px",
+                field: "ewCoin",
+                validate: [
+                    {
+                        pattern: new RegExp(/^[1-9]\d*$/, "g"),
+                        message: '只能输入数值格式'
+                    }, {
+                        required: true, message: '请输入优币!',
+                    }
+                ]
+            }
+        ];
+        //编辑表单的配置参数
+        const updateFormOptions = [
+            {
+                type: "input",
+                lable: "邮箱",
+                placeholder: "邮箱",
+                width: "200px",
+                field: "email",
+                initialValue: toCurOperRowObj.email,
+                validate: [
+                    {
+                        type: 'email', message: '邮箱格式不正确!',
+                    },
+                    {
+                        required: true, message: '请输入邮箱!',
+                    }
+                ]
+            },
+            {
+                type: "input",
+                lable: "密码",
+                placeholder: "密码",
+                width: "200px",
+                field: "password",
+                initialValue: toCurOperRowObj.password,
+                validate: [
+                    {required: true, message: '请输入密码!'}
+                ]
+            },
+            {
+                type: "input",
+                lable: "昵称",
+                placeholder: "昵称",
+                width: "200px",
+                field: "nickName",
+                initialValue: toCurOperRowObj.nickName,
+                validate: [
+                    {required: true, message: '请输入昵称!'}
+                ]
+            },
+            {
+                type: "input",
+                lable: "优币",
+                placeholder: "优币",
+                width: "200px",
+                field: "ewCoin",
+                initialValue: toCurOperRowObj.ewCoin,
+                validate: [
+                    {
+                        pattern: new RegExp(/^[1-9]\d*$/, "g"),
+                        message: '只能输入数值格式'
+                    }, {
+                        required: true, message: '请输入优币!',
+                    }
+                ]
+            }
+        ];
+
+
         return (
-           <div>
-               <h1>角色管理</h1>
-           </div>
+            <div>
+                <Card>
+                    {/*将父组件的filterForm方法传给子组件filterForm*/}
+                    <SearchForm searchOptions={searchFormOptions} resetLoadGrid={resetLoadGrid}
+                                filterForm={filterForm}/>
+                </Card>
+                <Card>
+                    <div>
+                        <Button type="primary" icon="plus" style={{marginRight: '10px'}}
+                                onClick={() => isShowAddRoleModal(true)}>添加</Button>
+                        <button className="ant-btn delBtn" onClick={() => delItem(selectDataIds, querParams)}><Icon
+                            type="delete"/>删除
+                        </button>
+                    </div>
+                    <br/>
+                    <Table
+                        rowSelection={rowSelection}
+                        rowKey="id"
+                        bordered
+                        columns={columns}
+                        dataSource={roleDataList}
+                        size="small"
+                        pagination={{
+                            showQuickJumper: true,
+                            current: pageIndex,
+                            total: totalSize,
+                            onChange: onShowSizeChange,
+                            showTotal: () => {
+                                return `共 ${totalSize} 条`
+                            },
+                        }}
+                    />
+                </Card>
+
+                <div>
+                    <Modal
+                        title="添加角色"
+                        visible={showAddRoleModal}
+                        onOk={() => {
+                            this.addRoleFormRef.addFormValidate(querParams)
+                        }}
+                        onCancel={() => isShowAddRoleModal(false)}
+                        destroyOnClose
+                    >
+                        <EditForm editFormOption={addFormOptions} editAction={this.props.addRoleOper}
+                                  onRef={this.onRef}/>
+                    </Modal>
+                </div>
+
+
+                <div>
+                    <Modal
+                        title="查看角色"
+                        visible={showViewRoleModal}
+                        onCancel={() => isShowViewRoleModal(false)}
+                        destroyOnClose
+                    >
+                        <ViewForm viewOptions={viewOptions} viewData={toCurOperRowObj}/>
+                    </Modal>
+                </div>
+
+                <div>
+                    <Modal
+                        title="修改角色"
+                        visible={showUpdateRoleModal}
+                        onOk={() => this.updateRoleFormRef.updateFormValidate(toCurOperRowObj.id, querParams)}
+                        onCancel={() => isShowUpdateRoleModal(false)}
+                        destroyOnClose
+                    >
+                        <EditForm editFormOption={updateFormOptions} editAction={this.props.updateItem}
+                                  onRef={this.onRef}/>
+                    </Modal>
+                </div>
+            </div>
         )
 
     }
 
 
 }
-const mapState = (state) => ({
 
+
+const mapState = (state) => ({
+    roleList: state.get("roleSettingReducer").get("roleList"),
+    selectIds: state.get("roleSettingReducer").get("selectIds"),
+    pageIndex: state.get("roleSettingReducer").get("pageIndex"),
+    totalSize: state.get("roleSettingReducer").get("totalSize"),
+    queryObj: state.get("roleSettingReducer").get("queryObj"),
+    showAddRoleModal: state.get("roleSettingReducer").get("showAddRoleModal"),
+    showViewRoleModal: state.get("roleSettingReducer").get("showViewRoleModal"),
+    showUpdateRoleModal: state.get("roleSettingReducer").get("showUpdateRoleModal"),
+    curOperRowObj: state.get("roleSettingReducer").get("curOperRowObj")
 });
 
 const mapDispatchToProps = (dispatch) => ({
+    //加载角色列表
+    loadRoleList() {
+        dispatch(actionCreators.loadRoleList(StringConstants.DEFAULT_PAGE_CURRENT, {}));
+    },
+    //表格复选框change事件
+    tableSelectChange(selectedRowKeys) {
+        dispatch(actionCreators.tableSelectChange(selectedRowKeys));
+    },
+    //删除项事件
+    delItem(selectDataIds, querParams) {
+        confirm({
+            title: '确认删除当前数据吗?',
+            okText: '确定',
+            okType: 'danger',
+            cancelText: '取消',
+            onOk() {
+                if (selectDataIds.length === 0) {
+                    Modal.error({
+                        "title": "错误提示",
+                        "content": "请选择要删除的记录"
+                    });
+                    return;
+                }
+                dispatch(actionCreators.delItem(selectDataIds, querParams));
+            }
+        });
 
+    },
+    //表格分页change事件
+    onShowSizeChange(current) {
+        dispatch(actionCreators.loadRoleList(current, querParams));
+    },
+    //查看单条记录的详情
+    showViewModal(id) {
+        dispatch(actionCreators.getDetailById(id, "view"));
+    },
+    //显示修改模态框
+    showUpdateModal(id) {
+        dispatch(actionCreators.getDetailById(id, "update"));
+    },
+    //修改操作
+    updateItem(updateObj, queryObj) {
+        dispatch(actionCreators.updateItem(updateObj, queryObj));
+    },
+    //条件查询表格
+    filterForm(queryObj) {
+        dispatch(actionCreators.filterForm(queryObj));
+    },
+    //重置表格
+    resetLoadGrid() {
+        dispatch(actionCreators.resetLoadGrid({}));
+    },
+    //是否显示添加角色模态框
+    isShowAddRoleModal(isShow) {
+        dispatch(actionCreators.isShowAddRoleModal(isShow));
+    },
+    //添加角色
+    addRoleOper(addRoleObj, querParam) {
+        dispatch(actionCreators.addRoleOper(addRoleObj, querParam));
+    },
+    //是否显示查看角色模态框
+    isShowViewRoleModal(isShow) {
+        dispatch(actionCreators.isShowViewRoleModal(isShow));
+    },
+    //是否显示修改角色模态框
+    isShowUpdateRoleModal(isShow) {
+        dispatch(actionCreators.isShowUpdateRoleModal(isShow));
+    }
 });
 
 export default connect(mapState, mapDispatchToProps)(Role);
