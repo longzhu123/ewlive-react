@@ -26,7 +26,7 @@ class Role extends PureComponent {
     };
 
     render() {
-        const {userRoleList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserRoleModal, showAddUserRoleModal, showViewUserRoleModal, showUpdateUserRoleModal, isShowViewUserRoleModal, isShowUpdateUserRoleModal, curOperRowObj,showMenuSettingModal} = this.props;
+        const {userRoleList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserRoleModal, showAddUserRoleModal, showViewUserRoleModal, showUpdateUserRoleModal, isShowViewUserRoleModal, isShowUpdateUserRoleModal, curOperRowObj,showRoleMenuSettingModal,showViewMenuSettingModal,isShowMenuSettingModal} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
         const userRoleDataList = userRoleList.toJS();
@@ -47,7 +47,7 @@ class Role extends PureComponent {
                     <span className='control-container'>
                          <Button type="primary" ghost onClick={() => showViewModal(record.id)}>查看</Button>
                          <Button type="primary" ghost onClick={() => showUpdateModal(record.id)}>修改</Button>
-                        <Button type="primary" ghost onClick={() => showMenuSettingModal(record.id)}>菜单设置</Button>
+                        <Button type="primary" ghost onClick={() => showViewMenuSettingModal(record.id)}>菜单设置</Button>
                     </span>
                 ),
             }
@@ -180,6 +180,17 @@ class Role extends PureComponent {
                                   onRef={this.onRef}/>
                     </Modal>
                 </div>
+
+                <div>
+                    <Modal
+                        title="菜单设置"
+                        visible={showRoleMenuSettingModal}
+                        onCancel={() => isShowMenuSettingModal(false)}
+                        destroyOnClose
+                    >
+                        <h1>菜单设置</h1>
+                    </Modal>
+                </div>
             </div>
         )
 
@@ -199,7 +210,7 @@ const mapState = (state) => ({
     showViewUserRoleModal: state.get("userRoleSettingReducer").get("showViewUserRoleModal"),
     showUpdateUserRoleModal: state.get("userRoleSettingReducer").get("showUpdateUserRoleModal"),
     curOperRowObj: state.get("userRoleSettingReducer").get("curOperRowObj"),
-
+    showRoleMenuSettingModal: state.get("userRoleSettingReducer").get("showRoleMenuSettingModal")
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -275,8 +286,9 @@ const mapDispatchToProps = (dispatch) => ({
     isShowMenuSettingModal(isShow){
         dispatch(actionCreators.isShowMenuSettingModal(isShow));
     },
-    showMenuSettingModal(id){
-        alert()
+    //菜单设置按钮Click事件
+    showViewMenuSettingModal(id){
+        dispatch(actionCreators.isShowMenuSettingModal(true));
     }
 });
 
