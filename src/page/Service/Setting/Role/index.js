@@ -26,7 +26,7 @@ class Role extends PureComponent {
     };
 
     render() {
-        const {userRoleList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserRoleModal, showAddUserRoleModal, showViewUserRoleModal, showUpdateUserRoleModal, isShowViewUserRoleModal, isShowUpdateUserRoleModal, curOperRowObj} = this.props;
+        const {userRoleList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserRoleModal, showAddUserRoleModal, showViewUserRoleModal, showUpdateUserRoleModal, isShowViewUserRoleModal, isShowUpdateUserRoleModal, curOperRowObj,showMenuSettingModal} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
         const userRoleDataList = userRoleList.toJS();
@@ -47,6 +47,7 @@ class Role extends PureComponent {
                     <span className='control-container'>
                          <Button type="primary" ghost onClick={() => showViewModal(record.id)}>查看</Button>
                          <Button type="primary" ghost onClick={() => showUpdateModal(record.id)}>修改</Button>
+                        <Button type="primary" ghost onClick={() => showMenuSettingModal(record.id)}>菜单设置</Button>
                     </span>
                 ),
             }
@@ -197,7 +198,8 @@ const mapState = (state) => ({
     showAddUserRoleModal: state.get("userRoleSettingReducer").get("showAddUserRoleModal"),
     showViewUserRoleModal: state.get("userRoleSettingReducer").get("showViewUserRoleModal"),
     showUpdateUserRoleModal: state.get("userRoleSettingReducer").get("showUpdateUserRoleModal"),
-    curOperRowObj: state.get("userRoleSettingReducer").get("curOperRowObj")
+    curOperRowObj: state.get("userRoleSettingReducer").get("curOperRowObj"),
+
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -268,6 +270,13 @@ const mapDispatchToProps = (dispatch) => ({
     //是否显示修改角色模态框
     isShowUpdateUserRoleModal(isShow) {
         dispatch(actionCreators.isShowUpdateUserRoleModal(isShow));
+    },
+    //是否显示菜单设置模态框
+    isShowMenuSettingModal(isShow){
+        dispatch(actionCreators.isShowMenuSettingModal(isShow));
+    },
+    showMenuSettingModal(id){
+        alert()
     }
 });
 

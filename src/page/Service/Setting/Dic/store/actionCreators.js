@@ -177,7 +177,7 @@ export const isShowUpdateDicModal = (isShow) => {
     }
 };
 
-//修改字典Action
+//添加字典Action
 const addDicOperAction = (res) => ({
     type: ActionConstants.ADD_DIC_OPER,
     dicList: fromJS(res.data.records),

@@ -178,7 +178,7 @@ export const isShowUpdateDicItemModal = (isShow) => {
     }
 };
 
-//修改字典项Action
+//添加字典项Action
 const addDicItemOperAction = (res) => ({
     type: ActionConstants.ADD_DICITEM_OPER,
     dicItemList: fromJS(res.data.records),

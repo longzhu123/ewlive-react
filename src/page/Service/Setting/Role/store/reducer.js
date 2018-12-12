@@ -11,7 +11,8 @@ const defaultState = fromJS(
         curOperRowObj:{},
         showAddUserRoleModal:false,
         showViewUserRoleModal:false,
-        showUpdateUserRoleModal:false
+        showUpdateUserRoleModal:false,
+        showMenuSettingModal:false
     }
 );
 
@@ -47,6 +48,8 @@ export default (state = defaultState, action) => {
                 showViewUserRoleModal = true;
             }
             return state.set("curOperRowObj",action.curOperRowObj).set("showUpdateUserRoleModal",fromJS(showUpdateUserRoleModal)).set("showViewUserRoleModal",fromJS(showViewUserRoleModal));
+        case ActionConstants.IS_SHOW_MENUSETTING_MODAL:
+            return state.set("showMenuSettingModal",action.isShow);
         default:
             return state;
     }

@@ -165,7 +165,7 @@ export const isShowUpdateUserRoleModal = (isShow) => {
     }
 };
 
-//修改角色Action
+//添加角色Action
 const addUserRoleOperAction = (res) => ({
     type: ActionConstants.ADD_USER_ROLE_OPER,
     userRoleList: fromJS(res.data.records),
@@ -264,3 +264,18 @@ const getDetailByIdAction = (curOperRowObj,opera) => ({
     curOperRowObj:fromJS(curOperRowObj),
     opera
 });
+
+
+
+//是否显示菜单设置模态框Action
+const isShowMenuSettingModalAction = (isShow) => ({
+    type: ActionConstants.IS_SHOW_MENUSETTING_MODAL,
+    isShow
+});
+
+//是否显示菜单设置模态框
+export const isShowMenuSettingModal = (isShow) => {
+    return (dispatch) => {
+        dispatch(isShowMenuSettingModalAction(isShow));
+    }
+};

@@ -165,7 +165,7 @@ export const isShowUpdateUserModal = (isShow) => {
     }
 };
 
-//修改用户Action
+//添加用户Action
 const addUserOperAction = (res) => ({
     type: ActionConstants.ADD_USER_OPER,
     userList: fromJS(res.data.records),
