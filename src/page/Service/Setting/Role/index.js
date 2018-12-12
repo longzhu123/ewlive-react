@@ -7,9 +7,10 @@ import EditForm from '../../../../common/Form/EditForm';
 import * as StringConstants from '../../../../constant';
 import './index.css';
 import {actionCreators} from "./store";
-import {Modal} from "antd";
+import {Modal,Tree } from "antd";
 
 const confirm = Modal.confirm;
+const { TreeNode } = Tree;
 let querParams = {};
 let toCurOperRowObj = {};
 
@@ -105,7 +106,64 @@ class Role extends PureComponent {
             }
         ];
 
-
+        const treeData = [{
+            title: '0-0',
+            key: '0-0',
+            children: [{
+                title: '0-0-0',
+                key: '0-0-0',
+                children: [
+                    { title: '0-0-0-0', key: '0-0-0-0' },
+                    { title: '0-0-0-1', key: '0-0-0-1' },
+                    { title: '0-0-0-2', key: '0-0-0-2' },
+                ],
+            }, {
+                title: '0-0-1',
+                key: '0-0-1',
+                children: [
+                    { title: '0-0-1-0', key: '0-0-1-0' },
+                    { title: '0-0-1-1', key: '0-0-1-1' },
+                    { title: '0-0-1-2', key: '0-0-1-2' },
+                    { title: '0-0-1-1', key: '0-0-1-3' },
+                    { title: '0-0-1-2', key: '0-0-1-4' },
+                    { title: '0-0-1-1', key: '0-0-1-5' },
+                    { title: '0-0-1-2', key: '0-0-1-6' },
+                    { title: '0-0-1-1', key: '0-0-1-7' },
+                    { title: '0-0-1-2', key: '0-0-1-8' },
+                    { title: '0-0-1-1', key: '0-0-1-9' },
+                    { title: '0-0-1-2', key: '0-0-1-10' },
+                    { title: '0-0-1-1', key: '0-0-1-11' },
+                    { title: '0-0-1-2', key: '0-0-1-12' },
+                    { title: '0-0-1-0', key: '0-0-1-0' },
+                    { title: '0-0-1-1', key: '0-0-1-1' },
+                    { title: '0-0-1-2', key: '0-0-1-2' },
+                    { title: '0-0-1-1', key: '0-0-1-3' },
+                    { title: '0-0-1-2', key: '0-0-1-4' },
+                    { title: '0-0-1-1', key: '0-0-1-5' },
+                    { title: '0-0-1-2', key: '0-0-1-6' },
+                    { title: '0-0-1-1', key: '0-0-1-7' },
+                    { title: '0-0-1-2', key: '0-0-1-8' },
+                    { title: '0-0-1-1', key: '0-0-1-9' },
+                    { title: '0-0-1-2', key: '0-0-1-10' },
+                    { title: '0-0-1-1', key: '0-0-1-11' },
+                    { title: '0-0-1-2', key: '0-0-1-12' },
+                ],
+            }, {
+                title: '0-0-2',
+                key: '0-0-2',
+            }],
+        }, {
+            title: '0-1',
+            key: '0-1',
+            children: [
+                { title: '0-1-0-0', key: '0-1-0-0' },
+                { title: '0-1-0-1', key: '0-1-0-1' },
+                { title: '0-1-0-2', key: '0-1-0-2' },
+            ],
+        }, {
+            title: '0-2',
+            key: '0-2',
+        }];
         return (
             <div>
                 <Card>
@@ -184,17 +242,36 @@ class Role extends PureComponent {
                 <div>
                     <Modal
                         title="菜单设置"
+                        height="600"
                         visible={showRoleMenuSettingModal}
                         onCancel={() => isShowMenuSettingModal(false)}
                         destroyOnClose
                     >
-                        <h1>菜单设置</h1>
+                        <Tree
+                            checkable
+                        >
+                            {this.renderTreeNodes(treeData)}
+                        </Tree>
                     </Modal>
                 </div>
             </div>
         )
 
     }
+
+
+
+
+    renderTreeNodes = data => data.map((item) => {
+        if (item.children) {
+            return (
+                <TreeNode title={item.title} key={item.key} dataRef={item}>
+                    {this.renderTreeNodes(item.children)}
+                </TreeNode>
+            );
+        }
+        return <TreeNode {...item} />;
+    });
 
 
 }

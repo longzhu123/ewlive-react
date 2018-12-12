@@ -1,3 +1,4 @@
+
 .admin-layout-content {
     margin: 0 16px;
     overflow: initial;
@@ -32,4 +33,10 @@
     border-color: #d43f3a;
     box-shadow: none;
     opacity: .85;
+}
+
+
+.ant-modal-body {
+    overflow: scroll;
+    max-height: 600px;
 }
