@@ -4,7 +4,7 @@ import * as StringConstants from "../../../../../constant";
 import util from '../../../../../util/util';
 import {Modal} from 'antd';
 //加载角色ListAction
-const loadRoleListAction = (list,current,total) => ({
+const loadUserRoleListAction = (list,current,total) => ({
     type: ActionConstants.LOAD_ROLE_LIST,
     roleList: fromJS(list),
     current,
@@ -12,16 +12,16 @@ const loadRoleListAction = (list,current,total) => ({
 });
 
 //加载角色List
-export const loadRoleList = (current,querParams) => {
+export const loadUserRoleList = (current,querParams) => {
     return (dispatch) => {
         querParams.current = current;
         querParams.size = StringConstants.PAGE_SIZE;
         let options = {
-            url: StringConstants.SERVER_URL + "/sysRole/likeSearchSysRoleByPage",
+            url: StringConstants.SERVER_URL + "/sysUserRole/likeSearchSysUserRoleByPage",
             data: querParams
         };
         util.ajax(options).then((res => {
-            dispatch(loadRoleListAction(res.data.records,res.data.current,res.data.total));
+            dispatch(loadUserRoleListAction(res.data.records,res.data.current,res.data.total));
         }));
     }
 };
@@ -52,7 +52,7 @@ const delItemAction = (roleList) => ({
 export const delItem = (selectIds,querParams) => {
     return (dispatch) => {
         let options = {
-            url: StringConstants.SERVER_URL + "/sysRole/deleteBatchSysRoleByIds",
+            url: StringConstants.SERVER_URL + "/sysUserRole/deleteBatchSysUserRoleByIds",
             data: {"ids":selectIds}
         };
         util.ajax(options).then((res => {
@@ -63,7 +63,7 @@ export const delItem = (selectIds,querParams) => {
             querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
             querParams.size = StringConstants.PAGE_SIZE;
             let roleOptions = {
-                url: StringConstants.SERVER_URL + "/sysRole/likeSearchSysRoleByPage",
+                url: StringConstants.SERVER_URL + "/sysUserRole/likeSearchSysUserRoleByPage",
                 data: querParams
             };
             util.ajax(roleOptions).then((res => {
@@ -90,11 +90,11 @@ export const filterForm = (queryObj) => {
         queryObj.current = 1;
         queryObj.size = StringConstants.PAGE_SIZE;
         let options = {
-            url: StringConstants.SERVER_URL + "/sysRole/likeSearchSysRoleByPage",
+            url: StringConstants.SERVER_URL + "/sysUserRole/likeSearchSysUserRoleByPage",
             data:queryObj
         };
         util.ajax(options).then((res => {
-            dispatch(loadRoleListAction(res.data.records,res.data.current,res.data.total));
+            dispatch(loadUserRoleListAction(res.data.records,res.data.current,res.data.total));
         }));
     }
 };
@@ -114,7 +114,7 @@ export const resetLoadGrid = (querParams) => {
         querParams.current = 1;
         querParams.size = StringConstants.PAGE_SIZE;
         let options = {
-            url: StringConstants.SERVER_URL + "/sysRole/likeSearchSysRoleByPage",
+            url: StringConstants.SERVER_URL + "/sysUserRole/likeSearchSysUserRoleByPage",
             data: querParams
         };
         util.ajax(options).then((res => {
@@ -124,62 +124,62 @@ export const resetLoadGrid = (querParams) => {
 };
 
 //是否显示添加角色模态框Action
-const isShowAddRoleModalAction = (isShow) => ({
+const isShowAddUserRoleModalAction = (isShow) => ({
     type: ActionConstants.IS_SHOW_ADD_ROLE_MODAL,
     isShow
 });
 
 //是否显示添加角色模态框
-export const isShowAddRoleModal = (isShow) => {
+export const isShowAddUserRoleModal = (isShow) => {
     return (dispatch) => {
-        dispatch(isShowAddRoleModalAction(isShow));
+        dispatch(isShowAddUserRoleModalAction(isShow));
     }
 };
 
 
 //是否显示查看角色模态框Action
-const isShowViewRoleModalAction = (isShow) => ({
+const isShowViewUserRoleModalAction = (isShow) => ({
     type: ActionConstants.IS_SHOW_VIEW_ROLE_MODAL,
     isShow
 });
 
 //是否显示查看角色模态框
-export const isShowViewRoleModal = (isShow) => {
+export const isShowViewUserRoleModal = (isShow) => {
     return (dispatch) => {
-        dispatch(isShowViewRoleModalAction(isShow));
+        dispatch(isShowViewUserRoleModalAction(isShow));
     }
 };
 
 
 
 //是否显示修改角色模态框Action
-const isShowUpdateRoleModalAction = (isShow) => ({
+const isShowUpdateUserRoleModalAction = (isShow) => ({
     type: ActionConstants.IS_SHOW_UPDATE_ROLE_MODAL,
     isShow
 });
 
 //是否显示修改角色模态框
-export const isShowUpdateRoleModal = (isShow) => {
+export const isShowUpdateUserRoleModal = (isShow) => {
     return (dispatch) => {
-        dispatch(isShowUpdateRoleModalAction(isShow));
+        dispatch(isShowUpdateUserRoleModalAction(isShow));
     }
 };
 
 //修改角色Action
-const addRoleOperAction = (res) => ({
+const addUserRoleOperAction = (res) => ({
     type: ActionConstants.ADD_ROLE_OPER,
     roleList: fromJS(res.data.records),
     current:res.data.current,
     total:res.data.total,
-    showAddRoleModal:false
+    showAddUserRoleModal:false
 });
 
 //添加角色
-export const addRoleOper = (addRoleObj,querParams) => {
+export const addUserRoleOper = (addUserRoleObj,querParams) => {
     return (dispatch) => {
         let options = {
-            url: StringConstants.SERVER_URL + "/sysRole/addSysRole",
-            data: addRoleObj
+            url: StringConstants.SERVER_URL + "/sysUserRole/addSysUserRole",
+            data: addUserRoleObj
         };
         util.ajax(options).then((res => {
             Modal.success({
@@ -190,11 +190,11 @@ export const addRoleOper = (addRoleObj,querParams) => {
             querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
             querParams.size = StringConstants.PAGE_SIZE;
             let roleOptions = {
-                url: StringConstants.SERVER_URL + "/sysRole/likeSearchSysRoleByPage",
+                url: StringConstants.SERVER_URL + "/sysUserRole/likeSearchSysUserRoleByPage",
                 data: querParams
             };
             util.ajax(roleOptions).then((res => {
-                dispatch(addRoleOperAction(res));
+                dispatch(addUserRoleOperAction(res));
             }));
         }));
     }
@@ -203,19 +203,19 @@ export const addRoleOper = (addRoleObj,querParams) => {
 
 
 //修改角色Action
-const updateRoleOperAction = (res) => ({
+const updateUserRoleOperAction = (res) => ({
     type: ActionConstants.UPDATE_ROLE_OPER,
     roleList: fromJS(res.data.records),
     current:res.data.current,
     total:res.data.total,
-    showUpdateRoleModal:false
+    showUpdateUserRoleModal:false
 });
 
 //修改角色
 export const updateItem = (updateObj,querParams) => {
     return (dispatch) => {
         let options = {
-            url: StringConstants.SERVER_URL + "/sysRole/updateSysRoleById",
+            url: StringConstants.SERVER_URL + "/sysUserRole/updateSysUserRoleById",
             data: updateObj
         };
         util.ajax(options).then((res => {
@@ -227,11 +227,11 @@ export const updateItem = (updateObj,querParams) => {
             querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
             querParams.size = StringConstants.PAGE_SIZE;
             let roleOptions = {
-                url: StringConstants.SERVER_URL + "/sysRole/likeSearchSysRoleByPage",
+                url: StringConstants.SERVER_URL + "/sysUserRole/likeSearchSysUserRoleByPage",
                 data: querParams
             };
             util.ajax(roleOptions).then((res => {
-                dispatch(updateRoleOperAction(res));
+                dispatch(updateUserRoleOperAction(res));
             }))
         }));
     }
@@ -241,7 +241,7 @@ export const updateItem = (updateObj,querParams) => {
 export const getDetailById = (id,operate) => {
     return (dispatch) => {
         let options = {
-            url: StringConstants.SERVER_URL + "/sysRole/getSysRoleById",
+            url: StringConstants.SERVER_URL + "/sysUserRole/getSysUserRoleById",
             data: {"id":id}
         };
 

@@ -17,16 +17,16 @@ let toCurOperRowObj = {};
 class Role extends PureComponent {
 
     componentDidMount() {
-        this.props.loadRoleList();
+        this.props.loadUserRoleList();
     }
 
     onRef = (ref) => {
-        this.addRoleFormRef = ref;
-        this.updateRoleFormRef = ref;
+        this.addUserRoleFormRef = ref;
+        this.updateUserRoleFormRef = ref;
     };
 
     render() {
-        const {roleList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddRoleModal, showAddRoleModal, showViewRoleModal, showUpdateRoleModal, isShowViewRoleModal, isShowUpdateRoleModal, curOperRowObj} = this.props;
+        const {roleList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserRoleModal, showAddUserRoleModal, showViewUserRoleModal, showUpdateUserRoleModal, isShowViewUserRoleModal, isShowUpdateUserRoleModal, curOperRowObj} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
         const roleDataList = roleList.toJS();
@@ -36,19 +36,10 @@ class Role extends PureComponent {
         };
         const columns = [
             {
-                title: '邮箱',
-                dataIndex: 'email',
+                title: '角色名称',
+                dataIndex: 'roleName',
                 align: "center"
-            }, {
-                title: '昵称',
-                dataIndex: 'nickName',
-                align: "center"
-            }, {
-                title: '优币',
-                dataIndex: 'ewCoin',
-                align: "center"
-            }
-            , {
+            },{
                 title: '操作',
                 key: 'control',
                 align: "center",
@@ -64,17 +55,10 @@ class Role extends PureComponent {
         const searchFormOptions = [
             {
                 type: "input",
-                lable: "邮箱",
-                placeholder: "邮箱",
+                lable: "角色名称",
+                placeholder: "角色名称",
                 width: "200px",
-                field: "email"
-            },
-            {
-                type: "input",
-                lable: "昵称",
-                placeholder: "昵称",
-                width: "200px",
-                field: "nickName"
+                field: "roleName"
             }
         ];
 
@@ -82,18 +66,8 @@ class Role extends PureComponent {
         const viewOptions = [
             {
                 type: "text",
-                lable: "邮箱",
-                field: "email"
-            },
-            {
-                type: "text",
-                lable: "昵称",
-                field: "nickName"
-            },
-            {
-                type: "text",
-                lable: "优币",
-                field: "ewCoin"
+                lable: "角色名称",
+                field: "roleName"
             }
         ];
 
@@ -102,51 +76,13 @@ class Role extends PureComponent {
         const addFormOptions = [
             {
                 type: "input",
-                lable: "邮箱",
-                placeholder: "邮箱",
+                lable: "角色名称",
+                placeholder: "角色名称",
                 width: "200px",
-                field: "email",
+                field: "roleName",
                 validate: [
                     {
-                        type: 'email', message: '邮箱格式不正确!',
-                    },
-                    {
-                        required: true, message: '请输入邮箱!',
-                    }
-                ]
-            },
-            {
-                type: "input",
-                lable: "密码",
-                placeholder: "密码",
-                width: "200px",
-                field: "password",
-                validate: [
-                    {required: true, message: '请输入密码!'}
-                ]
-            },
-            {
-                type: "input",
-                lable: "昵称",
-                placeholder: "昵称",
-                width: "200px",
-                field: "nickName",
-                validate: [
-                    {required: true, message: '请输入昵称!'}
-                ]
-            },
-            {
-                type: "input",
-                lable: "优币",
-                placeholder: "优币",
-                width: "200px",
-                field: "ewCoin",
-                validate: [
-                    {
-                        pattern: new RegExp(/^[1-9]\d*$/, "g"),
-                        message: '只能输入数值格式'
-                    }, {
-                        required: true, message: '请输入优币!',
+                        required: true, message: '请输入角色名称!',
                     }
                 ]
             }
@@ -155,55 +91,14 @@ class Role extends PureComponent {
         const updateFormOptions = [
             {
                 type: "input",
-                lable: "邮箱",
-                placeholder: "邮箱",
+                lable: "角色名称",
+                placeholder: "角色名称",
                 width: "200px",
-                field: "email",
-                initialValue: toCurOperRowObj.email,
+                field: "roleName",
+                initialValue: toCurOperRowObj.roleName,
                 validate: [
                     {
-                        type: 'email', message: '邮箱格式不正确!',
-                    },
-                    {
-                        required: true, message: '请输入邮箱!',
-                    }
-                ]
-            },
-            {
-                type: "input",
-                lable: "密码",
-                placeholder: "密码",
-                width: "200px",
-                field: "password",
-                initialValue: toCurOperRowObj.password,
-                validate: [
-                    {required: true, message: '请输入密码!'}
-                ]
-            },
-            {
-                type: "input",
-                lable: "昵称",
-                placeholder: "昵称",
-                width: "200px",
-                field: "nickName",
-                initialValue: toCurOperRowObj.nickName,
-                validate: [
-                    {required: true, message: '请输入昵称!'}
-                ]
-            },
-            {
-                type: "input",
-                lable: "优币",
-                placeholder: "优币",
-                width: "200px",
-                field: "ewCoin",
-                initialValue: toCurOperRowObj.ewCoin,
-                validate: [
-                    {
-                        pattern: new RegExp(/^[1-9]\d*$/, "g"),
-                        message: '只能输入数值格式'
-                    }, {
-                        required: true, message: '请输入优币!',
+                        required: true, message: '请输入角色名称!',
                     }
                 ]
             }
@@ -220,7 +115,7 @@ class Role extends PureComponent {
                 <Card>
                     <div>
                         <Button type="primary" icon="plus" style={{marginRight: '10px'}}
-                                onClick={() => isShowAddRoleModal(true)}>添加</Button>
+                                onClick={() => isShowAddUserRoleModal(true)}>添加</Button>
                         <button className="ant-btn delBtn" onClick={() => delItem(selectDataIds, querParams)}><Icon
                             type="delete"/>删除
                         </button>
@@ -248,14 +143,14 @@ class Role extends PureComponent {
                 <div>
                     <Modal
                         title="添加角色"
-                        visible={showAddRoleModal}
+                        visible={showAddUserRoleModal}
                         onOk={() => {
-                            this.addRoleFormRef.addFormValidate(querParams)
+                            this.addUserRoleFormRef.addFormValidate(querParams)
                         }}
-                        onCancel={() => isShowAddRoleModal(false)}
+                        onCancel={() => isShowAddUserRoleModal(false)}
                         destroyOnClose
                     >
-                        <EditForm editFormOption={addFormOptions} editAction={this.props.addRoleOper}
+                        <EditForm editFormOption={addFormOptions} editAction={this.props.addUserRoleOper}
                                   onRef={this.onRef}/>
                     </Modal>
                 </div>
@@ -264,8 +159,8 @@ class Role extends PureComponent {
                 <div>
                     <Modal
                         title="查看角色"
-                        visible={showViewRoleModal}
-                        onCancel={() => isShowViewRoleModal(false)}
+                        visible={showViewUserRoleModal}
+                        onCancel={() => isShowViewUserRoleModal(false)}
                         destroyOnClose
                     >
                         <ViewForm viewOptions={viewOptions} viewData={toCurOperRowObj}/>
@@ -275,9 +170,9 @@ class Role extends PureComponent {
                 <div>
                     <Modal
                         title="修改角色"
-                        visible={showUpdateRoleModal}
-                        onOk={() => this.updateRoleFormRef.updateFormValidate(toCurOperRowObj.id, querParams)}
-                        onCancel={() => isShowUpdateRoleModal(false)}
+                        visible={showUpdateUserRoleModal}
+                        onOk={() => this.updateUserRoleFormRef.updateFormValidate(toCurOperRowObj.id, querParams)}
+                        onCancel={() => isShowUpdateUserRoleModal(false)}
                         destroyOnClose
                     >
                         <EditForm editFormOption={updateFormOptions} editAction={this.props.updateItem}
@@ -299,16 +194,16 @@ const mapState = (state) => ({
     pageIndex: state.get("roleSettingReducer").get("pageIndex"),
     totalSize: state.get("roleSettingReducer").get("totalSize"),
     queryObj: state.get("roleSettingReducer").get("queryObj"),
-    showAddRoleModal: state.get("roleSettingReducer").get("showAddRoleModal"),
-    showViewRoleModal: state.get("roleSettingReducer").get("showViewRoleModal"),
-    showUpdateRoleModal: state.get("roleSettingReducer").get("showUpdateRoleModal"),
+    showAddUserRoleModal: state.get("roleSettingReducer").get("showAddUserRoleModal"),
+    showViewUserRoleModal: state.get("roleSettingReducer").get("showViewUserRoleModal"),
+    showUpdateUserRoleModal: state.get("roleSettingReducer").get("showUpdateUserRoleModal"),
     curOperRowObj: state.get("roleSettingReducer").get("curOperRowObj")
 });
 
 const mapDispatchToProps = (dispatch) => ({
     //加载角色列表
-    loadRoleList() {
-        dispatch(actionCreators.loadRoleList(StringConstants.DEFAULT_PAGE_CURRENT, {}));
+    loadUserRoleList() {
+        dispatch(actionCreators.loadUserRoleList(StringConstants.DEFAULT_PAGE_CURRENT, {}));
     },
     //表格复选框change事件
     tableSelectChange(selectedRowKeys) {
@@ -336,7 +231,7 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //表格分页change事件
     onShowSizeChange(current) {
-        dispatch(actionCreators.loadRoleList(current, querParams));
+        dispatch(actionCreators.loadUserRoleList(current, querParams));
     },
     //查看单条记录的详情
     showViewModal(id) {
@@ -359,20 +254,20 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(actionCreators.resetLoadGrid({}));
     },
     //是否显示添加角色模态框
-    isShowAddRoleModal(isShow) {
-        dispatch(actionCreators.isShowAddRoleModal(isShow));
+    isShowAddUserRoleModal(isShow) {
+        dispatch(actionCreators.isShowAddUserRoleModal(isShow));
     },
     //添加角色
-    addRoleOper(addRoleObj, querParam) {
-        dispatch(actionCreators.addRoleOper(addRoleObj, querParam));
+    addUserRoleOper(addUserRoleObj, querParam) {
+        dispatch(actionCreators.addUserRoleOper(addUserRoleObj, querParam));
     },
     //是否显示查看角色模态框
-    isShowViewRoleModal(isShow) {
-        dispatch(actionCreators.isShowViewRoleModal(isShow));
+    isShowViewUserRoleModal(isShow) {
+        dispatch(actionCreators.isShowViewUserRoleModal(isShow));
     },
     //是否显示修改角色模态框
-    isShowUpdateRoleModal(isShow) {
-        dispatch(actionCreators.isShowUpdateRoleModal(isShow));
+    isShowUpdateUserRoleModal(isShow) {
+        dispatch(actionCreators.isShowUpdateUserRoleModal(isShow));
     }
 });
 
