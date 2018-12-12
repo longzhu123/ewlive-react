@@ -26,10 +26,10 @@ class Role extends PureComponent {
     };
 
     render() {
-        const {roleList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserRoleModal, showAddUserRoleModal, showViewUserRoleModal, showUpdateUserRoleModal, isShowViewUserRoleModal, isShowUpdateUserRoleModal, curOperRowObj} = this.props;
+        const {userRoleList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserRoleModal, showAddUserRoleModal, showViewUserRoleModal, showUpdateUserRoleModal, isShowViewUserRoleModal, isShowUpdateUserRoleModal, curOperRowObj} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
-        const roleDataList = roleList.toJS();
+        const userRoleDataList = userRoleList.toJS();
         const selectDataIds = selectIds.toJS();
         const rowSelection = {
             onChange: tableSelectChange
@@ -126,7 +126,7 @@ class Role extends PureComponent {
                         rowKey="id"
                         bordered
                         columns={columns}
-                        dataSource={roleDataList}
+                        dataSource={userRoleDataList}
                         size="small"
                         pagination={{
                             showQuickJumper: true,
@@ -189,15 +189,15 @@ class Role extends PureComponent {
 
 
 const mapState = (state) => ({
-    roleList: state.get("roleSettingReducer").get("roleList"),
-    selectIds: state.get("roleSettingReducer").get("selectIds"),
-    pageIndex: state.get("roleSettingReducer").get("pageIndex"),
-    totalSize: state.get("roleSettingReducer").get("totalSize"),
-    queryObj: state.get("roleSettingReducer").get("queryObj"),
-    showAddUserRoleModal: state.get("roleSettingReducer").get("showAddUserRoleModal"),
-    showViewUserRoleModal: state.get("roleSettingReducer").get("showViewUserRoleModal"),
-    showUpdateUserRoleModal: state.get("roleSettingReducer").get("showUpdateUserRoleModal"),
-    curOperRowObj: state.get("roleSettingReducer").get("curOperRowObj")
+    userRoleList: state.get("userRoleSettingReducer").get("userRoleList"),
+    selectIds: state.get("userRoleSettingReducer").get("selectIds"),
+    pageIndex: state.get("userRoleSettingReducer").get("pageIndex"),
+    totalSize: state.get("userRoleSettingReducer").get("totalSize"),
+    queryObj: state.get("userRoleSettingReducer").get("queryObj"),
+    showAddUserRoleModal: state.get("userRoleSettingReducer").get("showAddUserRoleModal"),
+    showViewUserRoleModal: state.get("userRoleSettingReducer").get("showViewUserRoleModal"),
+    showUpdateUserRoleModal: state.get("userRoleSettingReducer").get("showUpdateUserRoleModal"),
+    curOperRowObj: state.get("userRoleSettingReducer").get("curOperRowObj")
 });
 
 const mapDispatchToProps = (dispatch) => ({

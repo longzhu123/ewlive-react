@@ -18,7 +18,7 @@ const reducer = combineReducers({
     adminSlider:AdminSlider,
     userSettingReducer:UserSettingReducer,
     menuSettingReducer:MenuSettingReducer,
-    roleSettingReducer:RoleSettingReducer,
+    userRoleSettingReducer:RoleSettingReducer,
     dicSettingReducer:DicSettingReducer,
     dicItemSettingReducer:DicItemSettingReducer
 });

@@ -5,8 +5,8 @@ import util from '../../../../../util/util';
 import {Modal} from 'antd';
 //加载角色ListAction
 const loadUserRoleListAction = (list,current,total) => ({
-    type: ActionConstants.LOAD_ROLE_LIST,
-    roleList: fromJS(list),
+    type: ActionConstants.LOAD_USER_ROLE_LIST,
+    userRoleList: fromJS(list),
     current,
     total
 });
@@ -41,11 +41,11 @@ export const tableSelectChange = (selectedRowKeys) => {
 };
 
 //删除表格项的数据 Action
-const delItemAction = (roleList) => ({
+const delItemAction = (userRoleList) => ({
     type: ActionConstants.TABLE_DEL_ITEM,
     selectIds:fromJS([]),
-    roleList:fromJS(roleList.records),
-    total:roleList.total
+    userRoleList:fromJS(userRoleList.records),
+    total:userRoleList.total
 });
 
 //删除表格项的数据
@@ -62,11 +62,11 @@ export const delItem = (selectIds,querParams) => {
             });
             querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
             querParams.size = StringConstants.PAGE_SIZE;
-            let roleOptions = {
+            let userRoleOptions = {
                 url: StringConstants.SERVER_URL + "/sysUserRole/likeSearchSysUserRoleByPage",
                 data: querParams
             };
-            util.ajax(roleOptions).then((res => {
+            util.ajax(userRoleOptions).then((res => {
                 dispatch(delItemAction(res.data));
             }));
 
@@ -103,7 +103,7 @@ export const filterForm = (queryObj) => {
 //重置表格ListAction
 const resetLoadGridAction = (list,current,total) => ({
     type: ActionConstants.RESET_LOAD_GRID,
-    roleList: fromJS(list),
+    userRoleList: fromJS(list),
     current,
     total
 });
@@ -125,7 +125,7 @@ export const resetLoadGrid = (querParams) => {
 
 //是否显示添加角色模态框Action
 const isShowAddUserRoleModalAction = (isShow) => ({
-    type: ActionConstants.IS_SHOW_ADD_ROLE_MODAL,
+    type: ActionConstants.IS_SHOW_ADD_USER_ROLE_MODAL,
     isShow
 });
 
@@ -139,7 +139,7 @@ export const isShowAddUserRoleModal = (isShow) => {
 
 //是否显示查看角色模态框Action
 const isShowViewUserRoleModalAction = (isShow) => ({
-    type: ActionConstants.IS_SHOW_VIEW_ROLE_MODAL,
+    type: ActionConstants.IS_SHOW_VIEW_USER_ROLE_MODAL,
     isShow
 });
 
@@ -154,7 +154,7 @@ export const isShowViewUserRoleModal = (isShow) => {
 
 //是否显示修改角色模态框Action
 const isShowUpdateUserRoleModalAction = (isShow) => ({
-    type: ActionConstants.IS_SHOW_UPDATE_ROLE_MODAL,
+    type: ActionConstants.IS_SHOW_UPDATE_USER_ROLE_MODAL,
     isShow
 });
 
@@ -167,8 +167,8 @@ export const isShowUpdateUserRoleModal = (isShow) => {
 
 //修改角色Action
 const addUserRoleOperAction = (res) => ({
-    type: ActionConstants.ADD_ROLE_OPER,
-    roleList: fromJS(res.data.records),
+    type: ActionConstants.ADD_USER_ROLE_OPER,
+    userRoleList: fromJS(res.data.records),
     current:res.data.current,
     total:res.data.total,
     showAddUserRoleModal:false
@@ -189,11 +189,11 @@ export const addUserRoleOper = (addUserRoleObj,querParams) => {
 
             querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
             querParams.size = StringConstants.PAGE_SIZE;
-            let roleOptions = {
+            let userRoleOptions = {
                 url: StringConstants.SERVER_URL + "/sysUserRole/likeSearchSysUserRoleByPage",
                 data: querParams
             };
-            util.ajax(roleOptions).then((res => {
+            util.ajax(userRoleOptions).then((res => {
                 dispatch(addUserRoleOperAction(res));
             }));
         }));
@@ -204,8 +204,8 @@ export const addUserRoleOper = (addUserRoleObj,querParams) => {
 
 //修改角色Action
 const updateUserRoleOperAction = (res) => ({
-    type: ActionConstants.UPDATE_ROLE_OPER,
-    roleList: fromJS(res.data.records),
+    type: ActionConstants.UPDATE_USER_ROLE_OPER,
+    userRoleList: fromJS(res.data.records),
     current:res.data.current,
     total:res.data.total,
     showUpdateUserRoleModal:false
@@ -226,11 +226,11 @@ export const updateItem = (updateObj,querParams) => {
 
             querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
             querParams.size = StringConstants.PAGE_SIZE;
-            let roleOptions = {
+            let userRoleOptions = {
                 url: StringConstants.SERVER_URL + "/sysUserRole/likeSearchSysUserRoleByPage",
                 data: querParams
             };
-            util.ajax(roleOptions).then((res => {
+            util.ajax(userRoleOptions).then((res => {
                 dispatch(updateUserRoleOperAction(res));
             }))
         }));
