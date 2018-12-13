@@ -4,7 +4,7 @@ import * as StringConstants from "../../../../../constant";
 import util from '../../../../../util/util';
 import {Modal} from 'antd';
 //加载用户ListAction
-const loadUserListAction = (list,current,total) => ({
+const loadUserListAction = (list, current, total) => ({
     type: ActionConstants.LOAD_USER_LIST,
     userList: fromJS(list),
     current,
@@ -12,7 +12,7 @@ const loadUserListAction = (list,current,total) => ({
 });
 
 //加载用户List
-export const loadUserList = (current,querParams) => {
+export const loadUserList = (current, querParams) => {
     return (dispatch) => {
         querParams.current = current;
         querParams.size = StringConstants.PAGE_SIZE;
@@ -21,7 +21,7 @@ export const loadUserList = (current,querParams) => {
             data: querParams
         };
         util.ajax(options).then((res => {
-            dispatch(loadUserListAction(res.data.records,res.data.current,res.data.total));
+            dispatch(loadUserListAction(res.data.records, res.data.current, res.data.total));
         }));
     }
 };
@@ -30,7 +30,7 @@ export const loadUserList = (current,querParams) => {
 //表格复选框chage Action
 const tableSelectChangeAction = (selectIds) => ({
     type: ActionConstants.TABLE_SELECT_CHANGE,
-    selectIds:fromJS(selectIds)
+    selectIds: fromJS(selectIds)
 });
 
 //表格复选框chage
@@ -43,17 +43,17 @@ export const tableSelectChange = (selectedRowKeys) => {
 //删除表格项的数据 Action
 const delItemAction = (userList) => ({
     type: ActionConstants.TABLE_DEL_ITEM,
-    selectIds:fromJS([]),
-    userList:fromJS(userList.records),
-    total:userList.total
+    selectIds: fromJS([]),
+    userList: fromJS(userList.records),
+    total: userList.total
 });
 
 //删除表格项的数据
-export const delItem = (selectIds,querParams) => {
+export const delItem = (selectIds, querParams) => {
     return (dispatch) => {
         let options = {
             url: StringConstants.SERVER_URL + "/sysUser/deleteBatchSysUserByIds",
-            data: {"ids":selectIds}
+            data: {"ids": selectIds}
         };
         util.ajax(options).then((res => {
             Modal.success({
@@ -78,7 +78,7 @@ export const delItem = (selectIds,querParams) => {
 //改变过滤表单参数
 const changeFilterParamAction = (queryObj) => ({
     type: ActionConstants.CHANGE_FILTER_PARAM,
-    queryObj:fromJS(queryObj)
+    queryObj: fromJS(queryObj)
 });
 
 
@@ -91,17 +91,17 @@ export const filterForm = (queryObj) => {
         queryObj.size = StringConstants.PAGE_SIZE;
         let options = {
             url: StringConstants.SERVER_URL + "/sysUser/likeSearchSysUserByPage",
-            data:queryObj
+            data: queryObj
         };
         util.ajax(options).then((res => {
-            dispatch(loadUserListAction(res.data.records,res.data.current,res.data.total));
+            dispatch(loadUserListAction(res.data.records, res.data.current, res.data.total));
         }));
     }
 };
 
 
 //重置表格ListAction
-const resetLoadGridAction = (list,current,total) => ({
+const resetLoadGridAction = (list, current, total) => ({
     type: ActionConstants.RESET_LOAD_GRID,
     userList: fromJS(list),
     current,
@@ -118,7 +118,7 @@ export const resetLoadGrid = (querParams) => {
             data: querParams
         };
         util.ajax(options).then((res => {
-            dispatch(resetLoadGridAction(res.data.records,res.data.current,res.data.total));
+            dispatch(resetLoadGridAction(res.data.records, res.data.current, res.data.total));
         }));
     }
 };
@@ -151,7 +151,6 @@ export const isShowViewUserModal = (isShow) => {
 };
 
 
-
 //是否显示修改用户模态框Action
 const isShowUpdateUserModalAction = (isShow) => ({
     type: ActionConstants.IS_SHOW_UPDATE_USER_MODAL,
@@ -169,13 +168,13 @@ export const isShowUpdateUserModal = (isShow) => {
 const addUserOperAction = (res) => ({
     type: ActionConstants.ADD_USER_OPER,
     userList: fromJS(res.data.records),
-    current:res.data.current,
-    total:res.data.total,
-    showAddUserModal:false
+    current: res.data.current,
+    total: res.data.total,
+    showAddUserModal: false
 });
 
 //添加用户
-export const addUserOper = (addUserObj,querParams) => {
+export const addUserOper = (addUserObj, querParams) => {
     return (dispatch) => {
         let options = {
             url: StringConstants.SERVER_URL + "/sysUser/addSysUser",
@@ -201,18 +200,17 @@ export const addUserOper = (addUserObj,querParams) => {
 };
 
 
-
 //修改用户Action
 const updateUserOperAction = (res) => ({
     type: ActionConstants.UPDATE_USER_OPER,
     userList: fromJS(res.data.records),
-    current:res.data.current,
-    total:res.data.total,
-    showUpdateUserModal:false
+    current: res.data.current,
+    total: res.data.total,
+    showUpdateUserModal: false
 });
 
 //修改用户
-export const updateItem = (updateObj,querParams) => {
+export const updateItem = (updateObj, querParams) => {
     return (dispatch) => {
         let options = {
             url: StringConstants.SERVER_URL + "/sysUser/updateSysUserById",
@@ -238,17 +236,17 @@ export const updateItem = (updateObj,querParams) => {
 };
 
 //根据id查询详情
-export const getDetailById = (id,operate) => {
+export const getDetailById = (id, operate) => {
     return (dispatch) => {
         let options = {
             url: StringConstants.SERVER_URL + "/sysUser/getSysUserById",
-            data: {"id":id}
+            data: {"id": id}
         };
 
 
         util.ajax(options).then((res => {
             let data = res.data;
-            dispatch(getDetailByIdAction(data,operate));
+            dispatch(getDetailByIdAction(data, operate));
         }));
 
     }
@@ -259,13 +257,11 @@ export const getDetailById = (id,operate) => {
  * @param curOperRowObj  当前操作的表格行对象
  *
  */
-const getDetailByIdAction = (curOperRowObj,opera) => ({
+const getDetailByIdAction = (curOperRowObj, opera) => ({
     type: ActionConstants.GET_DETAILBY_ID,
-    curOperRowObj:fromJS(curOperRowObj),
+    curOperRowObj: fromJS(curOperRowObj),
     opera
 });
-
-
 
 
 //是否显示角色设置模态框Action
@@ -280,3 +276,35 @@ export const isShowUserRoleModal = (isShow) => {
         dispatch(isShowUserRoleModalAction(isShow));
     }
 };
+
+//显示用户角色列表
+export const showUserRoleList = (data) => ({
+    type: ActionConstants.SHOW_USER_ROLE_LIST,
+    isShow:true,
+    data:fromJS(data)
+});
+
+
+
+
+//角色设置的click事件
+export const showUserRoleModal = (id) => {
+    return (dispatch) => {
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysUser/getSysUserById",
+            data: {"id": id}
+        };
+        util.ajax(options).then((res => {
+            let data = res.data;
+            dispatch(getDetailByIdAction(data));
+        }));
+
+
+        let userRoleOptions = {url: StringConstants.SERVER_URL + "/sysUserRole/getSysUserRoleByParams"}
+        util.ajax(userRoleOptions).then((res => {
+            let data = res.data;
+            dispatch(showUserRoleList(data));
+        }));
+    }
+};
+

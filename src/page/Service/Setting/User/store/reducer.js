@@ -12,7 +12,8 @@ const defaultState = fromJS(
         showAddUserModal:false,
         showViewUserModal:false,
         showUpdateUserModal:false,
-        showViewUserRoleModal:false
+        showViewUserRoleModal:false,
+        userRoleList:[]
     }
 );
 
@@ -49,6 +50,8 @@ export default (state = defaultState, action) => {
             return state.set("curOperRowObj",action.curOperRowObj).set("showUpdateUserModal",fromJS(showUpdateUserModal)).set("showViewUserModal",fromJS(showViewUserModal));
         case ActionConstants.IS_SHOW_USER_ROLE_MODAL:
             return state.set("showViewUserRoleModal",action.isShow);
+        case ActionConstants.SHOW_USER_ROLE_LIST:
+            return state.set("showViewUserRoleModal",action.isShow).set("userRoleList",action.data);
         default:
             return state;
     }
