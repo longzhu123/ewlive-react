@@ -264,3 +264,19 @@ const getDetailByIdAction = (curOperRowObj,opera) => ({
     curOperRowObj:fromJS(curOperRowObj),
     opera
 });
+
+
+
+
+//是否显示角色设置模态框Action
+const isShowUserRoleModalAction = (isShow) => ({
+    type: ActionConstants.IS_SHOW_USER_ROLE_MODAL,
+    isShow
+});
+
+//是否显示角色设置模态框
+export const isShowUserRoleModal = (isShow) => {
+    return (dispatch) => {
+        dispatch(isShowUserRoleModalAction(isShow));
+    }
+};

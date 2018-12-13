@@ -22,4 +22,6 @@ export const VIEW_USER_OPER = "VIEW_USER_OPER";
 
 export const GET_DETAILBY_ID = "GET_DETAILBY_ID";
 
+export const IS_SHOW_USER_ROLE_MODAL = "IS_SHOW_USER_ROLE_MODAL";
+
 

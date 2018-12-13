@@ -26,7 +26,7 @@ class User extends PureComponent {
     };
 
     render() {
-        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, isShowViewUserModal, isShowUpdateUserModal, curOperRowObj} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, isShowViewUserModal, isShowUpdateUserModal, curOperRowObj,showUserRoleModal,isShowUserRoleModal,showViewUserRoleModal} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
         const userDataList = userList.toJS();
@@ -56,6 +56,7 @@ class User extends PureComponent {
                     <span className='control-container'>
                          <Button type="primary" ghost onClick={() => showViewModal(record.id)}>查看</Button>
                          <Button type="primary" ghost onClick={() => showUpdateModal(record.id)}>修改</Button>
+                        <Button type="primary" ghost onClick={() => showUserRoleModal(record.id)}>角色设置</Button>
                     </span>
                 ),
             }
@@ -284,6 +285,18 @@ class User extends PureComponent {
                                   onRef={this.onRef}/>
                     </Modal>
                 </div>
+
+                <div>
+                    <Modal
+                        title="角色设置"
+                        visible={showViewUserRoleModal}
+                        onOk={() => isShowUserRoleModal(true)}
+                        onCancel={() => isShowUserRoleModal(false)}
+                        destroyOnClose
+                    >
+                        角色设置
+                    </Modal>
+                </div>
             </div>
         )
 
@@ -302,7 +315,8 @@ const mapState = (state) => ({
     showAddUserModal: state.get("userSettingReducer").get("showAddUserModal"),
     showViewUserModal: state.get("userSettingReducer").get("showViewUserModal"),
     showUpdateUserModal: state.get("userSettingReducer").get("showUpdateUserModal"),
-    curOperRowObj: state.get("userSettingReducer").get("curOperRowObj")
+    curOperRowObj: state.get("userSettingReducer").get("curOperRowObj"),
+    showViewUserRoleModal: state.get("userSettingReducer").get("showViewUserRoleModal")
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -373,6 +387,14 @@ const mapDispatchToProps = (dispatch) => ({
     //是否显示修改用户模态框
     isShowUpdateUserModal(isShow) {
         dispatch(actionCreators.isShowUpdateUserModal(isShow));
+    },
+    //是否显示角色设置模态框
+    isShowUserRoleModal(isShow){
+        dispatch(actionCreators.isShowUserRoleModal(isShow));
+    },
+    //角色设置的click事件
+    showUserRoleModal(id){
+        dispatch(actionCreators.isShowUserRoleModal(true));
     }
 });
 
