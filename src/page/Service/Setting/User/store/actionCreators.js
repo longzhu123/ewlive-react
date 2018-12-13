@@ -290,6 +290,7 @@ export const showUserRoleList = (data) => ({
 //角色设置的click事件
 export const showUserRoleModal = (id) => {
     return (dispatch) => {
+        debugger;
         let options = {
             url: StringConstants.SERVER_URL + "/sysUser/getSysUserById",
             data: {"id": id}
@@ -300,7 +301,7 @@ export const showUserRoleModal = (id) => {
         }));
 
 
-        let userRoleOptions = {url: StringConstants.SERVER_URL + "/sysUserRole/getSysUserRoleByParams"}
+        let userRoleOptions = {url: StringConstants.SERVER_URL + "/sysUserRole/getSysUserRoleByParams",data:{}};
         util.ajax(userRoleOptions).then((res => {
             let data = res.data;
             dispatch(showUserRoleList(data));
