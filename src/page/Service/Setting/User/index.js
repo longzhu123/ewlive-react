@@ -350,7 +350,8 @@ const mapState = (state) => ({
     curOperRowObj: state.get("userSettingReducer").get("curOperRowObj"),
     showViewUserRoleModal: state.get("userSettingReducer").get("showViewUserRoleModal"),
     userRoleList: state.get("userSettingReducer").get("userRoleList"),
-    userRoleCheckKeys: state.get("userSettingReducer").get("userRoleCheckKeys")
+    userRoleCheckKeys: state.get("userSettingReducer").get("userRoleCheckKeys"),
+    curUserRoleRealCheckData: state.get("userSettingReducer").get("curUserRoleRealCheckData")
 });
 
 const mapDispatchToProps = (dispatch) => ({

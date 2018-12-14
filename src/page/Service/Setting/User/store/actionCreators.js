@@ -284,6 +284,11 @@ export const showUserRoleList = (data) => ({
     data:fromJS(data)
 });
 
+//显示用户角色列表
+export const setCurUserRoleRealtionAction = (roleRealDataArray) => ({
+    type: ActionConstants.SET_CURUSERROLE_REALTION_ACTION,
+    roleRealDataArray:fromJS(roleRealDataArray)
+});
 
 
 
@@ -300,10 +305,22 @@ export const showUserRoleModal = (id) => {
         }));
 
 
+        //查询用户角色列表
         let userRoleOptions = {url: StringConstants.SERVER_URL + "/sysUserRole/getSysUserRoleByParams",data:{}};
         util.ajax(userRoleOptions).then((res => {
             let data = res.data;
             dispatch(showUserRoleList(data));
+        }));
+
+        //请求该用户对应的角色关系
+        let userRoleRealtionOptions = {url: StringConstants.SERVER_URL + "/sysUserRoleRealtion/getSysUserRoleRealtionByParams",data:{"userId":id}};
+        util.ajax(userRoleRealtionOptions).then((res => {
+            let data = res.data;
+            let roleRealDataArray = new Array();
+            for (const roleRealData of data) {
+                roleRealDataArray.push(roleRealData.userRoleId);
+            }
+            dispatch(setCurUserRoleRealtionAction(roleRealDataArray));
         }));
     }
 };

@@ -14,7 +14,8 @@ const defaultState = fromJS(
         showUpdateUserModal:false,
         showViewUserRoleModal:false,
         userRoleList:[],
-        userRoleCheckKeys:[]
+        userRoleCheckKeys:[],
+        curUserRoleRealCheckData:[]
     }
 );
 
@@ -57,6 +58,8 @@ export default (state = defaultState, action) => {
             return state.set("userRoleCheckKeys",action.checkedKeys);
         case  ActionConstants.CONFIRM_SHOWUSER_MODAL_ACTION:
             return state.set("showViewUserRoleModal",action.isShow);
+        case  ActionConstants.SET_CURUSERROLE_REALTION_ACTION:
+            return state.set("curUserRoleRealCheckData",action.roleRealDataArray);
         default:
             return state;
     }
