@@ -317,17 +317,21 @@ class User extends PureComponent {
 
     }
 
-    renderRoleTreeNodes = data => data.map((item) => {
-        console.log(data);
-        if (item.children) {
-            return (
-                <TreeNode title={item.roleName} key={item.id} dataRef={item}>
-                    {this.renderRoleTreeNodes(item.children)}
-                </TreeNode>
-            );
-        }
-        return <TreeNode {...item} />;
-    })
+    renderRoleTreeNodes = (data) =>{
+        return data.map(item => {
+            if (!item.children) {
+                return (
+                    <TreeNode title={item.roleName} key={item.id} />
+                )
+            } else {
+                return (
+                    <TreeNode title={item.roleName} key={item.id}>
+                        {this.renderRoleTreeNodes(item.children)}
+                    </TreeNode>
+                )
+            }
+        });
+    };
 
 }
 
