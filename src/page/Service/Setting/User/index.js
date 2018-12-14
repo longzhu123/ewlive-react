@@ -292,7 +292,7 @@ class User extends PureComponent {
                     <Modal
                         title="角色设置"
                         visible={showViewUserRoleModal}
-                        onOk={() => confirmShowUserModal(userRoleCheckKeys.toJS())}
+                        onOk={() => confirmShowUserModal(toCurOperRowObj.id,userRoleCheckKeys.toJS())}
                         onCancel={() => isShowUserRoleModal(false)}
                         destroyOnClose
                     >
@@ -427,8 +427,8 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(actionCreators.isShowUserRoleModal(isShow));
     },
     //角色设置模态的click事件
-    confirmShowUserModal(userRoleCheckKeys){
-        dispatch(actionCreators.confirmShowUserModal(userRoleCheckKeys));
+    confirmShowUserModal(id,userRoleCheckKeys){
+        dispatch(actionCreators.confirmShowUserModal(id,userRoleCheckKeys));
     },
     //角色设置的确认click事件
     showUserRoleModal(id) {

@@ -290,7 +290,6 @@ export const showUserRoleList = (data) => ({
 //角色设置的click事件
 export const showUserRoleModal = (id) => {
     return (dispatch) => {
-        debugger;
         let options = {
             url: StringConstants.SERVER_URL + "/sysUser/getSysUserById",
             data: {"id": id}
@@ -326,15 +325,21 @@ export const roleTreeCheck = (checkedKeys) => {
 
 
 //角色设置模态的确认click事件Action
-const confirmShowUserModalAction = (userRoleCheckKeys) => ({
+const confirmShowUserModalAction = (isShow) => ({
     type: ActionConstants.CONFIRM_SHOWUSER_MODAL_ACTION,
-    userRoleCheckKeys:fromJS(userRoleCheckKeys)
+    isShow
 });
 
 //角色设置模态的确认click事件
-export const confirmShowUserModal = (userRoleCheckKeys) => {
+export const confirmShowUserModal = (id,userRoleCheckKeys) => {
     return (dispatch) => {
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysUserRoleRealtion/addSysUserRoleRealtion",
+            data: {"userId": id,"userRoleIds":userRoleCheckKeys}
+        };
+        util.ajax(options).then((res => {
+            dispatch(confirmShowUserModalAction(false));
+        }));
 
-        dispatch(confirmShowUserModalAction(userRoleCheckKeys));
     }
 };

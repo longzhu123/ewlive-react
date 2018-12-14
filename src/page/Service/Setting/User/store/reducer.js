@@ -55,6 +55,8 @@ export default (state = defaultState, action) => {
             return state.set("showViewUserRoleModal",action.isShow).set("userRoleList",action.data);
         case ActionConstants.ROLE_TREE_CHECK_ACTION:
             return state.set("userRoleCheckKeys",action.checkedKeys);
+        case  ActionConstants.CONFIRM_SHOWUSER_MODAL_ACTION:
+            return state.set("showViewUserRoleModal",action.isShow);
         default:
             return state;
     }
