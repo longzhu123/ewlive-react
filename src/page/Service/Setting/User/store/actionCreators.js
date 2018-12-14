@@ -336,6 +336,12 @@ const roleTreeCheckAction = (checkedKeys) => ({
 //角色菜单Tree复选框选中事件
 export const roleTreeCheck = (checkedKeys) => {
     return (dispatch) => {
+        var findIndex = checkedKeys.findIndex(item => {
+            return item === StringConstants.ROLE_TREE_TOP_ID;
+        });
+        if(findIndex>-1){
+            checkedKeys.splice(findIndex,1);
+        }
         dispatch(roleTreeCheckAction(checkedKeys));
     }
 };

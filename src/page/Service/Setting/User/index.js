@@ -305,7 +305,7 @@ class User extends PureComponent {
                             {
                                 this.renderRoleTreeNodes([
                                     {
-                                        "id": "13110730be5b4a25a84c584d4449d0ff",
+                                        "id": StringConstants.ROLE_TREE_TOP_ID,
                                         "roleName": "角色列表",
                                         "children": roleTreeData
                                     }
