@@ -27,7 +27,7 @@ class User extends PureComponent {
     };
 
     render() {
-        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, isShowViewUserModal, isShowUpdateUserModal, curOperRowObj, showUserRoleModal, isShowUserRoleModal, showViewUserRoleModal, userRoleList,roleTreeCheck,userRoleCheckKeys,confirmShowUserModal} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, isShowViewUserModal, isShowUpdateUserModal, curOperRowObj, showUserRoleModal, isShowUserRoleModal, showViewUserRoleModal, userRoleList,roleTreeCheck,userRoleCheckKeys,confirmShowUserModal,curUserRoleRealCheckData} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
         const userDataList = userList.toJS();
@@ -300,6 +300,7 @@ class User extends PureComponent {
                             checkable
                             defaultExpandAll={true}
                             onCheck={roleTreeCheck}
+                            defaultCheckedKeys={curUserRoleRealCheckData.toJS()}
                         >
 
                             {

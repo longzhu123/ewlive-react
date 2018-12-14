@@ -368,5 +368,15 @@ export const confirmShowUserModal = (id,userRoleCheckKeys) => {
             });
         }));
 
+        //请求该用户对应的角色关系
+        let userRoleRealtionOptions = {url: StringConstants.SERVER_URL + "/sysUserRoleRealtion/getSysUserRoleRealtionByParams",data:{"userId":id}};
+        util.ajax(userRoleRealtionOptions).then((res => {
+            let data = res.data;
+            let roleRealDataArray = new Array();
+            for (const roleRealData of data) {
+                roleRealDataArray.push(roleRealData.userRoleId);
+            }
+            dispatch(setCurUserRoleRealtionAction(roleRealDataArray));
+        }));
     }
 };
