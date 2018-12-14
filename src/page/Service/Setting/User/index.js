@@ -27,7 +27,7 @@ class User extends PureComponent {
     };
 
     render() {
-        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, isShowViewUserModal, isShowUpdateUserModal, curOperRowObj, showUserRoleModal, isShowUserRoleModal, showViewUserRoleModal, userRoleList} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, isShowViewUserModal, isShowUpdateUserModal, curOperRowObj, showUserRoleModal, isShowUserRoleModal, showViewUserRoleModal, userRoleList,roleTreeCheck,userRoleCheckKeys,confirmShowUserModal} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
         const userDataList = userList.toJS();
@@ -292,13 +292,14 @@ class User extends PureComponent {
                     <Modal
                         title="角色设置"
                         visible={showViewUserRoleModal}
-                        onOk={() => isShowUserRoleModal(true)}
+                        onOk={() => confirmShowUserModal(userRoleCheckKeys.toJS())}
                         onCancel={() => isShowUserRoleModal(false)}
                         destroyOnClose
                     >
                         <Tree
                             checkable
                             defaultExpandAll={true}
+                            onCheck={roleTreeCheck}
                         >
 
                             {
@@ -349,6 +350,7 @@ const mapState = (state) => ({
     curOperRowObj: state.get("userSettingReducer").get("curOperRowObj"),
     showViewUserRoleModal: state.get("userSettingReducer").get("showViewUserRoleModal"),
     userRoleList: state.get("userSettingReducer").get("userRoleList"),
+    userRoleCheckKeys: state.get("userSettingReducer").get("userRoleCheckKeys")
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -422,13 +424,21 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //是否显示角色设置模态框
     isShowUserRoleModal(isShow) {
-        alert(1);
         dispatch(actionCreators.isShowUserRoleModal(isShow));
     },
-    //角色设置的click事件
+    //角色设置模态的click事件
+    confirmShowUserModal(userRoleCheckKeys){
+        dispatch(actionCreators.confirmShowUserModal(userRoleCheckKeys));
+    },
+    //角色设置的确认click事件
     showUserRoleModal(id) {
         dispatch(actionCreators.showUserRoleModal(id));
+    },
+    //角色菜单Tree复选框选中事件
+    roleTreeCheck(checkedKeys,e){
+        dispatch(actionCreators.roleTreeCheck(checkedKeys));
     }
+
 });
 
 export default connect(mapState, mapDispatchToProps)(User);

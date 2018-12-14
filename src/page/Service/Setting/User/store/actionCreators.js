@@ -309,3 +309,32 @@ export const showUserRoleModal = (id) => {
     }
 };
 
+
+
+//角色菜单Tree复选框选中事件Action
+const roleTreeCheckAction = (checkedKeys) => ({
+    type: ActionConstants.ROLE_TREE_CHECK_ACTION,
+    checkedKeys:fromJS(checkedKeys)
+});
+
+//角色菜单Tree复选框选中事件
+export const roleTreeCheck = (checkedKeys) => {
+    return (dispatch) => {
+        dispatch(roleTreeCheckAction(checkedKeys));
+    }
+};
+
+
+//角色设置模态的确认click事件Action
+const confirmShowUserModalAction = (userRoleCheckKeys) => ({
+    type: ActionConstants.CONFIRM_SHOWUSER_MODAL_ACTION,
+    userRoleCheckKeys:fromJS(userRoleCheckKeys)
+});
+
+//角色设置模态的确认click事件
+export const confirmShowUserModal = (userRoleCheckKeys) => {
+    return (dispatch) => {
+
+        dispatch(confirmShowUserModalAction(userRoleCheckKeys));
+    }
+};
