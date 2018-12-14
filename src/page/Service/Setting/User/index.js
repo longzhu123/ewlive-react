@@ -7,10 +7,10 @@ import EditForm from '../../../../common/Form/EditForm';
 import * as StringConstants from '../../../../constant';
 import './index.css';
 import {actionCreators} from "./store";
-import {Modal,Tree} from "antd";
+import {Modal, Tree} from "antd";
 
 const confirm = Modal.confirm;
-const { TreeNode } = Tree;
+const {TreeNode} = Tree;
 let querParams = {};
 let toCurOperRowObj = {};
 
@@ -27,11 +27,12 @@ class User extends PureComponent {
     };
 
     render() {
-        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, isShowViewUserModal, isShowUpdateUserModal, curOperRowObj,showUserRoleModal,isShowUserRoleModal,showViewUserRoleModal,userRoleList} = this.props;
+        const {userList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserModal, showAddUserModal, showViewUserModal, showUpdateUserModal, isShowViewUserModal, isShowUpdateUserModal, curOperRowObj, showUserRoleModal, isShowUserRoleModal, showViewUserRoleModal, userRoleList} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
         const userDataList = userList.toJS();
         const selectDataIds = selectIds.toJS();
+        const roleTreeData = userRoleList.toJS();
         const rowSelection = {
             onChange: tableSelectChange
         };
@@ -211,66 +212,6 @@ class User extends PureComponent {
             }
         ];
 
-        const treeData = [{
-            title: '0-0',
-            key: '0-0',
-            children: [{
-                title: '0-0-0',
-                key: '0-0-0',
-                children: [
-                    { title: '0-0-0-0', key: '0-0-0-0' },
-                    { title: '0-0-0-1', key: '0-0-0-1' },
-                    { title: '0-0-0-2', key: '0-0-0-2' },
-                ],
-            }, {
-                title: '0-0-1',
-                key: '0-0-1',
-                children: [
-                    { title: '0-0-1-0', key: '0-0-1-0' },
-                    { title: '0-0-1-1', key: '0-0-1-1' },
-                    { title: '0-0-1-2', key: '0-0-1-2' },
-                    { title: '0-0-1-1', key: '0-0-1-3' },
-                    { title: '0-0-1-2', key: '0-0-1-4' },
-                    { title: '0-0-1-1', key: '0-0-1-5' },
-                    { title: '0-0-1-2', key: '0-0-1-6' },
-                    { title: '0-0-1-1', key: '0-0-1-7' },
-                    { title: '0-0-1-2', key: '0-0-1-8' },
-                    { title: '0-0-1-1', key: '0-0-1-9' },
-                    { title: '0-0-1-2', key: '0-0-1-10' },
-                    { title: '0-0-1-1', key: '0-0-1-11' },
-                    { title: '0-0-1-2', key: '0-0-1-12' },
-                    { title: '0-0-1-0', key: '0-0-1-0' },
-                    { title: '0-0-1-1', key: '0-0-1-1' },
-                    { title: '0-0-1-2', key: '0-0-1-2' },
-                    { title: '0-0-1-1', key: '0-0-1-3' },
-                    { title: '0-0-1-2', key: '0-0-1-4' },
-                    { title: '0-0-1-1', key: '0-0-1-5' },
-                    { title: '0-0-1-2', key: '0-0-1-6' },
-                    { title: '0-0-1-1', key: '0-0-1-7' },
-                    { title: '0-0-1-2', key: '0-0-1-8' },
-                    { title: '0-0-1-1', key: '0-0-1-9' },
-                    { title: '0-0-1-2', key: '0-0-1-10' },
-                    { title: '0-0-1-1', key: '0-0-1-11' },
-                    { title: '0-0-1-2', key: '0-0-1-12' },
-                ],
-            }, {
-                title: '0-0-2',
-                key: '0-0-2',
-            }],
-        }, {
-            title: '0-1',
-            key: '0-1',
-            children: [
-                { title: '0-1-0-0', key: '0-1-0-0' },
-                { title: '0-1-0-1', key: '0-1-0-1' },
-                { title: '0-1-0-2', key: '0-1-0-2' },
-            ],
-        }, {
-            title: '0-2',
-            key: '0-2',
-        }];
-
-
 
         return (
             <div>
@@ -358,7 +299,16 @@ class User extends PureComponent {
                         <Tree
                             checkable
                         >
-                            {this.renderTreeNodes(treeData)}
+
+                            {
+                                this.renderRoleTreeNodes([
+                                    {
+                                        "id": "13110730be5b4a25a84c584d4449d0ff\n",
+                                        "roleName": "角色列表",
+                                        "children": roleTreeData
+                                    }
+                                ])
+                            }
                         </Tree>
                     </Modal>
                 </div>
@@ -367,17 +317,17 @@ class User extends PureComponent {
 
     }
 
-    renderTreeNodes = data => data.map((item) => {
+    renderRoleTreeNodes = data => data.map((item) => {
+        console.log(data);
         if (item.children) {
             return (
-                <TreeNode title={item.title} key={item.key} dataRef={item}>
-                    {this.renderTreeNodes(item.children)}
+                <TreeNode title={item.roleName} key={item.id} dataRef={item}>
+                    {this.renderRoleTreeNodes(item.children)}
                 </TreeNode>
             );
         }
         return <TreeNode {...item} />;
-    });
-
+    })
 
 }
 
@@ -393,7 +343,7 @@ const mapState = (state) => ({
     showUpdateUserModal: state.get("userSettingReducer").get("showUpdateUserModal"),
     curOperRowObj: state.get("userSettingReducer").get("curOperRowObj"),
     showViewUserRoleModal: state.get("userSettingReducer").get("showViewUserRoleModal"),
-    userRoleList:state.get("userSettingReducer").get("userRoleList"),
+    userRoleList: state.get("userSettingReducer").get("userRoleList"),
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -466,11 +416,11 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(actionCreators.isShowUpdateUserModal(isShow));
     },
     //是否显示角色设置模态框
-    isShowUserRoleModal(isShow){
+    isShowUserRoleModal(isShow) {
         dispatch(actionCreators.isShowUserRoleModal(isShow));
     },
     //角色设置的click事件
-    showUserRoleModal(id){
+    showUserRoleModal(id) {
         dispatch(actionCreators.showUserRoleModal(id));
     }
 });
