@@ -339,6 +339,10 @@ export const confirmShowUserModal = (id,userRoleCheckKeys) => {
         };
         util.ajax(options).then((res => {
             dispatch(confirmShowUserModalAction(false));
+            Modal.success({
+                "title": "信息提示",
+                "content": "角色设置成功"
+            });
         }));
 
     }
