@@ -298,6 +298,7 @@ class User extends PureComponent {
                     >
                         <Tree
                             checkable
+                            defaultExpandAll={true}
                         >
 
                             {
@@ -421,6 +422,7 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //是否显示角色设置模态框
     isShowUserRoleModal(isShow) {
+        alert(1);
         dispatch(actionCreators.isShowUserRoleModal(isShow));
     },
     //角色设置的click事件
