@@ -53,13 +53,14 @@ export default (state = defaultState, action) => {
         case ActionConstants.IS_SHOW_USER_ROLE_MODAL:
             return state.set("showViewUserRoleModal",action.isShow);
         case ActionConstants.SHOW_USER_ROLE_LIST:
-            return state.set("showViewUserRoleModal",action.isShow).set("userRoleList",action.data);
+            return state.set("userRoleList",action.data);
         case ActionConstants.ROLE_TREE_CHECK_ACTION:
             return state.set("userRoleCheckKeys",action.checkedKeys);
         case  ActionConstants.CONFIRM_SHOWUSER_MODAL_ACTION:
             return state.set("showViewUserRoleModal",action.isShow);
         case  ActionConstants.SET_CURUSERROLE_REALTION_ACTION:
-            return state.set("curUserRoleRealCheckData",action.roleRealDataArray);
+            debugger;
+            return state.set("curUserRoleRealCheckData",action.roleRealDataArray).set("showViewUserRoleModal",action.isShow);
         default:
             return state;
     }

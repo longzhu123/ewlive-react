@@ -280,13 +280,13 @@ export const isShowUserRoleModal = (isShow) => {
 //显示用户角色列表
 export const showUserRoleList = (data) => ({
     type: ActionConstants.SHOW_USER_ROLE_LIST,
-    isShow:true,
     data:fromJS(data)
 });
 
 //显示用户角色列表
 export const setCurUserRoleRealtionAction = (roleRealDataArray) => ({
     type: ActionConstants.SET_CURUSERROLE_REALTION_ACTION,
+    isShow:true,
     roleRealDataArray:fromJS(roleRealDataArray)
 });
 
