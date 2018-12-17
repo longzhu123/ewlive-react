@@ -10,6 +10,10 @@ import NoMatch from './common/NoMatch';
 import AuthorRoute from './route/AuthorRoute';
 import {  LocaleProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIgloo } from '@fortawesome/free-solid-svg-icons'
+
 class App extends Component {
     render() {
         return (
@@ -29,5 +33,5 @@ class App extends Component {
         );
     }
 }
-
+library.add(faIgloo);
 export default App;
