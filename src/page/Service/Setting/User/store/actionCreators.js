@@ -292,7 +292,7 @@ export const setCurUserRoleRealtionAction = (roleRealDataArray) => ({
 
 
 
-//角色设置的click事件
+//角色设置按钮的click事件
 export const showUserRoleModal = (id) => {
     return (dispatch) => {
         let options = {
@@ -316,10 +316,7 @@ export const showUserRoleModal = (id) => {
         let userRoleRealtionOptions = {url: StringConstants.SERVER_URL + "/sysUserRoleRealtion/getSysUserRoleRealtionByParams",data:{"userId":id}};
         util.ajax(userRoleRealtionOptions).then((res => {
             let data = res.data;
-            let roleRealDataArray = new Array();
-            for (const roleRealData of data) {
-                roleRealDataArray.push(roleRealData.userRoleId);
-            }
+            let roleRealDataArray = util.convertArrayToFiledList(data,"userRoleId");
             dispatch(setCurUserRoleRealtionAction(roleRealDataArray));
         }));
     }
@@ -372,10 +369,7 @@ export const confirmShowUserModal = (id,userRoleCheckKeys) => {
         let userRoleRealtionOptions = {url: StringConstants.SERVER_URL + "/sysUserRoleRealtion/getSysUserRoleRealtionByParams",data:{"userId":id}};
         util.ajax(userRoleRealtionOptions).then((res => {
             let data = res.data;
-            let roleRealDataArray = new Array();
-            for (const roleRealData of data) {
-                roleRealDataArray.push(roleRealData.userRoleId);
-            }
+            let roleRealDataArray = util.convertArrayToFiledList(data,"userRoleId");
             dispatch(setCurUserRoleRealtionAction(roleRealDataArray));
         }));
     }
