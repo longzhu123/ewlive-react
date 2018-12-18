@@ -3,21 +3,22 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import './index.css';
 import {connect} from 'react-redux';
 import {actionCreators} from "./store";
+
 //字体图标列表组件
 class FontList extends PureComponent {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.loadFontList();
     }
 
     render() {
-        const  {fontList} = this.props;
+        const {fontList, fontClick} = this.props;
         return (
             <div>
                 {
-                    fontList.map((item,index)=>(
-                        <p key={index}>
-                            <FontAwesomeIcon icon={[item.get("prev"),item.get("icon")]} size="lg"/>
+                    fontList.map((item, index) => (
+                        <p key={index} onClick={() => fontClick(item.get("prev"),item.get("icon"))}>
+                            <FontAwesomeIcon icon={[item.get("prev"), item.get("icon")]} size="lg"/>
                             <span>{item.get("icon")}</span>
                         </p>
                     ))
@@ -33,9 +34,11 @@ const mapState = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    loadFontList(){
-        debugger;
+    loadFontList() {
         dispatch(actionCreators.loadFontList());
+    },
+    fontClick(prev,icon) {
+        alert(prev+","+icon);
     }
 });
 
