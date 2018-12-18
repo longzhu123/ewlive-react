@@ -11,8 +11,10 @@ import AuthorRoute from './route/AuthorRoute';
 import {  LocaleProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faIgloo } from '@fortawesome/free-solid-svg-icons'
+import { fas  } from '@fortawesome/free-solid-svg-icons'
+import { fab  } from '@fortawesome/free-brands-svg-icons'
+import { fal  } from '@fortawesome/pro-light-svg-icons'
+import { far } from '@fortawesome/pro-regular-svg-icons'
 
 class App extends Component {
     render() {
@@ -33,5 +35,5 @@ class App extends Component {
         );
     }
 }
-library.add(faIgloo);
+library.add(fas ,fab,fal,far);
 export default App;

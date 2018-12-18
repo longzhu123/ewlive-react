@@ -1,0 +1,5918 @@
+﻿[
+    {
+        "prev": "fab",
+        "icon": "500px"
+    },
+    {
+        "prev": "fab",
+        "icon": "accessible-icon"
+    },
+    {
+        "prev": "fab",
+        "icon": "accusoft"
+    },
+    {
+        "prev": "fab",
+        "icon": "acquisitions-incorporated"
+    },
+    {
+        "prev": "fas",
+        "icon": "ad"
+    },
+    {
+        "prev": "fas",
+        "icon": "address-book"
+    },
+    {
+        "prev": "far",
+        "icon": "address-book"
+    },
+    {
+        "prev": "fas",
+        "icon": "address-card"
+    },
+    {
+        "prev": "far",
+        "icon": "address-card"
+    },
+    {
+        "prev": "fas",
+        "icon": "adjust"
+    },
+    {
+        "prev": "fab",
+        "icon": "adn"
+    },
+    {
+        "prev": "fab",
+        "icon": "adobe"
+    },
+    {
+        "prev": "fab",
+        "icon": "adversal"
+    },
+    {
+        "prev": "fab",
+        "icon": "affiliatetheme"
+    },
+    {
+        "prev": "fas",
+        "icon": "air-freshener"
+    },
+    {
+        "prev": "fab",
+        "icon": "algolia"
+    },
+    {
+        "prev": "fas",
+        "icon": "align-center"
+    },
+    {
+        "prev": "fas",
+        "icon": "align-justify"
+    },
+    {
+        "prev": "fas",
+        "icon": "align-left"
+    },
+    {
+        "prev": "fas",
+        "icon": "align-right"
+    },
+    {
+        "prev": "fab",
+        "icon": "alipay"
+    },
+    {
+        "prev": "fas",
+        "icon": "allergies"
+    },
+    {
+        "prev": "fab",
+        "icon": "amazon"
+    },
+    {
+        "prev": "fab",
+        "icon": "amazon-pay"
+    },
+    {
+        "prev": "fas",
+        "icon": "ambulance"
+    },
+    {
+        "prev": "fas",
+        "icon": "american-sign-language-interpreting"
+    },
+    {
+        "prev": "fab",
+        "icon": "amilia"
+    },
+    {
+        "prev": "fas",
+        "icon": "anchor"
+    },
+    {
+        "prev": "fab",
+        "icon": "android"
+    },
+    {
+        "prev": "fab",
+        "icon": "angellist"
+    },
+    {
+        "prev": "fas",
+        "icon": "angle-double-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "angle-double-left"
+    },
+    {
+        "prev": "fas",
+        "icon": "angle-double-right"
+    },
+    {
+        "prev": "fas",
+        "icon": "angle-double-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "angle-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "angle-left"
+    },
+    {
+        "prev": "fas",
+        "icon": "angle-right"
+    },
+    {
+        "prev": "fas",
+        "icon": "angle-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "angry"
+    },
+    {
+        "prev": "far",
+        "icon": "angry"
+    },
+    {
+        "prev": "fab",
+        "icon": "angrycreative"
+    },
+    {
+        "prev": "fab",
+        "icon": "angular"
+    },
+    {
+        "prev": "fas",
+        "icon": "ankh"
+    },
+    {
+        "prev": "fab",
+        "icon": "app-store"
+    },
+    {
+        "prev": "fab",
+        "icon": "app-store-ios"
+    },
+    {
+        "prev": "fab",
+        "icon": "apper"
+    },
+    {
+        "prev": "fab",
+        "icon": "apple"
+    },
+    {
+        "prev": "fas",
+        "icon": "apple-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "apple-pay"
+    },
+    {
+        "prev": "fas",
+        "icon": "archive"
+    },
+    {
+        "prev": "fas",
+        "icon": "archway"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrow-alt-circle-down"
+    },
+    {
+        "prev": "far",
+        "icon": "arrow-alt-circle-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrow-alt-circle-left"
+    },
+    {
+        "prev": "far",
+        "icon": "arrow-alt-circle-left"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrow-alt-circle-right"
+    },
+    {
+        "prev": "far",
+        "icon": "arrow-alt-circle-right"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrow-alt-circle-up"
+    },
+    {
+        "prev": "far",
+        "icon": "arrow-alt-circle-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrow-circle-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrow-circle-left"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrow-circle-right"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrow-circle-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrow-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrow-left"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrow-right"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrow-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrows-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrows-alt-h"
+    },
+    {
+        "prev": "fas",
+        "icon": "arrows-alt-v"
+    },
+    {
+        "prev": "fab",
+        "icon": "artstation"
+    },
+    {
+        "prev": "fas",
+        "icon": "assistive-listening-systems"
+    },
+    {
+        "prev": "fas",
+        "icon": "asterisk"
+    },
+    {
+        "prev": "fab",
+        "icon": "asymmetrik"
+    },
+    {
+        "prev": "fas",
+        "icon": "at"
+    },
+    {
+        "prev": "fas",
+        "icon": "atlas"
+    },
+    {
+        "prev": "fab",
+        "icon": "atlassian"
+    },
+    {
+        "prev": "fas",
+        "icon": "atom"
+    },
+    {
+        "prev": "fab",
+        "icon": "audible"
+    },
+    {
+        "prev": "fas",
+        "icon": "audio-description"
+    },
+    {
+        "prev": "fab",
+        "icon": "autoprefixer"
+    },
+    {
+        "prev": "fab",
+        "icon": "avianex"
+    },
+    {
+        "prev": "fab",
+        "icon": "aviato"
+    },
+    {
+        "prev": "fas",
+        "icon": "award"
+    },
+    {
+        "prev": "fab",
+        "icon": "aws"
+    },
+    {
+        "prev": "fas",
+        "icon": "baby"
+    },
+    {
+        "prev": "fas",
+        "icon": "baby-carriage"
+    },
+    {
+        "prev": "fas",
+        "icon": "backspace"
+    },
+    {
+        "prev": "fas",
+        "icon": "backward"
+    },
+    {
+        "prev": "fas",
+        "icon": "balance-scale"
+    },
+    {
+        "prev": "fas",
+        "icon": "ban"
+    },
+    {
+        "prev": "fas",
+        "icon": "band-aid"
+    },
+    {
+        "prev": "fab",
+        "icon": "bandcamp"
+    },
+    {
+        "prev": "fas",
+        "icon": "barcode"
+    },
+    {
+        "prev": "fas",
+        "icon": "bars"
+    },
+    {
+        "prev": "fas",
+        "icon": "baseball-ball"
+    },
+    {
+        "prev": "fas",
+        "icon": "basketball-ball"
+    },
+    {
+        "prev": "fas",
+        "icon": "bath"
+    },
+    {
+        "prev": "fas",
+        "icon": "battery-empty"
+    },
+    {
+        "prev": "fas",
+        "icon": "battery-full"
+    },
+    {
+        "prev": "fas",
+        "icon": "battery-half"
+    },
+    {
+        "prev": "fas",
+        "icon": "battery-quarter"
+    },
+    {
+        "prev": "fas",
+        "icon": "battery-three-quarters"
+    },
+    {
+        "prev": "fas",
+        "icon": "bed"
+    },
+    {
+        "prev": "fas",
+        "icon": "beer"
+    },
+    {
+        "prev": "fab",
+        "icon": "behance"
+    },
+    {
+        "prev": "fab",
+        "icon": "behance-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "bell"
+    },
+    {
+        "prev": "far",
+        "icon": "bell"
+    },
+    {
+        "prev": "fas",
+        "icon": "bell-slash"
+    },
+    {
+        "prev": "far",
+        "icon": "bell-slash"
+    },
+    {
+        "prev": "fas",
+        "icon": "bezier-curve"
+    },
+    {
+        "prev": "fas",
+        "icon": "bible"
+    },
+    {
+        "prev": "fas",
+        "icon": "bicycle"
+    },
+    {
+        "prev": "fab",
+        "icon": "bimobject"
+    },
+    {
+        "prev": "fas",
+        "icon": "binoculars"
+    },
+    {
+        "prev": "fas",
+        "icon": "biohazard"
+    },
+    {
+        "prev": "fas",
+        "icon": "birthday-cake"
+    },
+    {
+        "prev": "fab",
+        "icon": "bitbucket"
+    },
+    {
+        "prev": "fab",
+        "icon": "bitcoin"
+    },
+    {
+        "prev": "fab",
+        "icon": "bity"
+    },
+    {
+        "prev": "fab",
+        "icon": "black-tie"
+    },
+    {
+        "prev": "fab",
+        "icon": "blackberry"
+    },
+    {
+        "prev": "fas",
+        "icon": "blender"
+    },
+    {
+        "prev": "fas",
+        "icon": "blender-phone"
+    },
+    {
+        "prev": "fas",
+        "icon": "blind"
+    },
+    {
+        "prev": "fas",
+        "icon": "blog"
+    },
+    {
+        "prev": "fab",
+        "icon": "blogger"
+    },
+    {
+        "prev": "fab",
+        "icon": "blogger-b"
+    },
+    {
+        "prev": "fab",
+        "icon": "bluetooth"
+    },
+    {
+        "prev": "fab",
+        "icon": "bluetooth-b"
+    },
+    {
+        "prev": "fas",
+        "icon": "bold"
+    },
+    {
+        "prev": "fas",
+        "icon": "bolt"
+    },
+    {
+        "prev": "fas",
+        "icon": "bomb"
+    },
+    {
+        "prev": "fas",
+        "icon": "bone"
+    },
+    {
+        "prev": "fas",
+        "icon": "bong"
+    },
+    {
+        "prev": "fas",
+        "icon": "book"
+    },
+    {
+        "prev": "fas",
+        "icon": "book-dead"
+    },
+    {
+        "prev": "fas",
+        "icon": "book-open"
+    },
+    {
+        "prev": "fas",
+        "icon": "book-reader"
+    },
+    {
+        "prev": "fas",
+        "icon": "bookmark"
+    },
+    {
+        "prev": "far",
+        "icon": "bookmark"
+    },
+    {
+        "prev": "fas",
+        "icon": "bowling-ball"
+    },
+    {
+        "prev": "fas",
+        "icon": "box"
+    },
+    {
+        "prev": "fas",
+        "icon": "box-open"
+    },
+    {
+        "prev": "fas",
+        "icon": "boxes"
+    },
+    {
+        "prev": "fas",
+        "icon": "braille"
+    },
+    {
+        "prev": "fas",
+        "icon": "brain"
+    },
+    {
+        "prev": "fas",
+        "icon": "briefcase"
+    },
+    {
+        "prev": "fas",
+        "icon": "briefcase-medical"
+    },
+    {
+        "prev": "fas",
+        "icon": "broadcast-tower"
+    },
+    {
+        "prev": "fas",
+        "icon": "broom"
+    },
+    {
+        "prev": "fas",
+        "icon": "brush"
+    },
+    {
+        "prev": "fab",
+        "icon": "btc"
+    },
+    {
+        "prev": "fas",
+        "icon": "bug"
+    },
+    {
+        "prev": "fas",
+        "icon": "building"
+    },
+    {
+        "prev": "far",
+        "icon": "building"
+    },
+    {
+        "prev": "fas",
+        "icon": "bullhorn"
+    },
+    {
+        "prev": "fas",
+        "icon": "bullseye"
+    },
+    {
+        "prev": "fas",
+        "icon": "burn"
+    },
+    {
+        "prev": "fab",
+        "icon": "buromobelexperte"
+    },
+    {
+        "prev": "fas",
+        "icon": "bus"
+    },
+    {
+        "prev": "fas",
+        "icon": "bus-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "business-time"
+    },
+    {
+        "prev": "fab",
+        "icon": "buysellads"
+    },
+    {
+        "prev": "fas",
+        "icon": "calculator"
+    },
+    {
+        "prev": "fas",
+        "icon": "calendar"
+    },
+    {
+        "prev": "far",
+        "icon": "calendar"
+    },
+    {
+        "prev": "fas",
+        "icon": "calendar-alt"
+    },
+    {
+        "prev": "far",
+        "icon": "calendar-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "calendar-check"
+    },
+    {
+        "prev": "far",
+        "icon": "calendar-check"
+    },
+    {
+        "prev": "fas",
+        "icon": "calendar-day"
+    },
+    {
+        "prev": "fas",
+        "icon": "calendar-minus"
+    },
+    {
+        "prev": "far",
+        "icon": "calendar-minus"
+    },
+    {
+        "prev": "fas",
+        "icon": "calendar-plus"
+    },
+    {
+        "prev": "far",
+        "icon": "calendar-plus"
+    },
+    {
+        "prev": "fas",
+        "icon": "calendar-times"
+    },
+    {
+        "prev": "far",
+        "icon": "calendar-times"
+    },
+    {
+        "prev": "fas",
+        "icon": "calendar-week"
+    },
+    {
+        "prev": "fas",
+        "icon": "camera"
+    },
+    {
+        "prev": "fas",
+        "icon": "camera-retro"
+    },
+    {
+        "prev": "fas",
+        "icon": "campground"
+    },
+    {
+        "prev": "fab",
+        "icon": "canadian-maple-leaf"
+    },
+    {
+        "prev": "fas",
+        "icon": "candy-cane"
+    },
+    {
+        "prev": "fas",
+        "icon": "cannabis"
+    },
+    {
+        "prev": "fas",
+        "icon": "capsules"
+    },
+    {
+        "prev": "fas",
+        "icon": "car"
+    },
+    {
+        "prev": "fas",
+        "icon": "car-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "car-battery"
+    },
+    {
+        "prev": "fas",
+        "icon": "car-crash"
+    },
+    {
+        "prev": "fas",
+        "icon": "car-side"
+    },
+    {
+        "prev": "fas",
+        "icon": "caret-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "caret-left"
+    },
+    {
+        "prev": "fas",
+        "icon": "caret-right"
+    },
+    {
+        "prev": "fas",
+        "icon": "caret-square-down"
+    },
+    {
+        "prev": "far",
+        "icon": "caret-square-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "caret-square-left"
+    },
+    {
+        "prev": "far",
+        "icon": "caret-square-left"
+    },
+    {
+        "prev": "fas",
+        "icon": "caret-square-right"
+    },
+    {
+        "prev": "far",
+        "icon": "caret-square-right"
+    },
+    {
+        "prev": "fas",
+        "icon": "caret-square-up"
+    },
+    {
+        "prev": "far",
+        "icon": "caret-square-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "caret-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "carrot"
+    },
+    {
+        "prev": "fas",
+        "icon": "cart-arrow-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "cart-plus"
+    },
+    {
+        "prev": "fas",
+        "icon": "cash-register"
+    },
+    {
+        "prev": "fas",
+        "icon": "cat"
+    },
+    {
+        "prev": "fab",
+        "icon": "cc-amazon-pay"
+    },
+    {
+        "prev": "fab",
+        "icon": "cc-amex"
+    },
+    {
+        "prev": "fab",
+        "icon": "cc-apple-pay"
+    },
+    {
+        "prev": "fab",
+        "icon": "cc-diners-club"
+    },
+    {
+        "prev": "fab",
+        "icon": "cc-discover"
+    },
+    {
+        "prev": "fab",
+        "icon": "cc-jcb"
+    },
+    {
+        "prev": "fab",
+        "icon": "cc-mastercard"
+    },
+    {
+        "prev": "fab",
+        "icon": "cc-paypal"
+    },
+    {
+        "prev": "fab",
+        "icon": "cc-stripe"
+    },
+    {
+        "prev": "fab",
+        "icon": "cc-visa"
+    },
+    {
+        "prev": "fab",
+        "icon": "centercode"
+    },
+    {
+        "prev": "fab",
+        "icon": "centos"
+    },
+    {
+        "prev": "fas",
+        "icon": "certificate"
+    },
+    {
+        "prev": "fas",
+        "icon": "chair"
+    },
+    {
+        "prev": "fas",
+        "icon": "chalkboard"
+    },
+    {
+        "prev": "fas",
+        "icon": "chalkboard-teacher"
+    },
+    {
+        "prev": "fas",
+        "icon": "charging-station"
+    },
+    {
+        "prev": "fas",
+        "icon": "chart-area"
+    },
+    {
+        "prev": "fas",
+        "icon": "chart-bar"
+    },
+    {
+        "prev": "far",
+        "icon": "chart-bar"
+    },
+    {
+        "prev": "fas",
+        "icon": "chart-line"
+    },
+    {
+        "prev": "fas",
+        "icon": "chart-pie"
+    },
+    {
+        "prev": "fas",
+        "icon": "check"
+    },
+    {
+        "prev": "fas",
+        "icon": "check-circle"
+    },
+    {
+        "prev": "far",
+        "icon": "check-circle"
+    },
+    {
+        "prev": "fas",
+        "icon": "check-double"
+    },
+    {
+        "prev": "fas",
+        "icon": "check-square"
+    },
+    {
+        "prev": "far",
+        "icon": "check-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "chess"
+    },
+    {
+        "prev": "fas",
+        "icon": "chess-bishop"
+    },
+    {
+        "prev": "fas",
+        "icon": "chess-board"
+    },
+    {
+        "prev": "fas",
+        "icon": "chess-king"
+    },
+    {
+        "prev": "fas",
+        "icon": "chess-knight"
+    },
+    {
+        "prev": "fas",
+        "icon": "chess-pawn"
+    },
+    {
+        "prev": "fas",
+        "icon": "chess-queen"
+    },
+    {
+        "prev": "fas",
+        "icon": "chess-rook"
+    },
+    {
+        "prev": "fas",
+        "icon": "chevron-circle-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "chevron-circle-left"
+    },
+    {
+        "prev": "fas",
+        "icon": "chevron-circle-right"
+    },
+    {
+        "prev": "fas",
+        "icon": "chevron-circle-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "chevron-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "chevron-left"
+    },
+    {
+        "prev": "fas",
+        "icon": "chevron-right"
+    },
+    {
+        "prev": "fas",
+        "icon": "chevron-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "child"
+    },
+    {
+        "prev": "fab",
+        "icon": "chrome"
+    },
+    {
+        "prev": "fas",
+        "icon": "church"
+    },
+    {
+        "prev": "fas",
+        "icon": "circle"
+    },
+    {
+        "prev": "far",
+        "icon": "circle"
+    },
+    {
+        "prev": "fas",
+        "icon": "circle-notch"
+    },
+    {
+        "prev": "fas",
+        "icon": "city"
+    },
+    {
+        "prev": "fas",
+        "icon": "clipboard"
+    },
+    {
+        "prev": "far",
+        "icon": "clipboard"
+    },
+    {
+        "prev": "fas",
+        "icon": "clipboard-check"
+    },
+    {
+        "prev": "fas",
+        "icon": "clipboard-list"
+    },
+    {
+        "prev": "fas",
+        "icon": "clock"
+    },
+    {
+        "prev": "far",
+        "icon": "clock"
+    },
+    {
+        "prev": "fas",
+        "icon": "clone"
+    },
+    {
+        "prev": "far",
+        "icon": "clone"
+    },
+    {
+        "prev": "fas",
+        "icon": "closed-captioning"
+    },
+    {
+        "prev": "far",
+        "icon": "closed-captioning"
+    },
+    {
+        "prev": "fas",
+        "icon": "cloud"
+    },
+    {
+        "prev": "fas",
+        "icon": "cloud-download-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "cloud-meatball"
+    },
+    {
+        "prev": "fas",
+        "icon": "cloud-moon"
+    },
+    {
+        "prev": "fas",
+        "icon": "cloud-moon-rain"
+    },
+    {
+        "prev": "fas",
+        "icon": "cloud-rain"
+    },
+    {
+        "prev": "fas",
+        "icon": "cloud-showers-heavy"
+    },
+    {
+        "prev": "fas",
+        "icon": "cloud-sun"
+    },
+    {
+        "prev": "fas",
+        "icon": "cloud-sun-rain"
+    },
+    {
+        "prev": "fas",
+        "icon": "cloud-upload-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "cloudscale"
+    },
+    {
+        "prev": "fab",
+        "icon": "cloudsmith"
+    },
+    {
+        "prev": "fab",
+        "icon": "cloudversify"
+    },
+    {
+        "prev": "fas",
+        "icon": "cocktail"
+    },
+    {
+        "prev": "fas",
+        "icon": "code"
+    },
+    {
+        "prev": "fas",
+        "icon": "code-branch"
+    },
+    {
+        "prev": "fab",
+        "icon": "codepen"
+    },
+    {
+        "prev": "fab",
+        "icon": "codiepie"
+    },
+    {
+        "prev": "fas",
+        "icon": "coffee"
+    },
+    {
+        "prev": "fas",
+        "icon": "cog"
+    },
+    {
+        "prev": "fas",
+        "icon": "cogs"
+    },
+    {
+        "prev": "fas",
+        "icon": "coins"
+    },
+    {
+        "prev": "fas",
+        "icon": "columns"
+    },
+    {
+        "prev": "fas",
+        "icon": "comment"
+    },
+    {
+        "prev": "far",
+        "icon": "comment"
+    },
+    {
+        "prev": "fas",
+        "icon": "comment-alt"
+    },
+    {
+        "prev": "far",
+        "icon": "comment-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "comment-dollar"
+    },
+    {
+        "prev": "fas",
+        "icon": "comment-dots"
+    },
+    {
+        "prev": "far",
+        "icon": "comment-dots"
+    },
+    {
+        "prev": "fas",
+        "icon": "comment-slash"
+    },
+    {
+        "prev": "fas",
+        "icon": "comments"
+    },
+    {
+        "prev": "far",
+        "icon": "comments"
+    },
+    {
+        "prev": "fas",
+        "icon": "comments-dollar"
+    },
+    {
+        "prev": "fas",
+        "icon": "compact-disc"
+    },
+    {
+        "prev": "fas",
+        "icon": "compass"
+    },
+    {
+        "prev": "far",
+        "icon": "compass"
+    },
+    {
+        "prev": "fas",
+        "icon": "compress"
+    },
+    {
+        "prev": "fas",
+        "icon": "compress-arrows-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "concierge-bell"
+    },
+    {
+        "prev": "fab",
+        "icon": "confluence"
+    },
+    {
+        "prev": "fab",
+        "icon": "connectdevelop"
+    },
+    {
+        "prev": "fab",
+        "icon": "contao"
+    },
+    {
+        "prev": "fas",
+        "icon": "cookie"
+    },
+    {
+        "prev": "fas",
+        "icon": "cookie-bite"
+    },
+    {
+        "prev": "fas",
+        "icon": "copy"
+    },
+    {
+        "prev": "far",
+        "icon": "copy"
+    },
+    {
+        "prev": "fas",
+        "icon": "copyright"
+    },
+    {
+        "prev": "far",
+        "icon": "copyright"
+    },
+    {
+        "prev": "fas",
+        "icon": "couch"
+    },
+    {
+        "prev": "fab",
+        "icon": "cpanel"
+    },
+    {
+        "prev": "fab",
+        "icon": "creative-commons"
+    },
+    {
+        "prev": "fab",
+        "icon": "creative-commons-by"
+    },
+    {
+        "prev": "fab",
+        "icon": "creative-commons-nc"
+    },
+    {
+        "prev": "fab",
+        "icon": "creative-commons-nc-eu"
+    },
+    {
+        "prev": "fab",
+        "icon": "creative-commons-nc-jp"
+    },
+    {
+        "prev": "fab",
+        "icon": "creative-commons-nd"
+    },
+    {
+        "prev": "fab",
+        "icon": "creative-commons-pd"
+    },
+    {
+        "prev": "fab",
+        "icon": "creative-commons-pd-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "creative-commons-remix"
+    },
+    {
+        "prev": "fab",
+        "icon": "creative-commons-sa"
+    },
+    {
+        "prev": "fab",
+        "icon": "creative-commons-sampling"
+    },
+    {
+        "prev": "fab",
+        "icon": "creative-commons-sampling-plus"
+    },
+    {
+        "prev": "fab",
+        "icon": "creative-commons-share"
+    },
+    {
+        "prev": "fab",
+        "icon": "creative-commons-zero"
+    },
+    {
+        "prev": "fas",
+        "icon": "credit-card"
+    },
+    {
+        "prev": "far",
+        "icon": "credit-card"
+    },
+    {
+        "prev": "fab",
+        "icon": "critical-role"
+    },
+    {
+        "prev": "fas",
+        "icon": "crop"
+    },
+    {
+        "prev": "fas",
+        "icon": "crop-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "cross"
+    },
+    {
+        "prev": "fas",
+        "icon": "crosshairs"
+    },
+    {
+        "prev": "fas",
+        "icon": "crow"
+    },
+    {
+        "prev": "fas",
+        "icon": "crown"
+    },
+    {
+        "prev": "fab",
+        "icon": "css3"
+    },
+    {
+        "prev": "fab",
+        "icon": "css3-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "cube"
+    },
+    {
+        "prev": "fas",
+        "icon": "cubes"
+    },
+    {
+        "prev": "fas",
+        "icon": "cut"
+    },
+    {
+        "prev": "fab",
+        "icon": "cuttlefish"
+    },
+    {
+        "prev": "fab",
+        "icon": "d-and-d"
+    },
+    {
+        "prev": "fab",
+        "icon": "d-and-d-beyond"
+    },
+    {
+        "prev": "fab",
+        "icon": "dashcube"
+    },
+    {
+        "prev": "fas",
+        "icon": "database"
+    },
+    {
+        "prev": "fas",
+        "icon": "deaf"
+    },
+    {
+        "prev": "fab",
+        "icon": "delicious"
+    },
+    {
+        "prev": "fas",
+        "icon": "democrat"
+    },
+    {
+        "prev": "fab",
+        "icon": "deploydog"
+    },
+    {
+        "prev": "fab",
+        "icon": "deskpro"
+    },
+    {
+        "prev": "fas",
+        "icon": "desktop"
+    },
+    {
+        "prev": "fab",
+        "icon": "dev"
+    },
+    {
+        "prev": "fab",
+        "icon": "deviantart"
+    },
+    {
+        "prev": "fas",
+        "icon": "dharmachakra"
+    },
+    {
+        "prev": "fab",
+        "icon": "dhl"
+    },
+    {
+        "prev": "fas",
+        "icon": "diagnoses"
+    },
+    {
+        "prev": "fab",
+        "icon": "diaspora"
+    },
+    {
+        "prev": "fas",
+        "icon": "dice"
+    },
+    {
+        "prev": "fas",
+        "icon": "dice-d20"
+    },
+    {
+        "prev": "fas",
+        "icon": "dice-d6"
+    },
+    {
+        "prev": "fas",
+        "icon": "dice-five"
+    },
+    {
+        "prev": "fas",
+        "icon": "dice-four"
+    },
+    {
+        "prev": "fas",
+        "icon": "dice-one"
+    },
+    {
+        "prev": "fas",
+        "icon": "dice-six"
+    },
+    {
+        "prev": "fas",
+        "icon": "dice-three"
+    },
+    {
+        "prev": "fas",
+        "icon": "dice-two"
+    },
+    {
+        "prev": "fab",
+        "icon": "digg"
+    },
+    {
+        "prev": "fab",
+        "icon": "digital-ocean"
+    },
+    {
+        "prev": "fas",
+        "icon": "digital-tachograph"
+    },
+    {
+        "prev": "fas",
+        "icon": "directions"
+    },
+    {
+        "prev": "fab",
+        "icon": "discord"
+    },
+    {
+        "prev": "fab",
+        "icon": "discourse"
+    },
+    {
+        "prev": "fas",
+        "icon": "divide"
+    },
+    {
+        "prev": "fas",
+        "icon": "dizzy"
+    },
+    {
+        "prev": "far",
+        "icon": "dizzy"
+    },
+    {
+        "prev": "fas",
+        "icon": "dna"
+    },
+    {
+        "prev": "fab",
+        "icon": "dochub"
+    },
+    {
+        "prev": "fab",
+        "icon": "docker"
+    },
+    {
+        "prev": "fas",
+        "icon": "dog"
+    },
+    {
+        "prev": "fas",
+        "icon": "dollar-sign"
+    },
+    {
+        "prev": "fas",
+        "icon": "dolly"
+    },
+    {
+        "prev": "fas",
+        "icon": "dolly-flatbed"
+    },
+    {
+        "prev": "fas",
+        "icon": "donate"
+    },
+    {
+        "prev": "fas",
+        "icon": "door-closed"
+    },
+    {
+        "prev": "fas",
+        "icon": "door-open"
+    },
+    {
+        "prev": "fas",
+        "icon": "dot-circle"
+    },
+    {
+        "prev": "far",
+        "icon": "dot-circle"
+    },
+    {
+        "prev": "fas",
+        "icon": "dove"
+    },
+    {
+        "prev": "fas",
+        "icon": "download"
+    },
+    {
+        "prev": "fab",
+        "icon": "draft2digital"
+    },
+    {
+        "prev": "fas",
+        "icon": "drafting-compass"
+    },
+    {
+        "prev": "fas",
+        "icon": "dragon"
+    },
+    {
+        "prev": "fas",
+        "icon": "draw-polygon"
+    },
+    {
+        "prev": "fab",
+        "icon": "dribbble"
+    },
+    {
+        "prev": "fab",
+        "icon": "dribbble-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "dropbox"
+    },
+    {
+        "prev": "fas",
+        "icon": "drum"
+    },
+    {
+        "prev": "fas",
+        "icon": "drum-steelpan"
+    },
+    {
+        "prev": "fas",
+        "icon": "drumstick-bite"
+    },
+    {
+        "prev": "fab",
+        "icon": "drupal"
+    },
+    {
+        "prev": "fas",
+        "icon": "dumbbell"
+    },
+    {
+        "prev": "fas",
+        "icon": "dumpster"
+    },
+    {
+        "prev": "fas",
+        "icon": "dumpster-fire"
+    },
+    {
+        "prev": "fas",
+        "icon": "dungeon"
+    },
+    {
+        "prev": "fab",
+        "icon": "dyalog"
+    },
+    {
+        "prev": "fab",
+        "icon": "earlybirds"
+    },
+    {
+        "prev": "fab",
+        "icon": "ebay"
+    },
+    {
+        "prev": "fab",
+        "icon": "edge"
+    },
+    {
+        "prev": "fas",
+        "icon": "edit"
+    },
+    {
+        "prev": "far",
+        "icon": "edit"
+    },
+    {
+        "prev": "fas",
+        "icon": "eject"
+    },
+    {
+        "prev": "fab",
+        "icon": "elementor"
+    },
+    {
+        "prev": "fas",
+        "icon": "ellipsis-h"
+    },
+    {
+        "prev": "fas",
+        "icon": "ellipsis-v"
+    },
+    {
+        "prev": "fab",
+        "icon": "ello"
+    },
+    {
+        "prev": "fab",
+        "icon": "ember"
+    },
+    {
+        "prev": "fab",
+        "icon": "empire"
+    },
+    {
+        "prev": "fas",
+        "icon": "envelope"
+    },
+    {
+        "prev": "far",
+        "icon": "envelope"
+    },
+    {
+        "prev": "fas",
+        "icon": "envelope-open"
+    },
+    {
+        "prev": "far",
+        "icon": "envelope-open"
+    },
+    {
+        "prev": "fas",
+        "icon": "envelope-open-text"
+    },
+    {
+        "prev": "fas",
+        "icon": "envelope-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "envira"
+    },
+    {
+        "prev": "fas",
+        "icon": "equals"
+    },
+    {
+        "prev": "fas",
+        "icon": "eraser"
+    },
+    {
+        "prev": "fab",
+        "icon": "erlang"
+    },
+    {
+        "prev": "fab",
+        "icon": "ethereum"
+    },
+    {
+        "prev": "fas",
+        "icon": "ethernet"
+    },
+    {
+        "prev": "fab",
+        "icon": "etsy"
+    },
+    {
+        "prev": "fas",
+        "icon": "euro-sign"
+    },
+    {
+        "prev": "fas",
+        "icon": "exchange-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "exclamation"
+    },
+    {
+        "prev": "fas",
+        "icon": "exclamation-circle"
+    },
+    {
+        "prev": "fas",
+        "icon": "exclamation-triangle"
+    },
+    {
+        "prev": "fas",
+        "icon": "expand"
+    },
+    {
+        "prev": "fas",
+        "icon": "expand-arrows-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "expeditedssl"
+    },
+    {
+        "prev": "fas",
+        "icon": "external-link-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "external-link-square-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "eye"
+    },
+    {
+        "prev": "far",
+        "icon": "eye"
+    },
+    {
+        "prev": "fas",
+        "icon": "eye-dropper"
+    },
+    {
+        "prev": "fas",
+        "icon": "eye-slash"
+    },
+    {
+        "prev": "far",
+        "icon": "eye-slash"
+    },
+    {
+        "prev": "fab",
+        "icon": "facebook"
+    },
+    {
+        "prev": "fab",
+        "icon": "facebook-f"
+    },
+    {
+        "prev": "fab",
+        "icon": "facebook-messenger"
+    },
+    {
+        "prev": "fab",
+        "icon": "facebook-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "fantasy-flight-games"
+    },
+    {
+        "prev": "fas",
+        "icon": "fast-backward"
+    },
+    {
+        "prev": "fas",
+        "icon": "fast-forward"
+    },
+    {
+        "prev": "fas",
+        "icon": "fax"
+    },
+    {
+        "prev": "fas",
+        "icon": "feather"
+    },
+    {
+        "prev": "fas",
+        "icon": "feather-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "fedex"
+    },
+    {
+        "prev": "fab",
+        "icon": "fedora"
+    },
+    {
+        "prev": "fas",
+        "icon": "female"
+    },
+    {
+        "prev": "fas",
+        "icon": "fighter-jet"
+    },
+    {
+        "prev": "fab",
+        "icon": "figma"
+    },
+    {
+        "prev": "fas",
+        "icon": "file"
+    },
+    {
+        "prev": "far",
+        "icon": "file"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-alt"
+    },
+    {
+        "prev": "far",
+        "icon": "file-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-archive"
+    },
+    {
+        "prev": "far",
+        "icon": "file-archive"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-audio"
+    },
+    {
+        "prev": "far",
+        "icon": "file-audio"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-code"
+    },
+    {
+        "prev": "far",
+        "icon": "file-code"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-contract"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-csv"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-download"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-excel"
+    },
+    {
+        "prev": "far",
+        "icon": "file-excel"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-export"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-image"
+    },
+    {
+        "prev": "far",
+        "icon": "file-image"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-import"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-invoice"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-invoice-dollar"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-medical"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-medical-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-pdf"
+    },
+    {
+        "prev": "far",
+        "icon": "file-pdf"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-powerpoint"
+    },
+    {
+        "prev": "far",
+        "icon": "file-powerpoint"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-prescription"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-signature"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-upload"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-video"
+    },
+    {
+        "prev": "far",
+        "icon": "file-video"
+    },
+    {
+        "prev": "fas",
+        "icon": "file-word"
+    },
+    {
+        "prev": "far",
+        "icon": "file-word"
+    },
+    {
+        "prev": "fas",
+        "icon": "fill"
+    },
+    {
+        "prev": "fas",
+        "icon": "fill-drip"
+    },
+    {
+        "prev": "fas",
+        "icon": "film"
+    },
+    {
+        "prev": "fas",
+        "icon": "filter"
+    },
+    {
+        "prev": "fas",
+        "icon": "fingerprint"
+    },
+    {
+        "prev": "fas",
+        "icon": "fire"
+    },
+    {
+        "prev": "fas",
+        "icon": "fire-extinguisher"
+    },
+    {
+        "prev": "fab",
+        "icon": "firefox"
+    },
+    {
+        "prev": "fas",
+        "icon": "first-aid"
+    },
+    {
+        "prev": "fab",
+        "icon": "first-order"
+    },
+    {
+        "prev": "fab",
+        "icon": "first-order-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "firstdraft"
+    },
+    {
+        "prev": "fas",
+        "icon": "fish"
+    },
+    {
+        "prev": "fas",
+        "icon": "fist-raised"
+    },
+    {
+        "prev": "fas",
+        "icon": "flag"
+    },
+    {
+        "prev": "far",
+        "icon": "flag"
+    },
+    {
+        "prev": "fas",
+        "icon": "flag-checkered"
+    },
+    {
+        "prev": "fas",
+        "icon": "flag-usa"
+    },
+    {
+        "prev": "fas",
+        "icon": "flask"
+    },
+    {
+        "prev": "fab",
+        "icon": "flickr"
+    },
+    {
+        "prev": "fab",
+        "icon": "flipboard"
+    },
+    {
+        "prev": "fas",
+        "icon": "flushed"
+    },
+    {
+        "prev": "far",
+        "icon": "flushed"
+    },
+    {
+        "prev": "fab",
+        "icon": "fly"
+    },
+    {
+        "prev": "fas",
+        "icon": "folder"
+    },
+    {
+        "prev": "far",
+        "icon": "folder"
+    },
+    {
+        "prev": "fas",
+        "icon": "folder-minus"
+    },
+    {
+        "prev": "fas",
+        "icon": "folder-open"
+    },
+    {
+        "prev": "far",
+        "icon": "folder-open"
+    },
+    {
+        "prev": "fas",
+        "icon": "folder-plus"
+    },
+    {
+        "prev": "fas",
+        "icon": "font"
+    },
+    {
+        "prev": "fab",
+        "icon": "font-awesome"
+    },
+    {
+        "prev": "fab",
+        "icon": "font-awesome-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "font-awesome-flag"
+    },
+    {
+        "prev": "fab",
+        "icon": "fonticons"
+    },
+    {
+        "prev": "fab",
+        "icon": "fonticons-fi"
+    },
+    {
+        "prev": "fas",
+        "icon": "football-ball"
+    },
+    {
+        "prev": "fab",
+        "icon": "fort-awesome"
+    },
+    {
+        "prev": "fab",
+        "icon": "fort-awesome-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "forumbee"
+    },
+    {
+        "prev": "fas",
+        "icon": "forward"
+    },
+    {
+        "prev": "fab",
+        "icon": "foursquare"
+    },
+    {
+        "prev": "fab",
+        "icon": "free-code-camp"
+    },
+    {
+        "prev": "fab",
+        "icon": "freebsd"
+    },
+    {
+        "prev": "fas",
+        "icon": "frog"
+    },
+    {
+        "prev": "fas",
+        "icon": "frown"
+    },
+    {
+        "prev": "far",
+        "icon": "frown"
+    },
+    {
+        "prev": "fas",
+        "icon": "frown-open"
+    },
+    {
+        "prev": "far",
+        "icon": "frown-open"
+    },
+    {
+        "prev": "fab",
+        "icon": "fulcrum"
+    },
+    {
+        "prev": "fas",
+        "icon": "funnel-dollar"
+    },
+    {
+        "prev": "fas",
+        "icon": "futbol"
+    },
+    {
+        "prev": "far",
+        "icon": "futbol"
+    },
+    {
+        "prev": "fab",
+        "icon": "galactic-republic"
+    },
+    {
+        "prev": "fab",
+        "icon": "galactic-senate"
+    },
+    {
+        "prev": "fas",
+        "icon": "gamepad"
+    },
+    {
+        "prev": "fas",
+        "icon": "gas-pump"
+    },
+    {
+        "prev": "fas",
+        "icon": "gavel"
+    },
+    {
+        "prev": "fas",
+        "icon": "gem"
+    },
+    {
+        "prev": "far",
+        "icon": "gem"
+    },
+    {
+        "prev": "fas",
+        "icon": "genderless"
+    },
+    {
+        "prev": "fab",
+        "icon": "get-pocket"
+    },
+    {
+        "prev": "fab",
+        "icon": "gg"
+    },
+    {
+        "prev": "fab",
+        "icon": "gg-circle"
+    },
+    {
+        "prev": "fas",
+        "icon": "ghost"
+    },
+    {
+        "prev": "fas",
+        "icon": "gift"
+    },
+    {
+        "prev": "fas",
+        "icon": "gifts"
+    },
+    {
+        "prev": "fab",
+        "icon": "git"
+    },
+    {
+        "prev": "fab",
+        "icon": "git-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "github"
+    },
+    {
+        "prev": "fab",
+        "icon": "github-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "github-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "gitkraken"
+    },
+    {
+        "prev": "fab",
+        "icon": "gitlab"
+    },
+    {
+        "prev": "fab",
+        "icon": "gitter"
+    },
+    {
+        "prev": "fas",
+        "icon": "glass-cheers"
+    },
+    {
+        "prev": "fas",
+        "icon": "glass-martini"
+    },
+    {
+        "prev": "fas",
+        "icon": "glass-martini-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "glass-whiskey"
+    },
+    {
+        "prev": "fas",
+        "icon": "glasses"
+    },
+    {
+        "prev": "fab",
+        "icon": "glide"
+    },
+    {
+        "prev": "fab",
+        "icon": "glide-g"
+    },
+    {
+        "prev": "fas",
+        "icon": "globe"
+    },
+    {
+        "prev": "fas",
+        "icon": "globe-africa"
+    },
+    {
+        "prev": "fas",
+        "icon": "globe-americas"
+    },
+    {
+        "prev": "fas",
+        "icon": "globe-asia"
+    },
+    {
+        "prev": "fas",
+        "icon": "globe-europe"
+    },
+    {
+        "prev": "fab",
+        "icon": "gofore"
+    },
+    {
+        "prev": "fas",
+        "icon": "golf-ball"
+    },
+    {
+        "prev": "fab",
+        "icon": "goodreads"
+    },
+    {
+        "prev": "fab",
+        "icon": "goodreads-g"
+    },
+    {
+        "prev": "fab",
+        "icon": "google"
+    },
+    {
+        "prev": "fab",
+        "icon": "google-drive"
+    },
+    {
+        "prev": "fab",
+        "icon": "google-play"
+    },
+    {
+        "prev": "fab",
+        "icon": "google-plus"
+    },
+    {
+        "prev": "fab",
+        "icon": "google-plus-g"
+    },
+    {
+        "prev": "fab",
+        "icon": "google-plus-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "google-wallet"
+    },
+    {
+        "prev": "fas",
+        "icon": "gopuram"
+    },
+    {
+        "prev": "fas",
+        "icon": "graduation-cap"
+    },
+    {
+        "prev": "fab",
+        "icon": "gratipay"
+    },
+    {
+        "prev": "fab",
+        "icon": "grav"
+    },
+    {
+        "prev": "fas",
+        "icon": "greater-than"
+    },
+    {
+        "prev": "fas",
+        "icon": "greater-than-equal"
+    },
+    {
+        "prev": "fas",
+        "icon": "grimace"
+    },
+    {
+        "prev": "far",
+        "icon": "grimace"
+    },
+    {
+        "prev": "fas",
+        "icon": "grin"
+    },
+    {
+        "prev": "far",
+        "icon": "grin"
+    },
+    {
+        "prev": "fas",
+        "icon": "grin-alt"
+    },
+    {
+        "prev": "far",
+        "icon": "grin-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "grin-beam"
+    },
+    {
+        "prev": "far",
+        "icon": "grin-beam"
+    },
+    {
+        "prev": "fas",
+        "icon": "grin-beam-sweat"
+    },
+    {
+        "prev": "far",
+        "icon": "grin-beam-sweat"
+    },
+    {
+        "prev": "fas",
+        "icon": "grin-hearts"
+    },
+    {
+        "prev": "far",
+        "icon": "grin-hearts"
+    },
+    {
+        "prev": "fas",
+        "icon": "grin-squint"
+    },
+    {
+        "prev": "far",
+        "icon": "grin-squint"
+    },
+    {
+        "prev": "fas",
+        "icon": "grin-squint-tears"
+    },
+    {
+        "prev": "far",
+        "icon": "grin-squint-tears"
+    },
+    {
+        "prev": "fas",
+        "icon": "grin-stars"
+    },
+    {
+        "prev": "far",
+        "icon": "grin-stars"
+    },
+    {
+        "prev": "fas",
+        "icon": "grin-tears"
+    },
+    {
+        "prev": "far",
+        "icon": "grin-tears"
+    },
+    {
+        "prev": "fas",
+        "icon": "grin-tongue"
+    },
+    {
+        "prev": "far",
+        "icon": "grin-tongue"
+    },
+    {
+        "prev": "fas",
+        "icon": "grin-tongue-squint"
+    },
+    {
+        "prev": "far",
+        "icon": "grin-tongue-squint"
+    },
+    {
+        "prev": "fas",
+        "icon": "grin-tongue-wink"
+    },
+    {
+        "prev": "far",
+        "icon": "grin-tongue-wink"
+    },
+    {
+        "prev": "fas",
+        "icon": "grin-wink"
+    },
+    {
+        "prev": "far",
+        "icon": "grin-wink"
+    },
+    {
+        "prev": "fas",
+        "icon": "grip-horizontal"
+    },
+    {
+        "prev": "fas",
+        "icon": "grip-lines"
+    },
+    {
+        "prev": "fas",
+        "icon": "grip-lines-vertical"
+    },
+    {
+        "prev": "fas",
+        "icon": "grip-vertical"
+    },
+    {
+        "prev": "fab",
+        "icon": "gripfire"
+    },
+    {
+        "prev": "fab",
+        "icon": "grunt"
+    },
+    {
+        "prev": "fas",
+        "icon": "guitar"
+    },
+    {
+        "prev": "fab",
+        "icon": "gulp"
+    },
+    {
+        "prev": "fas",
+        "icon": "h-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "hacker-news"
+    },
+    {
+        "prev": "fab",
+        "icon": "hacker-news-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "hackerrank"
+    },
+    {
+        "prev": "fas",
+        "icon": "hammer"
+    },
+    {
+        "prev": "fas",
+        "icon": "hamsa"
+    },
+    {
+        "prev": "fas",
+        "icon": "hand-holding"
+    },
+    {
+        "prev": "fas",
+        "icon": "hand-holding-heart"
+    },
+    {
+        "prev": "fas",
+        "icon": "hand-holding-usd"
+    },
+    {
+        "prev": "fas",
+        "icon": "hand-lizard"
+    },
+    {
+        "prev": "far",
+        "icon": "hand-lizard"
+    },
+    {
+        "prev": "fas",
+        "icon": "hand-paper"
+    },
+    {
+        "prev": "far",
+        "icon": "hand-paper"
+    },
+    {
+        "prev": "fas",
+        "icon": "hand-peace"
+    },
+    {
+        "prev": "far",
+        "icon": "hand-peace"
+    },
+    {
+        "prev": "fas",
+        "icon": "hand-point-down"
+    },
+    {
+        "prev": "far",
+        "icon": "hand-point-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "hand-point-left"
+    },
+    {
+        "prev": "far",
+        "icon": "hand-point-left"
+    },
+    {
+        "prev": "fas",
+        "icon": "hand-point-right"
+    },
+    {
+        "prev": "far",
+        "icon": "hand-point-right"
+    },
+    {
+        "prev": "fas",
+        "icon": "hand-point-up"
+    },
+    {
+        "prev": "far",
+        "icon": "hand-point-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "hand-pointer"
+    },
+    {
+        "prev": "far",
+        "icon": "hand-pointer"
+    },
+    {
+        "prev": "fas",
+        "icon": "hand-rock"
+    },
+    {
+        "prev": "far",
+        "icon": "hand-rock"
+    },
+    {
+        "prev": "fas",
+        "icon": "hand-scissors"
+    },
+    {
+        "prev": "far",
+        "icon": "hand-scissors"
+    },
+    {
+        "prev": "fas",
+        "icon": "hand-spock"
+    },
+    {
+        "prev": "far",
+        "icon": "hand-spock"
+    },
+    {
+        "prev": "fas",
+        "icon": "hands"
+    },
+    {
+        "prev": "fas",
+        "icon": "hands-helping"
+    },
+    {
+        "prev": "fas",
+        "icon": "handshake"
+    },
+    {
+        "prev": "far",
+        "icon": "handshake"
+    },
+    {
+        "prev": "fas",
+        "icon": "hanukiah"
+    },
+    {
+        "prev": "fas",
+        "icon": "hashtag"
+    },
+    {
+        "prev": "fas",
+        "icon": "hat-wizard"
+    },
+    {
+        "prev": "fas",
+        "icon": "haykal"
+    },
+    {
+        "prev": "fas",
+        "icon": "hdd"
+    },
+    {
+        "prev": "far",
+        "icon": "hdd"
+    },
+    {
+        "prev": "fas",
+        "icon": "heading"
+    },
+    {
+        "prev": "fas",
+        "icon": "headphones"
+    },
+    {
+        "prev": "fas",
+        "icon": "headphones-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "headset"
+    },
+    {
+        "prev": "fas",
+        "icon": "heart"
+    },
+    {
+        "prev": "far",
+        "icon": "heart"
+    },
+    {
+        "prev": "fas",
+        "icon": "heart-broken"
+    },
+    {
+        "prev": "fas",
+        "icon": "heartbeat"
+    },
+    {
+        "prev": "fas",
+        "icon": "helicopter"
+    },
+    {
+        "prev": "fas",
+        "icon": "highlighter"
+    },
+    {
+        "prev": "fas",
+        "icon": "hiking"
+    },
+    {
+        "prev": "fas",
+        "icon": "hippo"
+    },
+    {
+        "prev": "fab",
+        "icon": "hips"
+    },
+    {
+        "prev": "fab",
+        "icon": "hire-a-helper"
+    },
+    {
+        "prev": "fas",
+        "icon": "history"
+    },
+    {
+        "prev": "fas",
+        "icon": "hockey-puck"
+    },
+    {
+        "prev": "fas",
+        "icon": "holly-berry"
+    },
+    {
+        "prev": "fas",
+        "icon": "home"
+    },
+    {
+        "prev": "fab",
+        "icon": "hooli"
+    },
+    {
+        "prev": "fab",
+        "icon": "hornbill"
+    },
+    {
+        "prev": "fas",
+        "icon": "horse"
+    },
+    {
+        "prev": "fas",
+        "icon": "horse-head"
+    },
+    {
+        "prev": "fas",
+        "icon": "hospital"
+    },
+    {
+        "prev": "far",
+        "icon": "hospital"
+    },
+    {
+        "prev": "fas",
+        "icon": "hospital-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "hospital-symbol"
+    },
+    {
+        "prev": "fas",
+        "icon": "hot-tub"
+    },
+    {
+        "prev": "fas",
+        "icon": "hotel"
+    },
+    {
+        "prev": "fab",
+        "icon": "hotjar"
+    },
+    {
+        "prev": "fas",
+        "icon": "hourglass"
+    },
+    {
+        "prev": "far",
+        "icon": "hourglass"
+    },
+    {
+        "prev": "fas",
+        "icon": "hourglass-end"
+    },
+    {
+        "prev": "fas",
+        "icon": "hourglass-half"
+    },
+    {
+        "prev": "fas",
+        "icon": "hourglass-start"
+    },
+    {
+        "prev": "fas",
+        "icon": "house-damage"
+    },
+    {
+        "prev": "fab",
+        "icon": "houzz"
+    },
+    {
+        "prev": "fas",
+        "icon": "hryvnia"
+    },
+    {
+        "prev": "fab",
+        "icon": "html5"
+    },
+    {
+        "prev": "fab",
+        "icon": "hubspot"
+    },
+    {
+        "prev": "fas",
+        "icon": "i-cursor"
+    },
+    {
+        "prev": "fas",
+        "icon": "icicles"
+    },
+    {
+        "prev": "fas",
+        "icon": "id-badge"
+    },
+    {
+        "prev": "far",
+        "icon": "id-badge"
+    },
+    {
+        "prev": "fas",
+        "icon": "id-card"
+    },
+    {
+        "prev": "far",
+        "icon": "id-card"
+    },
+    {
+        "prev": "fas",
+        "icon": "id-card-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "igloo"
+    },
+    {
+        "prev": "fas",
+        "icon": "image"
+    },
+    {
+        "prev": "far",
+        "icon": "image"
+    },
+    {
+        "prev": "fas",
+        "icon": "images"
+    },
+    {
+        "prev": "far",
+        "icon": "images"
+    },
+    {
+        "prev": "fab",
+        "icon": "imdb"
+    },
+    {
+        "prev": "fas",
+        "icon": "inbox"
+    },
+    {
+        "prev": "fas",
+        "icon": "indent"
+    },
+    {
+        "prev": "fas",
+        "icon": "industry"
+    },
+    {
+        "prev": "fas",
+        "icon": "infinity"
+    },
+    {
+        "prev": "fas",
+        "icon": "info"
+    },
+    {
+        "prev": "fas",
+        "icon": "info-circle"
+    },
+    {
+        "prev": "fab",
+        "icon": "instagram"
+    },
+    {
+        "prev": "fab",
+        "icon": "intercom"
+    },
+    {
+        "prev": "fab",
+        "icon": "internet-explorer"
+    },
+    {
+        "prev": "fab",
+        "icon": "invision"
+    },
+    {
+        "prev": "fab",
+        "icon": "ioxhost"
+    },
+    {
+        "prev": "fas",
+        "icon": "italic"
+    },
+    {
+        "prev": "fab",
+        "icon": "itunes"
+    },
+    {
+        "prev": "fab",
+        "icon": "itunes-note"
+    },
+    {
+        "prev": "fab",
+        "icon": "java"
+    },
+    {
+        "prev": "fas",
+        "icon": "jedi"
+    },
+    {
+        "prev": "fab",
+        "icon": "jedi-order"
+    },
+    {
+        "prev": "fab",
+        "icon": "jenkins"
+    },
+    {
+        "prev": "fab",
+        "icon": "jira"
+    },
+    {
+        "prev": "fab",
+        "icon": "joget"
+    },
+    {
+        "prev": "fas",
+        "icon": "joint"
+    },
+    {
+        "prev": "fab",
+        "icon": "joomla"
+    },
+    {
+        "prev": "fas",
+        "icon": "journal-whills"
+    },
+    {
+        "prev": "fab",
+        "icon": "js"
+    },
+    {
+        "prev": "fab",
+        "icon": "js-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "jsfiddle"
+    },
+    {
+        "prev": "fas",
+        "icon": "kaaba"
+    },
+    {
+        "prev": "fab",
+        "icon": "kaggle"
+    },
+    {
+        "prev": "fas",
+        "icon": "key"
+    },
+    {
+        "prev": "fab",
+        "icon": "keybase"
+    },
+    {
+        "prev": "fas",
+        "icon": "keyboard"
+    },
+    {
+        "prev": "far",
+        "icon": "keyboard"
+    },
+    {
+        "prev": "fab",
+        "icon": "keycdn"
+    },
+    {
+        "prev": "fas",
+        "icon": "khanda"
+    },
+    {
+        "prev": "fab",
+        "icon": "kickstarter"
+    },
+    {
+        "prev": "fab",
+        "icon": "kickstarter-k"
+    },
+    {
+        "prev": "fas",
+        "icon": "kiss"
+    },
+    {
+        "prev": "far",
+        "icon": "kiss"
+    },
+    {
+        "prev": "fas",
+        "icon": "kiss-beam"
+    },
+    {
+        "prev": "far",
+        "icon": "kiss-beam"
+    },
+    {
+        "prev": "fas",
+        "icon": "kiss-wink-heart"
+    },
+    {
+        "prev": "far",
+        "icon": "kiss-wink-heart"
+    },
+    {
+        "prev": "fas",
+        "icon": "kiwi-bird"
+    },
+    {
+        "prev": "fab",
+        "icon": "korvue"
+    },
+    {
+        "prev": "fas",
+        "icon": "landmark"
+    },
+    {
+        "prev": "fas",
+        "icon": "language"
+    },
+    {
+        "prev": "fas",
+        "icon": "laptop"
+    },
+    {
+        "prev": "fas",
+        "icon": "laptop-code"
+    },
+    {
+        "prev": "fab",
+        "icon": "laravel"
+    },
+    {
+        "prev": "fab",
+        "icon": "lastfm"
+    },
+    {
+        "prev": "fab",
+        "icon": "lastfm-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "laugh"
+    },
+    {
+        "prev": "far",
+        "icon": "laugh"
+    },
+    {
+        "prev": "fas",
+        "icon": "laugh-beam"
+    },
+    {
+        "prev": "far",
+        "icon": "laugh-beam"
+    },
+    {
+        "prev": "fas",
+        "icon": "laugh-squint"
+    },
+    {
+        "prev": "far",
+        "icon": "laugh-squint"
+    },
+    {
+        "prev": "fas",
+        "icon": "laugh-wink"
+    },
+    {
+        "prev": "far",
+        "icon": "laugh-wink"
+    },
+    {
+        "prev": "fas",
+        "icon": "layer-group"
+    },
+    {
+        "prev": "fas",
+        "icon": "leaf"
+    },
+    {
+        "prev": "fab",
+        "icon": "leanpub"
+    },
+    {
+        "prev": "fas",
+        "icon": "lemon"
+    },
+    {
+        "prev": "far",
+        "icon": "lemon"
+    },
+    {
+        "prev": "fab",
+        "icon": "less"
+    },
+    {
+        "prev": "fas",
+        "icon": "less-than"
+    },
+    {
+        "prev": "fas",
+        "icon": "less-than-equal"
+    },
+    {
+        "prev": "fas",
+        "icon": "level-down-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "level-up-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "life-ring"
+    },
+    {
+        "prev": "far",
+        "icon": "life-ring"
+    },
+    {
+        "prev": "fas",
+        "icon": "lightbulb"
+    },
+    {
+        "prev": "far",
+        "icon": "lightbulb"
+    },
+    {
+        "prev": "fab",
+        "icon": "line"
+    },
+    {
+        "prev": "fas",
+        "icon": "link"
+    },
+    {
+        "prev": "fab",
+        "icon": "linkedin"
+    },
+    {
+        "prev": "fab",
+        "icon": "linkedin-in"
+    },
+    {
+        "prev": "fab",
+        "icon": "linode"
+    },
+    {
+        "prev": "fab",
+        "icon": "linux"
+    },
+    {
+        "prev": "fas",
+        "icon": "lira-sign"
+    },
+    {
+        "prev": "fas",
+        "icon": "list"
+    },
+    {
+        "prev": "fas",
+        "icon": "list-alt"
+    },
+    {
+        "prev": "far",
+        "icon": "list-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "list-ol"
+    },
+    {
+        "prev": "fas",
+        "icon": "list-ul"
+    },
+    {
+        "prev": "fas",
+        "icon": "location-arrow"
+    },
+    {
+        "prev": "fas",
+        "icon": "lock"
+    },
+    {
+        "prev": "fas",
+        "icon": "lock-open"
+    },
+    {
+        "prev": "fas",
+        "icon": "long-arrow-alt-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "long-arrow-alt-left"
+    },
+    {
+        "prev": "fas",
+        "icon": "long-arrow-alt-right"
+    },
+    {
+        "prev": "fas",
+        "icon": "long-arrow-alt-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "low-vision"
+    },
+    {
+        "prev": "fas",
+        "icon": "luggage-cart"
+    },
+    {
+        "prev": "fab",
+        "icon": "lyft"
+    },
+    {
+        "prev": "fab",
+        "icon": "magento"
+    },
+    {
+        "prev": "fas",
+        "icon": "magic"
+    },
+    {
+        "prev": "fas",
+        "icon": "magnet"
+    },
+    {
+        "prev": "fas",
+        "icon": "mail-bulk"
+    },
+    {
+        "prev": "fab",
+        "icon": "mailchimp"
+    },
+    {
+        "prev": "fas",
+        "icon": "male"
+    },
+    {
+        "prev": "fab",
+        "icon": "mandalorian"
+    },
+    {
+        "prev": "fas",
+        "icon": "map"
+    },
+    {
+        "prev": "far",
+        "icon": "map"
+    },
+    {
+        "prev": "fas",
+        "icon": "map-marked"
+    },
+    {
+        "prev": "fas",
+        "icon": "map-marked-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "map-marker"
+    },
+    {
+        "prev": "fas",
+        "icon": "map-marker-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "map-pin"
+    },
+    {
+        "prev": "fas",
+        "icon": "map-signs"
+    },
+    {
+        "prev": "fab",
+        "icon": "markdown"
+    },
+    {
+        "prev": "fas",
+        "icon": "marker"
+    },
+    {
+        "prev": "fas",
+        "icon": "mars"
+    },
+    {
+        "prev": "fas",
+        "icon": "mars-double"
+    },
+    {
+        "prev": "fas",
+        "icon": "mars-stroke"
+    },
+    {
+        "prev": "fas",
+        "icon": "mars-stroke-h"
+    },
+    {
+        "prev": "fas",
+        "icon": "mars-stroke-v"
+    },
+    {
+        "prev": "fas",
+        "icon": "mask"
+    },
+    {
+        "prev": "fab",
+        "icon": "mastodon"
+    },
+    {
+        "prev": "fab",
+        "icon": "maxcdn"
+    },
+    {
+        "prev": "fas",
+        "icon": "medal"
+    },
+    {
+        "prev": "fab",
+        "icon": "medapps"
+    },
+    {
+        "prev": "fab",
+        "icon": "medium"
+    },
+    {
+        "prev": "fab",
+        "icon": "medium-m"
+    },
+    {
+        "prev": "fas",
+        "icon": "medkit"
+    },
+    {
+        "prev": "fab",
+        "icon": "medrt"
+    },
+    {
+        "prev": "fab",
+        "icon": "meetup"
+    },
+    {
+        "prev": "fab",
+        "icon": "megaport"
+    },
+    {
+        "prev": "fas",
+        "icon": "meh"
+    },
+    {
+        "prev": "far",
+        "icon": "meh"
+    },
+    {
+        "prev": "fas",
+        "icon": "meh-blank"
+    },
+    {
+        "prev": "far",
+        "icon": "meh-blank"
+    },
+    {
+        "prev": "fas",
+        "icon": "meh-rolling-eyes"
+    },
+    {
+        "prev": "far",
+        "icon": "meh-rolling-eyes"
+    },
+    {
+        "prev": "fas",
+        "icon": "memory"
+    },
+    {
+        "prev": "fab",
+        "icon": "mendeley"
+    },
+    {
+        "prev": "fas",
+        "icon": "menorah"
+    },
+    {
+        "prev": "fas",
+        "icon": "mercury"
+    },
+    {
+        "prev": "fas",
+        "icon": "meteor"
+    },
+    {
+        "prev": "fas",
+        "icon": "microchip"
+    },
+    {
+        "prev": "fas",
+        "icon": "microphone"
+    },
+    {
+        "prev": "fas",
+        "icon": "microphone-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "microphone-alt-slash"
+    },
+    {
+        "prev": "fas",
+        "icon": "microphone-slash"
+    },
+    {
+        "prev": "fas",
+        "icon": "microscope"
+    },
+    {
+        "prev": "fab",
+        "icon": "microsoft"
+    },
+    {
+        "prev": "fas",
+        "icon": "minus"
+    },
+    {
+        "prev": "fas",
+        "icon": "minus-circle"
+    },
+    {
+        "prev": "fas",
+        "icon": "minus-square"
+    },
+    {
+        "prev": "far",
+        "icon": "minus-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "mitten"
+    },
+    {
+        "prev": "fab",
+        "icon": "mix"
+    },
+    {
+        "prev": "fab",
+        "icon": "mixcloud"
+    },
+    {
+        "prev": "fab",
+        "icon": "mizuni"
+    },
+    {
+        "prev": "fas",
+        "icon": "mobile"
+    },
+    {
+        "prev": "fas",
+        "icon": "mobile-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "modx"
+    },
+    {
+        "prev": "fab",
+        "icon": "monero"
+    },
+    {
+        "prev": "fas",
+        "icon": "money-bill"
+    },
+    {
+        "prev": "fas",
+        "icon": "money-bill-alt"
+    },
+    {
+        "prev": "far",
+        "icon": "money-bill-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "money-bill-wave"
+    },
+    {
+        "prev": "fas",
+        "icon": "money-bill-wave-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "money-check"
+    },
+    {
+        "prev": "fas",
+        "icon": "money-check-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "monument"
+    },
+    {
+        "prev": "fas",
+        "icon": "moon"
+    },
+    {
+        "prev": "far",
+        "icon": "moon"
+    },
+    {
+        "prev": "fas",
+        "icon": "mortar-pestle"
+    },
+    {
+        "prev": "fas",
+        "icon": "mosque"
+    },
+    {
+        "prev": "fas",
+        "icon": "motorcycle"
+    },
+    {
+        "prev": "fas",
+        "icon": "mountain"
+    },
+    {
+        "prev": "fas",
+        "icon": "mouse-pointer"
+    },
+    {
+        "prev": "fas",
+        "icon": "mug-hot"
+    },
+    {
+        "prev": "fas",
+        "icon": "music"
+    },
+    {
+        "prev": "fab",
+        "icon": "napster"
+    },
+    {
+        "prev": "fab",
+        "icon": "neos"
+    },
+    {
+        "prev": "fas",
+        "icon": "network-wired"
+    },
+    {
+        "prev": "fas",
+        "icon": "neuter"
+    },
+    {
+        "prev": "fas",
+        "icon": "newspaper"
+    },
+    {
+        "prev": "far",
+        "icon": "newspaper"
+    },
+    {
+        "prev": "fab",
+        "icon": "nimblr"
+    },
+    {
+        "prev": "fab",
+        "icon": "nintendo-switch"
+    },
+    {
+        "prev": "fab",
+        "icon": "node"
+    },
+    {
+        "prev": "fab",
+        "icon": "node-js"
+    },
+    {
+        "prev": "fas",
+        "icon": "not-equal"
+    },
+    {
+        "prev": "fas",
+        "icon": "notes-medical"
+    },
+    {
+        "prev": "fab",
+        "icon": "npm"
+    },
+    {
+        "prev": "fab",
+        "icon": "ns8"
+    },
+    {
+        "prev": "fab",
+        "icon": "nutritionix"
+    },
+    {
+        "prev": "fas",
+        "icon": "object-group"
+    },
+    {
+        "prev": "far",
+        "icon": "object-group"
+    },
+    {
+        "prev": "fas",
+        "icon": "object-ungroup"
+    },
+    {
+        "prev": "far",
+        "icon": "object-ungroup"
+    },
+    {
+        "prev": "fab",
+        "icon": "odnoklassniki"
+    },
+    {
+        "prev": "fab",
+        "icon": "odnoklassniki-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "oil-can"
+    },
+    {
+        "prev": "fab",
+        "icon": "old-republic"
+    },
+    {
+        "prev": "fas",
+        "icon": "om"
+    },
+    {
+        "prev": "fab",
+        "icon": "opencart"
+    },
+    {
+        "prev": "fab",
+        "icon": "openid"
+    },
+    {
+        "prev": "fab",
+        "icon": "opera"
+    },
+    {
+        "prev": "fab",
+        "icon": "optin-monster"
+    },
+    {
+        "prev": "fab",
+        "icon": "osi"
+    },
+    {
+        "prev": "fas",
+        "icon": "otter"
+    },
+    {
+        "prev": "fas",
+        "icon": "outdent"
+    },
+    {
+        "prev": "fab",
+        "icon": "page4"
+    },
+    {
+        "prev": "fab",
+        "icon": "pagelines"
+    },
+    {
+        "prev": "fas",
+        "icon": "paint-brush"
+    },
+    {
+        "prev": "fas",
+        "icon": "paint-roller"
+    },
+    {
+        "prev": "fas",
+        "icon": "palette"
+    },
+    {
+        "prev": "fab",
+        "icon": "palfed"
+    },
+    {
+        "prev": "fas",
+        "icon": "pallet"
+    },
+    {
+        "prev": "fas",
+        "icon": "paper-plane"
+    },
+    {
+        "prev": "far",
+        "icon": "paper-plane"
+    },
+    {
+        "prev": "fas",
+        "icon": "paperclip"
+    },
+    {
+        "prev": "fas",
+        "icon": "parachute-box"
+    },
+    {
+        "prev": "fas",
+        "icon": "paragraph"
+    },
+    {
+        "prev": "fas",
+        "icon": "parking"
+    },
+    {
+        "prev": "fas",
+        "icon": "passport"
+    },
+    {
+        "prev": "fas",
+        "icon": "pastafarianism"
+    },
+    {
+        "prev": "fas",
+        "icon": "paste"
+    },
+    {
+        "prev": "fab",
+        "icon": "patreon"
+    },
+    {
+        "prev": "fas",
+        "icon": "pause"
+    },
+    {
+        "prev": "fas",
+        "icon": "pause-circle"
+    },
+    {
+        "prev": "far",
+        "icon": "pause-circle"
+    },
+    {
+        "prev": "fas",
+        "icon": "paw"
+    },
+    {
+        "prev": "fab",
+        "icon": "paypal"
+    },
+    {
+        "prev": "fas",
+        "icon": "peace"
+    },
+    {
+        "prev": "fas",
+        "icon": "pen"
+    },
+    {
+        "prev": "fas",
+        "icon": "pen-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "pen-fancy"
+    },
+    {
+        "prev": "fas",
+        "icon": "pen-nib"
+    },
+    {
+        "prev": "fas",
+        "icon": "pen-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "pencil-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "pencil-ruler"
+    },
+    {
+        "prev": "fab",
+        "icon": "penny-arcade"
+    },
+    {
+        "prev": "fas",
+        "icon": "people-carry"
+    },
+    {
+        "prev": "fas",
+        "icon": "percent"
+    },
+    {
+        "prev": "fas",
+        "icon": "percentage"
+    },
+    {
+        "prev": "fab",
+        "icon": "periscope"
+    },
+    {
+        "prev": "fas",
+        "icon": "person-booth"
+    },
+    {
+        "prev": "fab",
+        "icon": "phabricator"
+    },
+    {
+        "prev": "fab",
+        "icon": "phoenix-framework"
+    },
+    {
+        "prev": "fab",
+        "icon": "phoenix-squadron"
+    },
+    {
+        "prev": "fas",
+        "icon": "phone"
+    },
+    {
+        "prev": "fas",
+        "icon": "phone-slash"
+    },
+    {
+        "prev": "fas",
+        "icon": "phone-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "phone-volume"
+    },
+    {
+        "prev": "fab",
+        "icon": "php"
+    },
+    {
+        "prev": "fab",
+        "icon": "pied-piper"
+    },
+    {
+        "prev": "fab",
+        "icon": "pied-piper-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "pied-piper-hat"
+    },
+    {
+        "prev": "fab",
+        "icon": "pied-piper-pp"
+    },
+    {
+        "prev": "fas",
+        "icon": "piggy-bank"
+    },
+    {
+        "prev": "fas",
+        "icon": "pills"
+    },
+    {
+        "prev": "fab",
+        "icon": "pinterest"
+    },
+    {
+        "prev": "fab",
+        "icon": "pinterest-p"
+    },
+    {
+        "prev": "fab",
+        "icon": "pinterest-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "place-of-worship"
+    },
+    {
+        "prev": "fas",
+        "icon": "plane"
+    },
+    {
+        "prev": "fas",
+        "icon": "plane-arrival"
+    },
+    {
+        "prev": "fas",
+        "icon": "plane-departure"
+    },
+    {
+        "prev": "fas",
+        "icon": "play"
+    },
+    {
+        "prev": "fas",
+        "icon": "play-circle"
+    },
+    {
+        "prev": "far",
+        "icon": "play-circle"
+    },
+    {
+        "prev": "fab",
+        "icon": "playstation"
+    },
+    {
+        "prev": "fas",
+        "icon": "plug"
+    },
+    {
+        "prev": "fas",
+        "icon": "plus"
+    },
+    {
+        "prev": "fas",
+        "icon": "plus-circle"
+    },
+    {
+        "prev": "fas",
+        "icon": "plus-square"
+    },
+    {
+        "prev": "far",
+        "icon": "plus-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "podcast"
+    },
+    {
+        "prev": "fas",
+        "icon": "poll"
+    },
+    {
+        "prev": "fas",
+        "icon": "poll-h"
+    },
+    {
+        "prev": "fas",
+        "icon": "poo"
+    },
+    {
+        "prev": "fas",
+        "icon": "poo-storm"
+    },
+    {
+        "prev": "fas",
+        "icon": "poop"
+    },
+    {
+        "prev": "fas",
+        "icon": "portrait"
+    },
+    {
+        "prev": "fas",
+        "icon": "pound-sign"
+    },
+    {
+        "prev": "fas",
+        "icon": "power-off"
+    },
+    {
+        "prev": "fas",
+        "icon": "pray"
+    },
+    {
+        "prev": "fas",
+        "icon": "praying-hands"
+    },
+    {
+        "prev": "fas",
+        "icon": "prescription"
+    },
+    {
+        "prev": "fas",
+        "icon": "prescription-bottle"
+    },
+    {
+        "prev": "fas",
+        "icon": "prescription-bottle-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "print"
+    },
+    {
+        "prev": "fas",
+        "icon": "procedures"
+    },
+    {
+        "prev": "fab",
+        "icon": "product-hunt"
+    },
+    {
+        "prev": "fas",
+        "icon": "project-diagram"
+    },
+    {
+        "prev": "fab",
+        "icon": "pushed"
+    },
+    {
+        "prev": "fas",
+        "icon": "puzzle-piece"
+    },
+    {
+        "prev": "fab",
+        "icon": "python"
+    },
+    {
+        "prev": "fab",
+        "icon": "qq"
+    },
+    {
+        "prev": "fas",
+        "icon": "qrcode"
+    },
+    {
+        "prev": "fas",
+        "icon": "question"
+    },
+    {
+        "prev": "fas",
+        "icon": "question-circle"
+    },
+    {
+        "prev": "far",
+        "icon": "question-circle"
+    },
+    {
+        "prev": "fas",
+        "icon": "quidditch"
+    },
+    {
+        "prev": "fab",
+        "icon": "quinscape"
+    },
+    {
+        "prev": "fab",
+        "icon": "quora"
+    },
+    {
+        "prev": "fas",
+        "icon": "quote-left"
+    },
+    {
+        "prev": "fas",
+        "icon": "quote-right"
+    },
+    {
+        "prev": "fas",
+        "icon": "quran"
+    },
+    {
+        "prev": "fab",
+        "icon": "r-project"
+    },
+    {
+        "prev": "fas",
+        "icon": "radiation"
+    },
+    {
+        "prev": "fas",
+        "icon": "radiation-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "rainbow"
+    },
+    {
+        "prev": "fas",
+        "icon": "random"
+    },
+    {
+        "prev": "fab",
+        "icon": "raspberry-pi"
+    },
+    {
+        "prev": "fab",
+        "icon": "ravelry"
+    },
+    {
+        "prev": "fab",
+        "icon": "react"
+    },
+    {
+        "prev": "fab",
+        "icon": "reacteurope"
+    },
+    {
+        "prev": "fab",
+        "icon": "readme"
+    },
+    {
+        "prev": "fab",
+        "icon": "rebel"
+    },
+    {
+        "prev": "fas",
+        "icon": "receipt"
+    },
+    {
+        "prev": "fas",
+        "icon": "recycle"
+    },
+    {
+        "prev": "fab",
+        "icon": "red-river"
+    },
+    {
+        "prev": "fab",
+        "icon": "reddit"
+    },
+    {
+        "prev": "fab",
+        "icon": "reddit-alien"
+    },
+    {
+        "prev": "fab",
+        "icon": "reddit-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "redhat"
+    },
+    {
+        "prev": "fas",
+        "icon": "redo"
+    },
+    {
+        "prev": "fas",
+        "icon": "redo-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "registered"
+    },
+    {
+        "prev": "far",
+        "icon": "registered"
+    },
+    {
+        "prev": "fab",
+        "icon": "renren"
+    },
+    {
+        "prev": "fas",
+        "icon": "reply"
+    },
+    {
+        "prev": "fas",
+        "icon": "reply-all"
+    },
+    {
+        "prev": "fab",
+        "icon": "replyd"
+    },
+    {
+        "prev": "fas",
+        "icon": "republican"
+    },
+    {
+        "prev": "fab",
+        "icon": "researchgate"
+    },
+    {
+        "prev": "fab",
+        "icon": "resolving"
+    },
+    {
+        "prev": "fas",
+        "icon": "restroom"
+    },
+    {
+        "prev": "fas",
+        "icon": "retweet"
+    },
+    {
+        "prev": "fab",
+        "icon": "rev"
+    },
+    {
+        "prev": "fas",
+        "icon": "ribbon"
+    },
+    {
+        "prev": "fas",
+        "icon": "ring"
+    },
+    {
+        "prev": "fas",
+        "icon": "road"
+    },
+    {
+        "prev": "fas",
+        "icon": "robot"
+    },
+    {
+        "prev": "fas",
+        "icon": "rocket"
+    },
+    {
+        "prev": "fab",
+        "icon": "rocketchat"
+    },
+    {
+        "prev": "fab",
+        "icon": "rockrms"
+    },
+    {
+        "prev": "fas",
+        "icon": "route"
+    },
+    {
+        "prev": "fas",
+        "icon": "rss"
+    },
+    {
+        "prev": "fas",
+        "icon": "rss-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "ruble-sign"
+    },
+    {
+        "prev": "fas",
+        "icon": "ruler"
+    },
+    {
+        "prev": "fas",
+        "icon": "ruler-combined"
+    },
+    {
+        "prev": "fas",
+        "icon": "ruler-horizontal"
+    },
+    {
+        "prev": "fas",
+        "icon": "ruler-vertical"
+    },
+    {
+        "prev": "fas",
+        "icon": "running"
+    },
+    {
+        "prev": "fas",
+        "icon": "rupee-sign"
+    },
+    {
+        "prev": "fas",
+        "icon": "sad-cry"
+    },
+    {
+        "prev": "far",
+        "icon": "sad-cry"
+    },
+    {
+        "prev": "fas",
+        "icon": "sad-tear"
+    },
+    {
+        "prev": "far",
+        "icon": "sad-tear"
+    },
+    {
+        "prev": "fab",
+        "icon": "safari"
+    },
+    {
+        "prev": "fab",
+        "icon": "sass"
+    },
+    {
+        "prev": "fas",
+        "icon": "satellite"
+    },
+    {
+        "prev": "fas",
+        "icon": "satellite-dish"
+    },
+    {
+        "prev": "fas",
+        "icon": "save"
+    },
+    {
+        "prev": "far",
+        "icon": "save"
+    },
+    {
+        "prev": "fab",
+        "icon": "schlix"
+    },
+    {
+        "prev": "fas",
+        "icon": "school"
+    },
+    {
+        "prev": "fas",
+        "icon": "screwdriver"
+    },
+    {
+        "prev": "fab",
+        "icon": "scribd"
+    },
+    {
+        "prev": "fas",
+        "icon": "scroll"
+    },
+    {
+        "prev": "fas",
+        "icon": "sd-card"
+    },
+    {
+        "prev": "fas",
+        "icon": "search"
+    },
+    {
+        "prev": "fas",
+        "icon": "search-dollar"
+    },
+    {
+        "prev": "fas",
+        "icon": "search-location"
+    },
+    {
+        "prev": "fas",
+        "icon": "search-minus"
+    },
+    {
+        "prev": "fas",
+        "icon": "search-plus"
+    },
+    {
+        "prev": "fab",
+        "icon": "searchengin"
+    },
+    {
+        "prev": "fas",
+        "icon": "seedling"
+    },
+    {
+        "prev": "fab",
+        "icon": "sellcast"
+    },
+    {
+        "prev": "fab",
+        "icon": "sellsy"
+    },
+    {
+        "prev": "fas",
+        "icon": "server"
+    },
+    {
+        "prev": "fab",
+        "icon": "servicestack"
+    },
+    {
+        "prev": "fas",
+        "icon": "shapes"
+    },
+    {
+        "prev": "fas",
+        "icon": "share"
+    },
+    {
+        "prev": "fas",
+        "icon": "share-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "share-alt-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "share-square"
+    },
+    {
+        "prev": "far",
+        "icon": "share-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "shekel-sign"
+    },
+    {
+        "prev": "fas",
+        "icon": "shield-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "ship"
+    },
+    {
+        "prev": "fas",
+        "icon": "shipping-fast"
+    },
+    {
+        "prev": "fab",
+        "icon": "shirtsinbulk"
+    },
+    {
+        "prev": "fas",
+        "icon": "shoe-prints"
+    },
+    {
+        "prev": "fas",
+        "icon": "shopping-bag"
+    },
+    {
+        "prev": "fas",
+        "icon": "shopping-basket"
+    },
+    {
+        "prev": "fas",
+        "icon": "shopping-cart"
+    },
+    {
+        "prev": "fab",
+        "icon": "shopware"
+    },
+    {
+        "prev": "fas",
+        "icon": "shower"
+    },
+    {
+        "prev": "fas",
+        "icon": "shuttle-van"
+    },
+    {
+        "prev": "fas",
+        "icon": "sign"
+    },
+    {
+        "prev": "fas",
+        "icon": "sign-in-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "sign-language"
+    },
+    {
+        "prev": "fas",
+        "icon": "sign-out-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "signal"
+    },
+    {
+        "prev": "fas",
+        "icon": "signature"
+    },
+    {
+        "prev": "fas",
+        "icon": "sim-card"
+    },
+    {
+        "prev": "fab",
+        "icon": "simplybuilt"
+    },
+    {
+        "prev": "fab",
+        "icon": "sistrix"
+    },
+    {
+        "prev": "fas",
+        "icon": "sitemap"
+    },
+    {
+        "prev": "fab",
+        "icon": "sith"
+    },
+    {
+        "prev": "fas",
+        "icon": "skating"
+    },
+    {
+        "prev": "fab",
+        "icon": "sketch"
+    },
+    {
+        "prev": "fas",
+        "icon": "skiing"
+    },
+    {
+        "prev": "fas",
+        "icon": "skiing-nordic"
+    },
+    {
+        "prev": "fas",
+        "icon": "skull"
+    },
+    {
+        "prev": "fas",
+        "icon": "skull-crossbones"
+    },
+    {
+        "prev": "fab",
+        "icon": "skyatlas"
+    },
+    {
+        "prev": "fab",
+        "icon": "skype"
+    },
+    {
+        "prev": "fab",
+        "icon": "slack"
+    },
+    {
+        "prev": "fab",
+        "icon": "slack-hash"
+    },
+    {
+        "prev": "fas",
+        "icon": "slash"
+    },
+    {
+        "prev": "fas",
+        "icon": "sleigh"
+    },
+    {
+        "prev": "fas",
+        "icon": "sliders-h"
+    },
+    {
+        "prev": "fab",
+        "icon": "slideshare"
+    },
+    {
+        "prev": "fas",
+        "icon": "smile"
+    },
+    {
+        "prev": "far",
+        "icon": "smile"
+    },
+    {
+        "prev": "fas",
+        "icon": "smile-beam"
+    },
+    {
+        "prev": "far",
+        "icon": "smile-beam"
+    },
+    {
+        "prev": "fas",
+        "icon": "smile-wink"
+    },
+    {
+        "prev": "far",
+        "icon": "smile-wink"
+    },
+    {
+        "prev": "fas",
+        "icon": "smog"
+    },
+    {
+        "prev": "fas",
+        "icon": "smoking"
+    },
+    {
+        "prev": "fas",
+        "icon": "smoking-ban"
+    },
+    {
+        "prev": "fas",
+        "icon": "sms"
+    },
+    {
+        "prev": "fab",
+        "icon": "snapchat"
+    },
+    {
+        "prev": "fab",
+        "icon": "snapchat-ghost"
+    },
+    {
+        "prev": "fab",
+        "icon": "snapchat-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "snowboarding"
+    },
+    {
+        "prev": "fas",
+        "icon": "snowflake"
+    },
+    {
+        "prev": "far",
+        "icon": "snowflake"
+    },
+    {
+        "prev": "fas",
+        "icon": "snowman"
+    },
+    {
+        "prev": "fas",
+        "icon": "snowplow"
+    },
+    {
+        "prev": "fas",
+        "icon": "socks"
+    },
+    {
+        "prev": "fas",
+        "icon": "solar-panel"
+    },
+    {
+        "prev": "fas",
+        "icon": "sort"
+    },
+    {
+        "prev": "fas",
+        "icon": "sort-alpha-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "sort-alpha-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "sort-amount-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "sort-amount-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "sort-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "sort-numeric-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "sort-numeric-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "sort-up"
+    },
+    {
+        "prev": "fab",
+        "icon": "soundcloud"
+    },
+    {
+        "prev": "fab",
+        "icon": "sourcetree"
+    },
+    {
+        "prev": "fas",
+        "icon": "spa"
+    },
+    {
+        "prev": "fas",
+        "icon": "space-shuttle"
+    },
+    {
+        "prev": "fab",
+        "icon": "speakap"
+    },
+    {
+        "prev": "fas",
+        "icon": "spider"
+    },
+    {
+        "prev": "fas",
+        "icon": "spinner"
+    },
+    {
+        "prev": "fas",
+        "icon": "splotch"
+    },
+    {
+        "prev": "fab",
+        "icon": "spotify"
+    },
+    {
+        "prev": "fas",
+        "icon": "spray-can"
+    },
+    {
+        "prev": "fas",
+        "icon": "square"
+    },
+    {
+        "prev": "far",
+        "icon": "square"
+    },
+    {
+        "prev": "fas",
+        "icon": "square-full"
+    },
+    {
+        "prev": "fas",
+        "icon": "square-root-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "squarespace"
+    },
+    {
+        "prev": "fab",
+        "icon": "stack-exchange"
+    },
+    {
+        "prev": "fab",
+        "icon": "stack-overflow"
+    },
+    {
+        "prev": "fas",
+        "icon": "stamp"
+    },
+    {
+        "prev": "fas",
+        "icon": "star"
+    },
+    {
+        "prev": "far",
+        "icon": "star"
+    },
+    {
+        "prev": "fas",
+        "icon": "star-and-crescent"
+    },
+    {
+        "prev": "fas",
+        "icon": "star-half"
+    },
+    {
+        "prev": "far",
+        "icon": "star-half"
+    },
+    {
+        "prev": "fas",
+        "icon": "star-half-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "star-of-david"
+    },
+    {
+        "prev": "fas",
+        "icon": "star-of-life"
+    },
+    {
+        "prev": "fab",
+        "icon": "staylinked"
+    },
+    {
+        "prev": "fab",
+        "icon": "steam"
+    },
+    {
+        "prev": "fab",
+        "icon": "steam-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "steam-symbol"
+    },
+    {
+        "prev": "fas",
+        "icon": "step-backward"
+    },
+    {
+        "prev": "fas",
+        "icon": "step-forward"
+    },
+    {
+        "prev": "fas",
+        "icon": "stethoscope"
+    },
+    {
+        "prev": "fab",
+        "icon": "sticker-mule"
+    },
+    {
+        "prev": "fas",
+        "icon": "sticky-note"
+    },
+    {
+        "prev": "far",
+        "icon": "sticky-note"
+    },
+    {
+        "prev": "fas",
+        "icon": "stop"
+    },
+    {
+        "prev": "fas",
+        "icon": "stop-circle"
+    },
+    {
+        "prev": "far",
+        "icon": "stop-circle"
+    },
+    {
+        "prev": "fas",
+        "icon": "stopwatch"
+    },
+    {
+        "prev": "fas",
+        "icon": "store"
+    },
+    {
+        "prev": "fas",
+        "icon": "store-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "strava"
+    },
+    {
+        "prev": "fas",
+        "icon": "stream"
+    },
+    {
+        "prev": "fas",
+        "icon": "street-view"
+    },
+    {
+        "prev": "fas",
+        "icon": "strikethrough"
+    },
+    {
+        "prev": "fab",
+        "icon": "stripe"
+    },
+    {
+        "prev": "fab",
+        "icon": "stripe-s"
+    },
+    {
+        "prev": "fas",
+        "icon": "stroopwafel"
+    },
+    {
+        "prev": "fab",
+        "icon": "studiovinari"
+    },
+    {
+        "prev": "fab",
+        "icon": "stumbleupon"
+    },
+    {
+        "prev": "fab",
+        "icon": "stumbleupon-circle"
+    },
+    {
+        "prev": "fas",
+        "icon": "subscript"
+    },
+    {
+        "prev": "fas",
+        "icon": "subway"
+    },
+    {
+        "prev": "fas",
+        "icon": "suitcase"
+    },
+    {
+        "prev": "fas",
+        "icon": "suitcase-rolling"
+    },
+    {
+        "prev": "fas",
+        "icon": "sun"
+    },
+    {
+        "prev": "far",
+        "icon": "sun"
+    },
+    {
+        "prev": "fab",
+        "icon": "superpowers"
+    },
+    {
+        "prev": "fas",
+        "icon": "superscript"
+    },
+    {
+        "prev": "fab",
+        "icon": "supple"
+    },
+    {
+        "prev": "fas",
+        "icon": "surprise"
+    },
+    {
+        "prev": "far",
+        "icon": "surprise"
+    },
+    {
+        "prev": "fab",
+        "icon": "suse"
+    },
+    {
+        "prev": "fas",
+        "icon": "swatchbook"
+    },
+    {
+        "prev": "fas",
+        "icon": "swimmer"
+    },
+    {
+        "prev": "fas",
+        "icon": "swimming-pool"
+    },
+    {
+        "prev": "fas",
+        "icon": "synagogue"
+    },
+    {
+        "prev": "fas",
+        "icon": "sync"
+    },
+    {
+        "prev": "fas",
+        "icon": "sync-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "syringe"
+    },
+    {
+        "prev": "fas",
+        "icon": "table"
+    },
+    {
+        "prev": "fas",
+        "icon": "table-tennis"
+    },
+    {
+        "prev": "fas",
+        "icon": "tablet"
+    },
+    {
+        "prev": "fas",
+        "icon": "tablet-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "tablets"
+    },
+    {
+        "prev": "fas",
+        "icon": "tachometer-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "tag"
+    },
+    {
+        "prev": "fas",
+        "icon": "tags"
+    },
+    {
+        "prev": "fas",
+        "icon": "tape"
+    },
+    {
+        "prev": "fas",
+        "icon": "tasks"
+    },
+    {
+        "prev": "fas",
+        "icon": "taxi"
+    },
+    {
+        "prev": "fab",
+        "icon": "teamspeak"
+    },
+    {
+        "prev": "fas",
+        "icon": "teeth"
+    },
+    {
+        "prev": "fas",
+        "icon": "teeth-open"
+    },
+    {
+        "prev": "fab",
+        "icon": "telegram"
+    },
+    {
+        "prev": "fab",
+        "icon": "telegram-plane"
+    },
+    {
+        "prev": "fas",
+        "icon": "temperature-high"
+    },
+    {
+        "prev": "fas",
+        "icon": "temperature-low"
+    },
+    {
+        "prev": "fab",
+        "icon": "tencent-weibo"
+    },
+    {
+        "prev": "fas",
+        "icon": "tenge"
+    },
+    {
+        "prev": "fas",
+        "icon": "terminal"
+    },
+    {
+        "prev": "fas",
+        "icon": "text-height"
+    },
+    {
+        "prev": "fas",
+        "icon": "text-width"
+    },
+    {
+        "prev": "fas",
+        "icon": "th"
+    },
+    {
+        "prev": "fas",
+        "icon": "th-large"
+    },
+    {
+        "prev": "fas",
+        "icon": "th-list"
+    },
+    {
+        "prev": "fab",
+        "icon": "the-red-yeti"
+    },
+    {
+        "prev": "fas",
+        "icon": "theater-masks"
+    },
+    {
+        "prev": "fab",
+        "icon": "themeco"
+    },
+    {
+        "prev": "fab",
+        "icon": "themeisle"
+    },
+    {
+        "prev": "fas",
+        "icon": "thermometer"
+    },
+    {
+        "prev": "fas",
+        "icon": "thermometer-empty"
+    },
+    {
+        "prev": "fas",
+        "icon": "thermometer-full"
+    },
+    {
+        "prev": "fas",
+        "icon": "thermometer-half"
+    },
+    {
+        "prev": "fas",
+        "icon": "thermometer-quarter"
+    },
+    {
+        "prev": "fas",
+        "icon": "thermometer-three-quarters"
+    },
+    {
+        "prev": "fab",
+        "icon": "think-peaks"
+    },
+    {
+        "prev": "fas",
+        "icon": "thumbs-down"
+    },
+    {
+        "prev": "far",
+        "icon": "thumbs-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "thumbs-up"
+    },
+    {
+        "prev": "far",
+        "icon": "thumbs-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "thumbtack"
+    },
+    {
+        "prev": "fas",
+        "icon": "ticket-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "times"
+    },
+    {
+        "prev": "fas",
+        "icon": "times-circle"
+    },
+    {
+        "prev": "far",
+        "icon": "times-circle"
+    },
+    {
+        "prev": "fas",
+        "icon": "tint"
+    },
+    {
+        "prev": "fas",
+        "icon": "tint-slash"
+    },
+    {
+        "prev": "fas",
+        "icon": "tired"
+    },
+    {
+        "prev": "far",
+        "icon": "tired"
+    },
+    {
+        "prev": "fas",
+        "icon": "toggle-off"
+    },
+    {
+        "prev": "fas",
+        "icon": "toggle-on"
+    },
+    {
+        "prev": "fas",
+        "icon": "toilet"
+    },
+    {
+        "prev": "fas",
+        "icon": "toilet-paper"
+    },
+    {
+        "prev": "fas",
+        "icon": "toolbox"
+    },
+    {
+        "prev": "fas",
+        "icon": "tools"
+    },
+    {
+        "prev": "fas",
+        "icon": "tooth"
+    },
+    {
+        "prev": "fas",
+        "icon": "torah"
+    },
+    {
+        "prev": "fas",
+        "icon": "torii-gate"
+    },
+    {
+        "prev": "fas",
+        "icon": "tractor"
+    },
+    {
+        "prev": "fab",
+        "icon": "trade-federation"
+    },
+    {
+        "prev": "fas",
+        "icon": "trademark"
+    },
+    {
+        "prev": "fas",
+        "icon": "traffic-light"
+    },
+    {
+        "prev": "fas",
+        "icon": "train"
+    },
+    {
+        "prev": "fas",
+        "icon": "tram"
+    },
+    {
+        "prev": "fas",
+        "icon": "transgender"
+    },
+    {
+        "prev": "fas",
+        "icon": "transgender-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "trash"
+    },
+    {
+        "prev": "fas",
+        "icon": "trash-alt"
+    },
+    {
+        "prev": "far",
+        "icon": "trash-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "tree"
+    },
+    {
+        "prev": "fab",
+        "icon": "trello"
+    },
+    {
+        "prev": "fab",
+        "icon": "tripadvisor"
+    },
+    {
+        "prev": "fas",
+        "icon": "trophy"
+    },
+    {
+        "prev": "fas",
+        "icon": "truck"
+    },
+    {
+        "prev": "fas",
+        "icon": "truck-loading"
+    },
+    {
+        "prev": "fas",
+        "icon": "truck-monster"
+    },
+    {
+        "prev": "fas",
+        "icon": "truck-moving"
+    },
+    {
+        "prev": "fas",
+        "icon": "truck-pickup"
+    },
+    {
+        "prev": "fas",
+        "icon": "tshirt"
+    },
+    {
+        "prev": "fas",
+        "icon": "tty"
+    },
+    {
+        "prev": "fab",
+        "icon": "tumblr"
+    },
+    {
+        "prev": "fab",
+        "icon": "tumblr-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "tv"
+    },
+    {
+        "prev": "fab",
+        "icon": "twitch"
+    },
+    {
+        "prev": "fab",
+        "icon": "twitter"
+    },
+    {
+        "prev": "fab",
+        "icon": "twitter-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "typo3"
+    },
+    {
+        "prev": "fab",
+        "icon": "uber"
+    },
+    {
+        "prev": "fab",
+        "icon": "ubuntu"
+    },
+    {
+        "prev": "fab",
+        "icon": "uikit"
+    },
+    {
+        "prev": "fas",
+        "icon": "umbrella"
+    },
+    {
+        "prev": "fas",
+        "icon": "umbrella-beach"
+    },
+    {
+        "prev": "fas",
+        "icon": "underline"
+    },
+    {
+        "prev": "fas",
+        "icon": "undo"
+    },
+    {
+        "prev": "fas",
+        "icon": "undo-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "uniregistry"
+    },
+    {
+        "prev": "fas",
+        "icon": "universal-access"
+    },
+    {
+        "prev": "fas",
+        "icon": "university"
+    },
+    {
+        "prev": "fas",
+        "icon": "unlink"
+    },
+    {
+        "prev": "fas",
+        "icon": "unlock"
+    },
+    {
+        "prev": "fas",
+        "icon": "unlock-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "untappd"
+    },
+    {
+        "prev": "fas",
+        "icon": "upload"
+    },
+    {
+        "prev": "fab",
+        "icon": "ups"
+    },
+    {
+        "prev": "fab",
+        "icon": "usb"
+    },
+    {
+        "prev": "fas",
+        "icon": "user"
+    },
+    {
+        "prev": "far",
+        "icon": "user"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-alt"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-alt-slash"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-astronaut"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-check"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-circle"
+    },
+    {
+        "prev": "far",
+        "icon": "user-circle"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-clock"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-cog"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-edit"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-friends"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-graduate"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-injured"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-lock"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-md"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-minus"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-ninja"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-plus"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-secret"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-shield"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-slash"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-tag"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-tie"
+    },
+    {
+        "prev": "fas",
+        "icon": "user-times"
+    },
+    {
+        "prev": "fas",
+        "icon": "users"
+    },
+    {
+        "prev": "fas",
+        "icon": "users-cog"
+    },
+    {
+        "prev": "fab",
+        "icon": "usps"
+    },
+    {
+        "prev": "fab",
+        "icon": "ussunnah"
+    },
+    {
+        "prev": "fas",
+        "icon": "utensil-spoon"
+    },
+    {
+        "prev": "fas",
+        "icon": "utensils"
+    },
+    {
+        "prev": "fab",
+        "icon": "vaadin"
+    },
+    {
+        "prev": "fas",
+        "icon": "vector-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "venus"
+    },
+    {
+        "prev": "fas",
+        "icon": "venus-double"
+    },
+    {
+        "prev": "fas",
+        "icon": "venus-mars"
+    },
+    {
+        "prev": "fab",
+        "icon": "viacoin"
+    },
+    {
+        "prev": "fab",
+        "icon": "viadeo"
+    },
+    {
+        "prev": "fab",
+        "icon": "viadeo-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "vial"
+    },
+    {
+        "prev": "fas",
+        "icon": "vials"
+    },
+    {
+        "prev": "fab",
+        "icon": "viber"
+    },
+    {
+        "prev": "fas",
+        "icon": "video"
+    },
+    {
+        "prev": "fas",
+        "icon": "video-slash"
+    },
+    {
+        "prev": "fas",
+        "icon": "vihara"
+    },
+    {
+        "prev": "fab",
+        "icon": "vimeo"
+    },
+    {
+        "prev": "fab",
+        "icon": "vimeo-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "vimeo-v"
+    },
+    {
+        "prev": "fab",
+        "icon": "vine"
+    },
+    {
+        "prev": "fab",
+        "icon": "vk"
+    },
+    {
+        "prev": "fab",
+        "icon": "vnv"
+    },
+    {
+        "prev": "fas",
+        "icon": "volleyball-ball"
+    },
+    {
+        "prev": "fas",
+        "icon": "volume-down"
+    },
+    {
+        "prev": "fas",
+        "icon": "volume-mute"
+    },
+    {
+        "prev": "fas",
+        "icon": "volume-off"
+    },
+    {
+        "prev": "fas",
+        "icon": "volume-up"
+    },
+    {
+        "prev": "fas",
+        "icon": "vote-yea"
+    },
+    {
+        "prev": "fas",
+        "icon": "vr-cardboard"
+    },
+    {
+        "prev": "fab",
+        "icon": "vuejs"
+    },
+    {
+        "prev": "fas",
+        "icon": "walking"
+    },
+    {
+        "prev": "fas",
+        "icon": "wallet"
+    },
+    {
+        "prev": "fas",
+        "icon": "warehouse"
+    },
+    {
+        "prev": "fas",
+        "icon": "water"
+    },
+    {
+        "prev": "fab",
+        "icon": "weebly"
+    },
+    {
+        "prev": "fab",
+        "icon": "weibo"
+    },
+    {
+        "prev": "fas",
+        "icon": "weight"
+    },
+    {
+        "prev": "fas",
+        "icon": "weight-hanging"
+    },
+    {
+        "prev": "fab",
+        "icon": "weixin"
+    },
+    {
+        "prev": "fab",
+        "icon": "whatsapp"
+    },
+    {
+        "prev": "fab",
+        "icon": "whatsapp-square"
+    },
+    {
+        "prev": "fas",
+        "icon": "wheelchair"
+    },
+    {
+        "prev": "fab",
+        "icon": "whmcs"
+    },
+    {
+        "prev": "fas",
+        "icon": "wifi"
+    },
+    {
+        "prev": "fab",
+        "icon": "wikipedia-w"
+    },
+    {
+        "prev": "fas",
+        "icon": "wind"
+    },
+    {
+        "prev": "fas",
+        "icon": "window-close"
+    },
+    {
+        "prev": "far",
+        "icon": "window-close"
+    },
+    {
+        "prev": "fas",
+        "icon": "window-maximize"
+    },
+    {
+        "prev": "far",
+        "icon": "window-maximize"
+    },
+    {
+        "prev": "fas",
+        "icon": "window-minimize"
+    },
+    {
+        "prev": "far",
+        "icon": "window-minimize"
+    },
+    {
+        "prev": "fas",
+        "icon": "window-restore"
+    },
+    {
+        "prev": "far",
+        "icon": "window-restore"
+    },
+    {
+        "prev": "fab",
+        "icon": "windows"
+    },
+    {
+        "prev": "fas",
+        "icon": "wine-bottle"
+    },
+    {
+        "prev": "fas",
+        "icon": "wine-glass"
+    },
+    {
+        "prev": "fas",
+        "icon": "wine-glass-alt"
+    },
+    {
+        "prev": "fab",
+        "icon": "wix"
+    },
+    {
+        "prev": "fab",
+        "icon": "wizards-of-the-coast"
+    },
+    {
+        "prev": "fab",
+        "icon": "wolf-pack-battalion"
+    },
+    {
+        "prev": "fas",
+        "icon": "won-sign"
+    },
+    {
+        "prev": "fab",
+        "icon": "wordpress"
+    },
+    {
+        "prev": "fab",
+        "icon": "wordpress-simple"
+    },
+    {
+        "prev": "fab",
+        "icon": "wpbeginner"
+    },
+    {
+        "prev": "fab",
+        "icon": "wpexplorer"
+    },
+    {
+        "prev": "fab",
+        "icon": "wpforms"
+    },
+    {
+        "prev": "fab",
+        "icon": "wpressr"
+    },
+    {
+        "prev": "fas",
+        "icon": "wrench"
+    },
+    {
+        "prev": "fas",
+        "icon": "x-ray"
+    },
+    {
+        "prev": "fab",
+        "icon": "xbox"
+    },
+    {
+        "prev": "fab",
+        "icon": "xing"
+    },
+    {
+        "prev": "fab",
+        "icon": "xing-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "y-combinator"
+    },
+    {
+        "prev": "fab",
+        "icon": "yahoo"
+    },
+    {
+        "prev": "fab",
+        "icon": "yandex"
+    },
+    {
+        "prev": "fab",
+        "icon": "yandex-international"
+    },
+    {
+        "prev": "fab",
+        "icon": "yarn"
+    },
+    {
+        "prev": "fab",
+        "icon": "yelp"
+    },
+    {
+        "prev": "fas",
+        "icon": "yen-sign"
+    },
+    {
+        "prev": "fas",
+        "icon": "yin-yang"
+    },
+    {
+        "prev": "fab",
+        "icon": "yoast"
+    },
+    {
+        "prev": "fab",
+        "icon": "youtube"
+    },
+    {
+        "prev": "fab",
+        "icon": "youtube-square"
+    },
+    {
+        "prev": "fab",
+        "icon": "zhihu"
+    }
+]
