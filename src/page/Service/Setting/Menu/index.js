@@ -9,7 +9,7 @@ class Menu extends PureComponent {
     render() {
         return (
             <div>
-                Favorite Food: <FontAwesomeIcon icon="igloo"/>
+                <FontAwesomeIcon icon="check-square" />
                 <h1>菜单管理</h1>
             </div>
         )
