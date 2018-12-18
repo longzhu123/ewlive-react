@@ -11,7 +11,7 @@ const loadFontListAction = (list) => ({
 //加载用户List
 export const loadFontList = () => {
     return (dispatch) => {
-        axios.get("http://localhost:8000/config/font-icon.json").then((res => {
+        axios.get("../../font-icon.json").then((res => {
             debugger;
             dispatch(loadFontListAction(res.data));
         }));

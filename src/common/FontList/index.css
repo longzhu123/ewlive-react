@@ -1,5 +1,7 @@
 p{
     float: left;
     margin-right: 10px;
+    width: 250px;
     font-size: 15px;
+    text-align: center;
 }
