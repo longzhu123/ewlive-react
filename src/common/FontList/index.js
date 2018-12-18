@@ -18,7 +18,6 @@ class FontList extends PureComponent {
                     fontList.map((item,index)=>(
                         <p key={index}>
                             <FontAwesomeIcon icon={[item.get("prev"),item.get("icon")]} size="lg"/>
-                            <br/>
                             <span>{item.get("icon")}</span>
                         </p>
                     ))
