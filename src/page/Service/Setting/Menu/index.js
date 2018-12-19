@@ -1,35 +1,33 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
+import {Button,Modal} from 'antd';
 import './index.css';
 import {actionCreators} from "./store";
-import FontList from '../../../../common/FontList'
-import {Modal} from "antd";
+
 //菜单管理组件
 class Menu extends PureComponent {
 
     render() {
-        const {showFontListModal, isShowFontListModal} = this.props;
+        const {isShowFontListModal, showFontListModal} = this.props;
+
+
         return (
             <div>
-                <button onClick={isShowFontListModal(true)}>显示</button>
                 <div>
                     <Modal
                         title="字体图标列表"
                         visible={showFontListModal}
-                        onOk={() => {
-                        }}
+                        onOk={() =>alert(1) }
                         onCancel={() => isShowFontListModal(false)}
                         destroyOnClose
                     >
-                        <FontList/>
+                        <h1>Hello World</h1>
                     </Modal>
                 </div>
-
             </div>
         )
 
     }
-
 
 }
 
@@ -39,10 +37,11 @@ const mapState = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    //是否显示字体图标列表的Modal
+    //是否显示字体图标列表
     isShowFontListModal(isShow) {
-        dispatch(actionCreators.isShowFontListModal(true));
-    }
+        dispatch(actionCreators.isShowFontListModal(isShow));
+    },
+
 });
 
 export default connect(mapState, mapDispatchToProps)(Menu);

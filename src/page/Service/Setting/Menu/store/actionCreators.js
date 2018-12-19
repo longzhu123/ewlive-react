@@ -1,7 +1,7 @@
 import * as ActionConstants from "./constants";
 
 /**
- *
+ *是否显示字体图标列表
  * @param isShow
  * @returns {Function}
  */
