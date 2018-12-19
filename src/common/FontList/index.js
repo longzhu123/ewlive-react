@@ -17,7 +17,7 @@ class FontList extends PureComponent {
             <div>
                 {
                     fontList.map((item, index) => (
-                        <p key={index} onClick={() => fontClick(item.get("prev"),item.get("icon"))}>
+                        <p key={index} onClick={() => fontClick(item.get("prev"),item.get("icon"))} title={item.get("icon")}>
                             <FontAwesomeIcon icon={[item.get("prev"), item.get("icon")]} size="lg"/>
                             <span>{item.get("icon")}</span>
                         </p>
