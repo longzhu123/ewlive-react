@@ -26,7 +26,7 @@ const isShowFontListModalAction = (isShow) => ({
 });
 
 
-//加载用户ListAction
+//加载菜单ListAction
 const loadMenuListAction = (list, current, total) => ({
     type: ActionConstants.LOAD_MENU_LIST,
     menuList: fromJS(list),
@@ -34,13 +34,13 @@ const loadMenuListAction = (list, current, total) => ({
     total
 });
 
-//加载用户List
+//加载菜单List
 export const loadMenuList = (current, querParams) => {
     return (dispatch) => {
         querParams.current = current;
         querParams.size = StringConstants.PAGE_SIZE;
         let options = {
-            url: StringConstants.SERVER_URL + "/sysMenu/likeSearchSysMenuByPage",
+            url: StringConstants.SERVER_URL + "/sysMenu/likeSearchSysMenuTreeByPage",
             data: querParams
         };
         util.ajax(options).then((res => {
@@ -146,13 +146,13 @@ export const resetLoadGrid = (querParams) => {
     }
 };
 
-//是否显示添加用户模态框Action
+//是否显示添加菜单模态框Action
 const isShowAddMenuModalAction = (isShow) => ({
     type: ActionConstants.IS_SHOW_ADD_MENU_MODAL,
     isShow
 });
 
-//是否显示添加用户模态框
+//是否显示添加菜单模态框
 export const isShowAddMenuModal = (isShow) => {
     return (dispatch) => {
         dispatch(isShowAddMenuModalAction(isShow));
@@ -160,13 +160,13 @@ export const isShowAddMenuModal = (isShow) => {
 };
 
 
-//是否显示查看用户模态框Action
+//是否显示查看菜单模态框Action
 const isShowViewMenuModalAction = (isShow) => ({
     type: ActionConstants.IS_SHOW_VIEW_MENU_MODAL,
     isShow
 });
 
-//是否显示查看用户模态框
+//是否显示查看菜单模态框
 export const isShowViewMenuModal = (isShow) => {
     return (dispatch) => {
         dispatch(isShowViewMenuModalAction(isShow));
@@ -174,20 +174,20 @@ export const isShowViewMenuModal = (isShow) => {
 };
 
 
-//是否显示修改用户模态框Action
+//是否显示修改菜单模态框Action
 const isShowUpdateMenuModalAction = (isShow) => ({
     type: ActionConstants.IS_SHOW_UPDATE_MENU_MODAL,
     isShow
 });
 
-//是否显示修改用户模态框
+//是否显示修改菜单模态框
 export const isShowUpdateMenuModal = (isShow) => {
     return (dispatch) => {
         dispatch(isShowUpdateMenuModalAction(isShow));
     }
 };
 
-//添加用户Action
+//添加菜单Action
 const addMenuOperAction = (res) => ({
     type: ActionConstants.ADD_MENU_OPER,
     menuList: fromJS(res.data.records),
@@ -196,7 +196,7 @@ const addMenuOperAction = (res) => ({
     showAddMenuModal: false
 });
 
-//添加用户
+//添加菜单
 export const addMenuOper = (addMenuObj, querParams) => {
     return (dispatch) => {
         let options = {
@@ -223,7 +223,7 @@ export const addMenuOper = (addMenuObj, querParams) => {
 };
 
 
-//修改用户Action
+//修改菜单Action
 const updateMenuOperAction = (res) => ({
     type: ActionConstants.UPDATE_MENU_OPER,
     menuList: fromJS(res.data.records),
@@ -232,7 +232,7 @@ const updateMenuOperAction = (res) => ({
     showUpdateMenuModal: false
 });
 
-//修改用户
+//修改菜单
 export const updateItem = (updateObj, querParams) => {
     return (dispatch) => {
         let options = {
@@ -276,7 +276,7 @@ export const getDetailById = (id, operate) => {
 };
 
 /**
- * 修改用户Action
+ * 修改菜单Action
  * @param curOperRowObj  当前操作的表格行对象
  *
  */

@@ -33,16 +33,22 @@ class Menu extends PureComponent {
         };
         const columns = [
             {
-                title: '邮箱',
-                dataIndex: 'email',
+                title: '菜单名称',
+                dataIndex: 'menuName',
                 align: "center"
             }, {
-                title: '昵称',
-                dataIndex: 'nickName',
+                title: '菜单Url',
+                dataIndex: 'menuUrl',
                 align: "center"
-            }, {
-                title: '优币',
-                dataIndex: 'ewCoin',
+            },
+            {
+                title: '菜单图标',
+                dataIndex: 'menuIcon',
+                align: "center"
+            },
+            {
+                title: '排序号',
+                dataIndex: 'menuSort',
                 align: "center"
             }
             , {
