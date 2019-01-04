@@ -1,13 +1,12 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {Button, Card, Icon, Table} from 'antd';
+import {Button, Card, Icon, Table,Modal,Tree} from 'antd';
 import SearchForm from '../../../../common/Form/SearchForm';
 import ViewForm from '../../../../common/Form/ViewForm';
 import EditForm from '../../../../common/Form/EditForm';
 import * as StringConstants from '../../../../constant';
 import './index.css';
 import {actionCreators} from "./store";
-import {Modal,Tree } from "antd";
 
 const confirm = Modal.confirm;
 const { TreeNode } = Tree;
