@@ -86,7 +86,7 @@ export const delItem = (selectIds, querParams) => {
             querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
             querParams.size = StringConstants.PAGE_SIZE;
             let menuOptions = {
-                url: StringConstants.SERVER_URL + "/sysMenu/likeSearchSysMenuByPage",
+                url: StringConstants.SERVER_URL + "/sysMenu/likeSearchSysMenuTreeByPage",
                 data: querParams
             };
             util.ajax(menuOptions).then((res => {
@@ -113,7 +113,7 @@ export const filterForm = (queryObj) => {
         queryObj.current = 1;
         queryObj.size = StringConstants.PAGE_SIZE;
         let options = {
-            url: StringConstants.SERVER_URL + "/sysMenu/likeSearchSysMenuByPage",
+            url: StringConstants.SERVER_URL + "/sysMenu/likeSearchSysMenuTreeByPage",
             data: queryObj
         };
         util.ajax(options).then((res => {
@@ -137,7 +137,7 @@ export const resetLoadGrid = (querParams) => {
         querParams.current = 1;
         querParams.size = StringConstants.PAGE_SIZE;
         let options = {
-            url: StringConstants.SERVER_URL + "/sysMenu/likeSearchSysMenuByPage",
+            url: StringConstants.SERVER_URL + "/sysMenu/likeSearchSysMenuTreeByPage",
             data: querParams
         };
         util.ajax(options).then((res => {
@@ -212,7 +212,7 @@ export const addMenuOper = (addMenuObj, querParams) => {
             querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
             querParams.size = StringConstants.PAGE_SIZE;
             let menuOptions = {
-                url: StringConstants.SERVER_URL + "/sysMenu/likeSearchSysMenuByPage",
+                url: StringConstants.SERVER_URL + "/sysMenu/likeSearchSysMenuTreeByPage",
                 data: querParams
             };
             util.ajax(menuOptions).then((res => {
@@ -248,7 +248,7 @@ export const updateItem = (updateObj, querParams) => {
             querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
             querParams.size = StringConstants.PAGE_SIZE;
             let menuOptions = {
-                url: StringConstants.SERVER_URL + "/sysMenu/likeSearchSysMenuByPage",
+                url: StringConstants.SERVER_URL + "/sysMenu/likeSearchSysMenuTreeByPage",
                 data: querParams
             };
             util.ajax(menuOptions).then((res => {

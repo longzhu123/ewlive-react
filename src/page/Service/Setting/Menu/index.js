@@ -375,7 +375,7 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //修改操作
     updateItem(updateObj, queryObj) {
-        dispatch(actionCreators.updateItem(updateObj, queryObj));
+        dispatch(actionCreators.updateItem(updateObj, {}));
     },
     //条件查询表格
     filterForm(queryObj) {
@@ -391,7 +391,7 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //添加菜单
     addMenuOper(addMenuObj) {
-        dispatch(actionCreators.addMenuOper(addMenuObj));
+        dispatch(actionCreators.addMenuOper(addMenuObj,{}));
     },
     //是否显示查看菜单模态框
     isShowViewMenuModal(isShow) {
