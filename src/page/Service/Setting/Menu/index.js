@@ -118,8 +118,7 @@ class Menu extends PureComponent {
                     {required: true, message: '请输入菜单图标!'}
                 ],
                 onFocus: () => () => {
-                    alert(1);
-                    //isShowFontListModal(true);
+                    isShowFontListModal(true);
                 }
             },
             {
@@ -278,6 +277,7 @@ class Menu extends PureComponent {
                     <Modal
                         title="字体图标列表"
                         visible={showFontListModal}
+                        width={1200}
                         onOk={() => {
                         }}
                         onCancel={() => isShowFontListModal(false)}

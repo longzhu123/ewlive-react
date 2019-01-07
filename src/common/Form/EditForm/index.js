@@ -69,7 +69,7 @@ class EditForm extends PureComponent {
                     }else{
                         input = <FormItem label={lable} key={field}  {...formItemLayout}>
                             {getFieldDecorator(field, {initialValue: initialValue,rules:validate})(
-                                <Input placeholder={placeholder} onFocus={()=>item.onFocus()}/>
+                                <Input placeholder={placeholder} onClick={item.onFocus()}/>
                             )}
                         </FormItem>;
                     }
