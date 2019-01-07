@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import {Checkbox, DatePicker, Form, Input, Select} from "antd";
+import {Checkbox, DatePicker, Form, Input, Select,TreeSelect} from "antd";
 import util from '../../../util/util';
 import './index.css';
 import moment from "moment"
@@ -8,7 +8,7 @@ import 'moment/locale/zh-cn';
 
 moment.locale('zh-cn');
 const FormItem = Form.Item;
-
+const TreeNode = TreeSelect.TreeNode;
 
 //公共的编辑(增,删,改)表单组件
 class EditForm extends PureComponent {
@@ -113,10 +113,35 @@ class EditForm extends PureComponent {
                         )}
                     </FormItem>;
                     editFormList.push(dateComponent);
+                }else if(item.type === "tree"){
+                    const treeComponent =
+                        <FormItem label={lable} key={field}  {...formItemLayout}>
+                            {getFieldDecorator(field, {initialValue: initialValue,rules:validate})(
+                                <TreeSelect
+                                    showSearch
+                                    style={{ width: 300 }}
+                                    dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
+                                    placeholder="Please select"
+                                    allowClear
+                                    treeDefaultExpandAll
+                                >
+                                    <TreeNode value="parent 1" title="parent 1" key="0-1">
+                                        <TreeNode value="parent 1-0" title="parent 1-0" key="0-1-1">
+                                            <TreeNode value="leaf1" title="my leaf" key="random" />
+                                            <TreeNode value="leaf2" title="your leaf" key="random1" />
+                                        </TreeNode>
+                                    </TreeNode>
+                                </TreeSelect>
+                            )}
+                        </FormItem>;
+
+
+                    editFormList.push(treeComponent);
                 }
                 return index;
             })
         }
+        console.log(editFormList);
         return editFormList;
 
     };

@@ -135,7 +135,7 @@ class Menu extends PureComponent {
                 ]
             },
             {
-                type: "input",
+                type: "tree",
                 lable: "父菜单",
                 placeholder: "父菜单",
                 width: "200px",
