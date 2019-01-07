@@ -27,6 +27,7 @@ class Menu extends PureComponent {
         const {menuList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, isShowAddMenuModal, showAddMenuModal, showViewMenuModal, showUpdateMenuModal, isShowViewMenuModal, isShowUpdateMenuModal, curOperRowObj, showFontListModal, isShowFontListModal} = this.props;
         toCurOperRowObj = curOperRowObj.toJS();
         const menuDataList = menuList.toJS();
+        console.log(menuDataList);
         const selectDataIds = selectIds.toJS();
         const rowSelection = {
             onChange: tableSelectChange
@@ -139,6 +140,7 @@ class Menu extends PureComponent {
                 placeholder: "父菜单",
                 width: "200px",
                 field: "parentId",
+                treeList:menuDataList,
                 validate: [
                     {
                         required: true, message: '请输入父菜单!',

@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import {Checkbox, DatePicker, Form, Input, Select,TreeSelect} from "antd";
+import {Checkbox, DatePicker, Form, Input, Select, TreeSelect} from "antd";
 import util from '../../../util/util';
 import './index.css';
 import moment from "moment"
@@ -13,7 +13,7 @@ const TreeNode = TreeSelect.TreeNode;
 //公共的编辑(增,删,改)表单组件
 class EditForm extends PureComponent {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.onRef(this)
     }
 
@@ -35,7 +35,7 @@ class EditForm extends PureComponent {
      */
     initEditFormList = () => {
         const {getFieldDecorator} = this.props.form;
-        const  editFormOption = this.props.editFormOption;
+        const editFormOption = this.props.editFormOption;
         let editFormList = [];
         const formItemLayout = {
             labelCol: {
@@ -44,7 +44,7 @@ class EditForm extends PureComponent {
             },
             wrapperCol: {
                 xs: {span: 24},
-                sm: {span: 16,offset:1},
+                sm: {span: 16, offset: 1},
             },
         };
 
@@ -59,16 +59,16 @@ class EditForm extends PureComponent {
                 let validate = item.validate;   // 字段validate
 
                 if (item.type === "input") {
-                    let input="";
-                    if(item.onFocus === undefined){
+                    let input = "";
+                    if (item.onFocus === undefined) {
                         input = <FormItem label={lable} key={field}  {...formItemLayout}>
-                            {getFieldDecorator(field, {initialValue: initialValue,rules:validate})(
+                            {getFieldDecorator(field, {initialValue: initialValue, rules: validate})(
                                 <Input placeholder={placeholder}/>
                             )}
                         </FormItem>;
-                    }else{
+                    } else {
                         input = <FormItem label={lable} key={field}  {...formItemLayout}>
-                            {getFieldDecorator(field, {initialValue: initialValue,rules:validate})(
+                            {getFieldDecorator(field, {initialValue: initialValue, rules: validate})(
                                 <Input placeholder={placeholder} onClick={item.onFocus()}/>
                             )}
                         </FormItem>;
@@ -79,7 +79,7 @@ class EditForm extends PureComponent {
                     const select = <FormItem label={lable} key={field}  {...formItemLayout}>
                         {getFieldDecorator(field, {
                                 initialValue: initialValue,
-                                rules:validate
+                                rules: validate
                             }
                         )(
                             <Select style={{width: width}} placeholder={placeholder}>
@@ -93,7 +93,7 @@ class EditForm extends PureComponent {
                         {getFieldDecorator(field, {
                             valuePropName: "checked",
                             initialValue: initialValue,
-                            rules:validate
+                            rules: validate
                         })(
                             <Checkbox>{lable}</Checkbox>
                         )}
@@ -103,7 +103,7 @@ class EditForm extends PureComponent {
                     const dateComponent = <FormItem label={lable} key={field}  {...formItemLayout}>
                         {getFieldDecorator(field, {
                             initialValue: moment(initialValue, 'YYYY/MM/DD'),
-                            rules:validate
+                            rules: validate
                         })(
                             <DatePicker
                                 showTime
@@ -113,24 +113,19 @@ class EditForm extends PureComponent {
                         )}
                     </FormItem>;
                     editFormList.push(dateComponent);
-                }else if(item.type === "tree"){
+                } else if (item.type === "tree") {
                     const treeComponent =
                         <FormItem label={lable} key={field}  {...formItemLayout}>
-                            {getFieldDecorator(field, {initialValue: initialValue,rules:validate})(
+                            {getFieldDecorator(field, {initialValue: initialValue, rules: validate})(
                                 <TreeSelect
                                     showSearch
-                                    style={{ width: 300 }}
-                                    dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
-                                    placeholder="Please select"
+                                    style={{width: 300}}
+                                    dropdownStyle={{maxHeight: 400, overflow: 'auto'}}
+                                    placeholder={placeholder}
                                     allowClear
                                     treeDefaultExpandAll
                                 >
-                                    <TreeNode value="parent 1" title="parent 1" key="0-1">
-                                        <TreeNode value="parent 1-0" title="parent 1-0" key="0-1-1">
-                                            <TreeNode value="leaf1" title="my leaf" key="random" />
-                                            <TreeNode value="leaf2" title="your leaf" key="random1" />
-                                        </TreeNode>
-                                    </TreeNode>
+                                    {this.renderTreeForm(item.treeList)}
                                 </TreeSelect>
                             )}
                         </FormItem>;
@@ -141,9 +136,30 @@ class EditForm extends PureComponent {
                 return index;
             })
         }
-        console.log(editFormList);
         return editFormList;
 
+    };
+
+    /**
+     * 渲染树形下拉框
+     * @param treeList
+     */
+    renderTreeForm=(treeList)=>{
+        return treeList.map((item, index) => {
+            debugger;
+            if(item.children!==undefined&&item.children.length>0){
+                return (
+                    <TreeNode value={item.id} title={item.menuName} key={item.id}>
+                        {this.renderTreeForm(item.children)};
+                    </TreeNode>
+                )
+            }else{
+                return (
+                    <TreeNode value={item.id} title={item.menuName} key={item.id}></TreeNode>
+                )
+            }
+
+        })
     };
 
     render() {
@@ -166,10 +182,10 @@ class EditForm extends PureComponent {
     };
 
     //修改表单的validate
-    updateFormValidate = (id,querParam) => {
+    updateFormValidate = (id, querParam) => {
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                values.id=id;
+                values.id = id;
                 this.props.editAction(values, querParam);
             }
         });
