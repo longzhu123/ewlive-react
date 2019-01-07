@@ -36,7 +36,6 @@ class EditForm extends PureComponent {
     initEditFormList = () => {
         const {getFieldDecorator} = this.props.form;
         const  editFormOption = this.props.editFormOption;
-        console.log(editFormOption);
         let editFormList = [];
         const formItemLayout = {
             labelCol: {
@@ -70,7 +69,7 @@ class EditForm extends PureComponent {
                     }else{
                         input = <FormItem label={lable} key={field}  {...formItemLayout}>
                             {getFieldDecorator(field, {initialValue: initialValue,rules:validate})(
-                                <Input placeholder={placeholder} onFocus={item.onFocus}/>
+                                <Input placeholder={placeholder} onFocus={()=>item.onFocus()}/>
                             )}
                         </FormItem>;
                     }

@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {Button, Card, Icon, Table,Modal} from 'antd';
-import SearchForm from '../../../../common/Form/SearchForm';
+import {Button, Card, Icon, Table, Modal} from 'antd';
+import FontList from '../../../../common/FontList'
 import ViewForm from '../../../../common/Form/ViewForm';
 import EditForm from '../../../../common/Form/EditForm';
 import './index.css';
@@ -24,7 +24,7 @@ class Menu extends PureComponent {
     };
 
     render() {
-        const {menuList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, resetLoadGrid, isShowAddMenuModal, showAddMenuModal, showViewMenuModal, showUpdateMenuModal, isShowViewMenuModal, isShowUpdateMenuModal, curOperRowObj} = this.props;
+        const {menuList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, isShowAddMenuModal, showAddMenuModal, showViewMenuModal, showUpdateMenuModal, isShowViewMenuModal, isShowUpdateMenuModal, curOperRowObj, showFontListModal, isShowFontListModal} = this.props;
         toCurOperRowObj = curOperRowObj.toJS();
         const menuDataList = menuList.toJS();
         const selectDataIds = selectIds.toJS();
@@ -117,8 +117,9 @@ class Menu extends PureComponent {
                 validate: [
                     {required: true, message: '请输入菜单图标!'}
                 ],
-                onFocus:function () {
+                onFocus: () => () => {
                     alert(1);
+                    //isShowFontListModal(true);
                 }
             },
             {
@@ -128,7 +129,7 @@ class Menu extends PureComponent {
                 width: "200px",
                 field: "menuSort",
                 validate: [
-                   {
+                    {
                         required: true, message: '请输入菜单排序号!',
                     }
                 ]
@@ -203,8 +204,6 @@ class Menu extends PureComponent {
                 ]
             }
         ];
-
-
         return (
             <div>
                 <Card>
@@ -272,6 +271,19 @@ class Menu extends PureComponent {
                     >
                         <EditForm editFormOption={updateFormOptions} editAction={this.props.updateItem}
                                   onRef={this.onRef}/>
+                    </Modal>
+                </div>
+
+                <div>
+                    <Modal
+                        title="字体图标列表"
+                        visible={showFontListModal}
+                        onOk={() => {
+                        }}
+                        onCancel={() => isShowFontListModal(false)}
+                        destroyOnClose
+                    >
+                        <FontList/>
                     </Modal>
                 </div>
 
