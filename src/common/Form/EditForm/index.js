@@ -13,6 +13,7 @@ const TreeNode = TreeSelect.TreeNode;
 //公共的编辑(增,删,改)表单组件
 class EditForm extends PureComponent {
 
+
     componentDidMount() {
         this.props.onRef(this)
     }
@@ -123,7 +124,9 @@ class EditForm extends PureComponent {
                                     dropdownStyle={{maxHeight: 400, overflow: 'auto'}}
                                     placeholder={placeholder}
                                     allowClear
+                                    treeNodeFilterProp="title"
                                     treeDefaultExpandAll
+                                    onChange={this.treeSelectChange}
                                 >
                                     {this.renderTreeForm(item.treeList)}
                                 </TreeSelect>
@@ -139,6 +142,12 @@ class EditForm extends PureComponent {
         return editFormList;
 
     };
+
+
+    treeSelectChange = (value) => {
+        console.log(value);
+    };
+
 
     /**
      * 渲染树形下拉框
