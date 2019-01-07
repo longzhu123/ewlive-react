@@ -9,15 +9,16 @@ class FontList extends PureComponent {
 
     componentDidMount() {
         this.props.loadFontList();
+        this.props.onRef(this);
     }
 
     render() {
-        const {fontList, fontClick} = this.props;
+        const {fontList} = this.props;
         return (
             <div>
                 {
                     fontList.map((item, index) => (
-                        <p key={index} onClick={() => fontClick(item.get("prev"),item.get("icon"))} title={item.get("icon")}>
+                        <p key={index} onClick={() => this.fontClick(item.get("prev"),item.get("icon"))} title={item.get("icon")}>
                             <FontAwesomeIcon icon={[item.get("prev"), item.get("icon")]} size="lg"/>
                             <span>{item.get("icon")}</span>
                         </p>
@@ -25,6 +26,10 @@ class FontList extends PureComponent {
                 }
             </div>
         )
+    }
+
+    fontClick=(prev,icon)=>{
+        this.props.clickFontItem(prev,icon);
     }
 
 }
@@ -36,9 +41,6 @@ const mapState = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     loadFontList() {
         dispatch(actionCreators.loadFontList());
-    },
-    fontClick(prev,icon) {
-        alert(prev+","+icon);
     }
 });
 

@@ -24,7 +24,7 @@ class Menu extends PureComponent {
     };
 
     render() {
-        const {menuList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, isShowAddMenuModal, showAddMenuModal, showViewMenuModal, showUpdateMenuModal, isShowViewMenuModal, isShowUpdateMenuModal, curOperRowObj, showFontListModal, isShowFontListModal} = this.props;
+        const {menuList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, isShowAddMenuModal, showAddMenuModal, showViewMenuModal, showUpdateMenuModal, isShowViewMenuModal, isShowUpdateMenuModal, curOperRowObj, showFontListModal, isShowFontListModal,clickFontItem} = this.props;
         toCurOperRowObj = curOperRowObj.toJS();
         const menuDataList = menuList.toJS();
         const selectDataIds = selectIds.toJS();
@@ -284,7 +284,7 @@ class Menu extends PureComponent {
                         onCancel={() => isShowFontListModal(false)}
                         destroyOnClose
                     >
-                        <FontList/>
+                        <FontList clickFontItem={clickFontItem}  onRef={this.onRef}/>
                     </Modal>
                 </div>
 
@@ -380,6 +380,10 @@ const mapDispatchToProps = (dispatch) => ({
     //是否显示修改菜单模态框
     isShowUpdateMenuModal(isShow) {
         dispatch(actionCreators.isShowUpdateMenuModal(isShow));
+    },
+    clickFontItem(prev,icon){
+
+        alert(prev+","+icon);
     }
 });
 

@@ -126,7 +126,6 @@ class EditForm extends PureComponent {
                                     allowClear
                                     treeNodeFilterProp="title"
                                     treeDefaultExpandAll
-                                    onChange={this.treeSelectChange}
                                 >
                                     {this.renderTreeForm(item.treeList)}
                                 </TreeSelect>
@@ -144,9 +143,6 @@ class EditForm extends PureComponent {
     };
 
 
-    treeSelectChange = (value) => {
-        console.log(value);
-    };
 
 
     /**
