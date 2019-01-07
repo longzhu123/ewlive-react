@@ -7,10 +7,9 @@ import EditForm from '../../../../common/Form/EditForm';
 import './index.css';
 import {actionCreators} from "./store";
 import * as StringConstants from "../../../../constant";
-
+let goblaAddMenuForm;
 let toCurOperRowObj = {};
 const confirm = Modal.confirm;
-
 //菜单管理组件
 class Menu extends PureComponent {
 
@@ -18,7 +17,9 @@ class Menu extends PureComponent {
         this.props.loadMenuList();
     }
 
+
     onRef = (ref) => {
+        goblaAddMenuForm=ref;
         this.addMenuFormRef = ref;
         this.updateMenuFormRef = ref;
     };
@@ -284,7 +285,7 @@ class Menu extends PureComponent {
                         onCancel={() => isShowFontListModal(false)}
                         destroyOnClose
                     >
-                        <FontList clickFontItem={clickFontItem}  onRef={this.onRef}/>
+                        <FontList clickFontItem={clickFontItem}/>
                     </Modal>
                 </div>
 
@@ -382,9 +383,10 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(actionCreators.isShowUpdateMenuModal(isShow));
     },
     clickFontItem(prev,icon){
-
-        alert(prev+","+icon);
+        dispatch(actionCreators.isShowFontListModal(false));
+        let iconName = prev+","+icon;
+        goblaAddMenuForm.props.form.setFieldsValue({"menuIcon":iconName});
     }
 });
 
-export default connect(mapState, mapDispatchToProps)(Menu);
+export default connect(mapState, mapDispatchToProps, null, {withRef: true})(Menu);

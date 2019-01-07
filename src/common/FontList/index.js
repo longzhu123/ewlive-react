@@ -9,7 +9,6 @@ class FontList extends PureComponent {
 
     componentDidMount() {
         this.props.loadFontList();
-        this.props.onRef(this);
     }
 
     render() {
