@@ -130,6 +130,10 @@ class Menu extends PureComponent {
                 field: "menuSort",
                 validate: [
                     {
+                        pattern: new RegExp(/^[1-9]\d*$/, "g"),
+                        message: '只能输入数值格式'
+                    },
+                    {
                         required: true, message: '请输入菜单排序号!',
                     }
                 ]
@@ -152,55 +156,70 @@ class Menu extends PureComponent {
         const updateFormOptions = [
             {
                 type: "input",
-                lable: "邮箱",
-                placeholder: "邮箱",
+                lable: "菜单名称",
+                placeholder: "菜单名称",
+                initialValue: toCurOperRowObj.menuName,
                 width: "200px",
-                field: "email",
-                initialValue: toCurOperRowObj.email,
+                field: "menuName",
                 validate: [
                     {
-                        type: 'email', message: '邮箱格式不正确!',
-                    },
-                    {
-                        required: true, message: '请输入邮箱!',
+                        required: true, message: '请输入菜单名称!',
                     }
                 ]
             },
             {
                 type: "input",
-                lable: "密码",
-                placeholder: "密码",
+                lable: "菜单Url",
+                placeholder: "菜单Url",
                 width: "200px",
-                field: "password",
-                initialValue: toCurOperRowObj.password,
+                field: "menuUrl",
+                initialValue: toCurOperRowObj.menuUrl,
                 validate: [
-                    {required: true, message: '请输入密码!'}
+                    {required: true, message: '请输入菜单Url!'}
                 ]
             },
             {
                 type: "input",
-                lable: "昵称",
-                placeholder: "昵称",
+                lable: "菜单图标",
+                placeholder: "菜单图标",
                 width: "200px",
-                field: "nickName",
-                initialValue: toCurOperRowObj.nickName,
+                field: "menuIcon",
+                initialValue: toCurOperRowObj.menuIcon,
                 validate: [
-                    {required: true, message: '请输入昵称!'}
-                ]
+                    {required: true, message: '请输入菜单图标!'}
+                ],
+                onFocus: () => () => {
+                    isShowFontListModal(true);
+                }
             },
             {
                 type: "input",
-                lable: "优币",
-                placeholder: "优币",
+                lable: "菜单排序号",
+                placeholder: "菜单排序号",
                 width: "200px",
-                field: "ewCoin",
-                initialValue: toCurOperRowObj.ewCoin,
+                field: "menuSort",
+                initialValue: toCurOperRowObj.menuSort,
                 validate: [
                     {
                         pattern: new RegExp(/^[1-9]\d*$/, "g"),
                         message: '只能输入数值格式'
-                    }, {
-                        required: true, message: '请输入优币!',
+                    },
+                    {
+                        required: true, message: '请输入菜单排序号!',
+                    }
+                ]
+            },
+            {
+                type: "tree",
+                lable: "父菜单",
+                placeholder: "父菜单",
+                width: "200px",
+                field: "parentId",
+                treeList:menuDataList,
+                initialValue: toCurOperRowObj.parentId,
+                validate: [
+                    {
+                        required: true, message: '请输入父菜单!',
                     }
                 ]
             }
