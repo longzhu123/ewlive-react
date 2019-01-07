@@ -12,7 +12,8 @@ const defaultState = fromJS(
         showAddUserRoleModal:false,
         showViewUserRoleModal:false,
         showUpdateUserRoleModal:false,
-        showRoleMenuSettingModal:false
+        showRoleMenuSettingModal:false,
+        roleMenuList:[]
     }
 );
 

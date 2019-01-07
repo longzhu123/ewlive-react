@@ -279,3 +279,19 @@ export const isShowMenuSettingModal = (isShow) => {
         dispatch(isShowMenuSettingModalAction(isShow));
     }
 };
+
+
+//菜单设置按钮ClickAction
+const showViewMenuSettingModalAction = (menuTreeList) => ({
+    type: ActionConstants.SHOW_VIEWMENU_SETTING_MODAL,
+    isShow:true,
+    menuTreeList
+});
+
+//菜单设置按钮Click
+export const showViewMenuSettingModal = (id) => {
+    return (dispatch) => {
+
+        dispatch(showViewMenuSettingModalAction({}));
+    }
+};

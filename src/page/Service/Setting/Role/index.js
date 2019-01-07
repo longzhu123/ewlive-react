@@ -26,11 +26,12 @@ class Role extends PureComponent {
     };
 
     render() {
-        const {userRoleList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserRoleModal, showAddUserRoleModal, showViewUserRoleModal, showUpdateUserRoleModal, isShowViewUserRoleModal, isShowUpdateUserRoleModal, curOperRowObj,showRoleMenuSettingModal,showViewMenuSettingModal,isShowMenuSettingModal} = this.props;
+        const {userRoleList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserRoleModal, showAddUserRoleModal, showViewUserRoleModal, showUpdateUserRoleModal, isShowViewUserRoleModal, isShowUpdateUserRoleModal, curOperRowObj,showRoleMenuSettingModal,showViewMenuSettingModal,isShowMenuSettingModal,roleMenuList} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
         const userRoleDataList = userRoleList.toJS();
         const selectDataIds = selectIds.toJS();
+        const roleMenuTreeData = roleMenuList.toJS();
         const rowSelection = {
             onChange: tableSelectChange
         };
@@ -105,64 +106,7 @@ class Role extends PureComponent {
             }
         ];
 
-        const treeData = [{
-            title: '0-0',
-            key: '0-0',
-            children: [{
-                title: '0-0-0',
-                key: '0-0-0',
-                children: [
-                    { title: '0-0-0-0', key: '0-0-0-0' },
-                    { title: '0-0-0-1', key: '0-0-0-1' },
-                    { title: '0-0-0-2', key: '0-0-0-2' },
-                ],
-            }, {
-                title: '0-0-1',
-                key: '0-0-1',
-                children: [
-                    { title: '0-0-1-0', key: '0-0-1-0' },
-                    { title: '0-0-1-1', key: '0-0-1-1' },
-                    { title: '0-0-1-2', key: '0-0-1-2' },
-                    { title: '0-0-1-1', key: '0-0-1-3' },
-                    { title: '0-0-1-2', key: '0-0-1-4' },
-                    { title: '0-0-1-1', key: '0-0-1-5' },
-                    { title: '0-0-1-2', key: '0-0-1-6' },
-                    { title: '0-0-1-1', key: '0-0-1-7' },
-                    { title: '0-0-1-2', key: '0-0-1-8' },
-                    { title: '0-0-1-1', key: '0-0-1-9' },
-                    { title: '0-0-1-2', key: '0-0-1-10' },
-                    { title: '0-0-1-1', key: '0-0-1-11' },
-                    { title: '0-0-1-2', key: '0-0-1-12' },
-                    { title: '0-0-1-0', key: '0-0-1-0' },
-                    { title: '0-0-1-1', key: '0-0-1-1' },
-                    { title: '0-0-1-2', key: '0-0-1-2' },
-                    { title: '0-0-1-1', key: '0-0-1-3' },
-                    { title: '0-0-1-2', key: '0-0-1-4' },
-                    { title: '0-0-1-1', key: '0-0-1-5' },
-                    { title: '0-0-1-2', key: '0-0-1-6' },
-                    { title: '0-0-1-1', key: '0-0-1-7' },
-                    { title: '0-0-1-2', key: '0-0-1-8' },
-                    { title: '0-0-1-1', key: '0-0-1-9' },
-                    { title: '0-0-1-2', key: '0-0-1-10' },
-                    { title: '0-0-1-1', key: '0-0-1-11' },
-                    { title: '0-0-1-2', key: '0-0-1-12' },
-                ],
-            }, {
-                title: '0-0-2',
-                key: '0-0-2',
-            }],
-        }, {
-            title: '0-1',
-            key: '0-1',
-            children: [
-                { title: '0-1-0-0', key: '0-1-0-0' },
-                { title: '0-1-0-1', key: '0-1-0-1' },
-                { title: '0-1-0-2', key: '0-1-0-2' },
-            ],
-        }, {
-            title: '0-2',
-            key: '0-2',
-        }];
+
         return (
             <div>
                 <Card>
@@ -246,11 +190,16 @@ class Role extends PureComponent {
                         onCancel={() => isShowMenuSettingModal(false)}
                         destroyOnClose
                     >
-                        <Tree
-                            checkable
-                        >
-                            {this.renderTreeNodes(treeData)}
-                        </Tree>
+
+                        {
+                            this.renderRoleTreeNodes([
+                                {
+                                    "id": StringConstants.ROLE_TREE_TOP_ID,
+                                    "roleName": "角色列表",
+                                    "children": roleMenuTreeData
+                                }
+                            ])
+                        }
                     </Modal>
                 </div>
             </div>
@@ -261,16 +210,21 @@ class Role extends PureComponent {
 
 
 
-    renderTreeNodes = data => data.map((item) => {
-        if (item.children) {
-            return (
-                <TreeNode title={item.title} key={item.key} dataRef={item}>
-                    {this.renderTreeNodes(item.children)}
-                </TreeNode>
-            );
-        }
-        return <TreeNode {...item} />;
-    });
+    renderMenuTreeNodes = (data) =>{
+        return data.map(item => {
+            if (!item.children) {
+                return (
+                    <TreeNode title={item.roleName} key={item.id} />
+                )
+            } else {
+                return (
+                    <TreeNode title={item.roleName} key={item.id}>
+                        {this.renderRoleTreeNodes(item.children)}
+                    </TreeNode>
+                )
+            }
+        });
+    };
 
 
 }
@@ -286,7 +240,8 @@ const mapState = (state) => ({
     showViewUserRoleModal: state.get("userRoleSettingReducer").get("showViewUserRoleModal"),
     showUpdateUserRoleModal: state.get("userRoleSettingReducer").get("showUpdateUserRoleModal"),
     curOperRowObj: state.get("userRoleSettingReducer").get("curOperRowObj"),
-    showRoleMenuSettingModal: state.get("userRoleSettingReducer").get("showRoleMenuSettingModal")
+    showRoleMenuSettingModal: state.get("userRoleSettingReducer").get("showRoleMenuSettingModal"),
+    roleMenuList: state.get("userRoleSettingReducer").get("roleMenuList")
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -364,7 +319,7 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //菜单设置按钮Click事件
     showViewMenuSettingModal(id){
-        dispatch(actionCreators.isShowMenuSettingModal(true));
+        dispatch(actionCreators.showViewMenuSettingModal(id));
     }
 });
 
