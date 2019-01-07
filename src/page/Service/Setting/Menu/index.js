@@ -88,51 +88,60 @@ class Menu extends PureComponent {
         const addFormOptions = [
             {
                 type: "input",
-                lable: "邮箱",
-                placeholder: "邮箱",
+                lable: "菜单名称",
+                placeholder: "菜单名称",
                 width: "200px",
-                field: "email",
+                field: "menuName",
                 validate: [
                     {
-                        type: 'email', message: '邮箱格式不正确!',
-                    },
-                    {
-                        required: true, message: '请输入邮箱!',
+                        required: true, message: '请输入菜单名称!',
                     }
                 ]
             },
             {
                 type: "input",
-                lable: "密码",
-                placeholder: "密码",
+                lable: "菜单Url",
+                placeholder: "菜单Url",
                 width: "200px",
-                field: "password",
+                field: "menuUrl",
                 validate: [
-                    {required: true, message: '请输入密码!'}
+                    {required: true, message: '请输入菜单Url!'}
                 ]
             },
             {
                 type: "input",
-                lable: "昵称",
-                placeholder: "昵称",
+                lable: "菜单图标",
+                placeholder: "菜单图标",
                 width: "200px",
-                field: "nickName",
+                field: "menuIcon",
                 validate: [
-                    {required: true, message: '请输入昵称!'}
+                    {required: true, message: '请输入菜单图标!'}
+                ],
+                onFocus:function () {
+                    alert(1);
+                }
+            },
+            {
+                type: "input",
+                lable: "菜单排序号",
+                placeholder: "菜单排序号",
+                width: "200px",
+                field: "menuSort",
+                validate: [
+                   {
+                        required: true, message: '请输入菜单排序号!',
+                    }
                 ]
             },
             {
                 type: "input",
-                lable: "优币",
-                placeholder: "优币",
+                lable: "父菜单",
+                placeholder: "父菜单",
                 width: "200px",
-                field: "ewCoin",
+                field: "parentId",
                 validate: [
                     {
-                        pattern: new RegExp(/^[1-9]\d*$/, "g"),
-                        message: '只能输入数值格式'
-                    }, {
-                        required: true, message: '请输入优币!',
+                        required: true, message: '请输入父菜单!',
                     }
                 ]
             }
@@ -228,7 +237,7 @@ class Menu extends PureComponent {
 
                 <div>
                     <Modal
-                        title="添加用户"
+                        title="添加菜单"
                         visible={showAddMenuModal}
                         onOk={() => {
                             this.addMenuFormRef.addFormValidate()
@@ -244,7 +253,7 @@ class Menu extends PureComponent {
 
                 <div>
                     <Modal
-                        title="查看用户"
+                        title="查看菜单"
                         visible={showViewMenuModal}
                         onCancel={() => isShowViewMenuModal(false)}
                         destroyOnClose
@@ -255,7 +264,7 @@ class Menu extends PureComponent {
 
                 <div>
                     <Modal
-                        title="修改用户"
+                        title="修改菜单"
                         visible={showUpdateMenuModal}
                         onOk={() => this.updateMenuFormRef.updateFormValidate(toCurOperRowObj.id)}
                         onCancel={() => isShowUpdateMenuModal(false)}
@@ -291,7 +300,7 @@ const mapDispatchToProps = (dispatch) => ({
     isShowFontListModal(isShow) {
         dispatch(actionCreators.isShowFontListModal(isShow));
     },
-    //加载用户列表
+    //加载菜单列表
     loadMenuList() {
         dispatch(actionCreators.loadMenuList(StringConstants.DEFAULT_PAGE_CURRENT, {}));
     },
@@ -343,19 +352,19 @@ const mapDispatchToProps = (dispatch) => ({
     resetLoadGrid() {
         dispatch(actionCreators.resetLoadGrid({}));
     },
-    //是否显示添加用户模态框
+    //是否显示添加菜单模态框
     isShowAddMenuModal(isShow) {
         dispatch(actionCreators.isShowAddMenuModal(isShow));
     },
-    //添加用户
+    //添加菜单
     addMenuOper(addMenuObj) {
         dispatch(actionCreators.addMenuOper(addMenuObj));
     },
-    //是否显示查看用户模态框
+    //是否显示查看菜单模态框
     isShowViewMenuModal(isShow) {
         dispatch(actionCreators.isShowViewMenuModal(isShow));
     },
-    //是否显示修改用户模态框
+    //是否显示修改菜单模态框
     isShowUpdateMenuModal(isShow) {
         dispatch(actionCreators.isShowUpdateMenuModal(isShow));
     }

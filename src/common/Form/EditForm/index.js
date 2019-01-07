@@ -36,6 +36,7 @@ class EditForm extends PureComponent {
     initEditFormList = () => {
         const {getFieldDecorator} = this.props.form;
         const  editFormOption = this.props.editFormOption;
+        console.log(editFormOption);
         let editFormList = [];
         const formItemLayout = {
             labelCol: {
@@ -59,11 +60,20 @@ class EditForm extends PureComponent {
                 let validate = item.validate;   // 字段validate
 
                 if (item.type === "input") {
-                    const input = <FormItem label={lable} key={field}  {...formItemLayout}>
-                        {getFieldDecorator(field, {initialValue: initialValue,rules:validate})(
-                            <Input placeholder={placeholder}/>
-                        )}
-                    </FormItem>;
+                    let input="";
+                    if(item.onFocus === undefined){
+                        input = <FormItem label={lable} key={field}  {...formItemLayout}>
+                            {getFieldDecorator(field, {initialValue: initialValue,rules:validate})(
+                                <Input placeholder={placeholder}/>
+                            )}
+                        </FormItem>;
+                    }else{
+                        input = <FormItem label={lable} key={field}  {...formItemLayout}>
+                            {getFieldDecorator(field, {initialValue: initialValue,rules:validate})(
+                                <Input placeholder={placeholder} onFocus={item.onFocus}/>
+                            )}
+                        </FormItem>;
+                    }
                     editFormList.push(input);
                 }
                 else if (item.type === "select") {
