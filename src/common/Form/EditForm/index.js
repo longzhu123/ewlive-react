@@ -155,11 +155,10 @@ class EditForm extends PureComponent {
      */
     renderTreeForm=(treeList)=>{
         return treeList.map((item, index) => {
-            debugger;
             if(item.children!==undefined&&item.children.length>0){
                 return (
                     <TreeNode value={item.id} title={item.menuName} key={item.id}>
-                        {this.renderTreeForm(item.children)};
+                        {this.renderTreeForm(item.children)}
                     </TreeNode>
                 )
             }else{
