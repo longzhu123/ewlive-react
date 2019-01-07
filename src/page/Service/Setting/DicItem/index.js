@@ -219,7 +219,6 @@ const mapState = (state) => ({
     showViewDicItemModal: state.get("dicItemSettingReducer").get("showViewDicItemModal"),
     showUpdateDicItemModal: state.get("dicItemSettingReducer").get("showUpdateDicItemModal"),
     curOperRowObj: state.get("dicItemSettingReducer").get("curOperRowObj"),
-    showViewDicItemModal: state.get("dicItemSettingReducer").get("showViewDicItemModal"),
     dicItemItemList: state.get("dicItemSettingReducer").get("dicItemItemList"),
     dicItemItemCurrent: state.get("dicItemSettingReducer").get("dicItemItemCurrent"),
     dicItemItemTotal: state.get("dicItemSettingReducer").get("dicItemItemTotal")

@@ -2,7 +2,6 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Button, Card, Icon, Table, Modal} from 'antd';
 import FontList from '../../../../common/FontList'
-import ViewForm from '../../../../common/Form/ViewForm';
 import EditForm from '../../../../common/Form/EditForm';
 import './index.css';
 import {actionCreators} from "./store";
@@ -25,7 +24,7 @@ class Menu extends PureComponent {
     };
 
     render() {
-        const {menuList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, isShowAddMenuModal, showAddMenuModal, showViewMenuModal, showUpdateMenuModal, isShowViewMenuModal, isShowUpdateMenuModal, curOperRowObj, showFontListModal, isShowFontListModal,clickFontItem} = this.props;
+        const {menuList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showUpdateModal, isShowAddMenuModal, showAddMenuModal, showUpdateMenuModal, isShowUpdateMenuModal, curOperRowObj, showFontListModal, isShowFontListModal,clickFontItem} = this.props;
         toCurOperRowObj = curOperRowObj.toJS();
         const menuDataList = menuList.toJS();
         const selectDataIds = selectIds.toJS();
@@ -58,29 +57,9 @@ class Menu extends PureComponent {
                 align: "center",
                 render: (text, record) => (
                     <span className='control-container'>
-                         <Button type="primary" ghost onClick={() => showViewModal(record.id)}>查看</Button>
                          <Button type="primary" ghost onClick={() => showUpdateModal(record.id)}>修改</Button>
                     </span>
                 ),
-            }
-        ];
-
-        //详细的配置参数
-        const viewOptions = [
-            {
-                type: "text",
-                lable: "邮箱",
-                field: "email"
-            },
-            {
-                type: "text",
-                lable: "昵称",
-                field: "nickName"
-            },
-            {
-                type: "text",
-                lable: "优币",
-                field: "ewCoin"
             }
         ];
 
@@ -270,16 +249,6 @@ class Menu extends PureComponent {
                 </div>
 
 
-                <div>
-                    <Modal
-                        title="查看菜单"
-                        visible={showViewMenuModal}
-                        onCancel={() => isShowViewMenuModal(false)}
-                        destroyOnClose
-                    >
-                        <ViewForm viewOptions={viewOptions} viewData={toCurOperRowObj}/>
-                    </Modal>
-                </div>
 
                 <div>
                     <Modal
@@ -356,7 +325,7 @@ const mapDispatchToProps = (dispatch) => ({
                     });
                     return;
                 }
-                dispatch(actionCreators.delItem(selectDataIds));
+                dispatch(actionCreators.delItem(selectDataIds,{}));
             }
         });
 
@@ -365,16 +334,12 @@ const mapDispatchToProps = (dispatch) => ({
     onShowSizeChange(current) {
         dispatch(actionCreators.loadMenuList(current));
     },
-    //查看单条记录的详情
-    showViewModal(id) {
-        dispatch(actionCreators.getDetailById(id, "view"));
-    },
     //显示修改模态框
     showUpdateModal(id) {
         dispatch(actionCreators.getDetailById(id, "update"));
     },
     //修改操作
-    updateItem(updateObj, queryObj) {
+    updateItem(updateObj) {
         dispatch(actionCreators.updateItem(updateObj, {}));
     },
     //条件查询表格
@@ -392,10 +357,6 @@ const mapDispatchToProps = (dispatch) => ({
     //添加菜单
     addMenuOper(addMenuObj) {
         dispatch(actionCreators.addMenuOper(addMenuObj,{}));
-    },
-    //是否显示查看菜单模态框
-    isShowViewMenuModal(isShow) {
-        dispatch(actionCreators.isShowViewMenuModal(isShow));
     },
     //是否显示修改菜单模态框
     isShowUpdateMenuModal(isShow) {

@@ -64,14 +64,6 @@ class Dic extends PureComponent {
             }
         ];
 
-        //详细的配置参数
-        const viewOptions = [
-            {
-                type:"text",
-                lable:"字典名称",
-                field:"dicName"
-            }
-        ];
 
         //添加表单的配置参数
         const addFormOptions = [
