@@ -57,6 +57,8 @@ export default (state = defaultState, action) => {
             return state.set("showRoleMenuSettingModal",action.isShow).set("roleMenuList",action.menuTreeList);
         case ActionConstants.ROLE_MENU_TREE_CHECK_ACTION:
             return state.set("roleMenuCheckKeys",action.checkedKeys);
+        case ActionConstants.SET_CURROLE_MENU_REALTION_ACTION:
+            return state.set("curRoleMenuRealCheckData",action.menuRealDataArray);
         default:
             return state;
     }

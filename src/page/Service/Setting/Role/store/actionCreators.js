@@ -4,7 +4,7 @@ import * as StringConstants from "../../../../../constant";
 import util from '../../../../../util/util';
 import {Modal} from 'antd';
 //加载角色ListAction
-const loadUserRoleListAction = (list,current,total) => ({
+const loadUserRoleListAction = (list, current, total) => ({
     type: ActionConstants.LOAD_USER_ROLE_LIST,
     userRoleList: fromJS(list),
     current,
@@ -12,7 +12,7 @@ const loadUserRoleListAction = (list,current,total) => ({
 });
 
 //加载角色List
-export const loadUserRoleList = (current,querParams) => {
+export const loadUserRoleList = (current, querParams) => {
     return (dispatch) => {
         querParams.current = current;
         querParams.size = StringConstants.PAGE_SIZE;
@@ -21,7 +21,7 @@ export const loadUserRoleList = (current,querParams) => {
             data: querParams
         };
         util.ajax(options).then((res => {
-            dispatch(loadUserRoleListAction(res.data.records,res.data.current,res.data.total));
+            dispatch(loadUserRoleListAction(res.data.records, res.data.current, res.data.total));
         }));
     }
 };
@@ -30,7 +30,7 @@ export const loadUserRoleList = (current,querParams) => {
 //表格复选框chage Action
 const tableSelectChangeAction = (selectIds) => ({
     type: ActionConstants.TABLE_SELECT_CHANGE,
-    selectIds:fromJS(selectIds)
+    selectIds: fromJS(selectIds)
 });
 
 //表格复选框chage
@@ -43,17 +43,17 @@ export const tableSelectChange = (selectedRowKeys) => {
 //删除表格项的数据 Action
 const delItemAction = (userRoleList) => ({
     type: ActionConstants.TABLE_DEL_ITEM,
-    selectIds:fromJS([]),
-    userRoleList:fromJS(userRoleList.records),
-    total:userRoleList.total
+    selectIds: fromJS([]),
+    userRoleList: fromJS(userRoleList.records),
+    total: userRoleList.total
 });
 
 //删除表格项的数据
-export const delItem = (selectIds,querParams) => {
+export const delItem = (selectIds, querParams) => {
     return (dispatch) => {
         let options = {
             url: StringConstants.SERVER_URL + "/sysUserRole/deleteBatchSysUserRoleByIds",
-            data: {"ids":selectIds}
+            data: {"ids": selectIds}
         };
         util.ajax(options).then((res => {
             Modal.success({
@@ -78,7 +78,7 @@ export const delItem = (selectIds,querParams) => {
 //改变过滤表单参数
 const changeFilterParamAction = (queryObj) => ({
     type: ActionConstants.CHANGE_FILTER_PARAM,
-    queryObj:fromJS(queryObj)
+    queryObj: fromJS(queryObj)
 });
 
 
@@ -91,17 +91,17 @@ export const filterForm = (queryObj) => {
         queryObj.size = StringConstants.PAGE_SIZE;
         let options = {
             url: StringConstants.SERVER_URL + "/sysUserRole/likeSearchSysUserRoleByPage",
-            data:queryObj
+            data: queryObj
         };
         util.ajax(options).then((res => {
-            dispatch(loadUserRoleListAction(res.data.records,res.data.current,res.data.total));
+            dispatch(loadUserRoleListAction(res.data.records, res.data.current, res.data.total));
         }));
     }
 };
 
 
 //重置表格ListAction
-const resetLoadGridAction = (list,current,total) => ({
+const resetLoadGridAction = (list, current, total) => ({
     type: ActionConstants.RESET_LOAD_GRID,
     userRoleList: fromJS(list),
     current,
@@ -118,7 +118,7 @@ export const resetLoadGrid = (querParams) => {
             data: querParams
         };
         util.ajax(options).then((res => {
-            dispatch(resetLoadGridAction(res.data.records,res.data.current,res.data.total));
+            dispatch(resetLoadGridAction(res.data.records, res.data.current, res.data.total));
         }));
     }
 };
@@ -151,7 +151,6 @@ export const isShowViewUserRoleModal = (isShow) => {
 };
 
 
-
 //是否显示修改角色模态框Action
 const isShowUpdateUserRoleModalAction = (isShow) => ({
     type: ActionConstants.IS_SHOW_UPDATE_USER_ROLE_MODAL,
@@ -169,13 +168,13 @@ export const isShowUpdateUserRoleModal = (isShow) => {
 const addUserRoleOperAction = (res) => ({
     type: ActionConstants.ADD_USER_ROLE_OPER,
     userRoleList: fromJS(res.data.records),
-    current:res.data.current,
-    total:res.data.total,
-    showAddUserRoleModal:false
+    current: res.data.current,
+    total: res.data.total,
+    showAddUserRoleModal: false
 });
 
 //添加角色
-export const addUserRoleOper = (addUserRoleObj,querParams) => {
+export const addUserRoleOper = (addUserRoleObj, querParams) => {
     return (dispatch) => {
         let options = {
             url: StringConstants.SERVER_URL + "/sysUserRole/addSysUserRole",
@@ -201,18 +200,17 @@ export const addUserRoleOper = (addUserRoleObj,querParams) => {
 };
 
 
-
 //修改角色Action
 const updateUserRoleOperAction = (res) => ({
     type: ActionConstants.UPDATE_USER_ROLE_OPER,
     userRoleList: fromJS(res.data.records),
-    current:res.data.current,
-    total:res.data.total,
-    showUpdateUserRoleModal:false
+    current: res.data.current,
+    total: res.data.total,
+    showUpdateUserRoleModal: false
 });
 
 //修改角色
-export const updateItem = (updateObj,querParams) => {
+export const updateItem = (updateObj, querParams) => {
     return (dispatch) => {
         let options = {
             url: StringConstants.SERVER_URL + "/sysUserRole/updateSysUserRoleById",
@@ -238,17 +236,17 @@ export const updateItem = (updateObj,querParams) => {
 };
 
 //根据id查询详情
-export const getDetailById = (id,operate) => {
+export const getDetailById = (id, operate) => {
     return (dispatch) => {
         let options = {
             url: StringConstants.SERVER_URL + "/sysUserRole/getSysUserRoleById",
-            data: {"id":id}
+            data: {"id": id}
         };
 
 
         util.ajax(options).then((res => {
             let data = res.data;
-            dispatch(getDetailByIdAction(data,operate));
+            dispatch(getDetailByIdAction(data, operate));
         }));
 
     }
@@ -259,12 +257,11 @@ export const getDetailById = (id,operate) => {
  * @param curOperRowObj  当前操作的表格行对象
  *
  */
-const getDetailByIdAction = (curOperRowObj,opera) => ({
+const getDetailByIdAction = (curOperRowObj, opera) => ({
     type: ActionConstants.GET_DETAILBY_ID,
-    curOperRowObj:fromJS(curOperRowObj),
+    curOperRowObj: fromJS(curOperRowObj),
     opera
 });
-
 
 
 //是否显示菜单设置模态框Action
@@ -282,11 +279,19 @@ export const isShowMenuSettingModal = (isShow) => {
 
 
 //是否显示修改角色模态框Action
-const showViewMenuSettingModalAction = (menuList,isShow) => ({
+const showViewMenuSettingModalAction = (menuList, isShow) => ({
     type: ActionConstants.SHOW_VIEWMENU_SETTING_MODAL,
     isShow,
-    menuTreeList:fromJS(menuList)
+    menuTreeList: fromJS(menuList)
 });
+
+
+//显示角色对应的菜单列表
+export const setCurRoleMenuRealtionAction = (menuRealDataArray) => ({
+    type: ActionConstants.SET_CURROLE_MENU_REALTION_ACTION,
+    menuRealDataArray: fromJS(menuRealDataArray)
+});
+
 
 //菜单设置按钮Click
 export const showViewMenuSettingModal = (id) => {
@@ -307,17 +312,27 @@ export const showViewMenuSettingModal = (id) => {
         };
         util.ajax(menuTreeoptions).then((res => {
             let data = res.data;
-            dispatch(showViewMenuSettingModalAction(data,true));
+            dispatch(showViewMenuSettingModalAction(data, true));
+        }));
+
+        //请求该角色对应的菜单关系
+        let roleMenuRealtionOptions = {
+            url: StringConstants.SERVER_URL + "/sysRoleMenuAuthority/getSysRoleMenuAuthorityByParams",
+            data: {"userRoleId": id}
+        };
+        util.ajax(roleMenuRealtionOptions).then((res => {
+            let data = res.data;
+            let menuRealDataArray = util.convertArrayToFiledList(data, "menuId");
+            dispatch(setCurRoleMenuRealtionAction(menuRealDataArray));
         }));
     }
 };
 
 
-
 //菜单Tree复选框选中Action
 const menuTreeCheckAction = (checkedKeys) => ({
     type: ActionConstants.ROLE_MENU_TREE_CHECK_ACTION,
-    checkedKeys:fromJS(checkedKeys)
+    checkedKeys: fromJS(checkedKeys)
 });
 
 //菜单Tree复选框选中事件
@@ -328,13 +343,12 @@ export const menuTreeCheck = (checkedKeys) => {
 };
 
 
-
 //菜单设置模态框设置event
-export const confirmRoleMenuSetting = (id,checkedKeys) => {
+export const confirmRoleMenuSetting = (id, checkedKeys) => {
     return (dispatch) => {
         let options = {
             url: StringConstants.SERVER_URL + "/sysRoleMenuAuthority/addSysRoleMenuAuthority",
-            data: {"userRoleId": id,"userRoleMenuIds":checkedKeys}
+            data: {"userRoleId": id, "userRoleMenuIds": checkedKeys}
         };
         util.ajax(options).then((res => {
             dispatch(isShowMenuSettingModal(false));
