@@ -192,13 +192,7 @@ class Role extends PureComponent {
                     >
 
                         {
-                            this.renderRoleTreeNodes([
-                                {
-                                    "id": StringConstants.ROLE_TREE_TOP_ID,
-                                    "roleName": "角色列表",
-                                    "children": roleMenuTreeData
-                                }
-                            ])
+                            this.renderMenuTreeNodes(roleMenuTreeData)
                         }
                     </Modal>
                 </div>
@@ -214,12 +208,12 @@ class Role extends PureComponent {
         return data.map(item => {
             if (!item.children) {
                 return (
-                    <TreeNode title={item.roleName} key={item.id} />
+                    <TreeNode title={item.menuName} key={item.id} />
                 )
             } else {
                 return (
-                    <TreeNode title={item.roleName} key={item.id}>
-                        {this.renderRoleTreeNodes(item.children)}
+                    <TreeNode title={item.menuName} key={item.id}>
+                        {this.renderMenuTreeNodes(item.children)}
                     </TreeNode>
                 )
             }

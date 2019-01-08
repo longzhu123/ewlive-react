@@ -50,8 +50,9 @@ export default (state = defaultState, action) => {
             }
             return state.set("curOperRowObj",action.curOperRowObj).set("showUpdateUserRoleModal",fromJS(showUpdateUserRoleModal)).set("showViewUserRoleModal",fromJS(showViewUserRoleModal));
         case ActionConstants.IS_SHOW_MENUSETTING_MODAL:
-            debugger;
             return state.set("showRoleMenuSettingModal",action.isShow);
+        case ActionConstants.SHOW_VIEWMENU_SETTING_MODAL:
+            return state.set("showRoleMenuSettingModal",action.isShow).set("roleMenuList",action.menuTreeList);
         default:
             return state;
     }

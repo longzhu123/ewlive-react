@@ -281,17 +281,24 @@ export const isShowMenuSettingModal = (isShow) => {
 };
 
 
-//菜单设置按钮ClickAction
-const showViewMenuSettingModalAction = (menuTreeList) => ({
+//是否显示修改角色模态框Action
+const showViewMenuSettingModalAction = (menuList,isShow) => ({
     type: ActionConstants.SHOW_VIEWMENU_SETTING_MODAL,
-    isShow:true,
-    menuTreeList
+    isShow,
+    menuTreeList:fromJS(menuList)
 });
 
 //菜单设置按钮Click
 export const showViewMenuSettingModal = (id) => {
     return (dispatch) => {
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysMenu/getSysMenuTree",
+            data: {}
+        };
+        util.ajax(options).then((res => {
+            let data = res.data;
+            dispatch(showViewMenuSettingModalAction(data,true));
+        }));
 
-        dispatch(showViewMenuSettingModalAction({}));
     }
 };
