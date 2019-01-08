@@ -12,7 +12,6 @@ const loadFontListAction = (list) => ({
 export const loadFontList = () => {
     return (dispatch) => {
         axios.get("../../font-icon.json").then((res => {
-            debugger;
             dispatch(loadFontListAction(res.data));
         }));
     }

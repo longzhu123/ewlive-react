@@ -21,7 +21,6 @@ export const loadDicItemList = (current,querParams) => {
             data: querParams
         };
         util.ajax(options).then((res => {
-            debugger;
             dispatch(loadDicItemListAction(res.data.records,res.data.current,res.data.total));
         }));
     }
@@ -190,7 +189,6 @@ const addDicItemOperAction = (res) => ({
 //添加字典项
 export const addDicItemOper = (addDicItemObj,querParams) => {
     return (dispatch) => {
-        debugger;
         let options = {
             url: StringConstants.SERVER_URL + "/sysDicItem/addSysDicItem",
             data: addDicItemObj

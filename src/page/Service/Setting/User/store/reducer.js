@@ -59,7 +59,6 @@ export default (state = defaultState, action) => {
         case  ActionConstants.CONFIRM_SHOWUSER_MODAL_ACTION:
             return state.set("showViewUserRoleModal",action.isShow);
         case  ActionConstants.SET_CURUSERROLE_REALTION_ACTION:
-            debugger;
             return state.set("curUserRoleRealCheckData",action.roleRealDataArray).set("showViewUserRoleModal",action.isShow);
         default:
             return state;
