@@ -13,7 +13,9 @@ const defaultState = fromJS(
         showViewUserRoleModal:false,
         showUpdateUserRoleModal:false,
         showRoleMenuSettingModal:false,
-        roleMenuList:[]
+        roleMenuList:[],
+        roleMenuCheckKeys:[],
+        curRoleMenuRealCheckData:[]
     }
 );
 
@@ -53,6 +55,8 @@ export default (state = defaultState, action) => {
             return state.set("showRoleMenuSettingModal",action.isShow);
         case ActionConstants.SHOW_VIEWMENU_SETTING_MODAL:
             return state.set("showRoleMenuSettingModal",action.isShow).set("roleMenuList",action.menuTreeList);
+        case ActionConstants.ROLE_MENU_TREE_CHECK_ACTION:
+            return state.set("roleMenuCheckKeys",action.checkedKeys);
         default:
             return state;
     }

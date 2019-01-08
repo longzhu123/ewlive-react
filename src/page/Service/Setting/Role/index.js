@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {Button, Card, Icon, Table,Modal,Tree} from 'antd';
+import {Button, Card, Icon, Table, Modal, Tree} from 'antd';
 import SearchForm from '../../../../common/Form/SearchForm';
 import ViewForm from '../../../../common/Form/ViewForm';
 import EditForm from '../../../../common/Form/EditForm';
@@ -9,7 +9,7 @@ import './index.css';
 import {actionCreators} from "./store";
 
 const confirm = Modal.confirm;
-const { TreeNode } = Tree;
+const {TreeNode} = Tree;
 let querParams = {};
 let toCurOperRowObj = {};
 
@@ -26,7 +26,7 @@ class Role extends PureComponent {
     };
 
     render() {
-        const {userRoleList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserRoleModal, showAddUserRoleModal, showViewUserRoleModal, showUpdateUserRoleModal, isShowViewUserRoleModal, isShowUpdateUserRoleModal, curOperRowObj,showRoleMenuSettingModal,showViewMenuSettingModal,isShowMenuSettingModal,roleMenuList} = this.props;
+        const {userRoleList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddUserRoleModal, showAddUserRoleModal, showViewUserRoleModal, showUpdateUserRoleModal, isShowViewUserRoleModal, isShowUpdateUserRoleModal, curOperRowObj, showRoleMenuSettingModal, showViewMenuSettingModal, isShowMenuSettingModal, roleMenuList, menuTreeCheck,roleMenuCheckKeys,curRoleMenuRealCheckData,confirmRoleMenuSetting} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
         const userRoleDataList = userRoleList.toJS();
@@ -40,7 +40,7 @@ class Role extends PureComponent {
                 title: '角色名称',
                 dataIndex: 'roleName',
                 align: "center"
-            },{
+            }, {
                 title: '操作',
                 key: 'control',
                 align: "center",
@@ -187,12 +187,15 @@ class Role extends PureComponent {
                         title="菜单设置"
                         height="600"
                         visible={showRoleMenuSettingModal}
+                        onOk={() => confirmRoleMenuSetting(toCurOperRowObj.id,roleMenuCheckKeys.toJS())}
                         onCancel={() => isShowMenuSettingModal(false)}
                         destroyOnClose
                     >
                         <Tree
                             checkable
                             defaultExpandAll={true}
+                            onCheck={menuTreeCheck}
+                            defaultCheckedKeys={curRoleMenuRealCheckData.toJS()}
                         >
                             {
                                 this.renderMenuTreeNodes(roleMenuTreeData)
@@ -206,13 +209,11 @@ class Role extends PureComponent {
     }
 
 
-
-
-    renderMenuTreeNodes = (data) =>{
+    renderMenuTreeNodes = (data) => {
         return data.map(item => {
             if (!item.children) {
                 return (
-                    <TreeNode title={item.menuName} key={item.id} />
+                    <TreeNode title={item.menuName} key={item.id}/>
                 )
             } else {
                 return (
@@ -239,7 +240,9 @@ const mapState = (state) => ({
     showUpdateUserRoleModal: state.get("userRoleSettingReducer").get("showUpdateUserRoleModal"),
     curOperRowObj: state.get("userRoleSettingReducer").get("curOperRowObj"),
     showRoleMenuSettingModal: state.get("userRoleSettingReducer").get("showRoleMenuSettingModal"),
-    roleMenuList: state.get("userRoleSettingReducer").get("roleMenuList")
+    roleMenuList: state.get("userRoleSettingReducer").get("roleMenuList"),
+    roleMenuCheckKeys: state.get("userRoleSettingReducer").get("roleMenuCheckKeys"),
+    curRoleMenuRealCheckData: state.get("userRoleSettingReducer").get("curRoleMenuRealCheckData")
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -312,12 +315,21 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(actionCreators.isShowUpdateUserRoleModal(isShow));
     },
     //是否显示菜单设置模态框
-    isShowMenuSettingModal(isShow){
+    isShowMenuSettingModal(isShow) {
         dispatch(actionCreators.isShowMenuSettingModal(isShow));
     },
     //菜单设置按钮Click事件
-    showViewMenuSettingModal(id){
+    showViewMenuSettingModal(id) {
         dispatch(actionCreators.showViewMenuSettingModal(id));
+    },
+    //菜单Tree复选框选中事件
+    menuTreeCheck(checkedKeys, e) {
+        dispatch(actionCreators.menuTreeCheck(checkedKeys));
+    },
+    //菜单设置模态框设置event
+    confirmRoleMenuSetting(id,checkedKeys){
+        console.log(id);
+        console.log(checkedKeys);
     }
 });
 

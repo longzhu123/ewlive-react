@@ -292,13 +292,37 @@ const showViewMenuSettingModalAction = (menuList,isShow) => ({
 export const showViewMenuSettingModal = (id) => {
     return (dispatch) => {
         let options = {
-            url: StringConstants.SERVER_URL + "/sysMenu/getSysMenuTree",
-            data: {}
+            url: StringConstants.SERVER_URL + "/sysUserRole/getSysUserRoleById",
+            data: {"id": id}
         };
         util.ajax(options).then((res => {
             let data = res.data;
-            dispatch(showViewMenuSettingModalAction(data,true));
+            dispatch(getDetailByIdAction(data));
         }));
 
+
+        let menuTreeoptions = {
+            url: StringConstants.SERVER_URL + "/sysMenu/getSysMenuTree",
+            data: {}
+        };
+        util.ajax(menuTreeoptions).then((res => {
+            let data = res.data;
+            dispatch(showViewMenuSettingModalAction(data,true));
+        }));
+    }
+};
+
+
+
+//菜单Tree复选框选中Action
+const menuTreeCheckAction = (checkedKeys) => ({
+    type: ActionConstants.ROLE_MENU_TREE_CHECK_ACTION,
+    checkedKeys:fromJS(checkedKeys)
+});
+
+//菜单Tree复选框选中事件
+export const menuTreeCheck = (checkedKeys) => {
+    return (dispatch) => {
+        dispatch(menuTreeCheckAction(checkedKeys));
     }
 };
