@@ -326,3 +326,22 @@ export const menuTreeCheck = (checkedKeys) => {
         dispatch(menuTreeCheckAction(checkedKeys));
     }
 };
+
+
+
+//菜单设置模态框设置event
+export const confirmRoleMenuSetting = (id,checkedKeys) => {
+    return (dispatch) => {
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysRoleMenuAuthority/addSysRoleMenuAuthority",
+            data: {"userRoleId": id,"userRoleMenuIds":checkedKeys}
+        };
+        util.ajax(options).then((res => {
+            dispatch(isShowMenuSettingModal(false));
+            Modal.success({
+                "title": "信息提示",
+                "content": "菜单设置成功"
+            });
+        }));
+    }
+};

@@ -328,8 +328,7 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //菜单设置模态框设置event
     confirmRoleMenuSetting(id,checkedKeys){
-        console.log(id);
-        console.log(checkedKeys);
+        dispatch(actionCreators.confirmRoleMenuSetting(id,checkedKeys));
     }
 });
 
