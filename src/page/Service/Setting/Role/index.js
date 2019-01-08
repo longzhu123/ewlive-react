@@ -190,10 +190,14 @@ class Role extends PureComponent {
                         onCancel={() => isShowMenuSettingModal(false)}
                         destroyOnClose
                     >
-
-                        {
-                            this.renderMenuTreeNodes(roleMenuTreeData)
-                        }
+                        <Tree
+                            checkable
+                            defaultExpandAll={true}
+                        >
+                            {
+                                this.renderMenuTreeNodes(roleMenuTreeData)
+                            }
+                        </Tree>
                     </Modal>
                 </div>
             </div>
