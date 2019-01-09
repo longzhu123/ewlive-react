@@ -336,8 +336,19 @@ const menuTreeCheckAction = (checkedKeys) => ({
 });
 
 //菜单Tree复选框选中事件
-export const menuTreeCheck = (checkedKeys) => {
+export const menuTreeCheck = (checkedKeys,e) => {
     return (dispatch) => {
+        let halfCheckedKeys = e.halfCheckedKeys;
+        debugger;
+        //将根节点菜单从该数组中去除掉
+        var findIndex = halfCheckedKeys.findIndex(item => {
+            return item === StringConstants.MENU_TREE_TOP_ID;
+        });
+        if(findIndex>-1){
+            halfCheckedKeys.splice(findIndex,1);
+        }
+
+        checkedKeys=checkedKeys.concat(halfCheckedKeys);
         dispatch(menuTreeCheckAction(checkedKeys));
     }
 };

@@ -324,7 +324,7 @@ const mapDispatchToProps = (dispatch) => ({
     },
     //菜单Tree复选框选中事件
     menuTreeCheck(checkedKeys, e) {
-        dispatch(actionCreators.menuTreeCheck(checkedKeys));
+        dispatch(actionCreators.menuTreeCheck(checkedKeys,e));
     },
     //菜单设置模态框设置event
     confirmRoleMenuSetting(id,checkedKeys){

@@ -22,4 +22,4 @@ export const  DEFAULT_PAGE_CURRENT = 1;
 export const ROLE_TREE_TOP_ID = "13110730be5b4a25a84c584d4449d0ff";
 
 //菜单树形顶级的编号
-export const MENU_TREE_TOP_ID = "13110730be5b4a25a84c584d4449d0ff";
+export const MENU_TREE_TOP_ID = "099ce9a9f85b4ef896da216d33e28ce3";
