@@ -11,6 +11,7 @@ import DicSetting from '../Service/Setting/Dic';
 import LogError from '../Service/Monitor/LogError';
 import LogLogin from '../Service/Monitor/LogLogin';
 import LogOperate from '../Service/Monitor/LogOperate';
+import liveRoomMgr from '../Service/LiveMgr/LiveRoomMgr';
 
 import AdminIndex from "./AdminIndex";
 import NoMatch from "../../common/NoMatch";
@@ -44,6 +45,7 @@ class Admin extends PureComponent {
                                 <AuthorRoute exact path="/admin/system/monitor/log/operate" component={LogOperate}/>
                                 <AuthorRoute exact path="/admin/system/monitor/log/login" component={LogLogin}/>
                                 <AuthorRoute exact path="/admin/system/monitor/log/error" component={LogError}/>
+                                <AuthorRoute exact path="/admin/live/roomMgr" component={liveRoomMgr}/>
                                 <Route component={NoMatch}/>
                             </Switch>
                         </div>

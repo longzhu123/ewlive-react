@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {connect} from 'react-redux';
 import {Icon, Layout, Menu} from 'antd';
 import {Link} from 'react-router-dom';
@@ -60,6 +61,14 @@ class AdminSlider extends PureComponent {
                         </Menu.Item>
                         <Menu.Item key="/admin/system/monitor/log/login">
                             <Link to={'/admin/system/monitor/log/login'}><span><Icon type="file-done"/>登录日志</span></Link>
+                        </Menu.Item>
+                    </SubMenu>
+                    <SubMenu
+                        key="/admin/live"
+                        title={<span><FontAwesomeIcon icon={["fab", "google-play"]} size="sm"/><span>&nbsp;&nbsp;直播管理</span></span>}
+                    >
+                        <Menu.Item key="/admin/live/roomMgr">
+                            <Link to={'/admin/live/roomMgr'}><span><FontAwesomeIcon icon={["fab", "modx"]} size="sm"/><span>&nbsp;&nbsp;直播房间管理</span></span></Link>
                         </Menu.Item>
                     </SubMenu>
                 </Menu>

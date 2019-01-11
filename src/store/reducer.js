@@ -10,6 +10,8 @@ import {reducer as DicItemSettingReducer} from '../page/Service/Setting/DicItem/
 import {reducer as LogOperateReducer} from '../page/Service/Monitor/LogOperate/store';
 import {reducer as LogErrorReducer} from '../page/Service/Monitor/LogError/store';
 import {reducer as LogLoginReducer} from '../page/Service/Monitor/LogLogin/store';
+import {reducer as LiveRoomMgrReducer} from '../page/Service/LiveMgr/LiveRoomMgr/store';
+
 import {reducer as FontListReducer} from '../common/FontList/store';
 
 
@@ -28,6 +30,7 @@ const reducer = combineReducers({
     logOperateSettingReducer:LogOperateReducer,
     logLoginReducer:LogLoginReducer,
     logErrorReducer:LogErrorReducer,
+    liveRoomMgrReducer:LiveRoomMgrReducer,
     fontListReducer:FontListReducer
 });
 
