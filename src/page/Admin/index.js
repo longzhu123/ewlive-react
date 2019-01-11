@@ -8,7 +8,7 @@ import MenuSetting from '../Service/Setting/Menu';
 import RoleSetting from '../Service/Setting/Role';
 import DicSetting from '../Service/Setting/Dic';
 
-// import LogError from '../Service/Monitor/LogError';
+import LogError from '../Service/Monitor/LogError';
 import LogLogin from '../Service/Monitor/LogLogin';
 import LogOperate from '../Service/Monitor/LogOperate';
 
@@ -43,8 +43,7 @@ class Admin extends PureComponent {
                                 <AuthorRoute exact path="/admin/setting/dic" component={DicSetting}/>
                                 <AuthorRoute exact path="/admin/system/monitor/log/operate" component={LogOperate}/>
                                 <AuthorRoute exact path="/admin/system/monitor/log/login" component={LogLogin}/>
-                                {/*<AuthorRoute exact path="/admin/monitor/logError" component={LogError}/>*/}
-                                {/*<AuthorRoute exact path="/admin/monitor/logLogin" component={LogLogin}/>*/}
+                                <AuthorRoute exact path="/admin/system/monitor/log/error" component={LogError}/>
                                 <Route component={NoMatch}/>
                             </Switch>
                         </div>
