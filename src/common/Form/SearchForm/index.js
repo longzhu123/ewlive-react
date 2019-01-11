@@ -59,7 +59,7 @@ class SearchForm extends Component {
                 let field = item.field;   // 字段key
                 if (item.type === "input") {
 
-                    const input = <Col className="gutter-row" span={5}>
+                    const input = <Col span={5} key={field}>
                         <FormItem label={lable} key={field}>
                             {getFieldDecorator(field, {initialValue: initialValue})(
                                 <Input placeholder={placeholder}/>
