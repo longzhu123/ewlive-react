@@ -7,6 +7,11 @@ import UserSetting from '../Service/Setting/User';
 import MenuSetting from '../Service/Setting/Menu';
 import RoleSetting from '../Service/Setting/Role';
 import DicSetting from '../Service/Setting/Dic';
+
+// import LogError from '../Service/Monitor/LogError';
+// import LogLogin from '../Service/Monitor/LogLogin';
+import LogOperate from '../Service/Monitor/LogOperate';
+
 import AdminIndex from "./AdminIndex";
 import NoMatch from "../../common/NoMatch";
 import {Breadcrumb, Layout} from 'antd';
@@ -36,6 +41,9 @@ class Admin extends PureComponent {
                                 <AuthorRoute exact path="/admin/setting/menu" component={MenuSetting}/>
                                 <AuthorRoute exact path="/admin/setting/role" component={RoleSetting}/>
                                 <AuthorRoute exact path="/admin/setting/dic" component={DicSetting}/>
+                                <AuthorRoute exact path="/admin/system/monitor/log/operate" component={LogOperate}/>
+                                {/*<AuthorRoute exact path="/admin/monitor/logError" component={LogError}/>*/}
+                                {/*<AuthorRoute exact path="/admin/monitor/logLogin" component={LogLogin}/>*/}
                                 <Route component={NoMatch}/>
                             </Switch>
                         </div>
