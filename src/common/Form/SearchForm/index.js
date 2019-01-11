@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Checkbox, DatePicker, Form, Input, Select} from "antd";
+import {Button, Checkbox, DatePicker, Form, Input, Select, Row, Col} from "antd";
 import util from '../../../util/util';
 import './index.css';
 import moment from "moment"
@@ -13,9 +13,8 @@ const FormItem = Form.Item;
 class SearchForm extends Component {
 
 
-
     //搜索表单提交事件
-    search = ()=>{
+    search = () => {
         let fieldsValue = this.props.form.getFieldsValue();
         //调用父组件filterForm方法
         this.props.filterForm(fieldsValue);
@@ -59,11 +58,14 @@ class SearchForm extends Component {
                 let list = item.list || [];    //option
                 let field = item.field;   // 字段key
                 if (item.type === "input") {
-                    const input = <FormItem label={lable} key={field}>
-                        {getFieldDecorator(field, {initialValue: initialValue})(
-                            <Input placeholder={placeholder}/>
-                        )}
-                    </FormItem>
+
+                    const input = <Col className="gutter-row" span={5}>
+                        <FormItem label={lable} key={field}>
+                            {getFieldDecorator(field, {initialValue: initialValue})(
+                                <Input placeholder={placeholder}/>
+                            )}
+                        </FormItem>
+                    </Col>
                     formItemList.push(input);
                 }
                 else if (item.type === "select") {
@@ -116,11 +118,15 @@ class SearchForm extends Component {
 
     render() {
         return (<Form layout="inline">
-            {this.initSearchFormList()}
-            <FormItem>
-                <Button type="primary" onClick={this.search} style={{margin: '0 20px'}}>查询</Button>
-                <Button onClick={this.reset}>重置</Button>
-            </FormItem>
+            <Row gutter={24}>
+                {this.initSearchFormList()}
+                <Col span={12}>
+                    <FormItem>
+                            <Button type="primary" onClick={this.search} style={{margin: '0 20px'}}>查询</Button>
+                            <Button onClick={this.reset}>重置</Button>
+                    </FormItem>
+                </Col>
+            </Row>
         </Form>)
     }
 
