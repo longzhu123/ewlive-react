@@ -139,18 +139,6 @@ const mapDispatchToProps = (dispatch) => ({
     onShowSizeChange(current) {
         dispatch(actionCreators.loadLogLoginList(current, querParams));
     },
-    //查看单条记录的详情
-    showViewModal(id) {
-        dispatch(actionCreators.getDetailById(id, "view"));
-    },
-    //显示修改模态框
-    showUpdateModal(id) {
-        dispatch(actionCreators.getDetailById(id, "update"));
-    },
-    //修改操作
-    updateItem(updateObj, queryObj) {
-        dispatch(actionCreators.updateItem(updateObj, queryObj));
-    },
     //条件查询表格
     filterForm(queryObj) {
         dispatch(actionCreators.filterForm(queryObj));
