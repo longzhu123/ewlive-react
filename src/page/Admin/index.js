@@ -9,7 +9,7 @@ import RoleSetting from '../Service/Setting/Role';
 import DicSetting from '../Service/Setting/Dic';
 
 // import LogError from '../Service/Monitor/LogError';
-// import LogLogin from '../Service/Monitor/LogLogin';
+import LogLogin from '../Service/Monitor/LogLogin';
 import LogOperate from '../Service/Monitor/LogOperate';
 
 import AdminIndex from "./AdminIndex";
@@ -42,6 +42,7 @@ class Admin extends PureComponent {
                                 <AuthorRoute exact path="/admin/setting/role" component={RoleSetting}/>
                                 <AuthorRoute exact path="/admin/setting/dic" component={DicSetting}/>
                                 <AuthorRoute exact path="/admin/system/monitor/log/operate" component={LogOperate}/>
+                                <AuthorRoute exact path="/admin/system/monitor/log/login" component={LogLogin}/>
                                 {/*<AuthorRoute exact path="/admin/monitor/logError" component={LogError}/>*/}
                                 {/*<AuthorRoute exact path="/admin/monitor/logLogin" component={LogLogin}/>*/}
                                 <Route component={NoMatch}/>

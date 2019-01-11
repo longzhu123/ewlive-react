@@ -8,6 +8,7 @@ import {reducer as RoleSettingReducer} from '../page/Service/Setting/Role/store'
 import {reducer as DicSettingReducer} from '../page/Service/Setting/Dic/store';
 import {reducer as DicItemSettingReducer} from '../page/Service/Setting/DicItem/store';
 import {reducer as LogOperateReducer} from '../page/Service/Monitor/LogOperate/store';
+import {reducer as LogLoginReducer} from '../page/Service/Monitor/LogLogin/store';
 import {reducer as FontListReducer} from '../common/FontList/store';
 
 
@@ -24,6 +25,7 @@ const reducer = combineReducers({
     dicSettingReducer:DicSettingReducer,
     dicItemSettingReducer:DicItemSettingReducer,
     logOperateSettingReducer:LogOperateReducer,
+    logLoginReducer:LogLoginReducer,
     fontListReducer:FontListReducer
 });
 
