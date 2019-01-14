@@ -62,7 +62,11 @@ class Admin extends PureComponent {
             '/admin/setting/user': '用户管理',
             '/admin/setting/menu': '菜单管理',
             '/admin/setting/role': '角色管理',
-            '/admin/setting/dic': '字典管理'
+            '/admin/setting/dic': '字典管理',
+            '/admin/system/monitor/log/operate': '操作日志',
+            '/admin/system/monitor/log/error': '异常日志',
+            '/admin/system/monitor/log/login': '登录日志',
+            '/admin/live/roomMgr': '直播房间管理'
         };
         const path = window.location.pathname;
         if (path !== "/admin") {
