@@ -17,7 +17,7 @@ export const loadLiveRoomInfoList = (current, querParams) => {
         querParams.current = current;
         querParams.size = StringConstants.PAGE_SIZE;
         let options = {
-            url: StringConstants.SERVER_URL + "/LiveRoomInfo/likeSearchSysLiveRoomInfoByPage",
+            url: StringConstants.SERVER_URL + "/LiveRoomInfo/likeSearchLiveRoomInfoByPage",
             data: querParams
         };
         util.ajax(options).then((res => {
@@ -52,7 +52,7 @@ const delItemAction = (liveRoomInfoList) => ({
 export const delItem = (selectIds, querParams) => {
     return (dispatch) => {
         let options = {
-            url: StringConstants.SERVER_URL + "/LiveRoomInfo/deleteBatchSysLiveRoomInfoByIds",
+            url: StringConstants.SERVER_URL + "/LiveRoomInfo/deleteBatchLiveRoomInfoByIds",
             data: {"ids": selectIds}
         };
         util.ajax(options).then((res => {
@@ -63,7 +63,7 @@ export const delItem = (selectIds, querParams) => {
             querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
             querParams.size = StringConstants.PAGE_SIZE;
             let liveRoomInfoOptions = {
-                url: StringConstants.SERVER_URL + "/LiveRoomInfo/likeSearchSysLiveRoomInfoByPage",
+                url: StringConstants.SERVER_URL + "/LiveRoomInfo/likeSearchLiveRoomInfoByPage",
                 data: querParams
             };
             util.ajax(liveRoomInfoOptions).then((res => {
@@ -90,7 +90,7 @@ export const filterForm = (queryObj) => {
         queryObj.current = 1;
         queryObj.size = StringConstants.PAGE_SIZE;
         let options = {
-            url: StringConstants.SERVER_URL + "/LiveRoomInfo/likeSearchSysLiveRoomInfoByPage",
+            url: StringConstants.SERVER_URL + "/LiveRoomInfo/likeSearchLiveRoomInfoByPage",
             data: queryObj
         };
         util.ajax(options).then((res => {
@@ -114,7 +114,7 @@ export const resetLoadGrid = (querParams) => {
         querParams.current = 1;
         querParams.size = StringConstants.PAGE_SIZE;
         let options = {
-            url: StringConstants.SERVER_URL + "/LiveRoomInfo/likeSearchSysLiveRoomInfoByPage",
+            url: StringConstants.SERVER_URL + "/LiveRoomInfo/likeSearchLiveRoomInfoByPage",
             data: querParams
         };
         util.ajax(options).then((res => {
@@ -177,7 +177,7 @@ const addLiveRoomInfoOperAction = (res) => ({
 export const addLiveRoomInfoOper = (addLiveRoomInfoObj, querParams) => {
     return (dispatch) => {
         let options = {
-            url: StringConstants.SERVER_URL + "/LiveRoomInfo/addSysLiveRoomInfo",
+            url: StringConstants.SERVER_URL + "/LiveRoomInfo/addLiveRoomInfo",
             data: addLiveRoomInfoObj
         };
         util.ajax(options).then((res => {
@@ -189,7 +189,7 @@ export const addLiveRoomInfoOper = (addLiveRoomInfoObj, querParams) => {
             querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
             querParams.size = StringConstants.PAGE_SIZE;
             let liveRoomInfoOptions = {
-                url: StringConstants.SERVER_URL + "/LiveRoomInfo/likeSearchSysLiveRoomInfoByPage",
+                url: StringConstants.SERVER_URL + "/LiveRoomInfo/likeSearchLiveRoomInfoByPage",
                 data: querParams
             };
             util.ajax(liveRoomInfoOptions).then((res => {
@@ -213,7 +213,7 @@ const updateLiveRoomInfoOperAction = (res) => ({
 export const updateItem = (updateObj, querParams) => {
     return (dispatch) => {
         let options = {
-            url: StringConstants.SERVER_URL + "/LiveRoomInfo/updateSysLiveRoomInfoById",
+            url: StringConstants.SERVER_URL + "/LiveRoomInfo/updateLiveRoomInfoById",
             data: updateObj
         };
         util.ajax(options).then((res => {
@@ -225,7 +225,7 @@ export const updateItem = (updateObj, querParams) => {
             querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
             querParams.size = StringConstants.PAGE_SIZE;
             let liveRoomInfoOptions = {
-                url: StringConstants.SERVER_URL + "/LiveRoomInfo/likeSearchSysLiveRoomInfoByPage",
+                url: StringConstants.SERVER_URL + "/LiveRoomInfo/likeSearchLiveRoomInfoByPage",
                 data: querParams
             };
             util.ajax(liveRoomInfoOptions).then((res => {
@@ -239,7 +239,7 @@ export const updateItem = (updateObj, querParams) => {
 export const getDetailById = (id, operate) => {
     return (dispatch) => {
         let options = {
-            url: StringConstants.SERVER_URL + "/LiveRoomInfo/getSysLiveRoomInfoById",
+            url: StringConstants.SERVER_URL + "/LiveRoomInfo/getLiveRoomInfoById",
             data: {"id": id}
         };
 
