@@ -69,16 +69,18 @@ class SearchForm extends Component {
                     formItemList.push(input);
                 }
                 else if (item.type === "select") {
-                    const select = <FormItem label={lable} key={field}>
-                        {getFieldDecorator(field, {
-                                initialValue: initialValue
-                            }
-                        )(
-                            <Select style={{width: width}} placeholder={placeholder}>
-                                {util.OptionList(list)}
-                            </Select>
-                        )}
-                    </FormItem>;
+                    const select = <Col span={5} key={field}>
+                            <FormItem label={lable} key={field}>
+                            {getFieldDecorator(field, {
+                                    initialValue: initialValue
+                                }
+                            )(
+                                <Select style={{width: width}} placeholder={placeholder}>
+                                    {util.OptionList(list)}
+                                </Select>
+                            )}
+                            </FormItem>
+                    </Col>;
                     formItemList.push(select);
                 } else if (item.type === "checkbox") {
                     const checkbox = <FormItem label={lable} key={field}>
@@ -92,7 +94,7 @@ class SearchForm extends Component {
                     </FormItem>
                     formItemList.push(checkbox);
                 } else if (item.type === "date") {
-                    const dateComponent = <FormItem label={lable} key={field}>
+                    const dateComponent = <Col span={5} key={field}><FormItem label={lable} key={field}>
                         {getFieldDecorator(field, {
                             initialValue: moment(initialValue, 'YYYY/MM/DD')
 
@@ -105,6 +107,7 @@ class SearchForm extends Component {
                         )}
 
                     </FormItem>
+                    </Col>;
                     formItemList.push(dateComponent);
 
                 }

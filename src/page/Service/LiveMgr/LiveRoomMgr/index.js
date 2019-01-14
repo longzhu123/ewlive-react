@@ -63,17 +63,17 @@ class LiveRoomInfo extends PureComponent {
         const searchFormOptions = [
             {
                 type: "input",
-                lable: "邮箱",
-                placeholder: "邮箱",
+                lable: "房间名称",
+                placeholder: "房间名称",
                 width: "200px",
-                field: "email"
+                field: "roomName"
             },
             {
-                type: "input",
-                lable: "昵称",
-                placeholder: "昵称",
+                type: "select",
+                lable: "开播状态",
+                placeholder: "开播状态",
                 width: "200px",
-                field: "nickName"
+                field: "playState"
             }
         ];
 
