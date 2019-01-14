@@ -3,25 +3,25 @@ import {fromJS} from 'immutable';
 import * as StringConstants from "../../../../../constant";
 import util from '../../../../../util/util';
 import {Modal} from 'antd';
-//加载操作日志ListAction
-const loadLogOperateListAction = (list, current, total) => ({
-    type: ActionConstants.LOAD_LOGOPERATE_LIST,
-    logOperateList: fromJS(list),
+//加载直播房间信息ListAction
+const loadLiveRoomInfoListAction = (list, current, total) => ({
+    type: ActionConstants.LOAD_LIVEROOMINFO_LIST,
+    liveRoomInfoList: fromJS(list),
     current,
     total
 });
 
-//加载操作日志List
-export const loadLogOperateList = (current, querParams) => {
+//加载直播房间信息List
+export const loadLiveRoomInfoList = (current, querParams) => {
     return (dispatch) => {
         querParams.current = current;
         querParams.size = StringConstants.PAGE_SIZE;
         let options = {
-            url: StringConstants.SERVER_URL + "/sysLogOperate/likeSearchSysLogOperateByPage",
+            url: StringConstants.SERVER_URL + "/sysLiveRoomInfo/likeSearchSysLiveRoomInfoByPage",
             data: querParams
         };
         util.ajax(options).then((res => {
-            dispatch(loadLogOperateListAction(res.data.records, res.data.current, res.data.total));
+            dispatch(loadLiveRoomInfoListAction(res.data.records, res.data.current, res.data.total));
         }));
     }
 };
@@ -41,18 +41,18 @@ export const tableSelectChange = (selectedRowKeys) => {
 };
 
 //删除表格项的数据 Action
-const delItemAction = (logOperateList) => ({
+const delItemAction = (liveRoomInfoList) => ({
     type: ActionConstants.TABLE_DEL_ITEM,
     selectIds: fromJS([]),
-    logOperateList: fromJS(logOperateList.records),
-    total: logOperateList.total
+    liveRoomInfoList: fromJS(liveRoomInfoList.records),
+    total: liveRoomInfoList.total
 });
 
 //删除表格项的数据
 export const delItem = (selectIds, querParams) => {
     return (dispatch) => {
         let options = {
-            url: StringConstants.SERVER_URL + "/sysLogOperate/deleteBatchSysLogOperateByIds",
+            url: StringConstants.SERVER_URL + "/sysLiveRoomInfo/deleteBatchSysLiveRoomInfoByIds",
             data: {"ids": selectIds}
         };
         util.ajax(options).then((res => {
@@ -62,11 +62,11 @@ export const delItem = (selectIds, querParams) => {
             });
             querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
             querParams.size = StringConstants.PAGE_SIZE;
-            let logOperateOptions = {
-                url: StringConstants.SERVER_URL + "/sysLogOperate/likeSearchSysLogOperateByPage",
+            let liveRoomInfoOptions = {
+                url: StringConstants.SERVER_URL + "/sysLiveRoomInfo/likeSearchSysLiveRoomInfoByPage",
                 data: querParams
             };
-            util.ajax(logOperateOptions).then((res => {
+            util.ajax(liveRoomInfoOptions).then((res => {
                 dispatch(delItemAction(res.data));
             }));
 
@@ -90,11 +90,11 @@ export const filterForm = (queryObj) => {
         queryObj.current = 1;
         queryObj.size = StringConstants.PAGE_SIZE;
         let options = {
-            url: StringConstants.SERVER_URL + "/sysLogOperate/likeSearchSysLogOperateByPage",
+            url: StringConstants.SERVER_URL + "/sysLiveRoomInfo/likeSearchSysLiveRoomInfoByPage",
             data: queryObj
         };
         util.ajax(options).then((res => {
-            dispatch(loadLogOperateListAction(res.data.records, res.data.current, res.data.total));
+            dispatch(loadLiveRoomInfoListAction(res.data.records, res.data.current, res.data.total));
         }));
     }
 };
@@ -103,7 +103,7 @@ export const filterForm = (queryObj) => {
 //重置表格ListAction
 const resetLoadGridAction = (list, current, total) => ({
     type: ActionConstants.RESET_LOAD_GRID,
-    logOperateList: fromJS(list),
+    liveRoomInfoList: fromJS(list),
     current,
     total
 });
@@ -114,7 +114,7 @@ export const resetLoadGrid = (querParams) => {
         querParams.current = 1;
         querParams.size = StringConstants.PAGE_SIZE;
         let options = {
-            url: StringConstants.SERVER_URL + "/sysLogOperate/likeSearchSysLogOperateByPage",
+            url: StringConstants.SERVER_URL + "/sysLiveRoomInfo/likeSearchSysLiveRoomInfoByPage",
             data: querParams
         };
         util.ajax(options).then((res => {
@@ -122,3 +122,144 @@ export const resetLoadGrid = (querParams) => {
         }));
     }
 };
+
+//是否显示添加直播房间信息模态框Action
+const isShowAddLiveRoomInfoModalAction = (isShow) => ({
+    type: ActionConstants.IS_SHOW_ADD_LIVEROOMINFO_MODAL,
+    isShow
+});
+
+//是否显示添加直播房间信息模态框
+export const isShowAddLiveRoomInfoModal = (isShow) => {
+    return (dispatch) => {
+        dispatch(isShowAddLiveRoomInfoModalAction(isShow));
+    }
+};
+
+
+//是否显示查看直播房间信息模态框Action
+const isShowViewLiveRoomInfoModalAction = (isShow) => ({
+    type: ActionConstants.IS_SHOW_VIEW_LIVEROOMINFO_MODAL,
+    isShow
+});
+
+//是否显示查看直播房间信息模态框
+export const isShowViewLiveRoomInfoModal = (isShow) => {
+    return (dispatch) => {
+        dispatch(isShowViewLiveRoomInfoModalAction(isShow));
+    }
+};
+
+
+//是否显示修改直播房间信息模态框Action
+const isShowUpdateLiveRoomInfoModalAction = (isShow) => ({
+    type: ActionConstants.IS_SHOW_UPDATE_LIVEROOMINFO_MODAL,
+    isShow
+});
+
+//是否显示修改直播房间信息模态框
+export const isShowUpdateLiveRoomInfoModal = (isShow) => {
+    return (dispatch) => {
+        dispatch(isShowUpdateLiveRoomInfoModalAction(isShow));
+    }
+};
+
+//添加直播房间信息Action
+const addLiveRoomInfoOperAction = (res) => ({
+    type: ActionConstants.ADD_LIVEROOMINFO_OPER,
+    liveRoomInfoList: fromJS(res.data.records),
+    current: res.data.current,
+    total: res.data.total,
+    showAddLiveRoomInfoModal: false
+});
+
+//添加直播房间信息
+export const addLiveRoomInfoOper = (addLiveRoomInfoObj, querParams) => {
+    return (dispatch) => {
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysLiveRoomInfo/addSysLiveRoomInfo",
+            data: addLiveRoomInfoObj
+        };
+        util.ajax(options).then((res => {
+            Modal.success({
+                "title": "信息提示",
+                "content": "添加成功"
+            });
+
+            querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
+            querParams.size = StringConstants.PAGE_SIZE;
+            let liveRoomInfoOptions = {
+                url: StringConstants.SERVER_URL + "/sysLiveRoomInfo/likeSearchSysLiveRoomInfoByPage",
+                data: querParams
+            };
+            util.ajax(liveRoomInfoOptions).then((res => {
+                dispatch(addLiveRoomInfoOperAction(res));
+            }));
+        }));
+    }
+};
+
+
+//修改直播房间信息Action
+const updateLiveRoomInfoOperAction = (res) => ({
+    type: ActionConstants.UPDATE_LIVEROOMINFO_OPER,
+    liveRoomInfoList: fromJS(res.data.records),
+    current: res.data.current,
+    total: res.data.total,
+    showUpdateLiveRoomInfoModal: false
+});
+
+//修改直播房间信息
+export const updateItem = (updateObj, querParams) => {
+    return (dispatch) => {
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysLiveRoomInfo/updateSysLiveRoomInfoById",
+            data: updateObj
+        };
+        util.ajax(options).then((res => {
+            Modal.success({
+                "title": "信息提示",
+                "content": "修改成功"
+            });
+
+            querParams.current = StringConstants.DEFAULT_PAGE_CURRENT;
+            querParams.size = StringConstants.PAGE_SIZE;
+            let liveRoomInfoOptions = {
+                url: StringConstants.SERVER_URL + "/sysLiveRoomInfo/likeSearchSysLiveRoomInfoByPage",
+                data: querParams
+            };
+            util.ajax(liveRoomInfoOptions).then((res => {
+                dispatch(updateLiveRoomInfoOperAction(res));
+            }))
+        }));
+    }
+};
+
+//根据id查询详情
+export const getDetailById = (id, operate) => {
+    return (dispatch) => {
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysLiveRoomInfo/getSysLiveRoomInfoById",
+            data: {"id": id}
+        };
+
+
+        util.ajax(options).then((res => {
+            let data = res.data;
+            dispatch(getDetailByIdAction(data, operate));
+        }));
+
+    }
+};
+
+/**
+ * 修改直播房间信息Action
+ * @param curOperRowObj  当前操作的表格行对象
+ *
+ */
+const getDetailByIdAction = (curOperRowObj, opera) => ({
+    type: ActionConstants.GET_DETAILBY_ID,
+    curOperRowObj: fromJS(curOperRowObj),
+    opera
+});
+
