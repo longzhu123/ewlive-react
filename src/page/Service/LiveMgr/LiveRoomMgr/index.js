@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {Button, Card, Icon, Table,Modal} from 'antd';
+import {Button, Card, Icon, Table, Modal} from 'antd';
 import SearchForm from '../../../../common/Form/SearchForm';
 import ViewForm from '../../../../common/Form/ViewForm';
 import EditForm from '../../../../common/Form/EditForm';
@@ -17,6 +17,7 @@ class LiveRoomInfo extends PureComponent {
 
     componentDidMount() {
         this.props.loadLiveRoomInfoList();
+        this.props.loadPlayStateSelectList();
     }
 
     onRef = (ref) => {
@@ -25,10 +26,11 @@ class LiveRoomInfo extends PureComponent {
     };
 
     render() {
-        const {liveRoomInfoList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddLiveRoomInfoModal, showAddLiveRoomInfoModal, showViewLiveRoomInfoModal, showUpdateLiveRoomInfoModal, isShowViewLiveRoomInfoModal, isShowUpdateLiveRoomInfoModal, curOperRowObj} = this.props;
+        const {liveRoomInfoList, tableSelectChange, delItem, selectIds, onShowSizeChange, pageIndex, totalSize, showViewModal, showUpdateModal, filterForm, queryObj, resetLoadGrid, isShowAddLiveRoomInfoModal, showAddLiveRoomInfoModal, showViewLiveRoomInfoModal, showUpdateLiveRoomInfoModal, isShowViewLiveRoomInfoModal, isShowUpdateLiveRoomInfoModal, curOperRowObj, playStateSelectList} = this.props;
         querParams = queryObj.toJS();
         toCurOperRowObj = curOperRowObj.toJS();
         const liveRoomInfoDataList = liveRoomInfoList.toJS();
+        const playStateDropList = playStateSelectList.toJS();
         const selectDataIds = selectIds.toJS();
         const rowSelection = {
             onChange: tableSelectChange
@@ -73,7 +75,8 @@ class LiveRoomInfo extends PureComponent {
                 lable: "开播状态",
                 placeholder: "开播状态",
                 width: "200px",
-                field: "playState"
+                field: "playState",
+                list: playStateDropList
             }
         ];
 
@@ -300,7 +303,8 @@ const mapState = (state) => ({
     showAddLiveRoomInfoModal: state.get("liveRoomMgrReducer").get("showAddLiveRoomInfoModal"),
     showViewLiveRoomInfoModal: state.get("liveRoomMgrReducer").get("showViewLiveRoomInfoModal"),
     showUpdateLiveRoomInfoModal: state.get("liveRoomMgrReducer").get("showUpdateLiveRoomInfoModal"),
-    curOperRowObj: state.get("liveRoomMgrReducer").get("curOperRowObj")
+    curOperRowObj: state.get("liveRoomMgrReducer").get("curOperRowObj"),
+    playStateSelectList: state.get("liveRoomMgrReducer").get("playStateSelectList")
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -371,6 +375,10 @@ const mapDispatchToProps = (dispatch) => ({
     //是否显示修改直播房间信息模态框
     isShowUpdateLiveRoomInfoModal(isShow) {
         dispatch(actionCreators.isShowUpdateLiveRoomInfoModal(isShow));
+    },
+    //加载开播状态的下拉list
+    loadPlayStateSelectList(){
+        dispatch(actionCreators.loadPlayStateSelectList("4783fd16d2bc4015be3f35e60f970c87"));
     }
 });
 

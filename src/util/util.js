@@ -70,7 +70,7 @@ let util = {
         if (!data) {
             return [];
         }
-        let OptionMap = [<Option value="0" key="all_key">全部</Option>];
+        let OptionMap = [];
         data.map((item, index) => {
             OptionMap.push(<Option value={item.id} key={item.id}>{item.name}</Option>)
             return index;

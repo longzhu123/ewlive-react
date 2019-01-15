@@ -75,7 +75,7 @@ class SearchForm extends Component {
                                     initialValue: initialValue
                                 }
                             )(
-                                <Select style={{width: width}} placeholder={placeholder}>
+                                <Select style={{width: width}} placeholder={placeholder} showSearch optionFilterProp="children">
                                     {util.OptionList(list)}
                                 </Select>
                             )}

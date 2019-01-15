@@ -263,3 +263,40 @@ const getDetailByIdAction = (curOperRowObj, opera) => ({
     opera
 });
 
+
+//加载开播状态的下拉list
+export const loadPlayStateSelectList = (dicId) => {
+    return (dispatch) => {
+        let options = {
+            url: StringConstants.SERVER_URL + "/sysDicItem/getSysDicItemByParams",
+            data: {"dicId": dicId}
+        };
+
+        util.ajax(options).then((res => {
+            let data = res.data;
+            let selectData = [];
+            for (let i = 0; i < data.length; i++) {
+                let item = data[i];
+                let temp = {
+                    id:  item.dicItemCode,
+                    name: item.dicItemName
+                }
+                selectData.push(temp);
+            }
+            dispatch(loadPlayStateSelectListAction(selectData));
+        }));
+
+    }
+};
+
+
+/**
+ * 加载开播状态的下拉list
+ * @param selectList  下拉数据对象List
+ *
+ */
+const loadPlayStateSelectListAction = (selectList) => ({
+    type: ActionConstants.LOAD_PLAYSTATE_SELECT_LIST,
+    selectList: fromJS(selectList)
+});
+

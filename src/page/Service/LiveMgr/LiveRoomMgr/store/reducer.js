@@ -11,7 +11,8 @@ const defaultState = fromJS(
         curOperRowObj:{},
         showAddLiveRoomInfoModal:false,
         showViewLiveRoomInfoModal:false,
-        showUpdateLiveRoomInfoModal:false
+        showUpdateLiveRoomInfoModal:false,
+        playStateSelectList:[]
     }
 );
 
@@ -46,6 +47,8 @@ export default (state = defaultState, action) => {
                 showViewLiveRoomInfoModal = true;
             }
             return state.set("curOperRowObj",action.curOperRowObj).set("showUpdateLiveRoomInfoModal",fromJS(showUpdateLiveRoomInfoModal)).set("showViewLiveRoomInfoModal",fromJS(showViewLiveRoomInfoModal));
+        case ActionConstants.LOAD_PLAYSTATE_SELECT_LIST:
+            return state.set("playStateSelectList",action.selectList);
         default:
             return state;
     }
