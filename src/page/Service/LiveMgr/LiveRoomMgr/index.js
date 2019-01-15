@@ -111,54 +111,48 @@ class LiveRoomInfo extends PureComponent {
         const addFormOptions = [
             {
                 type: "input",
-                lable: "邮箱",
-                placeholder: "邮箱",
+                lable: "房间名称",
+                placeholder: "房间名称",
                 width: "200px",
-                field: "email",
+                field: "roomName",
                 validate: [
                     {
-                        type: 'email', message: '邮箱格式不正确!',
-                    },
-                    {
-                        required: true, message: '请输入邮箱!',
+                        required: true, message: '请输入房间名称!',
                     }
                 ]
             },
             {
-                type: "input",
-                lable: "密码",
-                placeholder: "密码",
+                type: "select",
+                lable: "开播状态",
+                placeholder: "开播状态",
                 width: "200px",
-                field: "password",
+                field: "playState",
+                list: playStateDropList,
                 validate: [
-                    {required: true, message: '请输入密码!'}
+                    {required: true, message: '请输入开播状态!'}
                 ]
             },
             {
-                type: "input",
-                lable: "昵称",
-                placeholder: "昵称",
+                type: "date",
+                lable: "开播时间",
+                placeholder: "开播时间",
                 width: "200px",
-                field: "nickName",
+                field: "playTime",
                 validate: [
-                    {required: true, message: '请输入昵称!'}
+                    {required: true, message: '请输入开播时间!'}
                 ]
             },
             {
-                type: "input",
-                lable: "优币",
-                placeholder: "优币",
+                type: "date",
+                lable: "房间封面",
+                placeholder: "房间封面",
                 width: "200px",
-                field: "ewCoin",
+                field: "roomImg",
                 validate: [
-                    {
-                        pattern: new RegExp(/^[1-9]\d*$/, "g"),
-                        message: '只能输入数值格式'
-                    }, {
-                        required: true, message: '请输入优币!',
-                    }
+                    {required: true, message: '请输入房间封面!'}
                 ]
             }
+
         ];
         //编辑表单的配置参数
         const updateFormOptions = [

@@ -83,7 +83,7 @@ class EditForm extends PureComponent {
                                 rules: validate
                             }
                         )(
-                            <Select style={{width: width}} placeholder={placeholder}>
+                            <Select style={{width: width}} placeholder={placeholder}  showSearch optionFilterProp="children">
                                 {util.OptionList(list)}
                             </Select>
                         )}
@@ -103,7 +103,6 @@ class EditForm extends PureComponent {
                 } else if (item.type === "date") {
                     const dateComponent = <FormItem label={lable} key={field}  {...formItemLayout}>
                         {getFieldDecorator(field, {
-                            initialValue: moment(initialValue, 'YYYY/MM/DD'),
                             rules: validate
                         })(
                             <DatePicker
