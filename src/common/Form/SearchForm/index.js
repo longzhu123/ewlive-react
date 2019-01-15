@@ -8,6 +8,7 @@ import 'moment/locale/zh-cn';
 
 moment.locale('zh-cn');
 const FormItem = Form.Item;
+const {  RangePicker } = DatePicker;
 
 //公共的搜索表单组件
 class SearchForm extends Component {
@@ -94,15 +95,10 @@ class SearchForm extends Component {
                     </FormItem>
                     formItemList.push(checkbox);
                 } else if (item.type === "date") {
-                    const dateComponent = <Col span={5} key={field}><FormItem label={lable} key={field}>
+                    const dateComponent = <Col span={7} key={field}><FormItem label={lable} key={field}>
                         {getFieldDecorator(field, {
-                            initialValue: moment(initialValue, 'YYYY/MM/DD')
-
                         })(
-                            <DatePicker
-                                showTime
-                                for-mat="YY-MM-DD HH:mm:ss"
-                                placeholder={placeholder}
+                            <RangePicker
                             />
                         )}
 
@@ -123,7 +119,7 @@ class SearchForm extends Component {
         return (<Form layout="inline">
             <Row gutter={24}>
                 {this.initSearchFormList()}
-                <Col span={12}>
+                <Col span={5}>
                     <FormItem>
                             <Button type="primary" onClick={this.search} style={{margin: '0 20px'}}>查询</Button>
                             <Button onClick={this.reset}>重置</Button>

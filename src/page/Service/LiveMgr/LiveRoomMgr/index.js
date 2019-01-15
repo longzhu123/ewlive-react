@@ -77,6 +77,13 @@ class LiveRoomInfo extends PureComponent {
                 width: "200px",
                 field: "playState",
                 list: playStateDropList
+            },
+            {
+                type: "date",
+                lable: "开播时间",
+                placeholder: "开播时间",
+                width: "200px",
+                field: "searchPlayTime"
             }
         ];
 
