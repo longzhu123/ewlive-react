@@ -108,7 +108,6 @@ class EditForm extends PureComponent {
                         })(
                             <DatePicker
                                 placeholder={placeholder}
-                                onChange={this.dateOnChange}
                             />
                         )}
                     </FormItem>;
@@ -142,10 +141,6 @@ class EditForm extends PureComponent {
     };
 
 
-    dateOnChange = (value, dateString) => {
-        console.log('Selected Time: ', value);
-        console.log('Formatted Selected Time: ', dateString);
-    };
 
     /**
      * 渲染树形下拉框
