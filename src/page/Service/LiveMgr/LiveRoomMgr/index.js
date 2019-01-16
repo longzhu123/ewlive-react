@@ -103,7 +103,7 @@ class LiveRoomInfo extends PureComponent {
             {
                 type: "text",
                 lable: "开播时间",
-                field: "searchPlayTime"
+                field: "playTime"
             }
         ];
 

@@ -104,6 +104,7 @@ class EditForm extends PureComponent {
                 } else if (item.type === "date") {
                     const dateComponent = <FormItem label={lable} key={field}  {...formItemLayout}>
                         {getFieldDecorator(field, {
+                            initialValue: initialValue===undefined?initialValue:moment(initialValue, 'YYYY/MM/DD'),
                             rules: validate
                         })(
                             <DatePicker
