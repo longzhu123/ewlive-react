@@ -83,7 +83,8 @@ class EditForm extends PureComponent {
                                 rules: validate
                             }
                         )(
-                            <Select style={{width: width}} placeholder={placeholder}  showSearch optionFilterProp="children">
+                            <Select style={{width: width}} placeholder={placeholder} showSearch
+                                    optionFilterProp="children">
                                 {util.OptionList(list)}
                             </Select>
                         )}
@@ -106,8 +107,8 @@ class EditForm extends PureComponent {
                             rules: validate
                         })(
                             <DatePicker
-                                showTime
                                 placeholder={placeholder}
+                                onChange={this.dateOnChange}
                             />
                         )}
                     </FormItem>;
@@ -141,21 +142,24 @@ class EditForm extends PureComponent {
     };
 
 
-
+    dateOnChange = (value, dateString) => {
+        console.log('Selected Time: ', value);
+        console.log('Formatted Selected Time: ', dateString);
+    };
 
     /**
      * 渲染树形下拉框
      * @param treeList
      */
-    renderTreeForm=(treeList)=>{
+    renderTreeForm = (treeList) => {
         return treeList.map((item, index) => {
-            if(item.children!==undefined&&item.children.length>0){
+            if (item.children !== undefined && item.children.length > 0) {
                 return (
                     <TreeNode value={item.id} title={item.menuName} key={item.id}>
                         {this.renderTreeForm(item.children)}
                     </TreeNode>
                 )
-            }else{
+            } else {
                 return (
                     <TreeNode value={item.id} title={item.menuName} key={item.id}></TreeNode>
                 )
@@ -178,6 +182,12 @@ class EditForm extends PureComponent {
     addFormValidate = (querParam) => {
         this.props.form.validateFields((err, values) => {
             if (!err) {
+                for(let key in values){
+                    if(key.toLowerCase().indexOf("time")>-1){
+                        values[key]=moment(values[key]).format("YYYY-MM-DD 00:00:00")
+                    }
+                }
+                console.log(values);
                 this.props.editAction(values, querParam);
             }
         });
