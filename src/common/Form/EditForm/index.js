@@ -107,7 +107,6 @@ class EditForm extends PureComponent {
                         })(
                             <DatePicker
                                 showTime
-                                for-mat="YY-MM-DD HH:mm:ss"
                                 placeholder={placeholder}
                             />
                         )}
