@@ -92,18 +92,18 @@ class LiveRoomInfo extends PureComponent {
         const viewOptions = [
             {
                 type: "text",
-                lable: "邮箱",
-                field: "email"
+                lable: "房间名称",
+                field: "roomName"
             },
             {
                 type: "text",
-                lable: "昵称",
-                field: "nickName"
+                lable: "开播状态",
+                field: "playStateDesc"
             },
             {
                 type: "text",
-                lable: "优币",
-                field: "ewCoin"
+                lable: "开播时间",
+                field: "searchPlayTime"
             }
         ];
 
@@ -159,55 +159,39 @@ class LiveRoomInfo extends PureComponent {
         const updateFormOptions = [
             {
                 type: "input",
-                lable: "邮箱",
-                placeholder: "邮箱",
+                lable: "房间名称",
+                placeholder: "房间名称",
                 width: "200px",
-                field: "email",
-                initialValue: toCurOperRowObj.email,
+                field: "roomName",
+                initialValue: toCurOperRowObj.roomName,
                 validate: [
                     {
-                        type: 'email', message: '邮箱格式不正确!',
-                    },
-                    {
-                        required: true, message: '请输入邮箱!',
+                        required: true, message: '请输入房间名称!',
                     }
                 ]
             },
             {
-                type: "input",
-                lable: "密码",
-                placeholder: "密码",
+                type: "select",
+                lable: "开播状态",
+                placeholder: "开播状态",
                 width: "200px",
-                field: "password",
-                initialValue: toCurOperRowObj.password,
+                field: "playState",
+                initialValue: toCurOperRowObj.playState,
+                list: playStateDropList,
                 validate: [
-                    {required: true, message: '请输入密码!'}
+                    {required: true, message: '请输入开播状态!'}
                 ]
             },
             {
-                type: "input",
-                lable: "昵称",
-                placeholder: "昵称",
+                type: "date",
+                lable: "开播时间",
+                placeholder: "开播时间",
                 width: "200px",
-                field: "nickName",
-                initialValue: toCurOperRowObj.nickName,
-                validate: [
-                    {required: true, message: '请输入昵称!'}
-                ]
-            },
-            {
-                type: "input",
-                lable: "优币",
-                placeholder: "优币",
-                width: "200px",
-                field: "ewCoin",
-                initialValue: toCurOperRowObj.ewCoin,
+                field: "playTime",
+                initialValue: toCurOperRowObj.playTime,
                 validate: [
                     {
-                        pattern: new RegExp(/^[1-9]\d*$/, "g"),
-                        message: '只能输入数值格式'
-                    }, {
-                        required: true, message: '请输入优币!',
+                        required: true, message: '请输入开播时间!',
                     }
                 ]
             }
@@ -379,7 +363,7 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(actionCreators.isShowUpdateLiveRoomInfoModal(isShow));
     },
     //加载开播状态的下拉list
-    loadPlayStateSelectList(){
+    loadPlayStateSelectList() {
         dispatch(actionCreators.loadPlayStateSelectList("4783fd16d2bc4015be3f35e60f970c87"));
     }
 });
