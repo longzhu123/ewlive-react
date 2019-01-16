@@ -37,16 +37,17 @@ class LiveRoomInfo extends PureComponent {
         };
         const columns = [
             {
-                title: '邮箱',
-                dataIndex: 'email',
+                title: '房间名称',
+                dataIndex: 'roomName',
+                align: "center"
+            },
+            {
+                title: '开播时间',
+                dataIndex: 'playTime',
                 align: "center"
             }, {
-                title: '昵称',
-                dataIndex: 'nickName',
-                align: "center"
-            }, {
-                title: '优币',
-                dataIndex: 'ewCoin',
+                title: '开播状态',
+                dataIndex: 'playStateDesc',
                 align: "center"
             }
             , {
