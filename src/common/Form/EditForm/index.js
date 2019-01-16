@@ -58,7 +58,6 @@ class EditForm extends PureComponent {
                 let list = item.list || [];    //option
                 let field = item.field;   // 字段key
                 let validate = item.validate;   // 字段validate
-
                 if (item.type === "input") {
                     let input = "";
                     if (item.onFocus === undefined) {
@@ -104,10 +103,11 @@ class EditForm extends PureComponent {
                 } else if (item.type === "date") {
                     const dateComponent = <FormItem label={lable} key={field}  {...formItemLayout}>
                         {getFieldDecorator(field, {
-                            initialValue: initialValue===undefined?initialValue:moment(initialValue, 'YYYY/MM/DD'),
+                            initialValue: initialValue===undefined?initialValue:moment(initialValue, 'YYYY-MM-DD 00:00:00'),
                             rules: validate
                         })(
                             <DatePicker
+                                defaultValue={moment(initialValue, 'YYYY-MM-DD 00:00:00')}
                                 placeholder={placeholder}
                             />
                         )}
@@ -191,6 +191,11 @@ class EditForm extends PureComponent {
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 values.id = id;
+                for(let key in values){
+                    if(key.toLowerCase().indexOf("time")>-1){
+                        values[key]=moment(values[key]).format("YYYY-MM-DD 00:00:00")
+                    }
+                }
                 this.props.editAction(values, querParam);
             }
         });
