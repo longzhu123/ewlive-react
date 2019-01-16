@@ -187,7 +187,6 @@ class EditForm extends PureComponent {
                         values[key]=moment(values[key]).format("YYYY-MM-DD 00:00:00")
                     }
                 }
-                console.log(values);
                 this.props.editAction(values, querParam);
             }
         });
