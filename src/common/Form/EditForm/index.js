@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import {Checkbox, DatePicker, Form, Input, Select, TreeSelect} from "antd";
 import util from '../../../util/util';
 import './index.css';
-import moment from ""
+import moment from "moment"
 import 'moment/locale/zh-cn';
 
 
@@ -139,8 +139,6 @@ class EditForm extends PureComponent {
         return editFormList;
 
     };
-
-
 
     /**
      * 渲染树形下拉框
