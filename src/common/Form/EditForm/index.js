@@ -177,7 +177,7 @@ class EditForm extends PureComponent {
             if (!err) {
                 for(let key in values){
                     if(key.toLowerCase().indexOf("time")>-1){
-                        values[key]=moment(values[key]).format("YYYY-MM-DD HH:mm:ss")
+                        values[key]=moment(values[key]).format("YYYY-MM-DD 00:00:00")
                     }
                 }
                 this.props.editAction(values, querParam);
