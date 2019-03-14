@@ -8,7 +8,7 @@ import 'moment/locale/zh-cn';
 
 moment.locale('zh-cn');
 const FormItem = Form.Item;
-const {  RangePicker } = DatePicker;
+const {RangePicker} = DatePicker;
 
 //公共的搜索表单组件
 class SearchForm extends Component {
@@ -60,28 +60,27 @@ class SearchForm extends Component {
                 let field = item.field;   // 字段key
                 if (item.type === "input") {
 
-                    const input = <Col span={5} key={field}>
+                    const input =
                         <FormItem label={lable} key={field}>
                             {getFieldDecorator(field, {initialValue: initialValue})(
                                 <Input placeholder={placeholder}/>
                             )}
                         </FormItem>
-                    </Col>
                     formItemList.push(input);
                 }
                 else if (item.type === "select") {
-                    const select = <Col span={5} key={field}>
-                            <FormItem label={lable} key={field}>
+                    const select =
+                        <FormItem label={lable} key={field}>
                             {getFieldDecorator(field, {
                                     initialValue: initialValue
                                 }
                             )(
-                                <Select style={{width: width}} placeholder={placeholder} showSearch optionFilterProp="children">
+                                <Select style={{width: width}} placeholder={placeholder} showSearch
+                                        optionFilterProp="children">
                                     {util.OptionList(list)}
                                 </Select>
                             )}
-                            </FormItem>
-                    </Col>;
+                        </FormItem>
                     formItemList.push(select);
                 } else if (item.type === "checkbox") {
                     const checkbox = <FormItem label={lable} key={field}>
@@ -95,15 +94,14 @@ class SearchForm extends Component {
                     </FormItem>
                     formItemList.push(checkbox);
                 } else if (item.type === "date") {
-                    const dateComponent = <Col span={7} key={field}><FormItem label={lable} key={field}>
-                        {getFieldDecorator(field, {
-                        })(
-                            <RangePicker
-                            />
-                        )}
+                    const dateComponent = <FormItem label={lable} key={field}>
+                            {getFieldDecorator(field, {})(
+                                <RangePicker
+                                />
+                            )}
 
-                    </FormItem>
-                    </Col>;
+                        </FormItem>
+                    ;
                     formItemList.push(dateComponent);
 
                 }
@@ -117,15 +115,13 @@ class SearchForm extends Component {
 
     render() {
         return (<Form layout="inline">
-            <Row gutter={24}>
-                {this.initSearchFormList()}
-                <Col span={5}>
-                    <FormItem>
-                            <Button type="primary" onClick={this.search} style={{margin: '0 20px'}}>查询</Button>
-                            <Button onClick={this.reset}>重置</Button>
-                    </FormItem>
-                </Col>
-            </Row>
+            {this.initSearchFormList()}
+            <div style={{overflow: 'hidden'}}>
+                <div style={{marginTop: 24}}>
+                    <Button type="primary" onClick={this.search} style={{margin: '0 20px'}}>查询</Button>
+                    <Button onClick={this.reset}>重置</Button>
+                </div>
+            </div>
         </Form>)
     }
 
