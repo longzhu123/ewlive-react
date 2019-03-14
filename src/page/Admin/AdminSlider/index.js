@@ -57,7 +57,7 @@ class AdminSlider extends PureComponent {
                             <Link to={'/admin/system/monitor/log/operate'}><span><Icon type="solution"/>操作日志</span></Link>
                         </Menu.Item>
                         <Menu.Item key="/admin/system/monitor/log/error">
-                            <Link to={'/admin/system/monitor/log/error'}><span><Icon type="exception"/>异常日志</span></Link>
+                                <Link to={'/admin/system/monitor/log/error'}><span><Icon type="exception"/>异常日志</span></Link>
                         </Menu.Item>
                         <Menu.Item key="/admin/system/monitor/log/login">
                             <Link to={'/admin/system/monitor/log/login'}><span><Icon type="file-done"/>登录日志</span></Link>
@@ -65,7 +65,7 @@ class AdminSlider extends PureComponent {
                     </SubMenu>
                     <SubMenu
                         key="/admin/live"
-                        title={<span><FontAwesomeIcon icon={["fab", "google-play"]} size="sm"/><span>&nbsp;&nbsp;直播管理</span></span>}
+                        title={<span><Icon type="youtube" /><span>直播管理</span></span>}
                     >
                         <Menu.Item key="/admin/live/roomMgr">
                             <Link to={'/admin/live/roomMgr'}><span><FontAwesomeIcon icon={["fab", "modx"]} size="sm"/><span>&nbsp;&nbsp;直播房间管理</span></span></Link>
