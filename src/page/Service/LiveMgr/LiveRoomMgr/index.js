@@ -104,6 +104,11 @@ class LiveRoomInfo extends PureComponent {
                 type: "text",
                 lable: "开播时间",
                 field: "playTime"
+            },
+            {
+                type: "text",
+                lable: "备注",
+                field: "comment"
             }
         ];
 
@@ -152,6 +157,16 @@ class LiveRoomInfo extends PureComponent {
                 validate: [
                     {required: true, message: '请输入房间封面!'}
                 ]
+            },
+            {
+                type: "textarea",
+                lable: "备注",
+                placeholder: "备注",
+                width: "200px",
+                field: "comment",
+                validate: [
+                    {required: true, message: '请输入备注!'}
+                ]
             }
 
         ];
@@ -192,6 +207,19 @@ class LiveRoomInfo extends PureComponent {
                 validate: [
                     {
                         required: true, message: '请输入开播时间!',
+                    }
+                ]
+            },
+            {
+                type: "textarea",
+                lable: "备注",
+                placeholder: "备注",
+                width: "200px",
+                field: "comment",
+                initialValue: toCurOperRowObj.comment,
+                validate: [
+                    {
+                        required: true, message: '请输入备注!',
                     }
                 ]
             }

@@ -9,7 +9,7 @@ import 'moment/locale/zh-cn';
 moment.locale('zh-cn');
 const FormItem = Form.Item;
 const TreeNode = TreeSelect.TreeNode;
-
+const { TextArea } = Input;
 //公共的编辑(增,删,改)表单组件
 class EditForm extends PureComponent {
 
@@ -133,6 +133,16 @@ class EditForm extends PureComponent {
 
 
                     editFormList.push(treeComponent);
+                }else if(item.type === "textarea"){
+                    const textArea =
+                        <FormItem label={lable} key={field}  {...formItemLayout}>
+                            {getFieldDecorator(field, {initialValue: initialValue, rules: validate})(
+                                <TextArea rows={5}  placeholder={placeholder} />
+                            )}
+                        </FormItem>;
+                    editFormList.push(textArea);
+                }else if(item.type === "file"){
+
                 }
                 return index;
             })
