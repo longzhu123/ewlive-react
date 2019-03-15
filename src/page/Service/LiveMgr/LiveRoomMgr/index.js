@@ -149,7 +149,7 @@ class LiveRoomInfo extends PureComponent {
                 ]
             },
             {
-                type: "date",
+                type: "file",
                 lable: "房间封面",
                 placeholder: "房间封面",
                 width: "200px",

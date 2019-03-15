@@ -1,9 +1,10 @@
 import React, {PureComponent} from 'react';
-import {Checkbox, DatePicker, Form, Input, Select, TreeSelect} from "antd";
+import {Upload,Checkbox, DatePicker, Form, Input, Select, TreeSelect,Button,Icon,message} from "antd";
 import util from '../../../util/util';
 import './index.css';
 import moment from "moment"
 import 'moment/locale/zh-cn';
+import * as StringConstant from '../../../constant';
 
 
 moment.locale('zh-cn');
@@ -142,7 +143,35 @@ class EditForm extends PureComponent {
                         </FormItem>;
                     editFormList.push(textArea);
                 }else if(item.type === "file"){
-
+                    const props = {
+                        name: 'files',
+                        action: StringConstant.UPLOAD_ACTION_URL,
+                        multiple: true,
+                        headers: {
+                            contenType: 'multipart/form-data'
+                        },
+                        onChange(info) {
+                            if (info.file.status !== 'uploading') {
+                                console.log(info.file, info.fileList);
+                            }
+                            if (info.file.status === 'done') {
+                                message.success(`${info.file.name} file uploaded successfully`);
+                            } else if (info.file.status === 'error') {
+                                message.error(`${info.file.name} file upload failed.`);
+                            }
+                        },
+                    };
+                    const upload =
+                        <FormItem label={lable} key={field}  {...formItemLayout}>
+                            {getFieldDecorator(field, {initialValue: initialValue, rules: validate})(
+                                <Upload {...props}>
+                                    <Button type="primary">
+                                        <Icon type="upload" />上传
+                                    </Button>
+                                </Upload>
+                            )}
+                        </FormItem>;
+                    editFormList.push(upload);
                 }
                 return index;
             })

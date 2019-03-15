@@ -23,3 +23,5 @@ export const ROLE_TREE_TOP_ID = "13110730be5b4a25a84c584d4449d0ff";
 
 //菜单树形顶级的编号
 export const MENU_TREE_TOP_ID = "099ce9a9f85b4ef896da216d33e28ce3";
+
+export const UPLOAD_ACTION_URL = SERVER_URL+"/sysFileInfo/addSysFileInfo";
