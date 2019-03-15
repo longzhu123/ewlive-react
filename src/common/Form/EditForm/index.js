@@ -108,7 +108,6 @@ class EditForm extends PureComponent {
                             rules: validate
                         })(
                             <DatePicker
-                                defaultValue={initialValue===undefined||initialValue===""?"":moment(initialValue, 'YYYY-MM-DD 00:00:00')}
                                 placeholder={placeholder}
                             />
                         )}
@@ -151,6 +150,7 @@ class EditForm extends PureComponent {
                             contenType: 'multipart/form-data'
                         },
                         onChange(info) {
+                            console.log(info);
                             if (info.file.status !== 'uploading') {
                                 console.log(info.file, info.fileList);
                             }
@@ -164,7 +164,7 @@ class EditForm extends PureComponent {
                     const upload =
                         <FormItem label={lable} key={field}  {...formItemLayout}>
                             {getFieldDecorator(field, {initialValue: initialValue, rules: validate})(
-                                <Upload {...props}>
+                                <Upload >
                                     <Button type="primary">
                                         <Icon type="upload" />上传
                                     </Button>
