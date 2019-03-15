@@ -164,7 +164,9 @@ class EditForm extends PureComponent {
                     const upload =
                         <FormItem label={lable} key={field}  {...formItemLayout}>
                             {getFieldDecorator(field, {initialValue: initialValue, rules: validate})(
-                                <Upload {...props}>
+                                <Upload
+                                    {...props}
+                                >
                                     <Button type="primary">
                                         <Icon type="upload" />上传
                                     </Button>
